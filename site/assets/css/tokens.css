@@ -1,0 +1,559 @@
+/* ============================================================
+   Trip Express BD — Design Tokens
+   Source of truth: .claude/skills/trip-express-brand/
+   All colour values sampled from or derived from logo-primary.jpg
+   ============================================================ */
+
+:root {
+  /* ---------- Brand core ---------- */
+  --te-orange:      #ED7C30;  /* Sunset Orange  — primary */
+  --te-sand:        #F2A16A;  /* Sand Orange    — logo mountain tint */
+  --te-sky:         #4394D5;  /* Sky Blue       — secondary */
+  --te-ocean:       #3171AE;  /* Deep Ocean     — anchor */
+  --te-night:       #132436;  /* Night Ocean    — darkest surface */
+  --te-white:       #FFFFFF;  /* Horizon White */
+
+  /* ---------- Orange ramp ---------- */
+  --te-orange-50:   #FEF8F5;
+  --te-orange-100:  #FDEFE6;
+  --te-orange-200:  #FADDC9;
+  --te-orange-300:  #F7C5A4;
+  --te-orange-400:  #F2A16A;
+  --te-orange-500:  #ED7C30;
+  --te-orange-600:  #C96A2B;
+  --te-orange-700:  #A45826;  /* lowest orange safe as text on white (5.25) */
+  --te-orange-800:  #804621;
+  --te-orange-900:  #60371C;
+  --te-orange-950:  #402718;
+
+  /* ---------- Sky Blue ramp ---------- */
+  --te-blue-50:     #F6FAFD;
+  --te-blue-100:    #E8F2FA;
+  --te-blue-200:    #CEE3F4;
+  --te-blue-300:    #ACD0ED;
+  --te-blue-400:    #78B2E1;
+  --te-blue-500:    #4394D5;
+  --te-blue-600:    #3A7EB5;
+  --te-blue-700:    #316896;  /* safe as text on white (5.91) */
+  --te-blue-800:    #285376;
+  --te-blue-900:    #20405B;
+  --te-blue-950:    #182D3F;
+
+  /* ---------- Deep Ocean ramp ---------- */
+  --te-deep-50:     #F5F8FB;
+  --te-deep-100:    #E6EEF5;
+  --te-deep-200:    #C9DAEA;
+  --te-deep-300:    #A4C1DB;
+  --te-deep-400:    #6B99C5;
+  --te-deep-500:    #3171AE;
+  --te-deep-600:    #2B6195;
+  --te-deep-700:    #25517B;
+  --te-deep-800:    #1E4162;
+  --te-deep-900:    #19324C;
+  --te-deep-950:    #132436;
+
+  /* ---------- Neutral (blue-tinted slate; never pure grey/black) ---------- */
+  --te-n-0:         #FFFFFF;
+  --te-n-50:        #F7F9FB;
+  --te-n-100:       #EFF3F7;
+  --te-n-200:       #DFE5EC;
+  --te-n-300:       #C6CFDA;
+  --te-n-400:       #9AA6B6;
+  --te-n-500:       #6F7D90;
+  --te-n-600:       #556274;
+  --te-n-700:       #3F4A5A;
+  --te-n-800:       #2B3442;
+  --te-n-900:       #1B2330;
+  --te-n-950:       #111823;  /* darkest ink — #000000 is forbidden */
+
+  /* ---------- Semantic ---------- */
+  --te-success:         #1E9E6A;
+  --te-success-text:    #15784F;
+  --te-success-surface: #E7F7F0;
+  --te-success-border:  #A7E3CB;
+
+  --te-warning:         #E0A000;
+  --te-warning-text:    #8A6100;
+  --te-warning-surface: #FFF6E0;
+  --te-warning-border:  #F5DB9B;
+
+  --te-error:           #D64545;
+  --te-error-text:      #B02E2E;
+  --te-error-surface:   #FDECEC;
+  --te-error-border:    #F3B9B9;
+
+  --te-info:            #3171AE;
+  --te-info-text:       #25517B;
+  --te-info-surface:    #E6EEF5;
+  --te-info-border:     #A4C1DB;
+
+  --te-whatsapp:        #25D366;
+  --te-whatsapp-hover:  #1FBE5A;
+  --te-whatsapp-ink:    #0B3D22;
+
+  /* ---------- Semantic roles (light theme) ---------- */
+  --te-bg:              var(--te-n-0);
+  --te-bg-subtle:       var(--te-n-50);
+  --te-bg-warm:         var(--te-orange-50);
+  --te-bg-cool:         var(--te-blue-50);
+  --te-bg-dark:         var(--te-deep-950);
+  --te-surface:         var(--te-n-0);
+  --te-border:          var(--te-n-200);
+  --te-border-strong:   var(--te-n-300);
+  --te-text:            var(--te-n-700);
+  --te-text-heading:    var(--te-n-900);
+  --te-text-muted:      var(--te-n-600);   /* n-500 is 4.19:1 - large text only */
+  --te-text-inverse:    var(--te-n-0);
+  --te-link:            var(--te-deep-600);
+  --te-link-hover:      var(--te-orange-700);
+  --te-focus:           var(--te-deep-500);
+
+  --te-action-bg:       var(--te-orange-500);
+  --te-action-bg-hover: var(--te-orange-600);
+  --te-action-ink:      var(--te-n-950);   /* NEVER white on orange (2.79:1) */
+  --te-action2-bg:      var(--te-deep-700);
+  --te-action2-ink:     var(--te-n-0);
+
+  --te-surface-2:       var(--te-n-50);
+  --te-overline:        var(--te-orange-700);
+  --te-hdr-bg:          rgba(255, 255, 255, 0.86);
+  --te-hdr-bg-stuck:    rgba(255, 255, 255, 0.94);
+  --te-ring:            #FFFFFF;
+  /* Form controls need their own surface. On a white card a white input is
+     just a border, and the field stops reading as something you can type in. */
+  --te-field-bg:        var(--te-n-50);
+  --te-field-border:    var(--te-n-300);
+  --te-field-ink:       var(--te-n-900);
+  --te-field-ph:        var(--te-n-500);
+
+  /* ---------- Gradients ---------- */
+  --te-grad-sunset: linear-gradient(17deg, #F2A16A 0%, #ED7C30 100%);
+  --te-grad-ocean:  linear-gradient(17deg, #4394D5 0%, #3171AE 100%);
+  --te-grad-night:  linear-gradient(17deg, #19324C 0%, #132436 100%);
+  --te-grad-horizon: linear-gradient(
+    17deg,
+    #ED7C30 0%,
+    #F2A16A 34%,
+    #FFFFFF 50%,
+    #4394D5 66%,
+    #3171AE 100%
+  );
+  --te-scrim: linear-gradient(
+    to top,
+    rgba(19, 36, 54, 0.88) 0%,
+    rgba(19, 36, 54, 0.55) 38%,
+    rgba(19, 36, 54, 0.00) 100%
+  );
+
+  /* ---------- Shadows (tinted with Deep Ocean) ---------- */
+  --te-shadow-xs:   0 1px 2px   rgba(19, 36, 54, 0.06);
+  --te-shadow-sm:   0 2px 6px   rgba(19, 36, 54, 0.08);
+  --te-shadow-md:   0 8px 20px  rgba(19, 36, 54, 0.10);
+  --te-shadow-lg:   0 16px 40px rgba(19, 36, 54, 0.14);
+  --te-shadow-xl:   0 28px 64px rgba(19, 36, 54, 0.18);
+  --te-shadow-warm: 0 10px 28px rgba(237, 124, 48, 0.32);
+
+  /* ---------- Typography ---------- */
+  --te-font-display: 'Plus Jakarta Sans', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --te-font-body:    'Inter', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --te-font-bangla:  'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', 'Segoe UI', sans-serif;
+  --te-font-num:     'Inter', 'Hind Siliguri', system-ui, sans-serif;  /* Hind carries the taka sign */
+
+  --te-fs-display-xl: clamp(2.75rem, 1.6rem + 4.6vw, 4.5rem);
+  --te-fs-display-lg: clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem);
+  --te-fs-h1:         clamp(1.875rem, 1.35rem + 2.2vw, 2.75rem);
+  --te-fs-h2:         clamp(1.625rem, 1.22rem + 1.75vw, 2.5rem);
+  --te-fs-h3:         clamp(1.3125rem, 1.14rem + 0.78vw, 1.75rem);
+  --te-fs-h4:         1.125rem;
+  --te-fs-body-lg:    1.125rem;
+  --te-fs-body:       1rem;
+  --te-fs-body-sm:    0.9375rem;
+  --te-fs-caption:    0.875rem;
+  /* 12px uppercase at 0.12em tracking measured as the first thing testers could
+     not read on a phone. The overline is a label, not a legal line. */
+  --te-fs-overline:   0.8125rem;
+  --te-fs-micro:      0.8125rem;   /* the floor for any Latin UI text */
+  --te-fs-price-lg:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --te-fs-price-sm:   1.125rem;
+
+  /* ---------- reading-first scale (see references/03-typography.md) ----------
+     Display sizes are capped lower than a generic marketing site so the type
+     stays readable on a 360px Android and never fights the photography. */
+  --te-fs-display:    clamp(2.375rem, 1.55rem + 3.3vw, 3.875rem);
+  --te-fs-lead:       clamp(1.0625rem, 0.99rem + 0.36vw, 1.25rem);
+  --te-fs-price:      clamp(1.625rem, 1.38rem + 0.95vw, 2.125rem);
+  --te-fs-stat:       clamp(2.25rem, 1.6rem + 2.6vw, 3.25rem);
+
+  /* ---------- chrome ---------- */
+  --te-hdr-h: 64px;
+  --te-rail-h: 46px;          /* the mobile journey rail under the header */
+  --te-ic-sw: 1.75;           /* icon stroke width on the 24 grid */
+
+  /* WhatsApp as a restrained action colour, not a billboard */
+  --te-wa-soft:      #E4F8EC;
+  --te-wa-ink-soft:  #10693C;
+  --te-wa-border:    #B6E7CB;
+
+  /* WhatsApp as a restrained action colour, not a billboard */
+
+  --te-lh-tight:  1.08;
+  --te-lh-snug:   1.25;
+  --te-lh-normal: 1.6;
+  --te-lh-relaxed:1.75;
+  --te-lh-bangla: 1.85;
+
+  --te-track-display: -0.03em;
+  --te-track-heading: -0.02em;
+  --te-track-normal:  0;
+  --te-track-overline: 0.12em;
+
+  --te-measure:        68ch;
+  --te-measure-bangla: 58ch;
+
+  /* Bangla conjuncts stack vertically, so the same nominal size reads smaller
+     than Latin. These are floors, not suggestions. */
+  --te-fs-bn-min:      1.0625rem;   /* 17px */
+  --te-fs-bn-ui-min:   1rem;        /* 16px, for chips/labels only */
+
+  /* ---------- Spacing (4px base) ---------- */
+  --te-space-0:  0;
+  --te-space-1:  4px;
+  --te-space-2:  8px;
+  --te-space-3:  12px;
+  --te-space-4:  16px;
+  --te-space-5:  20px;
+  --te-space-6:  24px;
+  --te-space-8:  32px;
+  --te-space-10: 40px;
+  --te-space-12: 48px;
+  --te-space-16: 64px;
+  --te-space-20: 80px;
+  --te-space-24: 96px;
+  --te-space-32: 128px;
+  --te-section-y: clamp(4rem, 8vw, 7rem);
+
+  /* ---------- Layout ---------- */
+  --te-container:        1240px;
+  --te-container-narrow: 800px;
+  --te-container-wide:   1500px;
+  --te-gutter:           24px;
+
+  /* ---------- Radii ---------- */
+  --te-r-xs:   4px;
+  --te-r-sm:   8px;
+  --te-r-md:   12px;
+  --te-r-lg:   16px;
+  --te-r-xl:   24px;
+  --te-r-2xl:  32px;
+  --te-r-pill: 999px;
+  --te-r-disc: 50%;
+
+  /* ---------- The Flight Angle (measured from the logo: 17deg) ---------- */
+  --te-flight-angle:     17deg;
+  --te-flight-angle-neg: -17deg;
+  /* tan(17deg) = 0.3057 — a cut whose rise is 30.57% of its width IS the Flight
+     Angle. Capped so a full-width cut never swallows the art behind it. */
+  --te-cut-rise: min(30.57vw, 170px);
+
+  /* ---------- Motion ---------- */
+  --te-dur-instant: 100ms;
+  --te-dur-fast:    180ms;
+  --te-dur-base:    260ms;
+  --te-dur-slow:    420ms;
+  --te-dur-scenic:  700ms;
+
+  --te-ease-out:   cubic-bezier(0.16, 1, 0.30, 1);
+  --te-ease-in:    cubic-bezier(0.70, 0, 0.84, 0);
+  --te-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --te-ease-lift:  cubic-bezier(0.34, 1.26, 0.64, 1);
+
+  /* ---------- Breakpoints (reference values; use in JS/container queries) ---------- */
+  --te-bp-xs:  0px;
+  --te-bp-sm:  480px;
+  --te-bp-md:  640px;
+  --te-bp-lg:  1024px;   /* primary break: mobile behaviour <-> desktop behaviour */
+  --te-bp-xl:  1280px;
+  --te-bp-2xl: 1536px;
+
+  --te-page-x: clamp(1.25rem, 4vw, 3rem);   /* 20px -> 48px */
+
+  /* header grows on desktop; scroll-padding uses this so anchors land right */
+
+  /* ---------- 3D / WebGL ---------- */
+  --te-3d-canvas-max-h-mobile: 55dvh;
+  --te-3d-canvas-max-h-desktop: 100dvh;
+  --te-3d-fallback-bg: var(--te-grad-horizon);
+  --te-3d-fade-in: var(--te-dur-scenic);    /* static fallback -> first frame */
+
+  /* ---------- Z-index ---------- */
+  --te-z-base:     0;
+  --te-z-raised:   10;
+  --te-z-sticky:   100;
+  --te-z-dropdown: 200;
+  --te-z-whatsapp: 300;
+  --te-z-overlay:  400;
+  --te-z-modal:    500;
+  --te-z-toast:    600;
+}
+
+@media (min-width: 1040px) {
+  :root { --te-hdr-h: 76px; }
+}
+
+/* ============================================================
+   Dark theme — Night Ocean, not neutral black.
+   PARITY RULE: the two selectors below define the SAME token list.
+   A token defined in one and not the other produces light panels with
+   white text on them. Keep them in lockstep.
+   ============================================================ */
+[data-theme="dark"] {
+  /* Every role token below MUST also exist in the prefers-color-scheme block.
+     A partial dark block is what makes warm/cool sections stay light while text
+     goes white — see references/02-color.md, "theme parity". */
+  --te-bg:              var(--te-deep-950);
+  --te-bg-subtle:       #17293C;
+  --te-bg-warm:         #241A13;
+  --te-bg-cool:         #14293D;
+  --te-bg-dark:         #0D1A28;
+  --te-surface:         #1A2E43;
+  --te-surface-2:       #21384F;
+  --te-border:          #2A4763;
+  --te-border-strong:   #37587A;
+  --te-text:            #C6CFDA;
+  --te-text-heading:    #FFFFFF;
+  --te-text-muted:      #93A6BB;
+  --te-text-inverse:    var(--te-n-950);
+  --te-link:            var(--te-blue-300);
+  --te-link-hover:      var(--te-orange-400);
+  --te-focus:           var(--te-blue-300);
+  --te-overline:        var(--te-orange-400);
+
+  --te-action-bg:       var(--te-orange-500);
+  --te-action-bg-hover: var(--te-orange-400);
+  --te-action-ink:      var(--te-n-950);
+  --te-action2-bg:      #21384F;
+  --te-action2-ink:     #FFFFFF;
+
+  --te-hdr-bg:          rgba(19, 36, 54, 0.88);
+  --te-hdr-bg-stuck:    rgba(19, 36, 54, 0.94);
+  --te-ring:            #1A2E43;
+  --te-field-bg:        #14273A;
+  --te-field-border:    #37587A;
+  --te-field-ink:       #FFFFFF;
+  --te-field-ph:        #8EA2B8;
+
+  --te-success-text:    #6FD9AC;
+  --te-success-surface: #14342A;
+  --te-success-border:  #2A6A52;
+  --te-warning-text:    #F3C969;
+  --te-warning-surface: #33280F;
+  --te-warning-border:  #6B5424;
+  --te-error-text:      #F3A3A3;
+  --te-error-surface:   #361B1B;
+  --te-error-border:    #6E3636;
+  --te-info-text:       #A4C1DB;
+  --te-info-surface:    #17304A;
+  --te-info-border:     #2F557A;
+
+  --te-shadow-xs:   0 1px 2px   rgba(0, 0, 0, 0.30);
+  --te-shadow-sm:   0 2px 6px   rgba(0, 0, 0, 0.34);
+  --te-shadow-md:   0 8px 20px  rgba(0, 0, 0, 0.40);
+  --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
+  --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
+  --te-wa-soft:      #14342A;
+  --te-wa-ink-soft:  #6FD9AC;
+  --te-wa-border:    #2A6A52;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Every role token below MUST also exist in the prefers-color-scheme block.
+       A partial dark block is what makes warm/cool sections stay light while text
+       goes white — see references/02-color.md, "theme parity". */
+    --te-bg:              var(--te-deep-950);
+    --te-bg-subtle:       #17293C;
+    --te-bg-warm:         #241A13;
+    --te-bg-cool:         #14293D;
+    --te-bg-dark:         #0D1A28;
+    --te-surface:         #1A2E43;
+    --te-surface-2:       #21384F;
+    --te-border:          #2A4763;
+    --te-border-strong:   #37587A;
+    --te-text:            #C6CFDA;
+    --te-text-heading:    #FFFFFF;
+    --te-text-muted:      #93A6BB;
+    --te-text-inverse:    var(--te-n-950);
+    --te-link:            var(--te-blue-300);
+    --te-link-hover:      var(--te-orange-400);
+    --te-focus:           var(--te-blue-300);
+    --te-overline:        var(--te-orange-400);
+
+    --te-action-bg:       var(--te-orange-500);
+    --te-action-bg-hover: var(--te-orange-400);
+    --te-action-ink:      var(--te-n-950);
+    --te-action2-bg:      #21384F;
+    --te-action2-ink:     #FFFFFF;
+
+    --te-hdr-bg:          rgba(19, 36, 54, 0.88);
+    --te-hdr-bg-stuck:    rgba(19, 36, 54, 0.94);
+    --te-ring:            #1A2E43;
+    --te-field-bg:        #14273A;
+    --te-field-border:    #37587A;
+    --te-field-ink:       #FFFFFF;
+    --te-field-ph:        #8EA2B8;
+
+    --te-success-text:    #6FD9AC;
+    --te-success-surface: #14342A;
+    --te-success-border:  #2A6A52;
+    --te-warning-text:    #F3C969;
+    --te-warning-surface: #33280F;
+    --te-warning-border:  #6B5424;
+    --te-error-text:      #F3A3A3;
+    --te-error-surface:   #361B1B;
+    --te-error-border:    #6E3636;
+    --te-info-text:       #A4C1DB;
+    --te-info-surface:    #17304A;
+    --te-info-border:     #2F557A;
+
+    --te-shadow-xs:   0 1px 2px   rgba(0, 0, 0, 0.30);
+    --te-shadow-sm:   0 2px 6px   rgba(0, 0, 0, 0.34);
+    --te-shadow-md:   0 8px 20px  rgba(0, 0, 0, 0.40);
+    --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
+    --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
+    --te-wa-soft:      #14342A;
+    --te-wa-ink-soft:  #6FD9AC;
+    --te-wa-border:    #2A6A52;
+
+  }
+}
+
+/* ============================================================
+   Base utilities
+   ============================================================ */
+
+:lang(bn),
+.bn {
+  font-family: var(--te-font-bangla);
+  line-height: var(--te-lh-bangla);
+  letter-spacing: 0;
+}
+
+.te-overline {
+  font-family: var(--te-font-body);
+  font-size: var(--te-fs-overline);
+  font-weight: 700;
+  letter-spacing: var(--te-track-overline);
+  text-transform: uppercase;
+  color: var(--te-orange-700);
+}
+
+[data-theme="dark"] .te-overline { color: var(--te-orange-400); }
+
+.te-flight-rule {
+  display: block;
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--te-grad-sunset);
+  transform: rotate(var(--te-flight-angle-neg));
+  transform-origin: left center;
+  margin: 12px 0 16px;
+}
+
+.te-num { font-family: var(--te-font-num); font-variant-numeric: tabular-nums; }
+
+.te-flight-streak {
+  background-image: repeating-linear-gradient(
+    107deg,
+    rgba(237, 124, 48, 0.07) 0px,
+    rgba(237, 124, 48, 0.07) 2px,
+    transparent 2px,
+    transparent 18px
+  );
+}
+
+.te-cut-top    { clip-path: polygon(0 var(--te-cut-rise), 100% 0, 100% 100%, 0 100%); }
+.te-cut-bottom { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--te-cut-rise)), 0 100%); }
+
+@keyframes te-depart {
+  from { opacity: 0; transform: translate(-14px, 10px); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+.te-depart {
+  animation: te-depart var(--te-dur-base) var(--te-ease-out) both;
+}
+
+:focus-visible {
+  outline: 3px solid var(--te-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Responsive guards — see references/11-responsive-standards.md
+   ============================================================ */
+
+/* Hover affordances only where hover genuinely exists.
+   Wrap EVERY :hover rule in this query. Touch gets :active instead. */
+@media (hover: hover) and (pointer: fine) {
+  .te-card:hover {
+    transform: translate(2px, -6px);
+    box-shadow: var(--te-shadow-md);
+  }
+}
+
+.te-card {
+  transition: transform var(--te-dur-base) var(--te-ease-lift),
+              box-shadow var(--te-dur-base) var(--te-ease-out);
+}
+
+/* Touch feedback — Android users rely on it, there is no hover cue. */
+@media (hover: none) {
+  .te-card:active,
+  .te-btn:active { transform: scale(0.98); }
+}
+
+/* Mobile entrance is fade + small rise only. */
+@media (max-width: 1023px) {
+  @keyframes te-depart {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* 3D canvas: never full-screen on mobile, never swallow vertical scroll. */
+.te-canvas {
+  display: block;
+  width: 100%;
+  max-height: var(--te-3d-canvas-max-h-mobile);
+  touch-action: pan-y;           /* vertical page scroll always wins */
+  background: var(--te-3d-fallback-bg);
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .te-canvas {
+    max-height: var(--te-3d-canvas-max-h-desktop);
+    touch-action: auto;
+  }
+}
+
+/* Phone landscape: short viewports get tighter rhythm and no full-height 3D. */
+@media (max-height: 480px) and (orientation: landscape) {
+  :root { --te-section-y: 2.5rem; }
+  .te-canvas { max-height: 100dvh; }
+}
+
+/* Fixed bottom elements clear the home indicator / gesture bar. */
+.te-fixed-bottom {
+  bottom: max(var(--te-space-5), env(safe-area-inset-bottom));
+}
