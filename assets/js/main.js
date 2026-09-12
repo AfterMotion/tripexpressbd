@@ -648,17 +648,6 @@
     });
   });
 
-  function reduce3dOn() { try { return localStorage.getItem('te-reduce-3d') === '1'; } catch (e) { return false; } }
-  var toggle = $('#reduce3d');
-  function paintToggle() { toggle.textContent = reduce3dOn() ? 'Enable 3D' : 'Reduce 3D'; }
-  paintToggle();
-  toggle.addEventListener('click', function () {
-    try { localStorage.setItem('te-reduce-3d', reduce3dOn() ? '0' : '1'); } catch (e) {}
-    paintToggle();
-    if (reduce3dOn() && scene) { scene.dispose(); scene = null; journey.classList.remove('is-live'); wp.setAttribute('data-on', 'false'); }
-    else if (!reduce3dOn() && !scene) { boot(); }
-  });
-
   canvas.addEventListener('te:contextlost', function () {
     journey.classList.remove('is-live');   // the photograph takes over, never a blank box
     wp.setAttribute('data-on', 'false');

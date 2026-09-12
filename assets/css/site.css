@@ -929,8 +929,6 @@ button { font: inherit; color: inherit; }
 .ftr__bar { margin-top: var(--te-space-8); padding-top: var(--te-space-5); border-top: 1px solid #24405C;
   display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between;
   font-size: 0.9063rem; color: #A6B7C8; }
-.ftr__bar button { background: none; border: 0; color: inherit; cursor: pointer; text-decoration: underline;
-  text-underline-offset: 3px; padding: 6px 0; }
 
 /* ============================================================
    FLOATING WHATSAPP
