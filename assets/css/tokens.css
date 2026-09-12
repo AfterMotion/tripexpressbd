@@ -145,6 +145,17 @@
     rgba(19, 36, 54, 0.00) 100%
   );
 
+  /* ---------- Glass (Night Ocean, over the 3D journey scene) ----------
+     Formalises the frosted-panel pattern already used by .wp and the
+     header's .is-over state: a translucent Night Ocean surface plus blur,
+     never a fully opaque card, so the sun/terrain keeps reading behind it.
+     Reserved for panels that sit over the journey canvas - card surfaces
+     elsewhere stay solid (--te-surface). */
+  --te-glass-bg:        rgba(19, 36, 54, 0.55);
+  --te-glass-bg-strong: rgba(19, 36, 54, 0.78);
+  --te-glass-border:    rgba(255, 255, 255, 0.14);
+  --te-glass-blur:      18px;
+
   /* ---------- Shadows (tinted with Deep Ocean) ---------- */
   --te-shadow-xs:   0 1px 2px   rgba(19, 36, 54, 0.06);
   --te-shadow-sm:   0 2px 6px   rgba(19, 36, 54, 0.08);

@@ -130,6 +130,36 @@ on anything the user must read precisely.
 Dark theme: reduce all shadow alphas by half and add a 1px `#24405C` top border
 instead - shadows read poorly on `deep-950`.
 
+## 6b. Glass surfaces
+
+Reserved for one job: a DOM panel that sits **over the journey's 3D canvas** and
+must stay honest that a scene is running behind it - the waypoint pill, the
+header's `.is-over` state, and the mobile hero card. Not a general card style;
+ordinary cards elsewhere stay solid (`--te-surface`).
+
+```css
+--te-glass-bg:        rgba(19, 36, 54, 0.55);   /* Night Ocean, translucent */
+--te-glass-bg-strong: rgba(19, 36, 54, 0.78);   /* @supports fallback, no blur */
+--te-glass-border:    rgba(255, 255, 255, 0.14);
+--te-glass-blur:      18px;
+```
+
+Rules:
+
+- Tint is always Night Ocean (`--te-deep-950`'s rgb), never white or a brand hue -
+  glass here is "night air over the scene", not frosted paper.
+- Pair `background: var(--te-glass-bg)` with `backdrop-filter: blur(var(--te-glass-blur))`
+  and a 1px `--te-glass-border` on the edge that faces the scene. Wrap a
+  `background: var(--te-glass-bg-strong)` fallback in
+  `@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)))`.
+- The mobile journey hero is the canonical example: the copy card overlaps the
+  bottom of the pinned 3D stage (negative `margin-top` on `.journey__flow`)
+  instead of sitting in a separate opaque block below it, so the sun/terrain
+  keep reading as a backdrop for the whole scroll, not just the first screen.
+  See `11-responsive-standards.md` and `.hero` in `assets/css/site.css`.
+- Never stack glass on glass, and never use it over a photo card or a form -
+  rule 19 (`--te-field-bg`) still governs form fields even inside a glass panel.
+
 ## 7. Z-index scale
 
 ```

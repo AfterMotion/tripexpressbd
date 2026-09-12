@@ -265,7 +265,7 @@ button { font: inherit; color: inherit; }
   position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer;
   background: rgba(9, 18, 29, 0.66);
   -webkit-backdrop-filter: blur(6px) saturate(120%); backdrop-filter: blur(6px) saturate(120%);
-  opacity: 0; transition: opacity var(--te-dur-slow) var(--te-ease-out);
+  opacity: 0; transition: opacity var(--te-dur-scenic) var(--te-ease-out);
 }
 .drawer[data-open="true"] .drawer__bd { opacity: 1; }
 
@@ -278,9 +278,10 @@ button { font: inherit; color: inherit; }
   padding: 0 var(--te-space-5) max(var(--te-space-5), env(safe-area-inset-bottom));
   overflow-y: auto; overscroll-behavior: contain;
   translate: 100% 0;
-  /* a slightly overshooting curve on open reads as a panel being *thrown* open;
-     a linear slide reads as a menu being dragged */
-  transition: translate var(--te-dur-slow) var(--te-ease-lift);
+  /* a longer, purely-decelerating curve reads as a panel gliding open; the old
+     bounce (--te-ease-lift) overshot past 0 and snapped back, which read as a
+     shake on real phones instead of a lift */
+  transition: translate var(--te-dur-scenic) var(--te-ease-out);
   box-shadow: var(--te-shadow-xl);
   will-change: translate;
 }
@@ -399,15 +400,27 @@ button { font: inherit; color: inherit; }
 /* the flow is the curtain that rises over the pinned stage */
 .journey__flow { position: relative; z-index: 2; }
 
-.hero { padding-block: var(--te-space-10) var(--te-space-12); background: var(--te-deep-950); position: relative; }
-/* The seam between the scene and the copy is a real 17deg cut, not a 5deg hint:
-   tan(17deg) = 0.3057, so the rise is 30.57% of the width, capped so it never eats
-   the scene on a wide phone. */
-.hero::before {
-  content: ""; position: absolute; left: 0; right: 0; z-index: 1;
-  top: calc(var(--te-cut-rise) * -1); height: var(--te-cut-rise);
-  background: var(--te-deep-950);
-  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+/* Mobile: the copy card overlaps the bottom of the pinned stage instead of
+   sitting in a separate opaque block below it, so the sun/terrain keep
+   showing through as a backdrop - at rest and for the whole scroll through
+   the journey, not just in the first 46dvh. A solid --te-deep-950 slab here
+   was "shrink the desktop hero" in mobile clothing; the glass panel is the
+   mobile-specific design, not a smaller copy of the desktop one. */
+@media (max-width: 1039px) {
+  .journey__flow { margin-top: -16dvh; }
+}
+
+.hero {
+  padding-block: var(--te-space-10) var(--te-space-12); position: relative;
+  background: var(--te-glass-bg);
+  -webkit-backdrop-filter: blur(var(--te-glass-blur)); backdrop-filter: blur(var(--te-glass-blur));
+  border-top: 1px solid var(--te-glass-border);
+  border-radius: var(--te-r-xl) var(--te-r-xl) 0 0;
+}
+/* Glass needs a browser that can blur; without it the flat tint alone would
+   read thin over a bright frame, so the fallback goes to a near-opaque tint. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero { background: var(--te-glass-bg-strong); }
 }
 .hero h1 { color: #fff; font-size: var(--te-fs-display); }
 .hero h1 em { font-style: normal; color: var(--te-orange-400); }
@@ -428,10 +441,11 @@ button { font: inherit; color: inherit; }
   .te-canvas { touch-action: auto; }
   .journey__flow { margin-top: -100dvh; }
   .hero {
-    min-height: 100dvh; display: flex; align-items: center; background: none;
+    min-height: 100dvh; display: flex; align-items: center;
+    background: none; -webkit-backdrop-filter: none; backdrop-filter: none;
+    border-top: 0; border-radius: 0;
     padding-block: calc(var(--te-hdr-h) + 40px) var(--te-space-16);
   }
-  .hero::before { display: none; }
   .hero__inner { max-width: 620px; position: relative; }
   .hero::after {
     content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
@@ -845,7 +859,11 @@ button { font: inherit; color: inherit; }
 }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: 0; border-color: var(--te-orange-500);
-  background: var(--te-surface);
+  /* background-color, not the `background` shorthand: the shorthand resets
+     background-image/repeat/position to their initial values too, which beat
+     .field select's no-repeat chevron on specificity and tiled it across the
+     whole control the moment it gained focus. */
+  background-color: var(--te-surface);
   box-shadow: 0 0 0 3.5px rgba(237, 124, 48, .26);
 }
 .field .err {
