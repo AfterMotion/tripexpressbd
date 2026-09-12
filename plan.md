@@ -385,7 +385,7 @@ o͏
 ,͏
  ·
 Departed from Dhaka at noon and safely arrived at Tribhuvan International Airport, Kathmandu by 2 PM. 🇳🇵
-After a warm welcome, we headed straight to Nagarkot — the serene mountain haven where we’ll be spending the night. 🌄
+After a warm welcome, we headed straight to Nagarkot - the serene mountain haven where we’ll be spending the night. 🌄
 Tomorrow morning, we’ll wake up to the breathtaking view of majestic Himalayan peaks. 🏔✨
 #NepalDiaries #Nagarkot #TeamTrip #HimalayanView #TravelMoments #ExploreNepal See less
 No photo description available.. No photo description available.. No photo description available.. No photo description available.. No photo description available.
@@ -551,11 +551,11 @@ f͏
  ·
 Nepal Tour – November 11–16 🇳🇵✨
 Bookings are now open for our upcoming Nepal trip!
-Only 3–4 slots left — so if you’ve been planning to join, don’t wait too long. Airfares are rising every day!
+Only 3–4 slots left - so if you’ve been planning to join, don’t wait too long. Airfares are rising every day!
 ✈️ Secure your seat now and confirm your flight as early as possible.
 Our trip is family-friendly, and female travelers are most welcome to join!
 📞 For booking and details: wa.me/+8801838754207
-Let’s explore the Himalayas together — an unforgettable journey awaits! 🌄 See less
+Let’s explore the Himalayas together - an unforgettable journey awaits! 🌄 See less
 Shared post
 
 

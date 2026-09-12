@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Trip Express BD — Guided group tours from Chattogram to Kashmir, Meghalaya &amp; Nepal</title>
+<title>Trip Express BD - Guided group tours from Chattogram to Kashmir, Meghalaya &amp; Nepal</title>
 <meta name="description" content="Trip Express BD runs guided group departures from Chattogram to Kashmir, Meghalaya, Nepal, Sikkim, Darjeeling, Kolkata, the Maldives and Sri Lanka. Fixed itineraries, published prices, a phone number that answers.">
 <meta name="theme-color" content="#132436" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ED7C30" media="(prefers-color-scheme: light)">
@@ -13,17 +13,17 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trip Express BD">
-<meta property="og:title" content="Trip Express BD — Guided group tours from Chattogram">
+<meta property="og:title" content="Trip Express BD - Guided group tours from Chattogram">
 <meta property="og:description" content="Kashmir, Meghalaya, Nepal and beyond. Fixed dates, published prices, and real photographs from every departure.">
 <meta property="og:image" content="https://tripexpressbd.example/assets/img/og/og-share.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Trip Express BD — guided group tours from Chattogram to Kashmir, Meghalaya and Nepal">
+<meta property="og:image:alt" content="Trip Express BD - guided group tours from Chattogram to Kashmir, Meghalaya and Nepal">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="bn_BD">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Trip Express BD — Guided group tours from Chattogram">
+<meta name="twitter:title" content="Trip Express BD - Guided group tours from Chattogram">
 <meta name="twitter:description" content="Kashmir, Meghalaya, Nepal and beyond. Fixed dates, published prices, real photographs.">
 <meta name="twitter:image" content="https://tripexpressbd.example/assets/img/og/og-share.jpg">
 
@@ -31,7 +31,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/img/hero/falls-tall-720.webp" media="(max-width: 1039px)">
 <link rel="preload" as="image" href="assets/img/hero/cliff-wide-1600.webp" media="(min-width: 1040px)">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Variable ranges, not a list of static cuts: the CSS uses 550 and 650, which a
+     static 400/500/600/700 set silently rounds to the nearest cut. Hind Siliguri
+     has no variable build, so Bengali ships three weights and no more - each
+     Bengali cut is roughly six times the weight of a Latin one. -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 
@@ -64,7 +68,7 @@
   },
   "areaServed": ["Bangladesh"],
   "makesOffer": [
-    {"@type":"Offer","priceCurrency":"BDT","price":"58500","itemOffered":{"@type":"TouristTrip","name":"Explore Nepal — Kathmandu, Nagarkot, Pokhara","touristType":"Group"}},
+    {"@type":"Offer","priceCurrency":"BDT","price":"58500","itemOffered":{"@type":"TouristTrip","name":"Explore Nepal - Kathmandu, Nagarkot, Pokhara","touristType":"Group"}},
     {"@type":"Offer","priceCurrency":"BDT","price":"35000","itemOffered":{"@type":"TouristTrip","name":"Kashmir by Road from Chattogram","touristType":"Group"}}
   ]
 }
@@ -77,7 +81,7 @@
 <!-- ==================== HEADER ==================== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="#top" aria-label="Trip Express BD — home">
+    <a class="brand" href="#top" aria-label="Trip Express BD - home">
       <img src="assets/brand/logo-mark.svg" alt="" width="42" height="42" aria-hidden="true">
       <span class="brand__name"><i>Trip</i> Express BD</span>
     </a>
@@ -211,11 +215,11 @@
           <p class="overline">Chattogram · Travel service</p>
           <h1>Small teams.<br>Real itineraries.<br><em>Photographs to prove it.</em></h1>
           <p class="hero__lead">
-            We take Bangladeshi travellers across South Asia on guided group departures —
+            We take Bangladeshi travellers across South Asia on guided group departures -
             fixed dates, a published price, and a phone number a human answers.
           </p>
           <p class="hero__lead bn bn-body" lang="bn">
-            চট্টগ্রাম থেকে কাশ্মীর, মেঘালয়, নেপালসহ দেশ-বিদেশের ট্যুর — নির্দিষ্ট তারিখ, নির্দিষ্ট প্যাকেজ মূল্য।
+            চট্টগ্রাম থেকে কাশ্মীর, মেঘালয়, নেপালসহ দেশ-বিদেশের ট্যুর - নির্দিষ্ট তারিখ, নির্দিষ্ট প্যাকেজ মূল্য।
           </p>
 
           <div class="hero__cta">
@@ -386,18 +390,46 @@
         </div>
       </article>
 
-      <!-- No Kashmir photograph exists yet, so this card uses the brand's own ridge
-           illustration rather than stock imagery. Brand rule 4. -->
+      <!-- Brand rule 4: no stock. The Kashmir card carries the brand's own artwork
+           until a real Kashmir photograph exists. -->
       <article class="tilt rv">
         <div class="card">
           <div class="card__media card__media--art">
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrated ridge line in the Trip Express BD palette">
-              <rect width="400" height="250" fill="#ED7C30"/>
-              <circle cx="312" cy="66" r="34" fill="#F2A16A" opacity=".85"/>
-              <path d="M0 250 L0 168 L56 120 L96 152 L152 92 L198 142 L240 106 L294 154 L338 122 L400 170 L400 250Z" fill="#F2A16A"/>
-              <path d="M0 250 L0 206 L64 178 L122 208 L180 170 L242 206 L302 176 L362 204 L400 184 L400 250Z" fill="#A45826" opacity=".9"/>
-              <path d="M-10 104 C 130 78, 280 44, 412 14" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
-              <path d="M336 32 l24 -7 l-6 7 l6 6 z" fill="#FFFFFF"/>
+            <!-- No Kashmir photograph exists yet. This is the same world the 3D journey
+                 renders - first-light sky, four ridge layers in aerial perspective, a
+                 cloud deck under the wing, one contrail at 17 degrees - drawn flat, so
+                 the card reads as ours and never as stock. Every value is a brand ramp
+                 step. Replace the whole block with a photograph the day we have one. -->
+            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img"
+                 aria-label="Illustration in the Trip Express BD palette: a dawn ridge line with an aircraft climbing at the brand's 17 degree flight angle">
+              <defs>
+                <linearGradient id="k-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1E4162"/>
+                  <stop offset="0.42" stop-color="#2B6195"/>
+                  <stop offset="0.74" stop-color="#ED7C30"/>
+                  <stop offset="1" stop-color="#F2A16A"/>
+                </linearGradient>
+                <linearGradient id="k-near" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#19324C"/>
+                  <stop offset="1" stop-color="#132436"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="250" fill="url(#k-sky)"/>
+              <circle cx="286" cy="150" r="26" fill="#FFFFFF" opacity=".92"/>
+              <circle cx="286" cy="150" r="52" fill="#F2A16A" opacity=".28"/>
+              <!-- far ridge: washed out by haze -->
+              <path d="M0 250V150l44-34 38 26 46-44 40 34 52-52 44 46 40-28 56 40v112z" fill="#6B99C5" opacity=".72"/>
+              <!-- mid ridge -->
+              <path d="M0 250V178l52-30 40 24 58-38 46 32 50-26 54 34 40-18v94z" fill="#2B6195"/>
+              <!-- cloud deck, under the wing -->
+              <ellipse cx="96" cy="196" rx="34" ry="8" fill="#FFFFFF" opacity=".5"/>
+              <ellipse cx="300" cy="204" rx="28" ry="7" fill="#FFFFFF" opacity=".42"/>
+              <ellipse cx="196" cy="214" rx="40" ry="9" fill="#FFFFFF" opacity=".34"/>
+              <!-- near ridge: silhouette -->
+              <path d="M0 250V214l58-22 52 26 60-30 54 28 62-24 58 26 56-14v36z" fill="url(#k-near)"/>
+              <!-- the flight angle: 17 degrees, rising to the right -->
+              <path d="M22 128 L352 27" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+              <path d="M338 40 l34-10 l-9 10 l9 9 z" fill="#FFFFFF"/>
             </svg>
             <span class="badge badge--open">Booking open</span>
             <span class="chip">Season 5</span>
@@ -538,7 +570,7 @@
 
     <div class="head rv" style="margin-top:var(--te-space-16);margin-bottom:var(--te-space-6)">
       <h3 style="font-size:var(--te-fs-h3)">Every frame from the road</h3>
-      <p class="lead">Keep scrolling — photographs load as you go, in black and white.
+      <p class="lead">Keep scrolling - photographs load as you go, in black and white.
         Hover one, or bring it to the middle of a phone screen, to see it in colour.</p>
     </div>
 
@@ -585,7 +617,7 @@
 
       <article class="report">
         <svg class="ic ic--md report__q" aria-hidden="true"><use href="assets/icons.svg#i-quote"></use></svg>
-        <p>“Day 3 of our Nepal tour has been nothing short of amazing. We arrived in Pokhara at 5 AM and headed straight to Sarangkot to witness the first light of the day and the breathtaking views of the Himalayan peaks. The highlight was the paragliding — the entire team completed it safely.”</p>
+        <p>“Day 3 of our Nepal tour has been nothing short of amazing. We arrived in Pokhara at 5 AM and headed straight to Sarangkot to witness the first light of the day and the breathtaking views of the Himalayan peaks. The highlight was the paragliding - the entire team completed it safely.”</p>
         <footer>
           <img class="report__av" src="assets/img/gallery/g01-640.webp" alt="" width="42" height="42" loading="lazy">
           <span class="report__who"><b>Trip Express BD</b><span>Explore Nepal · day 3, Pokhara</span></span>
@@ -613,7 +645,7 @@
           <p class="overline">Book a seat</p>
           <span class="rule" aria-hidden="true"></span>
           <h2>Tell us where you want to go</h2>
-          <p class="lead">Five fields. We call you back within one working day — or message us on WhatsApp and skip the form entirely.</p>
+          <p class="lead">Five fields. We call you back within one working day - or message us on WhatsApp and skip the form entirely.</p>
         </div>
 
         <div class="formcard rv">
@@ -648,8 +680,8 @@
                 <label for="f-dest">Destination <span class="req" aria-hidden="true">*</span></label>
                 <select id="f-dest" name="destination" required>
                   <option value="">Choose a destination</option>
-                  <option>Nepal — Kathmandu, Nagarkot, Pokhara</option>
-                  <option>Meghalaya — Dawki, Shillong, Cherrapunji</option>
+                  <option>Nepal - Kathmandu, Nagarkot, Pokhara</option>
+                  <option>Meghalaya - Dawki, Shillong, Cherrapunji</option>
                   <option>Kashmir by road</option>
                   <option>Sikkim</option>
                   <option>Darjeeling</option>
@@ -665,7 +697,7 @@
               <div class="field">
                 <label for="f-month">Travel month</label>
                 <input id="f-month" name="month" type="month" aria-describedby="f-month-hint">
-                <span class="field__hint" id="f-month-hint">Optional — we will suggest the nearest departure.</span>
+                <span class="field__hint" id="f-month-hint">Optional - we will suggest the nearest departure.</span>
               </div>
             </div>
             <div class="field">
@@ -680,7 +712,7 @@
             </button>
             <div class="note" style="margin-top:var(--te-space-5)">
               <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-info"></use></svg>
-              <span>This is a static demonstration page — the form validates but does not transmit. Use WhatsApp or the phone numbers to reach the team.</span>
+              <span>This is a static demonstration page - the form validates but does not transmit. Use WhatsApp or the phone numbers to reach the team.</span>
             </div>
           </form>
         </div>
@@ -697,7 +729,7 @@
             <span class="info__ic"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg></span>
             <div>
               <b>Office</b>
-              <p>1301, Mosjid Goli, Dui Number Gate, Chattogram — opposite Sermon School</p>
+              <p>1301, Mosjid Goli, Dui Number Gate, Chattogram - opposite Sermon School</p>
               <p lang="bn" class="bn">১৩০১, মসজিদ গলি, দুই নাম্বার গেইট, চট্টগ্রাম (সারমন স্কুলের অপজিটে)</p>
             </div>
           </div>

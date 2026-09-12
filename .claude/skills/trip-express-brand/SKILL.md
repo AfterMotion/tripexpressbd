@@ -3,7 +3,7 @@ name: trip-express-brand
 description: Complete brand, design, 3D and responsive system for Trip Express BD (Chattogram travel agency, tripexpressbd). Use whenever building, restyling, reviewing, or generating ANY Trip Express BD web page, section, component, landing page, package card, portfolio/gallery, Three.js/WebGL scene, animation, responsive layout, email, social graphic, or asset. Supplies the exact logo-derived palette, bilingual Bangla/English typography, the 17-degree Flight Angle system, textures, motion, component specs, imagery direction, voice, accessibility rules, Three.js colour/light/material/performance standards, and separate mobile vs desktop specifications. Trigger on "Trip Express", "tripexpressbd", "trip express bd", travel agency site work in this repo, or any request mentioning brand colors, brand guidelines, the logo, 3D/Three.js/WebGL for this site, or responsive behaviour for this site.
 ---
 
-# Trip Express BD — Brand & Design System
+# Trip Express BD - Brand & Design System
 
 Single source of truth for every visual and verbal decision on the Trip Express BD
 website and its portfolio. **Do not invent colors, fonts, radii, or spacing.** If a
@@ -16,7 +16,7 @@ brand's own published content. Nothing is guessed.
 
 ## 0. How to use this skill
 
-1. Read this file first — it carries the non-negotiable core.
+1. Read this file first - it carries the non-negotiable core.
 2. Load the reference file for the job at hand:
 
 | Task | Read |
@@ -35,14 +35,14 @@ brand's own published content. Nothing is guessed.
 
 3. Import tokens rather than hardcoding: `assets/tokens.css`,
    `assets/tailwind.tokens.js`, `assets/brand.tokens.json`.
-   For any 3D work, import `assets/three.brand.js` — never hardcode a colour,
+   For any 3D work, import `assets/three.brand.js` - never hardcode a colour,
    light, camera or budget into a scene.
 
 ---
 
 ## 1. Brand in one line
 
-> **Trip Express BD** — a Chattogram-based, community-run travel agency that takes
+> **Trip Express BD** - a Chattogram-based, community-run travel agency that takes
 > Bangladeshi travellers on group tours across South Asia and beyond, and comes back
 > with the photographs to prove it.
 
@@ -69,7 +69,7 @@ hemisphere below, cut by a white aircraft streaking upward to the right.
 
 ---
 
-## 3. Core palette — measured from the logo
+## 3. Core palette - measured from the logo
 
 These six are the brand. Full 50→950 ramps and dark mode live in
 `references/02-color.md`.
@@ -85,7 +85,7 @@ These six are the brand. Full 50→950 ramps and dark mode live in
 
 ### The one contrast rule you must not break
 
-`#FFFFFF` on `#ED7C30` is **2.79:1 — it fails WCAG AA.**
+`#FFFFFF` on `#ED7C30` is **2.79:1 - it fails WCAG AA.**
 
 - **Primary button = Sunset Orange background + `#111823` ink text** (5.66:1 ✓)
 - Orange text on white must be `--te-orange-700` `#A45826` (5.25:1 ✓)
@@ -93,14 +93,20 @@ These six are the brand. Full 50→950 ramps and dark mode live in
 
 ---
 
-## 4. The Flight Angle — the signature device
+## 4. The Flight Angle - the signature device
 
 Measured from the logo's aircraft streak: **17°**, rising left → right.
 
 ```css
 --te-flight-angle: 17deg;
 --te-flight-angle-neg: -17deg;
+--te-cut-rise: min(30.57vw, 170px);   /* tan(17deg) = 0.3057 */
 ```
+
+**A cut is only 17° if its rise is 30.57% of its run.** A full-width divider given
+an arbitrary `height: 36px` is a 5° cut wearing the brand's name - that is the
+single most common way this system gets faked. When a true 17° rise would swallow
+the artwork, shorten the *run* (a corner wedge) rather than shallowing the angle.
 
 Use it for: section dividers, the sunset/sea gradient direction, hero clip-paths,
 underline swashes, badge skews, card hover lift direction, and the motion path of
@@ -109,12 +115,12 @@ anything that "departs".
 Never use 45°, never use a horizontal-only divider on a hero. The site should feel
 like it is always climbing slightly to the right.
 
-The mark's disc is **76.6% of its canvas**, centre slightly right and above middle —
+The mark's disc is **76.6% of its canvas**, centre slightly right and above middle -
 respect that when cropping (see `references/04-logo.md`).
 
 ---
 
-## 5. Typography — non-negotiable
+## 5. Typography - non-negotiable
 
 The audience reads **Bangla and English in the same paragraph**. The type system is
 bilingual by default.
@@ -126,7 +132,23 @@ bilingual by default.
 | All Bangla (display + body) | **Hind Siliguri** | 400, 500, 600, 700 |
 | Numerals, prices, dates | Inter, `font-variant-numeric: tabular-nums` | 600 |
 
-Never set Bangla in a Latin-only face — it falls back and breaks conjuncts.
+Never set Bangla in a Latin-only face - it falls back and breaks conjuncts.
+
+**Two floors, measured on a 360px Android, that the type scale must never cross:**
+
+| | Floor | Why |
+|---|---|---|
+| Bangla running text | **17px** (`--te-fs-bn-min`) | Conjuncts stack vertically, so Bangla at a given nominal size reads a size smaller than Latin. Matching the numbers is what makes a bilingual list unreadable. |
+| Any Latin UI text | **13px** (`--te-fs-micro`) | Below this, uppercase tracking closes up and labels stop being scannable. |
+
+The **overline is 13px at 0.09em**, not 12px at 0.12em. It is a label, not a legal
+line - at 12px/0.12em it was the first thing testers could not read on a phone.
+
+Load Latin as **variable ranges** (`Inter:wght@400..700`), never a list of static
+cuts: the system uses 550 and 650, and a static set silently rounds them. Hind
+Siliguri has no variable build, so Bengali ships **three weights and no more** -
+each Bengali cut is roughly six times the payload of a Latin one.
+
 Full stacks, fluid scale, and line-height rules: `references/03-typography.md`.
 
 ---
@@ -134,7 +156,7 @@ Full stacks, fluid scale, and line-height rules: `references/03-typography.md`.
 ## 6. Shape language
 
 - **Disc**: perfect circles for avatars, icon chips, destination bubbles, badges.
-- **Hard angles**: the logo has no soft corners on its vehicles — keep radii modest.
+- **Hard angles**: the logo has no soft corners on its vehicles - keep radii modest.
 - Radii: `--te-r-sm 8px`, `--te-r-md 12px`, `--te-r-lg 16px`, `--te-r-xl 24px`,
   `--te-r-pill 999px`, `--te-r-disc 50%`.
 - Buttons are **pill**. Cards are **16px**. Images in cards are **12px**.
@@ -150,14 +172,30 @@ warm sun above, cool water below, a white flight path climbing at 17°.
 | Decision | Standard |
 |---|---|
 | Colour pipeline | `ColorManagement.enabled = true`; brand hexes declared as sRGB via `setHex(hex, SRGBColorSpace)` |
-| Tone mapping | **`NeutralToneMapping`** at exposure `1.0`, and `toneMapped: false` on flat brand-colour elements. **ACESFilmic is banned** — measured, it renders `#ED7C30` as `#E8903A` |
+| Tone mapping | **`NeutralToneMapping`** at exposure `1.0`, and `toneMapped: false` on flat brand-colour elements. **ACESFilmic is banned** - measured, it renders `#ED7C30` as `#E8903A` |
 | Light rig | Key warm (`#F2A16A`, upper-right, climbing at 17°), fill cool (`#4394D5`/`#3171AE` hemisphere), rim white. Ambient ≤ `0.25` |
 | Materials | `MeshStandardMaterial`, `metalness: 0`, `roughness ≥ 0.35`, flat-shaded low-poly. No chrome, glass, iridescence or toon outlines |
-| Palette | The six brand colours plus white. **No seventh hue in any scene** |
+| Palette | The six brand colours plus white, **plus documented ramp steps of those same hues** (`RAMP` in `assets/three.brand.js`). Aerial perspective needs distant ridges to wash out and near ridges to go to silhouette; that is tints and shades of the six hues, never a seventh hue |
+| Depth | Size the far plane from the world with `depthPlan(worldDepth)`. **Fog ends the scene, never the clip plane** |
 | Camera | FOV 35 desktop / 45 mobile, max 50, **roll always 0**, never animate FOV |
 | Post | Desktop: subtle bloom, vignette, DOF/SSAO at high tier. Mobile: **none**. Banned everywhere: chromatic aberration, grain, glitch, motion blur, lens flare, LUT grading |
 | Contexts | **One WebGL context per page.** Never one per card |
 | Status | 3D is a **progressive enhancement**. WebGL off must still leave a complete, bookable page |
+
+**The far-plane trap.** Measured on this site: a 300-unit route inside the default
+120-unit far plane rendered *nothing but `scene.background`* - a flat navy panel
+with no error, no warning and no console output. It looks exactly like "the WebGL
+scene failed to load". Always derive `near`/`far`/`fog` from the actual world size:
+
+```js
+const plan = depthPlan(340)              // world depth in scene units
+const camera = createCamera(aspect, tier, plan)
+scene.fog = new THREE.Fog(colour, plan.far * 0.24, plan.far * 0.78)
+```
+
+**Fog colour is haze, not sunlight.** Fogging terrain with full-strength Sunset
+Orange turns an entire landscape into one orange mass. Mix the horizon stop toward
+the sky's mid stop (~0.4) before assigning it to the fog.
 
 Full geometry vocabulary, approved component catalogue, budgets, disposal and QA:
 `references/10-3d-and-threejs.md`.
@@ -179,15 +217,21 @@ Design 360px first, then 1440px. The primary break is **1024px**.
 | Grid | 4–8 col, 20–32px margin, cards 1–2 up | 12 col, container 1200, cards 3 up |
 | Body type | 16px Latin / **17px Bangla** minimum | 16px Latin / 17px Bangla |
 | Hero media | `4:5` portrait, text below | `21:9`, text overlaid |
-| Hover | **Does not exist** — every hover needs a touch equivalent | Card lift `translate(2px, -6px)` |
+| Hover | **Does not exist** - every hover needs a touch equivalent | Card lift `translate(2px, -6px)` |
 | Parallax | **Banned** | ≤ 20px travel |
 | 3D canvas | ≤ **55dvh**, `touch-action: pan-y`, DPR ≤ 1.5, 0 shadows, 0 post passes, ≤ 80k tris | Up to 100dvh, DPR ≤ 2, 1 shadow map, ≤ 3 passes, ≤ 350k tris |
 | 3D components | Globe / Photo Prism / Terrain Card **swap to DOM equivalents** | Full WebGL |
+| Scroll-driven 3D | Stage is **`position: sticky` under the header at ≤ 46dvh**, content scrolls over it | Stage is sticky full-height, content overlays it |
+| "You are here" | **Journey rail** - a sticky row of section chips under the header, current one marked | The nav bar, with the active link underlined at 17° |
 | Page weight | **< 700KB** initial, LCP < 2.5s on throttled 4G | < 1.4MB, LCP < 1.8s |
 
 Use `100dvh`, never `100vh`. Respect `env(safe-area-inset-bottom)`. Gate hover
 styles on `@media (hover: hover) and (pointer: fine)`. Tap targets 44px with 8px
 separation.
+
+**A hamburger is not wayfinding.** Desktop answers "where am I, where can I go"
+with seven visible links; a phone answered it with an icon and nothing else. Any
+page with more than four sections carries the journey rail on mobile.
 
 Full breakpoint tables, per-component behaviour matrix, image art direction and
 the responsive QA checklist: `references/11-responsive-standards.md`.
@@ -201,19 +245,38 @@ the responsive QA checklist: `references/11-responsive-standards.md`.
 3. Never use pure black `#000000` anywhere. Darkest ink is `#111823`.
 4. Never use a stock-looking generic travel photo where a real tour photo exists.
 5. Never render Bangla in Inter or Plus Jakarta Sans.
-6. Never use a gradient that mixes orange and blue through grey — use the
+6. Never use a gradient that mixes orange and blue through grey - use the
    prescribed Horizon Gradient stops.
 7. Every price shows the `৳` symbol and tabular numerals.
-8. Every package card must carry a WhatsApp CTA — it is the brand's real conversion path.
+8. Every package card must carry a WhatsApp CTA - it is the brand's real conversion path.
 9. Dividers and hero cuts use 17°, not 45°, not 0°.
 10. Dark sections use `--te-deep-950`, not neutral-950.
 11. Never ship a 3D scene without `ColorManagement.enabled` and Neutral tone mapping.
 12. Never extrude the logo into 3D, and never render text in WebGL.
 13. Never let a 3D canvas block vertical scroll or exceed 55dvh on mobile.
-14. Never make 3D load-blocking — the DOM paints first, the canvas attaches second.
+14. Never make 3D load-blocking - the DOM paints first, the canvas attaches second.
 15. `prefers-reduced-motion` renders a static frame. No exceptions, no "play anyway" nag.
-16. Never use `100vh` on mobile — always `100dvh`.
+16. Never use `100vh` on mobile - always `100dvh`.
 17. Never ship a hover-only affordance without a touch equivalent.
+18. Never set Bangla running text below **17px**, or any Latin UI text below **13px**.
+19. Never put a form control on the page background. Fields use `--te-field-bg`;
+    a white input on a white card is a border, not something you can type into.
+    Placeholders use full-strength `--te-field-ph` - never `opacity` below 1.
+20. Never set `stroke-width` inside an icon sprite. Declare it per size on the
+    host element and let it inherit; one number across sizes renders uneven.
+21. Never style sprite symbols from a `<style>` block. A `<style>` inside `<defs>`
+    is **not** cloned into the `<use>` shadow tree of an external sprite, and the
+    icons render as nothing at all. Presentation attributes go on the symbol.
+    (And an XML comment may not contain two consecutive hyphens - `.ic--sm` in a
+    sprite comment is a parse error that silently kills every icon on the page.)
+22. Never let a light section keep dark-theme ink. Every role token in the dark
+    block must exist in **both** the `[data-theme="dark"]` and the
+    `prefers-color-scheme` block - a partial block is what produces white headings
+    on a cream background.
+23. Never fake the Flight Angle. A cut's rise is 30.57% of its run, or it is not 17°.
+24. WhatsApp is an action, not a billboard. A bare saturated-green circle reads as
+    a third-party widget: use a brand surface that carries the glyph, and give it
+    a label wherever there is room for one.
 
 ---
 
@@ -221,7 +284,7 @@ the responsive QA checklist: `references/11-responsive-standards.md`.
 
 - **Name:** Trip Express BD (never "TripExpress", never "Trip Express Bangladesh")
 - **Home:** Chattogram (Chittagong) 4202, Bangladesh
-- **Office:** 1301, Mosjid Goli, Dui Number Gate, Chattogram — opposite Sermon School
+- **Office:** 1301, Mosjid Goli, Dui Number Gate, Chattogram - opposite Sermon School
 - **Phones:** 01621-785968 · 01838-754207 · 01840-004495
 - **WhatsApp:** wa.me/+8801838754207
 - **Email:** tripexpressb@gmail.com

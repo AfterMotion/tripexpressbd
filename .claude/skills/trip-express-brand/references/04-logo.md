@@ -1,4 +1,4 @@
-# 04 — Logo
+# 04 - Logo
 
 Master file: `../assets/logo-primary.jpg` (2048 × 2048, JPEG, white background).
 
@@ -9,12 +9,12 @@ Master file: `../assets/logo-primary.jpg` (2048 × 2048, JPEG, white background)
 | Canvas | 2048 × 2048 |
 | Full mark bounding box | x 80–1944, y 244–1812 (1864 × 1568) |
 | Disc diameter | 1568 px = **76.6% of canvas height** |
-| Disc centre | approx. (1060, 1028) — slightly right of and above centre |
+| Disc centre | approx. (1060, 1028) - slightly right of and above centre |
 | Aircraft streak | left tip (80, 1430) → right tip (1944, 859) |
 | **Flight Angle** | **17°** rising left → right |
 | Sun/sea seam inside disc | 11°–17° (the aircraft body widens it) |
 
-The streak **overhangs the disc on both sides**. That overhang is part of the mark —
+The streak **overhangs the disc on both sides**. That overhang is part of the mark -
 never crop it to make a tidy circle.
 
 ## 2. Logo variants to produce
@@ -29,14 +29,14 @@ never crop it to make a tidy circle.
 | **Reverse** | Mark unchanged, wordmark in `#FFFFFF` | Dark sections, footer, photo overlay |
 | **Single-colour** | Whole mark in `deep-950` or `#FFFFFF` | Fax-grade print, embroidery, watermark |
 
-Produce SVG for every variant. The current JPEG is a raster stand-in — **vectorise
+Produce SVG for every variant. The current JPEG is a raster stand-in - **vectorise
 it before launch**; do not ship the JPEG in the header.
 
 ## 3. Wordmark
 
 - Family: **Plus Jakarta Sans ExtraBold (800)**
 - Tracking: `-0.02em`
-- Case: `Trip Express BD` — Title Case, "BD" uppercase
+- Case: `Trip Express BD` - Title Case, "BD" uppercase
 - Colour: `deep-950` `#132436` on light, `#FFFFFF` on dark
 - Optional split-colour treatment: `Trip` in `orange-500`, `Express BD` in
   `deep-950`. Use this **only** in the stacked lockup, never in the header.
@@ -61,7 +61,7 @@ Minimum clear space on all four sides = **25% of the disc diameter**.
 ```
 clear = 0.25 × disc_height
 ```
-At a 64px-tall mark that is 16px of untouched space. Nothing enters it — no text,
+At a 64px-tall mark that is 16px of untouched space. Nothing enters it - no text,
 no rule, no photo edge, no button.
 
 ## 5. Minimum sizes
@@ -75,7 +75,7 @@ no rule, no photo edge, no button.
 | Primary mark, print | 15mm tall |
 | Lockup, print | 35mm wide |
 
-Below 32px the palms, bus and kayak become noise — switch to the monogram.
+Below 32px the palms, bus and kayak become noise - switch to the monogram.
 
 ## 6. Backgrounds
 
@@ -106,7 +106,7 @@ Below 32px the palms, bus and kayak become noise — switch to the monogram.
 
 | Size | Asset |
 |---|---|
-| 16×16, 32×32 | Monogram — white aircraft on `orange-500`, no disc split |
+| 16×16, 32×32 | Monogram - white aircraft on `orange-500`, no disc split |
 | 48×48, 64×64 | Disc-only, simplified (drop palms + kayak) |
 | 180×180 (apple-touch) | Disc-only on white, 12% padding |
 | 192/512 (PWA maskable) | Disc-only centred on `#FFFFFF`, 20% safe padding |

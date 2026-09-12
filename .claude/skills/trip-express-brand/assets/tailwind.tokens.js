@@ -1,5 +1,5 @@
 /**
- * Trip Express BD — Tailwind theme extension
+ * Trip Express BD - Tailwind theme extension
  * Spread this into tailwind.config.js -> theme.extend
  *
  *   const teBrand = require('./.claude/skills/trip-express-brand/assets/tailwind.tokens.js')
@@ -49,14 +49,14 @@ module.exports = {
     'display-xl': ['clamp(2.75rem, 1.6rem + 4.6vw, 4.5rem)', { lineHeight: '1.04', letterSpacing: '-0.03em', fontWeight: '800' }],
     'display-lg': ['clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem)',  { lineHeight: '1.08', letterSpacing: '-0.025em', fontWeight: '800' }],
     'h1':         ['clamp(1.875rem, 1.35rem + 2.2vw, 2.75rem)', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
-    'h2':         ['clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem)',  { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '700' }],
-    'h3':         ['clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '700' }],
+    'h2':         ['clamp(1.625rem, 1.22rem + 1.75vw, 2.5rem)', { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '700' }],
+    'h3':         ['clamp(1.3125rem, 1.14rem + 0.78vw, 1.75rem)', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '700' }],
     'h4':         ['1.125rem', { lineHeight: '1.4', fontWeight: '600' }],
     'body-lg':    ['1.125rem', { lineHeight: '1.65' }],
     'body':       ['1rem', { lineHeight: '1.6' }],
     'body-sm':    ['0.9375rem', { lineHeight: '1.55' }],
     'caption':    ['0.875rem', { lineHeight: '1.45', fontWeight: '500' }],
-    'overline':   ['0.75rem', { lineHeight: '1.3', letterSpacing: '0.12em', fontWeight: '700' }],
+    'overline':   ['0.8125rem', { lineHeight: '1.3', letterSpacing: '0.09em', fontWeight: '700' }],  // 12px/0.12em failed on a 360px phone
     'price-lg':   ['clamp(1.5rem, 1.2rem + 1.2vw, 2rem)', { lineHeight: '1.1', letterSpacing: '-0.01em', fontWeight: '700' }],
     'price-sm':   ['1.125rem', { lineHeight: '1.2', fontWeight: '600' }],
   },
@@ -101,7 +101,7 @@ module.exports = {
     lg: '1024px',   // primary break: mobile behaviour <-> desktop behaviour
     xl: '1280px',
     '2xl': '1536px',
-    // Capability queries — gate hover affordances and 3D on these, not on width.
+    // Capability queries - gate hover affordances and 3D on these, not on width.
     hoverable: { raw: '(hover: hover) and (pointer: fine)' },
     touch: { raw: '(hover: none)' },
     'motion-ok': { raw: '(prefers-reduced-motion: no-preference)' },

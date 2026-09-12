@@ -5,57 +5,143 @@
     "source": "logo-primary.jpg (2048x2048), pixel-sampled",
     "flightAngleDeg": 17,
     "discDiameterRatio": 0.766,
-    "markBoundingBox": { "x": 80, "y": 244, "w": 1864, "h": 1568 },
-    "logoColourShare": { "white": 0.549, "orange": 0.147, "sky": 0.103, "ocean": 0.033 },
-    "pageColourRatio": { "white": 0.60, "orange": 0.25, "blue": 0.12, "ink": 0.03 }
-  },
-
-  "color": {
-    "brand": {
-      "sunsetOrange": { "value": "#ED7C30", "note": "primary; NEVER white text on this (2.79:1)" },
-      "sandOrange":   { "value": "#F2A16A", "note": "logo mountain highlight; dark-mode accent text" },
-      "skyBlue":      { "value": "#4394D5", "note": "secondary" },
-      "deepOcean":    { "value": "#3171AE", "note": "anchor; white text safe (5.12:1)" },
-      "nightOcean":   { "value": "#132436", "note": "darkest surface / dark theme base" },
-      "horizonWhite": { "value": "#FFFFFF" }
+    "markBoundingBox": {
+      "x": 80,
+      "y": 244,
+      "w": 1864,
+      "h": 1568
     },
-    "orange": {
-      "50": "#FEF8F5", "100": "#FDEFE6", "200": "#FADDC9", "300": "#F7C5A4",
-      "400": "#F2A16A", "500": "#ED7C30", "600": "#C96A2B", "700": "#A45826",
-      "800": "#804621", "900": "#60371C", "950": "#402718"
+    "logoColourShare": {
+      "white": 0.549,
+      "orange": 0.147,
+      "sky": 0.103,
+      "ocean": 0.033
     },
-    "sky": {
-      "50": "#F6FAFD", "100": "#E8F2FA", "200": "#CEE3F4", "300": "#ACD0ED",
-      "400": "#78B2E1", "500": "#4394D5", "600": "#3A7EB5", "700": "#316896",
-      "800": "#285376", "900": "#20405B", "950": "#182D3F"
-    },
-    "ocean": {
-      "50": "#F5F8FB", "100": "#E6EEF5", "200": "#C9DAEA", "300": "#A4C1DB",
-      "400": "#6B99C5", "500": "#3171AE", "600": "#2B6195", "700": "#25517B",
-      "800": "#1E4162", "900": "#19324C", "950": "#132436"
-    },
-    "ink": {
-      "0": "#FFFFFF", "50": "#F7F9FB", "100": "#EFF3F7", "200": "#DFE5EC",
-      "300": "#C6CFDA", "400": "#9AA6B6", "500": "#6F7D90", "600": "#556274",
-      "700": "#3F4A5A", "800": "#2B3442", "900": "#1B2330", "950": "#111823"
-    },
-    "semantic": {
-      "success": { "base": "#1E9E6A", "text": "#15784F", "surface": "#E7F7F0", "border": "#A7E3CB" },
-      "warning": { "base": "#E0A000", "text": "#8A6100", "surface": "#FFF6E0", "border": "#F5DB9B" },
-      "error":   { "base": "#D64545", "text": "#B02E2E", "surface": "#FDECEC", "border": "#F3B9B9" },
-      "info":    { "base": "#3171AE", "text": "#25517B", "surface": "#E6EEF5", "border": "#A4C1DB" },
-      "whatsapp":{ "base": "#25D366", "hover": "#1FBE5A", "ink": "#0B3D22" }
+    "pageColourRatio": {
+      "white": 0.6,
+      "orange": 0.25,
+      "blue": 0.12,
+      "ink": 0.03
     }
   },
-
-  "gradient": {
-    "sunset":  "linear-gradient(17deg, #F2A16A 0%, #ED7C30 100%)",
-    "ocean":   "linear-gradient(17deg, #4394D5 0%, #3171AE 100%)",
-    "night":   "linear-gradient(17deg, #19324C 0%, #132436 100%)",
-    "horizon": "linear-gradient(17deg, #ED7C30 0%, #F2A16A 34%, #FFFFFF 50%, #4394D5 66%, #3171AE 100%)",
-    "scrim":   "linear-gradient(to top, rgba(19,36,54,0.88) 0%, rgba(19,36,54,0.55) 38%, rgba(19,36,54,0) 100%)"
+  "color": {
+    "brand": {
+      "sunsetOrange": {
+        "value": "#ED7C30",
+        "note": "primary; NEVER white text on this (2.79:1)"
+      },
+      "sandOrange": {
+        "value": "#F2A16A",
+        "note": "logo mountain highlight; dark-mode accent text"
+      },
+      "skyBlue": {
+        "value": "#4394D5",
+        "note": "secondary"
+      },
+      "deepOcean": {
+        "value": "#3171AE",
+        "note": "anchor; white text safe (5.12:1)"
+      },
+      "nightOcean": {
+        "value": "#132436",
+        "note": "darkest surface / dark theme base"
+      },
+      "horizonWhite": {
+        "value": "#FFFFFF"
+      }
+    },
+    "orange": {
+      "50": "#FEF8F5",
+      "100": "#FDEFE6",
+      "200": "#FADDC9",
+      "300": "#F7C5A4",
+      "400": "#F2A16A",
+      "500": "#ED7C30",
+      "600": "#C96A2B",
+      "700": "#A45826",
+      "800": "#804621",
+      "900": "#60371C",
+      "950": "#402718"
+    },
+    "sky": {
+      "50": "#F6FAFD",
+      "100": "#E8F2FA",
+      "200": "#CEE3F4",
+      "300": "#ACD0ED",
+      "400": "#78B2E1",
+      "500": "#4394D5",
+      "600": "#3A7EB5",
+      "700": "#316896",
+      "800": "#285376",
+      "900": "#20405B",
+      "950": "#182D3F"
+    },
+    "ocean": {
+      "50": "#F5F8FB",
+      "100": "#E6EEF5",
+      "200": "#C9DAEA",
+      "300": "#A4C1DB",
+      "400": "#6B99C5",
+      "500": "#3171AE",
+      "600": "#2B6195",
+      "700": "#25517B",
+      "800": "#1E4162",
+      "900": "#19324C",
+      "950": "#132436"
+    },
+    "ink": {
+      "0": "#FFFFFF",
+      "50": "#F7F9FB",
+      "100": "#EFF3F7",
+      "200": "#DFE5EC",
+      "300": "#C6CFDA",
+      "400": "#9AA6B6",
+      "500": "#6F7D90",
+      "600": "#556274",
+      "700": "#3F4A5A",
+      "800": "#2B3442",
+      "900": "#1B2330",
+      "950": "#111823"
+    },
+    "semantic": {
+      "success": {
+        "base": "#1E9E6A",
+        "text": "#15784F",
+        "surface": "#E7F7F0",
+        "border": "#A7E3CB"
+      },
+      "warning": {
+        "base": "#E0A000",
+        "text": "#8A6100",
+        "surface": "#FFF6E0",
+        "border": "#F5DB9B"
+      },
+      "error": {
+        "base": "#D64545",
+        "text": "#B02E2E",
+        "surface": "#FDECEC",
+        "border": "#F3B9B9"
+      },
+      "info": {
+        "base": "#3171AE",
+        "text": "#25517B",
+        "surface": "#E6EEF5",
+        "border": "#A4C1DB"
+      },
+      "whatsapp": {
+        "base": "#25D366",
+        "hover": "#1FBE5A",
+        "ink": "#0B3D22"
+      }
+    }
   },
-
+  "gradient": {
+    "sunset": "linear-gradient(17deg, #F2A16A 0%, #ED7C30 100%)",
+    "ocean": "linear-gradient(17deg, #4394D5 0%, #3171AE 100%)",
+    "night": "linear-gradient(17deg, #19324C 0%, #132436 100%)",
+    "horizon": "linear-gradient(17deg, #ED7C30 0%, #F2A16A 34%, #FFFFFF 50%, #4394D5 66%, #3171AE 100%)",
+    "scrim": "linear-gradient(to top, rgba(19,36,54,0.88) 0%, rgba(19,36,54,0.55) 38%, rgba(19,36,54,0) 100%)"
+  },
   "shadow": {
     "xs": "0 1px 2px rgba(19,36,54,0.06)",
     "sm": "0 2px 6px rgba(19,36,54,0.08)",
@@ -64,13 +150,29 @@
     "xl": "0 28px 64px rgba(19,36,54,0.18)",
     "warm": "0 10px 28px rgba(237,124,48,0.32)"
   },
-
   "font": {
     "display": "Plus Jakarta Sans",
     "body": "Inter",
     "bangla": "Hind Siliguri",
     "numeric": "Inter (tabular-nums)",
-    "weights": { "display": [700, 800], "body": [400, 500, 600, 700], "bangla": [400, 500, 600, 700] },
+    "weights": {
+      "display": [
+        700,
+        800
+      ],
+      "body": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "bangla": [
+        400,
+        500,
+        600,
+        700
+      ]
+    },
     "banglaRules": {
       "minSizePx": 15,
       "bodySizeBumpPx": 1,
@@ -80,7 +182,6 @@
       "maxWeight": 700
     }
   },
-
   "scale": {
     "displayXl": "clamp(2.75rem, 1.6rem + 4.6vw, 4.5rem)",
     "displayLg": "clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem)",
@@ -96,28 +197,57 @@
     "priceLg": "clamp(1.5rem, 1.2rem + 1.2vw, 2rem)",
     "priceSm": "1.125rem"
   },
-
   "space": {
-    "0": 0, "1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24,
-    "8": 32, "10": 40, "12": 48, "16": 64, "20": 80, "24": 96, "32": 128,
+    "0": 0,
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48,
+    "16": 64,
+    "20": 80,
+    "24": 96,
+    "32": 128,
     "sectionY": "clamp(4rem, 8vw, 7rem)"
   },
-
   "radius": {
-    "xs": 4, "sm": 8, "md": 12, "lg": 16, "xl": 24, "2xl": 32,
-    "pill": 999, "disc": "50%"
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "pill": 999,
+    "disc": "50%"
   },
-
   "layout": {
-    "container": 1200,
+    "container": 1240,
     "containerNarrow": 800,
-    "containerWide": 1440,
+    "containerWide": 1500,
     "gutter": 24,
-    "breakpoints": { "sm": 640, "md": 768, "lg": 1024, "xl": 1280, "2xl": 1536 }
+    "breakpoints": {
+      "sm": 640,
+      "md": 768,
+      "lg": 1024,
+      "xl": 1280,
+      "2xl": 1536
+    },
+    "railHeight": 46,
+    "cutRise": "min(30.57vw, 170px)",
+    "cutRiseNote": "tan(17deg) = 0.3057 - a cut whose rise is 30.57% of its width IS the Flight Angle"
   },
-
   "motion": {
-    "duration": { "instant": 100, "fast": 180, "base": 260, "slow": 420, "scenic": 700 },
+    "duration": {
+      "instant": 100,
+      "fast": 180,
+      "base": 260,
+      "slow": 420,
+      "scenic": 700
+    },
     "easing": {
       "out": "cubic-bezier(0.16, 1, 0.30, 1)",
       "in": "cubic-bezier(0.70, 0, 0.84, 0)",
@@ -126,56 +256,162 @@
     },
     "cardHoverTransform": "translate(2px, -6px)"
   },
-
   "zIndex": {
-    "base": 0, "raised": 10, "sticky": 100, "dropdown": 200,
-    "whatsapp": 300, "overlay": 400, "modal": 500, "toast": 600
+    "base": 0,
+    "raised": 10,
+    "sticky": 100,
+    "dropdown": 200,
+    "whatsapp": 300,
+    "overlay": 400,
+    "modal": 500,
+    "toast": 600
   },
-
   "contrast": {
     "banned": [
-      { "fg": "#FFFFFF", "bg": "#ED7C30", "ratio": 2.79 },
-      { "fg": "#FFFFFF", "bg": "#4394D5", "ratio": 3.26 },
-      { "fg": "#ED7C30", "bg": "#FFFFFF", "ratio": 2.79 },
-      { "fg": "#A45826", "bg": "#132436", "ratio": 3.51 }
+      {
+        "fg": "#FFFFFF",
+        "bg": "#ED7C30",
+        "ratio": 2.79
+      },
+      {
+        "fg": "#FFFFFF",
+        "bg": "#4394D5",
+        "ratio": 3.26
+      },
+      {
+        "fg": "#ED7C30",
+        "bg": "#FFFFFF",
+        "ratio": 2.79
+      },
+      {
+        "fg": "#A45826",
+        "bg": "#132436",
+        "ratio": 3.51
+      }
     ],
-    "approvedPrimaryButton": { "fg": "#111823", "bg": "#ED7C30", "ratio": 5.66 }
+    "approvedPrimaryButton": {
+      "fg": "#111823",
+      "bg": "#ED7C30",
+      "ratio": 5.66
+    }
   },
-
   "threeD": {
     "colorManagement": true,
     "outputColorSpace": "SRGBColorSpace",
     "toneMapping": "NeutralToneMapping",
     "toneMappingExposure": 1.0,
-    "bannedToneMapping": ["ACESFilmic", "Reinhard", "AgX"],
+    "bannedToneMapping": [
+      "ACESFilmic",
+      "Reinhard",
+      "AgX"
+    ],
     "cameraRoll": 0,
-    "fov": { "desktop": 35, "mobile": 45, "max": 50, "animatable": false },
+    "fov": {
+      "desktop": 35,
+      "mobile": 45,
+      "max": 50,
+      "animatable": false
+    },
     "lightRig": {
-      "key":     { "type": "DirectionalLight", "color": "#F2A16A", "intensity": 2.4, "position": [6, 4.2, 3], "castShadow": true },
-      "fill":    { "type": "HemisphereLight", "sky": "#4394D5", "ground": "#3171AE", "intensity": 0.85 },
-      "rim":     { "type": "DirectionalLight", "color": "#FFFFFF", "intensity": 1.1, "position": [-4, 1.5, -5], "desktopOnly": true },
-      "ambient": { "type": "AmbientLight", "color": "#4394D5", "intensity": 0.18, "max": 0.25 }
+      "key": {
+        "type": "DirectionalLight",
+        "color": "#F2A16A",
+        "intensity": 2.4,
+        "position": [
+          6,
+          4.2,
+          3
+        ],
+        "castShadow": true
+      },
+      "fill": {
+        "type": "HemisphereLight",
+        "sky": "#4394D5",
+        "ground": "#3171AE",
+        "intensity": 0.85
+      },
+      "rim": {
+        "type": "DirectionalLight",
+        "color": "#FFFFFF",
+        "intensity": 1.1,
+        "position": [
+          -4,
+          1.5,
+          -5
+        ],
+        "desktopOnly": true
+      },
+      "ambient": {
+        "type": "AmbientLight",
+        "color": "#4394D5",
+        "intensity": 0.18,
+        "max": 0.25
+      }
     },
     "material": {
       "base": "MeshStandardMaterial",
       "metalness": 0.0,
       "roughnessMin": 0.35,
       "roughnessMax": 0.95,
-      "envMapIntensity": [0.4, 0.7],
+      "envMapIntensity": [
+        0.4,
+        0.7
+      ],
       "emissiveMax": 0.6,
       "clearcoat": 0,
-      "banned": ["chrome", "iridescent", "holographic", "heavy-glass", "liquid-metal", "neon-wireframe", "toon-outline"]
+      "banned": [
+        "chrome",
+        "iridescent",
+        "holographic",
+        "heavy-glass",
+        "liquid-metal",
+        "neon-wireframe",
+        "toon-outline"
+      ]
     },
-    "fogBySection": { "warm": "#FEF8F5", "cool": "#E8F2FA", "dark": "#132436", "white": "#FFFFFF" },
+    "fogBySection": {
+      "warm": "#FEF8F5",
+      "cool": "#E8F2FA",
+      "dark": "#132436",
+      "white": "#FFFFFF"
+    },
     "postProcessing": {
       "allowed": {
-        "bloom": { "threshold": 0.85, "strengthMax": 0.35, "radiusMax": 0.5, "desktopOnly": true },
-        "vignette": { "darknessMax": 0.2, "color": "#132436" },
-        "smaa": { "desktopOnly": true },
-        "dof": { "tier": "high" },
-        "ssao": { "tier": "high", "intensityMax": 0.6, "tint": "#3171AE" }
+        "bloom": {
+          "threshold": 0.85,
+          "strengthMax": 0.35,
+          "radiusMax": 0.5,
+          "desktopOnly": true
+        },
+        "vignette": {
+          "darknessMax": 0.2,
+          "color": "#132436"
+        },
+        "smaa": {
+          "desktopOnly": true
+        },
+        "dof": {
+          "tier": "high"
+        },
+        "ssao": {
+          "tier": "high",
+          "intensityMax": 0.6,
+          "tint": "#3171AE"
+        }
       },
-      "banned": ["chromaticAberration", "filmGrain", "glitch", "rgbSplit", "motionBlur", "lensFlare", "godRays", "lutGrading", "ascii", "halftone", "dither"]
+      "banned": [
+        "chromaticAberration",
+        "filmGrain",
+        "glitch",
+        "rgbSplit",
+        "motionBlur",
+        "lensFlare",
+        "godRays",
+        "lutGrading",
+        "ascii",
+        "halftone",
+        "dither"
+      ]
     },
     "motion": {
       "cameraDamp": 0.08,
@@ -190,24 +426,71 @@
       "autoRotateInfinite": false
     },
     "tiers": {
-      "high":     { "dprCap": 2.0,  "maxTriangles": 350000, "maxDrawCalls": 120, "shadowMapSize": 2048, "postPasses": 3, "maxTextureSize": 2048, "targetFrameMs": 8,  "payloadBytes": 3500000 },
-      "standard": { "dprCap": 1.75, "maxTriangles": 180000, "maxDrawCalls": 80,  "shadowMapSize": 1024, "postPasses": 1, "maxTextureSize": 2048, "targetFrameMs": 12, "payloadBytes": 2500000 },
-      "mobile":   { "dprCap": 1.5,  "maxTriangles": 80000,  "maxDrawCalls": 45,  "shadowMapSize": 0,    "postPasses": 0, "maxTextureSize": 1024, "targetFrameMs": 16, "payloadBytes": 1200000 },
-      "off":      null
+      "high": {
+        "dprCap": 2.0,
+        "maxTriangles": 350000,
+        "maxDrawCalls": 120,
+        "shadowMapSize": 2048,
+        "postPasses": 3,
+        "maxTextureSize": 2048,
+        "targetFrameMs": 8,
+        "payloadBytes": 3500000
+      },
+      "standard": {
+        "dprCap": 1.75,
+        "maxTriangles": 180000,
+        "maxDrawCalls": 80,
+        "shadowMapSize": 1024,
+        "postPasses": 1,
+        "maxTextureSize": 2048,
+        "targetFrameMs": 12,
+        "payloadBytes": 2500000
+      },
+      "mobile": {
+        "dprCap": 1.5,
+        "maxTriangles": 80000,
+        "maxDrawCalls": 45,
+        "shadowMapSize": 0,
+        "postPasses": 0,
+        "maxTextureSize": 1024,
+        "targetFrameMs": 16,
+        "payloadBytes": 1200000
+      },
+      "off": null
     },
     "assets": {
       "format": "glb",
-      "geometryCompression": ["meshopt", "draco"],
-      "textureFormat": ["ktx2", "webp"],
-      "bannedFormats": ["fbx", "obj", "png-textures"]
+      "geometryCompression": [
+        "meshopt",
+        "draco"
+      ],
+      "textureFormat": [
+        "ktx2",
+        "webp"
+      ],
+      "bannedFormats": [
+        "fbx",
+        "obj",
+        "png-textures"
+      ]
     },
     "approvedComponents": [
-      "horizon-hero", "destination-globe", "flight-path-connector",
-      "portfolio-photo-prism", "terrain-card", "boarding-pass-parallax(css3d)"
+      "horizon-hero",
+      "destination-globe",
+      "flight-path-connector",
+      "portfolio-photo-prism",
+      "terrain-card",
+      "boarding-pass-parallax(css3d)"
     ],
     "bannedElements": [
-      "logo-extruded-3d", "3d-text", "starfield", "particle-storm",
-      "cursor-follow-blob", "photoreal-earth", "physics-sandbox", "3d-nav-menu"
+      "logo-extruded-3d",
+      "3d-text",
+      "starfield",
+      "particle-storm",
+      "cursor-follow-blob",
+      "photoreal-earth",
+      "physics-sandbox",
+      "3d-nav-menu"
     ],
     "accessibility": {
       "canvasAriaHidden": true,
@@ -218,25 +501,90 @@
       "contextLossFallback": true
     }
   },
-
   "responsive": {
     "primaryBreakpointPx": 1024,
-    "designBaselines": { "mobile": "360x800", "desktop": "1440x900" },
+    "designBaselines": {
+      "mobile": "360x800",
+      "desktop": "1440x900"
+    },
     "grid": {
-      "xs": { "columns": 4,  "gutter": 16, "margin": 20, "container": "fluid",  "cards": 1, "sectionY": 64 },
-      "md": { "columns": 8,  "gutter": 20, "margin": 32, "container": "fluid",  "cards": 2, "sectionY": 80 },
-      "lg": { "columns": 12, "gutter": 24, "margin": 40, "container": 1120,     "cards": 3, "sectionY": 96 },
-      "xl": { "columns": 12, "gutter": 24, "margin": 48, "container": 1200,     "cards": 3, "sectionY": 112 },
-      "2xl":{ "columns": 12, "gutter": 32, "margin": 64, "container": 1280,     "cards": 3, "sectionY": 112 }
+      "xs": {
+        "columns": 4,
+        "gutter": 16,
+        "margin": 20,
+        "container": "fluid",
+        "cards": 1,
+        "sectionY": 64
+      },
+      "md": {
+        "columns": 8,
+        "gutter": 20,
+        "margin": 32,
+        "container": "fluid",
+        "cards": 2,
+        "sectionY": 80
+      },
+      "lg": {
+        "columns": 12,
+        "gutter": 24,
+        "margin": 40,
+        "container": 1120,
+        "cards": 3,
+        "sectionY": 96
+      },
+      "xl": {
+        "columns": 12,
+        "gutter": 24,
+        "margin": 48,
+        "container": 1200,
+        "cards": 3,
+        "sectionY": 112
+      },
+      "2xl": {
+        "columns": 12,
+        "gutter": 32,
+        "margin": 64,
+        "container": 1280,
+        "cards": 3,
+        "sectionY": 112
+      }
     },
     "typeEndpointsPx": {
-      "displayXl": { "360": 44, "768": 56, "1440": 72 },
-      "displayLg": { "360": 36, "768": 46, "1440": 56 },
-      "h1":        { "360": 30, "768": 38, "1440": 44 },
-      "h2":        { "360": 24, "768": 29, "1440": 34 },
-      "h3":        { "360": 20, "768": 23, "1440": 26 },
-      "body":      { "360": 16, "768": 16, "1440": 16 },
-      "priceLg":   { "360": 24, "768": 28, "1440": 32 }
+      "displayXl": {
+        "360": 44,
+        "768": 56,
+        "1440": 72
+      },
+      "displayLg": {
+        "360": 36,
+        "768": 46,
+        "1440": 56
+      },
+      "h1": {
+        "360": 30,
+        "768": 38,
+        "1440": 44
+      },
+      "h2": {
+        "360": 24,
+        "768": 29,
+        "1440": 34
+      },
+      "h3": {
+        "360": 20,
+        "768": 23,
+        "1440": 26
+      },
+      "body": {
+        "360": 16,
+        "768": 16,
+        "1440": 16
+      },
+      "priceLg": {
+        "360": 24,
+        "768": 28,
+        "1440": 32
+      }
     },
     "minimums": {
       "bodyLatinPx": 16,
@@ -247,18 +595,66 @@
       "sideMarginMobilePx": 20
     },
     "imageCrops": {
-      "hero":        { "mobile": "4:5",  "desktop": "21:9", "mobileMaxKB": 120 },
-      "packageCard": { "mobile": "16:10","desktop": "16:10","mobileMaxKB": 60 },
-      "destDisc":    { "mobile": "1:1",  "desktop": "1:1",  "mobileMaxKB": 20 },
-      "tripHeader":  { "mobile": "4:3",  "desktop": "3:2",  "mobileMaxKB": 90 }
+      "hero": {
+        "mobile": "4:5",
+        "desktop": "21:9",
+        "mobileMaxKB": 120
+      },
+      "packageCard": {
+        "mobile": "16:10",
+        "desktop": "16:10",
+        "mobileMaxKB": 60
+      },
+      "destDisc": {
+        "mobile": "1:1",
+        "desktop": "1:1",
+        "mobileMaxKB": 20
+      },
+      "tripHeader": {
+        "mobile": "4:3",
+        "desktop": "3:2",
+        "mobileMaxKB": 90
+      }
     },
     "threeDByBreakpoint": {
-      "mobile":  { "canvasMaxHeight": "55dvh", "touchAction": "pan-y", "fov": 45, "dprCap": 1.5, "shadows": 0, "postPasses": 0, "pointerParallax": false, "payloadBytes": 1200000 },
-      "desktop": { "canvasMaxHeight": "100dvh", "touchAction": "auto", "fov": 35, "dprCap": 2.0, "shadows": 1, "postPasses": 3, "pointerParallax": true,  "payloadBytes": 3500000 }
+      "mobile": {
+        "canvasMaxHeight": "55dvh",
+        "touchAction": "pan-y",
+        "fov": 45,
+        "dprCap": 1.5,
+        "shadows": 0,
+        "postPasses": 0,
+        "pointerParallax": false,
+        "payloadBytes": 1200000
+      },
+      "desktop": {
+        "canvasMaxHeight": "100dvh",
+        "touchAction": "auto",
+        "fov": 35,
+        "dprCap": 2.0,
+        "shadows": 1,
+        "postPasses": 3,
+        "pointerParallax": true,
+        "payloadBytes": 3500000
+      }
     },
     "performanceBudget": {
-      "mobile":  { "lcpMs": 2500, "cls": 0.05, "inpMs": 200, "initialJsKB": 120, "threeDBundleKB": 220, "totalPageKB": 700 },
-      "desktop": { "lcpMs": 1800, "cls": 0.05, "inpMs": 150, "initialJsKB": 180, "threeDBundleKB": 320, "totalPageKB": 1400 }
+      "mobile": {
+        "lcpMs": 2500,
+        "cls": 0.05,
+        "inpMs": 200,
+        "initialJsKB": 120,
+        "threeDBundleKB": 220,
+        "totalPageKB": 700
+      },
+      "desktop": {
+        "lcpMs": 1800,
+        "cls": 0.05,
+        "inpMs": 150,
+        "initialJsKB": 180,
+        "threeDBundleKB": 320,
+        "totalPageKB": 1400
+      }
     },
     "rules": {
       "viewportUnit": "100dvh",
@@ -269,21 +665,30 @@
       "safeAreaInset": "env(safe-area-inset-bottom)"
     }
   },
-
   "business": {
     "legalName": "Trip Express BD",
     "city": "Chattogram",
     "postcode": "4202",
     "country": "Bangladesh",
     "office": "1301, Mosjid Goli, Dui Number Gate, Chattogram (opposite Sermon School)",
-    "phones": ["01621-785968", "01838-754207", "01840-004495"],
+    "phones": [
+      "01621-785968",
+      "01838-754207",
+      "01840-004495"
+    ],
     "whatsapp": "https://wa.me/8801838754207",
     "email": "tripexpressb@gmail.com",
     "currency": "BDT",
     "currencySymbol": "৳",
     "destinations": [
-      "Kashmir", "Meghalaya / Shillong", "Sikkim", "Darjeeling",
-      "Nepal (Kathmandu, Nagarkot, Pokhara)", "Kolkata", "Maldives", "Sri Lanka"
+      "Kashmir",
+      "Meghalaya / Shillong",
+      "Sikkim",
+      "Darjeeling",
+      "Nepal (Kathmandu, Nagarkot, Pokhara)",
+      "Kolkata",
+      "Maldives",
+      "Sri Lanka"
     ]
   }
 }

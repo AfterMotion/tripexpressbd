@@ -1,4 +1,4 @@
-# 08 — Voice, Tone & Content Rules
+# 08 - Voice, Tone & Content Rules
 
 ## 1. Voice attributes
 
@@ -32,17 +32,17 @@ Rules:
   rather than bad Bangla.
 - Never mix scripts inside a single word or brand name.
 - Always tag Bangla with `lang="bn"` so the correct font and line-height apply.
-- If the site offers a language toggle, it switches **content**, not just labels —
+- If the site offers a language toggle, it switches **content**, not just labels -
   a half-translated page damages trust more than a monolingual one.
 
 ## 3. Headline patterns
 
-**Hero** — destination plus promise, under 8 words:
+**Hero** - destination plus promise, under 8 words:
 - "Kashmir, the way it should be seen."
 - "Five days in Nepal. One team. Fixed dates."
-- "ভূস্বর্গ কাশ্মীর — আমাদের সাথে"
+- "ভূস্বর্গ কাশ্মীর - আমাদের সাথে"
 
-**Section** — plain, declarative, no questions:
+**Section** - plain, declarative, no questions:
 - "Where we take you"
 - "What is included"
 - "Trips we have already run"
@@ -54,7 +54,7 @@ Avoid: rhetorical questions, "Discover", "Unlock", "Embark on a journey",
 
 - Sentences under 20 words. Paragraphs under 4 lines.
 - Lead with the fact: date, price, duration, seats.
-- Use the brand's own list format — a check glyph line per inclusion, a cross glyph
+- Use the brand's own list format - a check glyph line per inclusion, a cross glyph
   line per exclusion. It is already familiar to the audience.
 - Numbers are always concrete: "7 travellers", "13-person team", "Season 5",
   not "a small group".
@@ -62,8 +62,8 @@ Avoid: rhetorical questions, "Discover", "Unlock", "Embark on a journey",
 
 ## 5. Religious and cultural register
 
-The brand's authentic voice includes Islamic expressions — *Alhamdulillah*,
-*Insha'Allah* — in trip reports and announcements. This is genuine and should be
+The brand's authentic voice includes Islamic expressions - *Alhamdulillah*,
+*Insha'Allah* - in trip reports and announcements. This is genuine and should be
 preserved in:
 
 - Portfolio trip reports and social embeds (verbatim, never edited out)
@@ -130,7 +130,7 @@ In this order:
 5. What is not included
 6. Booking deadline
 7. Booking method and payment terms
-8. Contact block — three phone numbers plus WhatsApp
+8. Contact block - three phone numbers plus WhatsApp
 9. Gallery from previous runs of the same trip
 10. Related trips
 
@@ -151,7 +151,7 @@ Never use exclamation marks in error states. Never apologise more than once.
 
 ## 11. SEO and metadata
 
-- Title pattern: `<Trip Name> — <N Days / N Nights> from Chattogram | Trip Express BD`
+- Title pattern: `<Trip Name> - <N Days / N Nights> from Chattogram | Trip Express BD`
 - Meta description: destination, duration, price, departure month, in one sentence
   under 155 characters
 - Every image needs a descriptive `alt` naming the place and the subject, never

@@ -1,16 +1,16 @@
 /* ============================================================
-   Trip Express BD — Design Tokens
+   Trip Express BD - Design Tokens
    Source of truth: .claude/skills/trip-express-brand/
    All colour values sampled from or derived from logo-primary.jpg
    ============================================================ */
 
 :root {
   /* ---------- Brand core ---------- */
-  --te-orange:      #ED7C30;  /* Sunset Orange  — primary */
-  --te-sand:        #F2A16A;  /* Sand Orange    — logo mountain tint */
-  --te-sky:         #4394D5;  /* Sky Blue       — secondary */
-  --te-ocean:       #3171AE;  /* Deep Ocean     — anchor */
-  --te-night:       #132436;  /* Night Ocean    — darkest surface */
+  --te-orange:      #ED7C30;  /* Sunset Orange  - primary */
+  --te-sand:        #F2A16A;  /* Sand Orange    - logo mountain tint */
+  --te-sky:         #4394D5;  /* Sky Blue       - secondary */
+  --te-ocean:       #3171AE;  /* Deep Ocean     - anchor */
+  --te-night:       #132436;  /* Night Ocean    - darkest surface */
   --te-white:       #FFFFFF;  /* Horizon White */
 
   /* ---------- Orange ramp ---------- */
@@ -64,7 +64,7 @@
   --te-n-700:       #3F4A5A;
   --te-n-800:       #2B3442;
   --te-n-900:       #1B2330;
-  --te-n-950:       #111823;  /* darkest ink — #000000 is forbidden */
+  --te-n-950:       #111823;  /* darkest ink - #000000 is forbidden */
 
   /* ---------- Semantic ---------- */
   --te-success:         #1E9E6A;
@@ -251,7 +251,7 @@
   /* ---------- The Flight Angle (measured from the logo: 17deg) ---------- */
   --te-flight-angle:     17deg;
   --te-flight-angle-neg: -17deg;
-  /* tan(17deg) = 0.3057 — a cut whose rise is 30.57% of its width IS the Flight
+  /* tan(17deg) = 0.3057 - a cut whose rise is 30.57% of its width IS the Flight
      Angle. Capped so a full-width cut never swallows the art behind it. */
   --te-cut-rise: min(30.57vw, 170px);
 
@@ -301,7 +301,7 @@
 }
 
 /* ============================================================
-   Dark theme — Night Ocean, not neutral black.
+   Dark theme - Night Ocean, not neutral black.
    PARITY RULE: the two selectors below define the SAME token list.
    A token defined in one and not the other produces light panels with
    white text on them. Keep them in lockstep.
@@ -309,7 +309,7 @@
 [data-theme="dark"] {
   /* Every role token below MUST also exist in the prefers-color-scheme block.
      A partial dark block is what makes warm/cool sections stay light while text
-     goes white — see references/02-color.md, "theme parity". */
+     goes white - see references/02-color.md, "theme parity". */
   --te-bg:              var(--te-deep-950);
   --te-bg-subtle:       #17293C;
   --te-bg-warm:         #241A13;
@@ -370,7 +370,7 @@
   :root:not([data-theme="light"]) {
     /* Every role token below MUST also exist in the prefers-color-scheme block.
        A partial dark block is what makes warm/cool sections stay light while text
-       goes white — see references/02-color.md, "theme parity". */
+       goes white - see references/02-color.md, "theme parity". */
     --te-bg:              var(--te-deep-950);
     --te-bg-subtle:       #17293C;
     --te-bg-warm:         #241A13;
@@ -500,7 +500,7 @@
 }
 
 /* ============================================================
-   Responsive guards — see references/11-responsive-standards.md
+   Responsive guards - see references/11-responsive-standards.md
    ============================================================ */
 
 /* Hover affordances only where hover genuinely exists.
@@ -517,7 +517,7 @@
               box-shadow var(--te-dur-base) var(--te-ease-out);
 }
 
-/* Touch feedback — Android users rely on it, there is no hover cue. */
+/* Touch feedback - Android users rely on it, there is no hover cue. */
 @media (hover: none) {
   .te-card:active,
   .te-btn:active { transform: scale(0.98); }

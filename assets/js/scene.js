@@ -1,27 +1,27 @@
 /**
- * Trip Express BD — "The Journey": a scroll-driven departure.
+ * Trip Express BD - "The Journey": a scroll-driven departure.
  *
  * This is storytelling, not decoration. Scroll position IS flight progress, and
  * the whole world tells one story as it advances:
  *
- *   0.00  Chattogram, before dawn — stars out, ridges in silhouette
- *   0.28  Nepal, first light — the horizon turns Sand Orange
- *   0.52  Meghalaya, morning — Sky Blue opens up, cloud deck below the wing
- *   0.74  Dawki, over water — the river shelf and its sun glitter
- *   0.92  Kashmir, golden hour — Sunset Orange returns, ridges go warm
+ *   0.00  Chattogram, before dawn - stars out, ridges in silhouette
+ *   0.28  Nepal, first light - the horizon turns Sand Orange
+ *   0.52  Meghalaya, morning - Sky Blue opens up, cloud deck below the wing
+ *   0.74  Dawki, over water - the river shelf and its sun glitter
+ *   0.92  Kashmir, golden hour - Sunset Orange returns, ridges go warm
  *
  * At each waypoint a real trip photograph rises beside the route on a card, so the
  * 3D is showing the brand's actual proof, not an abstraction. Clicking a
  * destination in the DOM flies the camera to its waypoint and holds.
  *
- * Brand contract — references/10-3d-and-threejs.md:
+ * Brand contract - references/10-3d-and-threejs.md:
  *  - ColorManagement on, brand hexes sRGB, Neutral tone mapping @ 1.0,
  *    `toneMapped: false` on every flat brand-colour element
  *  - key warm / fill cool / rim white, ambient <= 0.25
  *  - metalness 0, roughness >= 0.35, flat-shaded low poly
  *  - only the six brand hues and their documented ramp steps (RAMP)
  *  - camera roll 0, FOV 35 desktop / 45 mobile, never animated
- *  - the far plane is sized from the world (depthPlan) — fog hides the edge,
+ *  - the far plane is sized from the world (depthPlan) - fog hides the edge,
  *    never the clip plane
  *  - one WebGL context, mobile gets 0 shadows and 0 post passes
  *  - progressive enhancement: the page is complete and bookable without it
@@ -53,11 +53,11 @@ export const WAYPOINTS = [
 
 /* ------------------------------------------------------------------
  * The sky: four keyframes across the flight. Every stop is a brand hue
- * or a documented ramp step — the horizon stop also drives the fog, so
+ * or a documented ramp step - the horizon stop also drives the fog, so
  * the terrain always dissolves into exactly the sky behind it.
  * ------------------------------------------------------------------ */
 const SKY_KEYS = [
-  /* first light over Chattogram — the page opens on the best hour of the flight,
+  /* first light over Chattogram - the page opens on the best hour of the flight,
      never on a dim frame */
   { t: 0.00, zenith: RAMP.deep800, high: RAMP.deep600,   horizon: HEX.sunset,   glow: HEX.sand },
   /* morning climb past Pokhara */
@@ -68,7 +68,7 @@ const SKY_KEYS = [
   { t: 1.00, zenith: RAMP.deep800, high: RAMP.orange700, horizon: HEX.sunset,   glow: HEX.sand },
 ];
 
-/* Scratch colours — skyAt runs every frame, so it must not allocate. */
+/* Scratch colours - skyAt runs every frame, so it must not allocate. */
 const SKY_SCRATCH = { zenith: new THREE.Color(), high: new THREE.Color(), horizon: new THREE.Color(), glow: new THREE.Color() };
 const SKY_TMP = new THREE.Color();
 
@@ -86,7 +86,7 @@ function skyAt(p) {
 }
 
 /* Gradient sky on a dome. A CanvasTexture keeps the brand hexes exact through
-   `toneMapped: false` + MeshBasicMaterial — the same path verifyBrandColour()
+   `toneMapped: false` + MeshBasicMaterial - the same path verifyBrandColour()
    checks. A raw ShaderMaterial would bypass three's output colour conversion. */
 function createSky(mobile) {
   const c = document.createElement('canvas');
@@ -114,11 +114,15 @@ function createSky(mobile) {
       const key = Math.round(p * 240);
       if (key === lastKey) return;
       lastKey = key;
+      /* Row 0 = dome top (zenith), row 256 = dome bottom. The horizon stop sits
+         at 62%, not 46% - any higher and its bright "glow" neighbour paints a
+         pale band across the part of the sky the terrain never covers, which
+         reads as a streak sweeping the screen while the camera travels. */
       const g = ctx.createLinearGradient(0, 0, 0, 256);
       g.addColorStop(0.00, hex(palette.zenith));
-      g.addColorStop(0.28, hex(palette.high));
-      g.addColorStop(0.46, hex(palette.horizon));
-      g.addColorStop(0.55, hex(palette.glow));
+      g.addColorStop(0.34, hex(palette.high));
+      g.addColorStop(0.62, hex(palette.horizon));
+      g.addColorStop(0.68, hex(palette.glow));
       g.addColorStop(1.00, hex(palette.horizon));
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, 2, 256);
@@ -187,7 +191,7 @@ function planeGeometry() {
   return g;
 }
 
-/* A soft radial sprite — used for the sun bloom and the wing light. Bloom as a
+/* A soft radial sprite - used for the sun bloom and the wing light. Bloom as a
    texture, not a post pass, keeps the mobile tier at zero passes. */
 function glowTexture(hex) {
   const c = document.createElement('canvas');
@@ -459,7 +463,7 @@ export function createJourneyScene({ canvas, tierName, onReady, onWaypoint, asse
     stem.position.y = -17;
     g.add(stem);
 
-    /* the proof card — only where a real photograph from that departure exists */
+    /* the proof card - only where a real photograph from that departure exists */
     const card = new THREE.Group();
     card.visible = false;
     const frame = new THREE.Mesh(frameGeo, new THREE.MeshBasicMaterial({
@@ -535,7 +539,7 @@ export function createJourneyScene({ canvas, tierName, onReady, onWaypoint, asse
   let raf = 0, visible = true, disposed = false, firstFrame = false, activeWp = -1;
 
   /* World-space chase offset: behind, above, and to the near side, so the ridge
-     line (negative Z) fills the background. It closes in as the flight advances —
+     line (negative Z) fills the background. It closes in as the flight advances -
      the journey gets more intimate, it never rolls, and FOV never moves. */
   const CAM_FAR_OFF  = mobile ? new THREE.Vector3(-40, 15, 58) : new THREE.Vector3(-46, 17, 66);
   const CAM_NEAR_OFF = mobile ? new THREE.Vector3(-28, 10, 42) : new THREE.Vector3(-32, 12, 48);
@@ -613,7 +617,7 @@ export function createJourneyScene({ canvas, tierName, onReady, onWaypoint, asse
     camOff.copy(CAM_FAR_OFF).lerp(CAM_NEAR_OFF, smooth(0.05, 0.95, p));
     offs.copy(camOff).add(tmpOff.set(pointer.x * 6, -pointer.y * 3.6, 0));
     camPos.copy(tmpPos).add(offs);
-    // First frame snaps into the chase position — a fly-in from the origin reads
+    // First frame snaps into the chase position - a fly-in from the origin reads
     // as a bug, not an entrance.
     if (!firstFrame) camera.position.copy(camPos);
     else camera.position.lerp(camPos, 1 - Math.pow(0.002, dt));

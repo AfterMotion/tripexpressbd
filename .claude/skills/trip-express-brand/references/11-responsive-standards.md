@@ -1,4 +1,4 @@
-# 11 — Responsive Standards (Mobile vs Desktop)
+# 11 - Responsive Standards (Mobile vs Desktop)
 
 Mobile and desktop are **two designed experiences**, not one layout that shrinks.
 This file gives each its own specification so that responsiveness, readability and
@@ -29,7 +29,7 @@ xl    1280–1535  desktop (baseline)     12-col, container 1200
 2xl   1536+      wide                   12-col, container 1280 max, larger gutters
 ```
 
-The **primary design break is `1024px`** — below it is "mobile behaviour", above it
+The **primary design break is `1024px`** - below it is "mobile behaviour", above it
 is "desktop behaviour". `640px` and `1280px` are refinement breaks.
 
 Rules:
@@ -37,7 +37,7 @@ Rules:
 - Never write a max-width-only media query as the primary strategy. Mobile-first
   `min-width` queries only, so the base styles are the mobile styles.
 - Breakpoints are **layout** decisions. Capability decisions use
-  `(pointer: coarse)`, `(hover: hover)`, `prefers-reduced-motion`, and the 3D tier —
+  `(pointer: coarse)`, `(hover: hover)`, `prefers-reduced-motion`, and the 3D tier -
   never viewport width.
 - A 1024px tablet in landscape is *not* a desktop. Gate hover-dependent behaviour on
   `(hover: hover) and (pointer: fine)`.
@@ -65,7 +65,7 @@ Rules:
 
 **Mobile-specific**
 
-- Minimum side margin is **20px**. Never less — content touching the screen edge
+- Minimum side margin is **20px**. Never less - content touching the screen edge
   reads as broken on Android.
 - Never nest more than two levels of horizontal padding. Padding compounds and eats
   the 360px viewport fast.
@@ -83,7 +83,7 @@ Rules:
 - Content never exceeds `1280px`; at 1920 the extra space becomes margin, not
   wider columns.
 - Body copy never exceeds `68ch` even when the container is wide.
-- Two-column editorial layouts split `7 / 5` or `8 / 4`, never `6 / 6` — an even
+- Two-column editorial layouts split `7 / 5` or `8 / 4`, never `6 / 6` - an even
   split has no hierarchy.
 
 ---
@@ -115,11 +115,11 @@ the resolved endpoints to verify against.
 3. Headline tracking loosens as size drops: `display-xl` uses `-0.03em` at 72px but
    `-0.02em` at 44px. Tight tracking on small text hurts legibility.
 4. Headlines wrap to a **maximum of 3 lines** at 360px. If a headline needs 4, the
-   copy is too long — rewrite it, do not shrink the type.
+   copy is too long - rewrite it, do not shrink the type.
 5. Line length target is **32–40 characters** for mobile body; Bangla 28–34.
 6. Never rely on `text-overflow: ellipsis` for a package title. Clamp to 2 lines with
    `-webkit-line-clamp` and make sure the full title is on the detail page.
-7. Form inputs use **16px** font on mobile — anything smaller triggers iOS
+7. Form inputs use **16px** font on mobile - anything smaller triggers iOS
    auto-zoom on focus.
 8. `overline` labels stay 12px everywhere, but on mobile reduce tracking from
    `0.12em` to `0.10em` so the label does not wrap.
@@ -128,7 +128,7 @@ the resolved endpoints to verify against.
 
 - `display-xl` is reserved for the homepage hero only. One per site.
 - Measure caps at `68ch` (Latin) / `62ch` (Bangla) regardless of container width.
-- Multi-column text is banned — it breaks on every mixed-script paragraph.
+- Multi-column text is banned - it breaks on every mixed-script paragraph.
 
 ---
 
@@ -161,7 +161,7 @@ the resolved endpoints to verify against.
   starts at the page margin and the rail scrolls edge-to-edge.
 - Avoid gestures that conflict with browser navigation: no horizontal swipe at the
   left screen edge, no pull-down gesture at scroll-top.
-- Provide a visible pressed state (`:active`) on every button — Android users rely
+- Provide a visible pressed state (`:active`) on every button - Android users rely
   on it because there is no hover feedback.
 - Scroll rails use `scroll-snap-type: x mandatory`, `overscroll-behavior-x: contain`,
   and hide the scrollbar without removing keyboard scrollability.
@@ -170,7 +170,7 @@ the resolved endpoints to verify against.
 
 ## 5. Image treatment per breakpoint
 
-Art direction is required — the same crop does not work at 21:9 and 4:5.
+Art direction is required - the same crop does not work at 21:9 and 4:5.
 
 | Placement | Mobile crop | Desktop crop | Mobile max weight |
 |---|---|---|---|
@@ -199,7 +199,7 @@ Rules:
   `object-position` per breakpoint rather than letting `cover` centre-crop heads off.
 - Text over images uses `--te-scrim`; on mobile the scrim height increases to **60%**
   because the text block is proportionally larger.
-- Background-attachment fixed / parallax backgrounds are **banned on mobile** —
+- Background-attachment fixed / parallax backgrounds are **banned on mobile** -
   they stutter on Android and break on iOS.
 
 ---
@@ -250,7 +250,7 @@ This is the highest-risk area. Specify it explicitly, per screen.
   must meet contrast at every camera position.
 - Wheel events over the canvas still scroll the page unless the user is inside an
   explicit orbit viewer.
-- At `2xl`, do not scale the scene up indefinitely — cap camera distance so the
+- At `2xl`, do not scale the scene up indefinitely - cap camera distance so the
   composition stays as designed at 1440.
 
 ---
@@ -372,3 +372,76 @@ Enforcement:
 - [ ] CLS < 0.05 on both mobile and desktop
 - [ ] Total initial mobile page weight < 700KB
 - [ ] Tested on a real mid-range Android device, not only in a simulator
+
+---
+
+# Scroll-driven 3D on a phone
+
+The first build gave mobile a 52dvh band of 3D at the very top of the page that
+scrolled away after one swipe, and never came back. Half the screen, once, for
+nothing.
+
+**The stage is sticky under the header and the content scrolls over it.**
+
+```css
+.journey__stage {          /* mobile */
+  position: sticky; top: var(--te-hdr-h);
+  height: 46dvh;           /* never above 55dvh */
+  max-height: var(--te-3d-canvas-max-h-mobile);
+}
+.journey__flow { position: relative; z-index: 2; }   /* the curtain */
+```
+
+The window into the journey stays open while the visitor reads the hero, then the
+copy rises over it like a curtain. The canvas still keeps `touch-action: pan-y`,
+so vertical scroll always wins.
+
+When a control elsewhere on the page drives the scene ("pick a destination and the
+flight jumps to it"), **scroll the stage back into view first** - on a phone the
+stage may be entirely behind the content by the time the visitor reaches the
+control, and a promise that produces no visible result is worse than no promise.
+
+On desktop the same section keeps the scene visible behind the destinations by
+using a **scrim**, not an opaque fill:
+
+```css
+background: linear-gradient(180deg,
+  rgba(13,26,40,0) 0%, rgba(13,26,40,.74) 14%, rgba(13,26,40,.90) 42%, rgba(13,26,40,.96) 100%);
+```
+
+---
+
+# The header over a dark section
+
+The journey block is Night Ocean in **both** themes. In light theme a white header
+bar sitting on it looked like two pages stitched together.
+
+Add `.is-over` to the header while the dark block is still under it, and let the
+header wear that block's material: `rgba(13,26,40,.42)` unstuck, `.84` stuck,
+white type, orange accents, translucent icon buttons, blue focus rings.
+
+```js
+hdr.classList.toggle('is-over', journey.getBoundingClientRect().bottom > hdr.offsetHeight + 8)
+```
+
+---
+
+# Mobile wayfinding
+
+See `06-components.md` → **The journey rail**. The short version: a hamburger is
+not wayfinding. Any page with more than four sections carries the rail.
+
+Header (64px) + rail (46px) = 110px of chrome. `scroll-padding-top` must account
+for both, and so must any JS that computes a scroll offset - measure the elements,
+because `--te-chrome-h` holds a `calc()` and comes back unresolved from
+`getComputedStyle`.
+
+---
+
+# Dev-server caching will lie to you
+
+Not a brand rule, but it cost real time on this build. `python -m http.server`
+sends no `Cache-Control`, so Chrome applies **heuristic freshness** and serves
+CSS/JS from cache without even revalidating - a hard reload fixes the top document
+and not the sub-resources, and edits appear to have no effect. Serve local
+previews with `Cache-Control: no-store` while iterating.

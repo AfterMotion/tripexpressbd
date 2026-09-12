@@ -1,4 +1,4 @@
-/* Trip Express BD — page behaviour.
+/* Trip Express BD - page behaviour.
    DOM first, always. The 3D journey is imported lazily and only when the device
    earns it; everything below works with WebGL switched off. */
 (function () {
@@ -37,7 +37,7 @@
   });
 
   /* ================= smooth scroll =================
-     One eased curve for every in-page jump — nav, rail, drawer, hero buttons and
+     One eased curve for every in-page jump - nav, rail, drawer, hero buttons and
      the skip link. Native `scroll-behavior: smooth` is off in CSS: browsers give
      it different durations and it cannot be interrupted, so a visitor who starts
      scrolling mid-animation gets dragged back. This can be. */
@@ -72,7 +72,7 @@
       window.removeEventListener('wheel', onWheel);
       window.removeEventListener('touchstart', onWheel);
     };
-    // A visitor who starts scrolling owns the scroll — the animation stands down.
+    // A visitor who starts scrolling owns the scroll - the animation stands down.
     window.addEventListener('wheel', onWheel, { passive: true });
     window.addEventListener('touchstart', onWheel, { passive: true });
 
@@ -167,6 +167,19 @@
 
   var fab = $('#fab');
   var fabPulsed = false;
+  var fabBlocked = false;
+
+  /* The floating action stands down over the enquiry form and the footer: the
+     visitor is already at the conversion point, and a fixed pill sitting on top of
+     the form's own copy is just an obstacle. */
+  if ('IntersectionObserver' in window) {
+    var fabIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.target.id === 'contact') fabBlocked = e.isIntersecting; });
+      fab.setAttribute('data-hide', fabBlocked ? 'true' : 'false');
+    }, { rootMargin: '-10% 0px -10% 0px' });
+    var contactEl = $('#contact');
+    if (contactEl) fabIO.observe(contactEl);
+  }
 
   /* ================= drawer ================= */
   var drawer = $('#drawer');
@@ -459,7 +472,7 @@
 
   /* Counter-drift: odd columns travel with the scroll, even columns against it,
      so the wall of photographs breathes instead of sliding as one slab. Capped at
-     20px of travel, desktop only — the brand bans parallax on touch. */
+     20px of travel, desktop only - the brand bans parallax on touch. */
   var driftOn = fine && !reduceMotion && desktop.matches;
   var galleryVisible = false;
   if ('IntersectionObserver' in window) {
@@ -584,7 +597,7 @@
   });
 
   /* ================================================================
-     THE JOURNEY — scroll drives the flight; the flight drives the DOM
+     THE JOURNEY - scroll drives the flight; the flight drives the DOM
      ================================================================ */
   var journey = $('.journey');
   var stage = $('#stage');

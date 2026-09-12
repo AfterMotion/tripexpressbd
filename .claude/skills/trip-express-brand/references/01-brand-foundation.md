@@ -1,4 +1,4 @@
-# 01 — Brand Foundation
+# 01 - Brand Foundation
 
 ## 1. Who they are
 
@@ -12,7 +12,7 @@ photographs that are theirs.**
 
 ## 2. Positioning statement
 
-> For Bangladeshi travellers — especially from Chattogram — who want to see Kashmir,
+> For Bangladeshi travellers - especially from Chattogram - who want to see Kashmir,
 > Meghalaya, Nepal or the Maldives without assembling the trip themselves, Trip
 > Express BD runs guided group tours with fixed dates, a published itinerary, a
 > published price, and a phone number that a human answers.
@@ -32,11 +32,11 @@ influencer gloss.
 
 ## 4. Audience
 
-1. **Primary** — Bangladeshi adults 22–45, Chattogram and greater Chattogram, mixed
+1. **Primary** - Bangladeshi adults 22–45, Chattogram and greater Chattogram, mixed
    Bangla/English readers, mobile-first, WhatsApp-native, price-aware, travelling in
    friend groups or with family.
-2. **Secondary** — Dhaka-based travellers joining flagship trips.
-3. **Tertiary** — Corporate / institutional group bookings.
+2. **Secondary** - Dhaka-based travellers joining flagship trips.
+3. **Tertiary** - Corporate / institutional group bookings.
 
 **Design consequences:** mobile-first is not a nicety, it is the default. WhatsApp is
 the primary CTA, not a form. Prices must be visible without a click. Bangla must
@@ -44,12 +44,12 @@ render correctly at every size.
 
 ## 5. Service pillars (site information architecture)
 
-1. **Signature International Tours** — Kashmir, Meghalaya/Shillong, Sikkim,
+1. **Signature International Tours** - Kashmir, Meghalaya/Shillong, Sikkim,
    Darjeeling, Nepal, Kolkata, Maldives, Sri Lanka
-2. **Domestic Tours** — Bangladesh destinations
-3. **Custom / Corporate Group Trips** — build-your-own team departures
-4. **Air Ticketing & Visa Assistance** — supporting services
-5. **Portfolio / Trip Archive** — completed tours with photography (the trust engine)
+2. **Domestic Tours** - Bangladesh destinations
+3. **Custom / Corporate Group Trips** - build-your-own team departures
+4. **Air Ticketing & Visa Assistance** - supporting services
+5. **Portfolio / Trip Archive** - completed tours with photography (the trust engine)
 
 ## 6. Proof assets the brand already owns
 
@@ -60,13 +60,13 @@ render correctly at every size.
 - Repeat-season trips ("Kashmir by road, Season 5", "4th Kolkata city trip")
 
 Use these on the site as: follower count, completed-trip count, seasons-run counters,
-and a dated trip archive. **Numbers must be real** — never invent a statistic.
+and a dated trip archive. **Numbers must be real** - never invent a statistic.
 
 ## 7. Reference package shape (use for package-card structure)
 
 A real published package, for structure only:
 
-- **Title:** Explore Nepal — Kathmandu · Nagarkot · Pokhara
+- **Title:** Explore Nepal - Kathmandu · Nagarkot · Pokhara
 - **Duration:** 5 Days / 4 Nights
 - **Dates:** fixed departure and return, with flight times
 - **Price:** ৳58,500 per person
@@ -83,9 +83,9 @@ these fields. Design for them.
 
 ## 8. Naming and capitalisation
 
-- **Trip Express BD** — three words, "BD" always uppercase.
+- **Trip Express BD** - three words, "BD" always uppercase.
 - Never: TripExpress, Trip Express Bangladesh, TEBD, tripexpress.
 - Lowercase `tripexpressbd` is acceptable only in URLs, handles and file names.
 - Trip names: Title Case in English (`Explore Nepal`), natural Bangla otherwise
   (`ভূস্বর্গ কাশ্মীর ভ্রমণ`).
-- Season naming: `Kashmir by Road — Season 5`.
+- Season naming: `Kashmir by Road - Season 5`.

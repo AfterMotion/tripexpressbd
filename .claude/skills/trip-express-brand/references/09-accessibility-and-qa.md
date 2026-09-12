@@ -1,10 +1,10 @@
-# 09 — Accessibility & QA
+# 09 - Accessibility & QA
 
 Target: **WCAG 2.2 Level AA**.
 
 ---
 
-## 1. Contrast — the pre-computed safe list
+## 1. Contrast - the pre-computed safe list
 
 **Approved text pairings (light theme)**
 
@@ -12,8 +12,8 @@ Target: **WCAG 2.2 Level AA**.
 |---|---|---|---|
 | `#1B2330` n-900 | `#FFFFFF` | 15.79 | all |
 | `#3F4A5A` n-700 | `#FFFFFF` | 8.98 | all |
-| `#556274` n-600 | `#FFFFFF` | 6.20 | all — **this is the muted-text token** |
-| `#6F7D90` n-500 | `#FFFFFF` | 4.19 | large only (≥24px, or ≥19px bold) — never for captions, routes or prices |
+| `#556274` n-600 | `#FFFFFF` | 6.20 | all - **this is the muted-text token** |
+| `#6F7D90` n-500 | `#FFFFFF` | 4.19 | large only (≥24px, or ≥19px bold) - never for captions, routes or prices |
 | `#A45826` orange-700 | `#FFFFFF` | 5.25 | all |
 | `#316896` blue-700 | `#FFFFFF` | 5.91 | all |
 | `#25517B` deep-700 | `#FFFFFF` | 8.26 | all |
@@ -46,7 +46,7 @@ Target: **WCAG 2.2 Level AA**.
 | `#A45826` orange-700 | `#132436` | 3.51 | Dark-theme text |
 
 Non-text contrast (borders, icons, focus rings, chart strokes) needs **3:1**.
-`#C6CFDA` n-300 on white is 1.57 — acceptable as a decorative hairline, **not** as
+`#C6CFDA` n-300 on white is 1.57 - acceptable as a decorative hairline, **not** as
 the only indicator of an input boundary. Input borders use `#C6CFDA` plus a visible
 label; a focused or errored state raises the border to a 3:1 colour.
 
@@ -59,7 +59,7 @@ label; a focused or errored state raises the border to a 3:1 colour.
 - On `deep-950` surfaces: `outline-color: #ACD0ED`.
 - On `orange-500` surfaces: `outline-color: #111823`.
 - Never `outline: none` without an equivalent replacement.
-- Focus must not be clipped — parents of focusable items avoid `overflow: hidden`
+- Focus must not be clipped - parents of focusable items avoid `overflow: hidden`
   on the axis where the ring extends, or use `outline-offset: -3px` inset rings.
 - A visible skip link ("Skip to content") is the first focusable element,
   positioned off-screen until focused, then pinned top-left with an `orange-500`
@@ -123,7 +123,7 @@ element faster than 3Hz.
 - Body text never below 16px (Bangla never below 17px).
 - No horizontal scroll at 320px width.
 - `user-scalable=no` is forbidden. Pinch-zoom stays available.
-- Sticky elements must not consume more than 20% of viewport height on mobile —
+- Sticky elements must not consume more than 20% of viewport height on mobile -
   the header at 64px plus the WhatsApp disc is the budget; nothing else sticks.
 - Form inputs use the correct `inputmode` and `autocomplete` so Android keyboards
   behave.
@@ -193,3 +193,34 @@ Rules:
 - [ ] Every image has a descriptive `alt`
 - [ ] All three phone numbers plus WhatsApp reachable from every page
 - [ ] No invented statistics
+
+---
+
+## Form controls
+
+A form is where the brand asks for something. It gets the strictest reading rules
+on the site.
+
+| Element | Rule |
+|---|---|
+| Label | **16px / 600 / `--te-text-heading`.** Not 14px, not muted. A label is content, not chrome. |
+| Input text | **17px minimum.** Under 16px, iOS Safari zooms the viewport on focus and the visitor loses their place. |
+| Input surface | `--te-field-bg`, never the page background. A white input on a white card is a border, and testers did not read it as a field at all. |
+| Placeholder | `--te-field-ph` at **full strength**. `opacity: .75` on muted ink measured under 4.5:1 in both themes. A placeholder carries real instructions. |
+| Hint | 14px `--te-text-muted`, wired with `aria-describedby`. |
+| Error | 14px / 600 `--te-error-text`, with an icon, and `aria-invalid` on the control. |
+| Select arrow | Ship **two** data-URI chevrons, one per theme. A single hardcoded grey is invisible in one of them. |
+| Focus | `3.5px` orange ring plus a border change - ring alone is not enough on a tinted field. |
+
+## Contrast checks that actually caught something
+
+Run these three before shipping, in **both** themes:
+
+1. **Every light-background section, in dark theme.** This is where the theme
+   parity bug shows up as invisible headings.
+2. **Every muted/secondary text colour on its real background** - not on white.
+   `--te-text-muted` on `--te-surface-2` is a different number from on `--te-bg`.
+3. **Text over photography and over 3D.** A scrim has to hold 4.5:1 against the
+   *brightest* frame the photograph or the scene can produce, not the frame that
+   happens to be on screen. The hero scrim is opaque to 34% of the width for
+   exactly this reason.

@@ -1,4 +1,4 @@
-# 06 — Component Specifications
+# 06 - Component Specifications
 
 All values reference tokens from `../assets/tokens.css`.
 
@@ -8,13 +8,13 @@ All values reference tokens from `../assets/tokens.css`.
 
 | Variant | Background | Ink | Border | Hover | Use |
 |---|---|---|---|---|---|
-| **Primary** | `orange-500` `#ED7C30` | `n-950` `#111823` | none | bg `orange-600`, `--te-shadow-warm` | Book / Enquire — one per view |
+| **Primary** | `orange-500` `#ED7C30` | `n-950` `#111823` | none | bg `orange-600`, `--te-shadow-warm` | Book / Enquire - one per view |
 | **Secondary** | `deep-700` `#25517B` | `#FFFFFF` | none | bg `deep-800` | View itinerary, See packages |
 | **Outline** | transparent | `deep-700` | `1.5px deep-300` | bg `deep-50`, border `deep-500` | Tertiary actions |
 | **Ghost** | transparent | `n-700` | none | bg `n-100` | Toolbar, card overflow |
 | **WhatsApp** | `#25D366` | `#0B3D22` | none | bg `#1FBE5A` | Direct chat CTA |
 | **Danger** | `#B02E2E` | `#FFFFFF` | none | `#8F2424` | Cancel booking |
-| **On-dark primary** | `orange-500` | `n-950` | none | `orange-400` | Same everywhere — do not invert |
+| **On-dark primary** | `orange-500` | `n-950` | none | `orange-400` | Same everywhere - do not invert |
 
 **Never** `#FFFFFF` ink on `orange-500`. Ratio 2.79:1.
 
@@ -49,7 +49,7 @@ on hover.
 
 ---
 
-## 2. Package card — the most important component
+## 2. Package card - the most important component
 
 ```
 +--------------------------------------+
@@ -94,7 +94,7 @@ on hover.
 | COMPLETED | `rgba(255,255,255,0.92)` | `#3F4A5A` |
 
 Featured and Seats Filling badges carry `transform: skewX(-6deg)`; the label inside
-counter-skews `+6deg`. A full 17° skew is unreadable at 12px — 6° reads as the same
+counter-skews `+6deg`. A full 17° skew is unreadable at 12px - 6° reads as the same
 family.
 
 **Glass chip** (duration, over photo):
@@ -113,7 +113,7 @@ font-weight: 600;
 
 ## 3. Destination tile (circular)
 
-The disc is the brand shape — use it for destination entry points.
+The disc is the brand shape - use it for destination entry points.
 
 - `--te-r-disc`, size 96px mobile / 128px desktop
 - Photo inside, plus a `--te-scrim` bottom overlay
@@ -142,7 +142,7 @@ The disc is the brand shape — use it for destination entry points.
 - Right: WhatsApp icon button plus hamburger
 - Drawer slides from the right, 88% width, `--te-dur-base`, `--te-ease-out`; backdrop `rgba(19,36,54,0.55)`
 
-**Floating WhatsApp button** — present on every page
+**Floating WhatsApp button** - present on every page
 
 - 56px disc, bottom-right, 20px inset, `z-index: var(--te-z-whatsapp)`
 - `#25D366` background, white glyph, `--te-shadow-lg`
@@ -191,7 +191,7 @@ Message. Anything longer loses this audience.
 
 ## 7. Itinerary accordion
 
-Mirrors the brand's published itinerary format — keep it recognisable.
+Mirrors the brand's published itinerary format - keep it recognisable.
 
 - Each day is a row: a `Day 01` chip (`orange-100` background, `orange-800` ink, `--te-r-sm`) plus a route line (`h4`) plus a chevron
 - Expanded body: bulleted activities with a 6px `orange-400` disc marker, `body-sm`, line-height 1.6 (Bangla 1.85)
@@ -248,9 +248,130 @@ Dark band (`--te-grad-night`), 4 columns desktop / 2 mobile.
 
 ## 12. Icons
 
-- Set: **Lucide** — 2px stroke, 24px grid, round caps, geometric. It matches the logo's flat-vector construction.
+- Set: **Lucide** - 2px stroke, 24px grid, round caps, geometric. It matches the logo's flat-vector construction.
 - Sizes: 16 / 18 / 20 / 24 / 32. Stroke stays 2px; do not scale stroke.
 - Colour: inherit `currentColor`. Accent icons `orange-500`, structural icons `n-500`.
 - Icon chips: `--te-r-disc`, 40px, background `orange-50` with an `orange-600` glyph, or `blue-50` with a `deep-600` glyph.
 - Travel vocabulary maps to the logo's own objects wherever possible: `plane` (air), `bus` (overland), `sailboat` (water), `mountain` (hill stations), `palmtree` (beach), `sun` (season).
 - Never mix icon families. Never use filled and stroked variants in one row.
+
+---
+
+# Iconography - the system, not the drawings
+
+Geometry is Lucide on a 24×24 grid, round caps and joins. What follows is what
+makes a set of Lucide paths look like *one* set instead of thirty imports.
+
+## Stroke width belongs to the page, not the sprite
+
+`stroke-width` is an **inherited** SVG property. Set it once per size on the host
+element and let it inherit through the `<use>` shadow tree:
+
+```css
+.ic      { width: 20px; height: 20px; stroke-width: 1.85; }
+.ic--sm  { width: 16px; height: 16px; stroke-width: 2.15; }
+.ic--md  { width: 22px; height: 22px; stroke-width: 1.75; }
+.ic--lg  { width: 26px; height: 26px; stroke-width: 1.55; }
+.ic--xl  { width: 32px; height: 32px; stroke-width: 1.35; }
+```
+
+**Never write `stroke-width` into the sprite.** One number on a 24-unit grid does
+not render at one weight: a 2px stroke drawn into a 16px box is a third heavier
+than the same stroke drawn into a 24px box. That unevenness is what "the icons
+don't feel premium" actually is. Target a **rendered** stroke of ~1.5px at every
+size and back the numbers out from there.
+
+## Two ways an external sprite renders nothing at all
+
+Both of these produce **no icons, no error, no console output**:
+
+1. **Styling symbols from a `<style>` block.** A `<style>` inside `<defs>` is not
+   cloned into the `<use>` shadow tree of an *external* sprite. Presentation
+   attributes (`fill`, `stroke`, `stroke-linecap`, `stroke-linejoin`) go on each
+   `<symbol>` element, where they *are* cloned. Only `stroke-width` is left off,
+   to inherit.
+2. **Two consecutive hyphens in an XML comment.** Documenting `.ic--sm` in the
+   sprite's own header comment is an XML parse error. Write class names without
+   their leading dashes in sprite comments.
+
+## Choosing the glyph
+
+- Line icons for everything the brand does. Solid fills only for **other
+  companies' marks** (WhatsApp, Facebook) - those are never redrawn as line icons.
+- One icon per idea across the whole site: `i-badge-check` means "what is
+  included" everywhere, `i-camera` means "portfolio" everywhere. An icon that
+  means two things means nothing.
+- A destination with no photograph does **not** get a generic clip-art mountain on
+  a flat blue circle. It gets the brand's own **night disc** with the Flight Angle
+  across the upper third and the icon in Sand Orange. (`.dest__disc--art`)
+
+Minimum set: plane, bus, mountain, ship, palm, compass, route, globe, users,
+calendar, clock, pin, bed, utensils, wallet, shield, badge-check, tag, star,
+phone, mail, message, check, x, info, chevrons, arrows, menu, quote, image,
+camera, layers, sun, moon, whatsapp, facebook.
+
+---
+
+# WhatsApp, at three sizes
+
+WhatsApp is the brand's real conversion path, which is exactly why it must not
+look bolted on. Saturated `#25D366` appears **only inside the glyph's own disc** -
+never as a full-width bar, never as the page's second primary button.
+
+| Placement | Treatment |
+|---|---|
+| **Package card** | A pill: `--te-wa-soft` background, `--te-wa-ink-soft` ink, `--te-wa-border`, glyph + the words "Ask us". Hover fills with `--te-whatsapp`. |
+| **Floating action** | A **brand surface** card - Night Ocean, white type, `--te-shadow-lg`, 1px light border - carrying a 42px green disc and a two-line label ("Ask about a tour" / Bangla). Expands on hover, and once, briefly, when it first arrives. |
+| **Contact block** | `btn--secondary` (Deep Ocean), glyph + full sentence. |
+
+An unlabelled green circle in the corner tested as "an advert", not "the way to
+ask". Below 420px the floating action may collapse to the disc; above it, it
+carries its label.
+
+---
+
+# The journey rail (mobile wayfinding)
+
+A sticky row of section chips under the header, `--te-rail-h` tall, horizontally
+scrollable, current section filled Sunset Orange with `--te-action-ink`.
+
+- Appears once the visitor is past 60% of the first viewport.
+- Hides on an active downward scroll (`y > lastY + 6`), returns on anything else.
+  Scrolling **up** is the gesture that means "I want to navigate".
+- The active chip is scrolled into the centre of the rail whenever it changes.
+- Hidden entirely at ≥1040px, where the nav bar does this job.
+- One scroll-spy paints the nav, the rail **and** the drawer from the same state.
+
+---
+
+# Drawer
+
+- `min(88%, 388px)`, rounded on the leading edge, with a 3px Sunset seam down it.
+- Opens on `--te-ease-lift` over `--te-dur-slow`. A linear slide reads as a menu
+  being dragged; a slight overshoot reads as a panel being thrown open.
+- Items stagger in at `90ms + i × 40ms`; the footer block follows at 320ms.
+- The current section is marked in the drawer too (`.is-here`), with the icon chip
+  filled in the sunset gradient.
+- **Drag right to close**, with a 30%-of-width threshold. Decide axis on the first
+  move: if the finger is travelling more vertically than horizontally, let the
+  panel scroll instead. A drawer dismissable only by a 44px X in the far corner is
+  a desktop drawer wearing a phone's clothes.
+- Focus is trapped, Escape closes, focus returns to the trigger.
+
+---
+
+# Gallery - the proof wall
+
+- **Column masonry, not pagination.** Photographs append in batches of 6 from an
+  `IntersectionObserver` sentinel 600px ahead. 1 / 2 / 3 / 4 columns at
+  0 / 560 / 1040 / 1280.
+- **Monochrome by default.** `filter: grayscale(1) contrast(1.04)`; colour returns
+  on hover. There is no hover on a phone, so the frame nearest the middle of the
+  viewport comes to colour instead (`rootMargin: '-38% 0px -38% 0px'`).
+- **Counter-drift.** Odd columns travel with the scroll, even columns against it,
+  capped at **20px** and desktop-only - parallax stays banned on touch. The wall
+  breathes instead of sliding as one slab.
+- Entrance offsets alternate ±26px by column, so the grid assembles rather than
+  fading in flat.
+- Each frame carries its trip name in a caption that appears with the colour.
+- Every frame opens a lightbox: arrows, Escape, swipe, focus restored on close.

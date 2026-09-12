@@ -1,4 +1,4 @@
-# 05 — Layout, Space, Shape & Motion
+# 05 - Layout, Space, Shape & Motion
 
 ## 1. Grid
 
@@ -7,16 +7,16 @@
 | `<640px` | mobile | 4 | 16px | 20px | fluid |
 | `640–1023` | tablet | 8 | 20px | 32px | fluid |
 | `1024–1279` | laptop | 12 | 24px | 40px | 1120px |
-| `≥1280` | desktop | 12 | 24px | 48px | **1200px** |
+| `≥1280` | desktop | 12 | 24px | 48px | **1240px** |
 | `≥1536` | wide | 12 | 32px | 64px | 1280px max |
 
 ```css
---te-container: 1200px;
+--te-container: 1240px;
 --te-container-narrow: 800px;   /* article / itinerary body */
 --te-container-wide: 1440px;    /* gallery, full-bleed media */
 ```
 
-Mobile-first is mandatory — the audience is overwhelmingly on Android phones.
+Mobile-first is mandatory - the audience is overwhelmingly on Android phones.
 Design the 360px view first, then scale up.
 
 ## 2. Spacing scale (4px base)
@@ -73,7 +73,7 @@ padding holds a 12px image, not another 16px.
 - Dark-section hairline: `1px solid #24405C`
 - Never use a border thicker than 2px except the Flight Rule (below).
 
-**Flight Rule** — the brand's decorative divider:
+**Flight Rule** - the brand's decorative divider:
 ```css
 .te-flight-rule {
   height: 3px;
@@ -102,14 +102,14 @@ read at full-bleed widths use a **rise of 0.30 × width**, capped at 160px:
 ```css
 --te-cut-rise: min(0.30 * 100vw, 160px);
 ```
-Cap it — an uncapped 17° cut eats the viewport on wide screens.
+Cap it - an uncapped 17° cut eats the viewport on wide screens.
 
 **Where 17° appears**
 - Hero bottom edge
 - The transition between a warm band and a cool band
 - The Flight Rule under section overlines
 - Badge / ribbon skew on "Featured" and "Seats Filling" tags
-- The direction of card hover lift: `translate(2px, -6px)` — up **and** right
+- The direction of card hover lift: `translate(2px, -6px)` - up **and** right
 - Underline swash beneath a highlighted word in a headline
 
 **Where it must not appear**: inside tables, inside form fields, on the nav bar,
@@ -128,7 +128,7 @@ on anything the user must read precisely.
 | warm | `--te-shadow-warm` | Primary CTA hover only |
 
 Dark theme: reduce all shadow alphas by half and add a 1px `#24405C` top border
-instead — shadows read poorly on `deep-950`.
+instead - shadows read poorly on `deep-950`.
 
 ## 7. Z-index scale
 
@@ -156,7 +156,7 @@ instead — shadows read poorly on `deep-950`.
 
 ### Easing
 ```
---te-ease-out:   cubic-bezier(0.16, 1, 0.30, 1);    /* default — arrivals */
+--te-ease-out:   cubic-bezier(0.16, 1, 0.30, 1);    /* default - arrivals */
 --te-ease-in:    cubic-bezier(0.7, 0, 0.84, 0);     /* departures, exits */
 --te-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);    /* moves between two states */
 --te-ease-lift:  cubic-bezier(0.34, 1.26, 0.64, 1); /* gentle overshoot, cards only */
@@ -164,7 +164,7 @@ instead — shadows read poorly on `deep-950`.
 
 ### Signature motions
 
-**Depart** — anything entering the viewport travels along the Flight Angle:
+**Depart** - anything entering the viewport travels along the Flight Angle:
 ```css
 @keyframes te-depart {
   from { opacity: 0; transform: translate(-14px, 10px); }
@@ -173,17 +173,17 @@ instead — shadows read poorly on `deep-950`.
 /* 260ms var(--te-ease-out), stagger children by 60ms, cap the stagger at 6 items */
 ```
 
-**Card lift** — up and slightly right, mirroring the streak:
+**Card lift** - up and slightly right, mirroring the streak:
 ```css
 .te-card:hover { transform: translate(2px, -6px); box-shadow: var(--te-shadow-md); }
 transition: transform var(--te-dur-base) var(--te-ease-lift),
             box-shadow var(--te-dur-base) var(--te-ease-out);
 ```
 
-**Image reveal** — scale 1.06 → 1.0 over `--te-dur-scenic`, `--te-ease-out`.
+**Image reveal** - scale 1.06 → 1.0 over `--te-dur-scenic`, `--te-ease-out`.
 Photography settles, it does not pop.
 
-**Primary CTA hover** — background `orange-500` → `orange-600`,
+**Primary CTA hover** - background `orange-500` → `orange-600`,
 `--te-shadow-warm` fades in over `--te-dur-fast`. No scale change on buttons.
 
 ### Rules
@@ -193,4 +193,51 @@ Photography settles, it does not pop.
 - Sticky header: compresses from 84px to 64px over `--te-dur-base`, gains
   `--te-shadow-sm` and a `rgba(255,255,255,0.92)` + `backdrop-filter: blur(12px)`
   background.
-- Honour `prefers-reduced-motion` — see `09-accessibility-and-qa.md`.
+- Honour `prefers-reduced-motion` - see `09-accessibility-and-qa.md`.
+
+---
+
+## The 17° cut, stated as arithmetic
+
+`tan(17°) = 0.3057`. **A cut is 17° only when its rise is 30.57% of its run.**
+
+```css
+--te-cut-rise: min(30.57vw, 170px);
+.seam { height: var(--te-cut-rise); clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
+```
+
+The failure mode is picking a height that "looks like a diagonal": a full-width
+divider at `height: 36px` on a 412px phone is a **5°** cut carrying the brand's
+name. Measure it. If a true 17° rise would swallow the artwork behind it, shorten
+the **run** - a corner wedge over 330px - rather than shallowing the angle. The
+angle is the brand; the size of the shape is negotiable.
+
+Applies to: section seams, the footer cut, the OG card, hero clip-paths and the
+Flight Rule under every section header.
+
+---
+
+## Anchor scrolling is one curve, written once
+
+Turn native smooth scrolling **off** and animate anchor jumps in JS:
+
+```css
+html { scroll-behavior: auto; scroll-padding-top: calc(var(--te-hdr-h) + var(--te-rail-h) + 12px); }
+```
+
+Reasons, in order of how much they matter:
+
+1. **It can be interrupted.** Native smooth scroll cannot. A visitor who starts
+   scrolling mid-animation gets dragged back to where the browser was going - the
+   single worst feeling on a long page. Listen for `wheel` and `touchstart` and
+   stand down immediately.
+2. **It is the same everywhere.** Browsers pick their own duration for native
+   smooth scroll; Safari's and Chrome's do not match.
+3. **Duration can follow distance.** `clamp(320 + distance * 0.32, 380, 980)`ms -
+   a short hop must not take as long as a full-page flight, and nothing takes
+   longer than a second.
+
+Curve: `easeInOutQuint`. Offset: measure the header (and the rail, if it is
+showing) from the DOM. Do **not** read `--te-chrome-h` with
+`getComputedStyle().getPropertyValue()` - a custom property holding a `calc()`
+comes back unresolved, and `parseFloat` gives `NaN`.

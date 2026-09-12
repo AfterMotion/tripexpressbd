@@ -1,5 +1,5 @@
 /**
- * Trip Express BD — Three.js brand constants and rig factories.
+ * Trip Express BD - Three.js brand constants and rig factories.
  *
  * Import this instead of hardcoding colours, lights, camera or budgets.
  * Rules enforced here are documented in references/10-3d-and-threejs.md.
@@ -12,7 +12,7 @@
 import * as THREE from 'three';
 
 /* ------------------------------------------------------------------
- * 1. Colour management — must run before any Color is constructed
+ * 1. Colour management - must run before any Color is constructed
  * ------------------------------------------------------------------ */
 
 THREE.ColorManagement.enabled = true;
@@ -43,7 +43,7 @@ export const COLOR = {
 /**
  * Tints and shades of the six hues. A scene needs more than six values to build
  * aerial perspective (distant ridges must wash out, near ridges must go to
- * silhouette) — but every value here is a step on a documented brand ramp, so the
+ * silhouette) - but every value here is a step on a documented brand ramp, so the
  * "no seventh hue" rule still holds. Do not add a value that is not in
  * references/02-color.md.
  */
@@ -120,7 +120,7 @@ export const TIERS = {
 };
 
 /**
- * Pick a tier. Never upgrade mid-session — only downgrade.
+ * Pick a tier. Never upgrade mid-session - only downgrade.
  * Honours the user's "Reduce 3D" preference and saveData above everything else.
  */
 export function detectTier() {
@@ -128,7 +128,7 @@ export function detectTier() {
 
   try {
     if (localStorage.getItem('te-reduce-3d') === '1') return 'off';
-  } catch { /* storage blocked — ignore */ }
+  } catch { /* storage blocked - ignore */ }
 
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return 'off';
 
@@ -150,7 +150,7 @@ export function detectTier() {
 }
 
 /* ------------------------------------------------------------------
- * 4. Renderer — colour pipeline is non-negotiable
+ * 4. Renderer - colour pipeline is non-negotiable
  * ------------------------------------------------------------------ */
 
 export function createRenderer(canvas, tierName = 'standard') {
@@ -165,7 +165,7 @@ export function createRenderer(canvas, tierName = 'standard') {
   });
 
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  // Neutral preserves brand hue. ACESFilmic shifts #ED7C30 toward cream — banned.
+  // Neutral preserves brand hue. ACESFilmic shifts #ED7C30 toward cream - banned.
   renderer.toneMapping = THREE.NeutralToneMapping;
   renderer.toneMappingExposure = 1.0;
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, tier.dprCap));
@@ -183,13 +183,13 @@ export function createRenderer(canvas, tierName = 'standard') {
 }
 
 /* ------------------------------------------------------------------
- * 5. The brand light rig — key warm, fill cool, rim white
+ * 5. The brand light rig - key warm, fill cool, rim white
  * ------------------------------------------------------------------ */
 
 export function createLightRig(scene, tierName = 'standard') {
   const tier = TIERS[tierName];
 
-  // KEY — the sun, upper-right, climbing at the Flight Angle.
+  // KEY - the sun, upper-right, climbing at the Flight Angle.
   const key = new THREE.DirectionalLight(COLOR.sand.clone(), 2.4);
   key.position.set(6, 4.2, 3);
   if (tier.shadows) {
@@ -200,15 +200,15 @@ export function createLightRig(scene, tierName = 'standard') {
   }
   scene.add(key);
 
-  // FILL — the sea. Cool hemisphere, never inverted.
+  // FILL - the sea. Cool hemisphere, never inverted.
   const fill = new THREE.HemisphereLight(COLOR.sky.clone(), COLOR.ocean.clone(), 0.85);
   scene.add(fill);
 
-  // AMBIENT — lift only. Never above 0.25.
+  // AMBIENT - lift only. Never above 0.25.
   const ambient = new THREE.AmbientLight(COLOR.sky.clone(), 0.18);
   scene.add(ambient);
 
-  // RIM — the white seam. Desktop tiers only (mobile budget is 2 + ambient).
+  // RIM - the white seam. Desktop tiers only (mobile budget is 2 + ambient).
   let rim = null;
   if (tierName !== 'mobile') {
     rim = new THREE.DirectionalLight(COLOR.white.clone(), 1.1);
@@ -234,7 +234,7 @@ export function createCamera(aspect, tierName = 'standard', { near = 0.1, far = 
 
 /**
  * Aerial perspective. A scene whose depth exceeds the camera far plane reads as
- * an empty background — measured on this site: a 300-unit route inside a 120-unit
+ * an empty background - measured on this site: a 300-unit route inside a 120-unit
  * far plane rendered nothing but `scene.background`. Size the far plane from the
  * world, then let fog, not clipping, hide the edge.
  *
@@ -275,7 +275,7 @@ export function brandMaterial({
 }
 
 /* ------------------------------------------------------------------
- * 8. Fog — colour must match the section background exactly
+ * 8. Fog - colour must match the section background exactly
  * ------------------------------------------------------------------ */
 
 export const FOG_BY_SECTION = {
@@ -290,7 +290,7 @@ export function applyFog(scene, section = 'white', near = 8, far = 42) {
 }
 
 /* ------------------------------------------------------------------
- * 9. Frame-rate watchdog — downgrade only, never upgrade
+ * 9. Frame-rate watchdog - downgrade only, never upgrade
  * ------------------------------------------------------------------ */
 
 export function createTierWatchdog({ tierName, onDowngrade, thresholdFps = 45, windowMs = 2000 }) {
@@ -315,7 +315,7 @@ export function createTierWatchdog({ tierName, onDowngrade, thresholdFps = 45, w
 }
 
 /* ------------------------------------------------------------------
- * 10. Disposal — a leaked context on route change is a shipping blocker
+ * 10. Disposal - a leaked context on route change is a shipping blocker
  * ------------------------------------------------------------------ */
 
 export function disposeScene(scene, renderer) {
@@ -335,12 +335,12 @@ export function disposeScene(scene, renderer) {
 }
 
 /* ------------------------------------------------------------------
- * 11. Verification helper — run this once per scene during QA
+ * 11. Verification helper - run this once per scene during QA
  * ------------------------------------------------------------------ */
 
 /**
  * Colour-pipeline check. Renders a flat #ED7C30 quad with `toneMapped: false`
- * into its own canvas and reads the DEFAULT framebuffer back — a render target
+ * into its own canvas and reads the DEFAULT framebuffer back - a render target
  * is linear, so reading one measures nothing useful.
  *
  * With ColorManagement on, sRGB output and tone mapping bypassed, the result must

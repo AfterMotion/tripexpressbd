@@ -1,5 +1,5 @@
 /* ============================================================
-   Trip Express BD — site styles
+   Trip Express BD - site styles
    Every value resolves through tokens.css. Nothing brand-level is
    hardcoded here except white/black on permanently dark surfaces.
    See .claude/skills/trip-express-brand/
@@ -9,8 +9,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 html {
   -webkit-text-size-adjust: 100%;
-  /* Anchor scrolling is animated in JS with a single eased curve so every jump —
-     nav, drawer, rail, in-page link — lands the same way. Native smooth scroll is
+  /* Anchor scrolling is animated in JS with a single eased curve so every jump -
+     nav, drawer, rail, in-page link - lands the same way. Native smooth scroll is
      left off so the two never fight. */
   scroll-behavior: auto;
   scroll-padding-top: calc(var(--te-hdr-h) + var(--te-rail-h) + 12px);
@@ -43,7 +43,7 @@ button { font: inherit; color: inherit; }
 
 /* Bangla never inherits a Latin face and never drops below 17px in running text.
    Conjuncts stack vertically, so Bangla at the same nominal size reads smaller
-   than Latin — matching the numbers is what made the old lists hard to scan. */
+   than Latin - matching the numbers is what made the old lists hard to scan. */
 :lang(bn), .bn {
   font-family: var(--te-font-bangla);
   line-height: var(--te-lh-bangla);
@@ -150,7 +150,7 @@ button { font: inherit; color: inherit; }
 .btn--sm { --btn-h: 40px; padding: 0 16px; font-size: 0.875rem; }
 .btn--block { width: 100%; }
 
-/* ink on orange — 5.66:1. White on orange is 2.79:1 and is never used. */
+/* ink on orange - 5.66:1. White on orange is 2.79:1 and is never used. */
 .btn--primary   { background: var(--te-action-bg); color: var(--te-action-ink); }
 .btn--secondary { background: var(--te-action2-bg); color: var(--te-action2-ink); }
 .btn--outline   { background: transparent; color: var(--te-text-heading); box-shadow: inset 0 0 0 1.5px var(--te-border-strong); }
@@ -199,7 +199,7 @@ button { font: inherit; color: inherit; }
 .hdr.is-stuck { background: var(--te-hdr-bg-stuck); border-bottom-color: var(--te-border); box-shadow: var(--te-shadow-sm); }
 .hdr__in { display: flex; align-items: center; gap: var(--te-space-5); height: var(--te-hdr-h); }
 
-/* scroll progress — tells the visitor how far through the journey they are */
+/* scroll progress - tells the visitor how far through the journey they are */
 .hdr__progress {
   position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
   background: var(--te-grad-sunset); transform-origin: left center;
@@ -349,7 +349,7 @@ button { font: inherit; color: inherit; }
 .journey { position: relative; background: var(--te-deep-950); }
 
 /* Mobile keeps the flight pinned under the header while the copy scrolls up over
-   it — the window into the journey stays open instead of scrolling away after one
+   it - the window into the journey stays open instead of scrolling away after one
    swipe. It never exceeds 55dvh and never takes the scroll (see .te-canvas). */
 .journey__stage {
   position: sticky; top: var(--te-hdr-h); z-index: 0;
@@ -369,7 +369,7 @@ button { font: inherit; color: inherit; }
 }
 .journey.is-live .journey__still { opacity: 0; }
 
-/* waypoint readout — the 3D tells the DOM where the aircraft is */
+/* waypoint readout - the 3D tells the DOM where the aircraft is */
 .wp {
   position: absolute; z-index: 2; left: var(--te-page-x); bottom: 14px;
   display: flex; align-items: center; gap: 10px;
@@ -490,7 +490,7 @@ button { font: inherit; color: inherit; }
 }
 .dest__disc img { width: 100%; height: 100%; object-fit: cover; }
 /* A destination we have no photograph of gets the brand's own night disc with the
-   Flight Angle across it — not a flat blue circle with a clip-art mountain. */
+   Flight Angle across it - not a flat blue circle with a clip-art mountain. */
 .dest__disc--art {
   background: var(--te-grad-night);
   display: grid; place-items: center; color: var(--te-orange-400);
@@ -854,7 +854,11 @@ button { font: inherit; color: inherit; }
 }
 .field.is-bad input, .field.is-bad select, .field.is-bad textarea { border-color: var(--te-error); }
 .field.is-bad .err { display: flex; }
-.grid2 { display: grid; gap: 0 var(--te-space-5); }
+/* align-items: start - without it, grid's default row-stretch inflates the
+   shorter field's own auto rows (label/input) to match its paired field's
+   height whenever only one of the two carries a .field__hint, which is what
+   made inputs in the same row render at visibly different heights. */
+.grid2 { display: grid; gap: 0 var(--te-space-5); align-items: start; }
 @media (min-width: 560px) { .grid2 { grid-template-columns: 1fr 1fr; } }
 
 .form-ok { display: none; gap: 11px; padding: 15px 16px; margin-bottom: var(--te-space-5);
@@ -873,7 +877,8 @@ button { font: inherit; color: inherit; }
   letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 5px;
 }
 .info__row a {
-  display: inline-block; font-weight: 600; font-size: 1.0625rem; color: var(--te-text-heading);
+  display: block; width: fit-content;
+  font-weight: 600; font-size: 1.0625rem; color: var(--te-text-heading);
   text-decoration: none; padding: 3px 0;
 }
 @media (hover: hover) and (pointer: fine) { .info__row a:hover { color: var(--te-link-hover); text-decoration: underline; } }
@@ -914,13 +919,13 @@ button { font: inherit; color: inherit; }
    A bare saturated-green circle is what every template ships and it reads as a
    third-party widget bolted on to the page. This is a brand surface card that
    happens to carry the WhatsApp glyph: the page's own material, its own border
-   and shadow, the brand's own type — with green used only inside the 40px disc,
+   and shadow, the brand's own type - with green used only inside the 40px disc,
    where it is the product mark and nothing else.
    ============================================================ */
 .fab {
   position: fixed; right: var(--te-page-x); bottom: max(20px, env(safe-area-inset-bottom));
   z-index: var(--te-z-whatsapp);
-  display: inline-flex; align-items: center; gap: 11px;
+  display: inline-flex; align-items: center; gap: 0;
   height: 58px; padding: 0 8px; border-radius: var(--te-r-pill);
   background: var(--te-deep-950); color: #fff;
   text-decoration: none; font-weight: 650; font-size: 0.9688rem;
@@ -931,10 +936,14 @@ button { font: inherit; color: inherit; }
               translate var(--te-dur-slow) var(--te-ease-lift),
               scale var(--te-dur-slow) var(--te-ease-lift),
               padding var(--te-dur-base) var(--te-ease-out),
+              gap var(--te-dur-base) var(--te-ease-out),
               border-color var(--te-dur-fast) var(--te-ease-out);
 }
 .fab[data-show="true"] { opacity: 1; translate: 0 0; scale: 1; pointer-events: auto; }
-.fab[data-expanded="true"] { padding-right: 20px; }
+/* gap only appears once the label has real width - with the base gap always on,
+   a hidden 0-width label still claimed 11px of it, so the collapsed disc rendered
+   as a 69x58 stub with the glyph pushed left of centre instead of a true circle. */
+.fab[data-expanded="true"] { padding-right: 20px; gap: 11px; }
 
 .fab__ic {
   position: relative; display: grid; place-items: center;
@@ -962,19 +971,20 @@ button { font: inherit; color: inherit; }
 /* below 420px the label would push the pill into the content; everywhere else it
    stays open, because an unlabelled circle does not say what it does */
 @media (min-width: 420px) {
-  .fab { padding-right: 20px; }
+  .fab { padding-right: 20px; gap: 11px; }
   .fab .fab__lbl { max-width: 220px; opacity: 1; }
 }
 .fab[data-expanded="true"] .fab__lbl { max-width: 220px; opacity: 1; }
 @media (hover: hover) and (pointer: fine) {
   .fab:hover { border-color: var(--te-whatsapp); background: #19324C; }
   .fab:hover .fab__lbl { max-width: 220px; opacity: 1; }
-  .fab:hover { padding-right: 20px; }
+  .fab:hover { padding-right: 20px; gap: 11px; }
 }
 .fab:active { scale: 0.97; }
-/* never float over a modal */
+/* never float over a modal, and never over the enquiry form */
 body:has(.lb[data-open="true"]) .fab,
-body:has(.drawer[data-open="true"]) .fab { opacity: 0; pointer-events: none; }
+body:has(.drawer[data-open="true"]) .fab,
+.fab[data-hide="true"] { opacity: 0; translate: 0 20px; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) {
   .fab__ic::after { animation: none !important; }
 }
