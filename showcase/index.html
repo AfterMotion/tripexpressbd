@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Express BD - Prototype Showcase Index (Prompt 3C)</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="sc-hdr">
+  <div class="sc-container sc-hdr__in">
+    <a class="ds-brand" href="../design-system/index.html">
+      <span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span>
+      <span>Trip Express BD · Showcase</span>
+    </a>
+    <div class="ds-controls">
+      <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+      <a class="te-btn te-btn--sm te-btn--primary" href="../design-system/index.html">Design System</a>
+    </div>
+  </div>
+</header>
+<main id="main" class="sc-container" style="padding-top:40px;padding-bottom:64px;">
+  <p class="te-overline">Stage 3C · 9 Complete Application Prototypes</p>
+  <span class="te-flight-rule" aria-hidden="true"></span>
+  <h1>Pages &amp; Application Patterns</h1>
+  <p style="max-width:68ch;color:var(--te-text-muted);">Every page consumes central tokens (<code>tokens/tokens.css</code> &amp; <code>tokens/themes.css</code>). Backend submissions, OTP checks, and admin edits run locally in browser state.</p>
+  <div class="ds-grid-3" style="margin-top:24px;">
+    <a class="ds-index-card" href="01-marketing-home.html"><span class="te-overline">01 · Marketing</span><h3 style="margin:6px 0;">Homepage</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Hero, 17° seams, discs, packages, proof gallery, enquiry &amp; footer.</p></a>
+    <a class="ds-index-card" href="02-listing-search.html"><span class="te-overline">02 · Discovery</span><h3 style="margin:6px 0;">Tour Listing &amp; Search</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Live filters, mobile bottom sheet, skeleton loader, empty state.</p></a>
+    <a class="ds-index-card" href="03-auth-flow.html"><span class="te-overline">03 · Portal Auth</span><h3 style="margin:6px 0;">Login, Reset &amp; OTP</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Password toggle, server-style errors, 6-digit pasteable OTP.</p></a>
+    <a class="ds-index-card" href="04-onboarding-booking.html"><span class="te-overline">04 · Registration</span><h3 style="margin:6px 0;">3-Step Tour Booking</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Stepper, +880 validation, passport upload, error summary, draft save.</p></a>
+    <a class="ds-index-card" href="05-admin-dashboard.html"><span class="te-overline">05 · Compact Admin</span><h3 style="margin:6px 0;">Operations Dashboard</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">KPI tiles, SVG charts + table fallback, date filter, notification bell.</p></a>
+    <a class="ds-index-card" href="06-admin-users-crud.html"><span class="te-overline">06 · Compact Admin</span><h3 style="margin:6px 0;">Traveller &amp; User CRUD</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Sortable table, bulk actions, stacked mobile view, modal &amp; drawer.</p></a>
+    <a class="ds-index-card" href="07-record-detail.html"><span class="te-overline">07 · Compact Admin</span><h3 style="margin:6px 0;">Booking Record Detail</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Tabs, payment timeline, passport docs, audit history, confirm modal.</p></a>
+    <a class="ds-index-card" href="08-settings-profile.html"><span class="te-overline">08 · Portal / Admin</span><h3 style="margin:6px 0;">Settings &amp; Permissions</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">Vertical tabs, role switches, theme/contrast sync, permission table.</p></a>
+    <a class="ds-index-card" href="09-system-states.html"><span class="te-overline">09 · Edge States</span><h3 style="margin:6px 0;">Empty / 403 / 404 / 500</h3><p style="font-size:13px;color:var(--te-text-muted);margin:0;">5-color brand illustrations, recovery CTAs, maintenance screen.</p></a>
+  </div>
+</main>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+</body>
+</html>

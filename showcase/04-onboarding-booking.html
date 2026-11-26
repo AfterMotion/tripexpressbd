@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Your Departure - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (04/09):</strong> Multi-step wizard saves draft locally; no payment processed. <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+</div>
+<main id="main" class="sc-container--narrow" style="padding-top:40px;padding-bottom:64px;">
+  <p class="te-overline">3-Step Booking Registration</p>
+  <span class="te-flight-rule" aria-hidden="true"></span>
+  <h1>Reserve Your Group Seat</h1>
+
+  <div class="sc-stepper" role="list" style="margin-top:20px;">
+    <div class="sc-step is-active" id="st1">1. Departure &amp; Seats</div>
+    <div class="sc-step" id="st2">2. Traveller &amp; Passport</div>
+    <div class="sc-step" id="st3">3. Bank Deposit Terms</div>
+  </div>
+
+  <div id="errSummary" tabindex="-1" class="te-card" style="display:none;border-color:var(--te-status-error-border);background:var(--te-status-error-surface);margin-bottom:20px;">
+    <strong style="color:var(--te-status-error-text);">Please fix the following before continuing:</strong>
+    <ul id="errList" style="margin:8px 0 0;padding-left:20px;font-size:14px;"></ul>
+  </div>
+
+  <form id="wizardForm" class="te-card" novalidate>
+    <!-- STEP 1 -->
+    <div id="step1" style="display:grid;gap:14px;">
+      <div class="te-field">
+        <label class="te-label" for="wzTour">Select Tour Package</label>
+        <select class="te-select" id="wzTour">
+          <option value="58500">Explore Nepal (5D/4N) - ৳58,500 / person</option>
+          <option value="35000">Kashmir by Road (Season 5) - ৳35,000 / person</option>
+        </select>
+      </div>
+      <div class="te-field">
+        <label class="te-label" for="wzSeats">Number of Travellers</label>
+        <input class="te-input te-num" id="wzSeats" type="number" min="1" max="10" value="1">
+      </div>
+      <button class="te-btn te-btn--primary" type="button" onclick="goStep(2)">Continue to Traveller Details</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" hidden style="display:grid;gap:14px;">
+      <div class="te-field">
+        <label class="te-label" for="wzName">Full Name (As on Passport) <span class="te-req">*</span></label>
+        <input class="te-input" id="wzName" required placeholder="Tariqul Hasan">
+      </div>
+      <div class="te-field">
+        <label class="te-label" for="wzPhone">BD WhatsApp Number <span class="te-req">*</span></label>
+        <input class="te-input te-num" id="wzPhone" type="tel" required placeholder="01838-754207">
+      </div>
+      <div class="te-field">
+        <label class="te-label" for="wzFile">Passport / NID Copy (Optional preview)</label>
+        <input class="te-input" id="wzFile" type="file" accept="image/*,.pdf" style="padding-top:10px;">
+      </div>
+      <div style="display:flex;gap:10px;justify-content:space-between;">
+        <button class="te-btn te-btn--outline" type="button" onclick="goStep(1)">Back</button>
+        <button class="te-btn te-btn--primary" type="button" onclick="validateStep2()">Review Bank Deposit</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" hidden style="display:grid;gap:14px;">
+      <p lang="bn" class="bn" style="margin:0;">ব্যাংক ডিপোজিট করে কিংবা অফিসে এসে সরাসরি ক্যাশ জমা করে সিট কনফার্ম করতে হবে।</p>
+      <div class="ds-panel ds-panel--subtle" style="font-size:14px;">
+        <strong>Islami Bank (Chawkbazar):</strong> <code class="te-mono">20501620205843017</code><br>
+        <strong>Eastern Bank (Agrabad):</strong> <code class="te-mono">0011450000514</code><br>
+        <strong>Office:</strong> 1301, Mosjid Goli, Dui Number Gate, Chattogram
+      </div>
+      <div id="wzTotal" class="te-num" style="font-size:22px;font-weight:700;color:var(--te-text-heading);">Total Payable: ৳58,500</div>
+      <div style="display:flex;gap:10px;justify-content:space-between;">
+        <button class="te-btn te-btn--outline" type="button" onclick="goStep(2)">Back</button>
+        <button class="te-btn te-btn--primary" type="submit">Submit Booking Request</button>
+      </div>
+    </div>
+  </form>
+  <div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+</main>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  function goStep(n) {
+    [1, 2, 3].forEach(i => {
+      document.getElementById('step' + i).hidden = i !== n;
+      const pill = document.getElementById('st' + i);
+      pill.classList.toggle('is-active', i === n);
+      pill.classList.toggle('is-done', i < n);
+    });
+    const total = Number(document.getElementById('wzTour').value) * Number(document.getElementById('wzSeats').value || 1);
+    document.getElementById('wzTotal').textContent = 'Total Payable: ৳' + total.toLocaleString();
+  }
+  function validateStep2() {
+    const errs = [];
+    const nameEl = document.getElementById('wzName');
+    const phoneEl = document.getElementById('wzPhone');
+    const cleaned = phoneEl.value.replace(/[\s\-()]/g, '').replace(/^\+?880/, '0');
+    if (!nameEl.value.trim()) errs.push({ el: nameEl, msg: 'Passport full name is required.' });
+    if (!/^01[3-9]\d{8}$/.test(cleaned)) errs.push({ el: phoneEl, msg: 'Enter a valid 11-digit Bangladeshi mobile number.' });
+    const sum = document.getElementById('errSummary');
+    if (errs.length) {
+      sum.style.display = 'block';
+      document.getElementById('errList').innerHTML = errs.map(e => `<li><a class="te-link" href="#${e.el.id}">${e.msg}</a></li>`).join('');
+      sum.focus();
+      return;
+    }
+    sum.style.display = 'none';
+    goStep(3);
+  }
+  document.getElementById('wizardForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.teToast('Booking reference TE-NEP-099 created locally (demo).');
+  });
+</script>
+</body>
+</html>

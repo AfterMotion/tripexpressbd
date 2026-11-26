@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System States (Empty / 403 / 404 / 500 / Maintenance) - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock"><span><strong>Demo Mode (09/09 · Edge States):</strong> Switch between Empty, 403, 404, 500 &amp; Maintenance. <a class="te-link" href="index.html">All 9 Prototypes</a></span><button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button></div>
+<main id="main" class="sc-container--narrow" style="padding-top:40px;padding-bottom:64px;text-align:center;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px;" id="stateSwitch">
+    <button class="te-chip" type="button" data-st="empty" aria-pressed="true">Empty Archive</button>
+    <button class="te-chip" type="button" data-st="403" aria-pressed="false">403 Permission</button>
+    <button class="te-chip" type="button" data-st="404" aria-pressed="false">404 Not Found</button>
+    <button class="te-chip" type="button" data-st="500" aria-pressed="false">500 Server Error</button>
+    <button class="te-chip" type="button" data-st="maint" aria-pressed="false">Maintenance</button>
+  </div>
+
+  <div class="te-card" style="padding:40px 24px;">
+    <svg viewBox="0 0 220 120" aria-hidden="true" style="width:220px;height:auto;margin:0 auto 18px;display:block;">
+      <circle cx="110" cy="60" r="48" fill="var(--te-bg-cool)" stroke="var(--te-border-subtle)" stroke-width="2"/>
+      <circle cx="144" cy="36" r="14" fill="var(--te-p-orange-500)"/>
+      <polygon points="74,92 104,48 134,92" fill="var(--te-p-ocean-500)"/>
+      <polygon points="104,92 132,56 158,92" fill="var(--te-p-sky-500)"/>
+      <line x1="56" y1="84" x2="170" y2="48" stroke="var(--te-text-heading)" stroke-width="3"/>
+    </svg>
+    <span class="te-badge te-badge--info" id="stBadge">EMPTY STATE</span>
+    <h1 id="stTitle" style="margin-top:12px;">Photos from this trip are on the way.</h1>
+    <p id="stBody" style="max-width:48ch;margin:0 auto 20px;color:var(--te-text-muted);">Our team is uploading verified departure photos from Chattogram.</p>
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+      <a class="te-btn te-btn--primary" href="01-marketing-home.html">Back to All Tours</a>
+      <a class="te-btn te-btn--wa" href="https://wa.me/8801838754207">Ask on WhatsApp</a>
+    </div>
+  </div>
+</main>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  const STATES = {
+    empty: { badge: 'EMPTY GALLERY', cls: 'info', title: 'Photos from this trip are on the way.', body: 'Real departure photos replace placeholders as soon as the team returns.' },
+    '403': { badge: '403 · RESTRICTED', cls: 'warning', title: 'Bank ledger access requires Admin permission.', body: 'Tour Leads can view rosters, while Islami & EBL deposit approval is restricted to Admins.' },
+    '404': { badge: '404 · OFF ROUTE', cls: 'info', title: 'This route does not exist yet.', body: 'The departure URL may have moved or completed. Browse upcoming Chattogram tours below.' },
+    '500': { badge: '500 · SYSTEM ERROR', cls: 'error', title: 'Unable to load departure manifest.', body: 'Try refreshing in a moment, or reach our Chattogram desk on 01838-754207.' },
+    maint: { badge: 'MAINTENANCE', cls: 'warning', title: 'Scheduled departure sync in progress.', body: 'Booking confirmation stays open via WhatsApp (wa.me/+8801838754207) during updates.' }
+  };
+  document.querySelectorAll('#stateSwitch .te-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#stateSwitch .te-chip').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      const s = STATES[btn.dataset.st];
+      const badge = document.getElementById('stBadge');
+      badge.className = 'te-badge te-badge--' + s.cls;
+      badge.textContent = s.badge;
+      document.getElementById('stTitle').textContent = s.title;
+      document.getElementById('stBody').textContent = s.body;
+    });
+  });
+</script>
+</body>
+</html>

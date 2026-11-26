@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings &amp; Permissions - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock"><span><strong>Demo Mode (08/09 · Settings):</strong> Preferences persist via localStorage. <a class="te-link" href="index.html">All 9 Prototypes</a></span><button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button></div>
+<main id="main" class="sc-container" style="padding-top:32px;padding-bottom:64px;">
+  <h1>Account &amp; Role Preferences</h1>
+  <div class="ds-grid-2" style="margin-top:20px;align-items:start;">
+    <section class="te-card" style="display:grid;gap:14px;">
+      <h2 style="font-size:18px;">Office &amp; Notification Settings</h2>
+      <div class="te-field"><label class="te-label" for="setOffice">Primary Office</label><input class="te-input" id="setOffice" value="1301, Mosjid Goli, Dui Number Gate, Chattogram"></div>
+      <label class="te-switch"><input type="checkbox" checked><span class="te-switch__track"></span><span>Send WhatsApp alerts on new Islami Bank deposit</span></label>
+      <label class="te-switch"><input type="checkbox" id="hcSwitch"><span class="te-switch__track"></span><span>Enable High-Contrast borders (prefers-contrast)</span></label>
+      <button class="te-btn te-btn--primary" type="button" onclick="window.teToast('Preferences saved locally.')">Save Preferences</button>
+    </section>
+
+    <section class="te-card">
+      <h2 style="font-size:18px;margin-bottom:12px;">Role Permission Matrix</h2>
+      <div class="te-table-wrap">
+        <table class="te-table">
+          <thead><tr><th>Capability</th><th>Admin</th><th>Tour Lead</th><th>Support</th></tr></thead>
+          <tbody>
+            <tr><td>Verify Bank Deposits</td><td>Yes</td><td>No</td><td>No</td></tr>
+            <tr><td>Manage Departure Roster</td><td>Yes</td><td>Yes</td><td>Read-only</td></tr>
+            <tr><td>Void / Refund Seat</td><td>Yes</td><td>No</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  document.getElementById('hcSwitch').addEventListener('change', function () {
+    document.documentElement.setAttribute('data-contrast', this.checked ? 'high' : 'standard');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Trip Express BD - Guided Group Tours from Chattogram</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (01/09):</strong> Enquiry submission runs locally in browser (no backend). <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+    <button class="te-btn te-btn--sm te-btn--outline" id="contrastToggle" type="button">Contrast: Standard</button>
+  </div>
+</div>
+
+<header class="sc-hdr">
+  <div class="sc-container sc-hdr__in">
+    <a class="ds-brand" href="#top">
+      <span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span>
+      <span>Trip Express BD</span>
+    </a>
+    <nav class="sc-nav" aria-label="Primary">
+      <a href="#destinations" aria-current="page">Destinations</a>
+      <a href="#tours">Tours</a>
+      <a href="#proof">Proof Gallery</a>
+      <a href="#enquire">Book / Enquire</a>
+      <a href="02-listing-search.html">Search Tours</a>
+      <a href="03-auth-flow.html">Portal</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <a class="te-btn te-btn--sm te-btn--wa" href="https://wa.me/8801838754207"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg> WhatsApp</a>
+      <a class="te-btn te-btn--sm te-btn--primary" href="04-onboarding-booking.html">Book a Seat</a>
+      <button class="te-btn te-btn--ghost te-btn--icon ds-menu-btn" id="adminMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="adminSidebar"><svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="sc-rail" aria-label="Mobile section rail">
+  <a class="is-active" href="#destinations">Destinations</a>
+  <a href="#tours">Tours</a>
+  <a href="#proof">Real Photos</a>
+  <a href="#enquire">Enquire</a>
+  <a href="02-listing-search.html">Filter All</a>
+</nav>
+
+<aside class="sc-admin-side" id="adminSidebar" style="display:none;" aria-label="Mobile menu"></aside>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="sc-hero" id="top">
+    <div class="sc-hero__media">
+      <img src="../assets/img/hero/cliff-wide-1600.webp" alt="Trip Express BD travellers cheering in Meghalaya hills">
+      <div class="sc-hero__scrim" aria-hidden="true"></div>
+    </div>
+    <div class="sc-container sc-hero__body">
+      <p class="te-overline" style="color:var(--te-p-orange-300);">Chattogram · Fixed-Date Group Tours</p>
+      <h1 style="color:var(--te-p-n-0);font-size:var(--te-p-fs-display-xl);max-width:16ch;margin:8px 0 14px;">Kashmir, Nepal &amp; Meghalaya - One Team.</h1>
+      <p style="color:var(--te-p-n-200);max-width:52ch;font-size:var(--te-p-fs-body-lg);">Small groups of 7–15 travellers from Chattogram, published prices in ৳, clear exclusions, and real tour photographs.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;">
+        <a class="te-btn te-btn--lg te-btn--primary" href="#tours">Explore Departures</a>
+        <a class="te-btn te-btn--lg te-btn--secondary" href="04-onboarding-booking.html">Reserve Seat Now</a>
+      </div>
+    </div>
+    <div class="sc-cut-seam" aria-hidden="true"></div>
+  </section>
+
+  <!-- DESTINATION DISCS -->
+  <section class="sc-container" id="destinations" style="padding-top:48px;padding-bottom:48px;">
+    <p class="te-overline">Where We Take You</p>
+    <span class="te-flight-rule" aria-hidden="true"></span>
+    <h2 style="margin-bottom:20px;">Signature Destinations</h2>
+    <div class="sc-disc-rail">
+      <a class="sc-disc" href="02-listing-search.html?dest=Nepal"><div class="sc-disc__img"><img src="../assets/img/disc/nepal-240.webp" alt="Nepal"></div><strong>Nepal</strong></a>
+      <a class="sc-disc" href="02-listing-search.html?dest=Meghalaya"><div class="sc-disc__img"><img src="../assets/img/disc/meghalaya-240.webp" alt="Meghalaya"></div><strong>Meghalaya</strong></a>
+      <a class="sc-disc" href="02-listing-search.html?dest=Dawki"><div class="sc-disc__img"><img src="../assets/img/disc/dawki-240.webp" alt="Dawki"></div><strong>Dawki</strong></a>
+      <a class="sc-disc" href="02-listing-search.html?dest=Shillong"><div class="sc-disc__img"><img src="../assets/img/disc/shillong-240.webp" alt="Shillong"></div><strong>Shillong</strong></a>
+      <a class="sc-disc" href="02-listing-search.html?dest=Kashmir">
+        <div class="sc-disc__img">
+          <svg viewBox="0 0 100 100" aria-label="Kashmir brand illustration"><circle cx="72" cy="28" r="14" fill="var(--te-p-orange-500)"/><polygon points="0,100 32,48 64,100" fill="var(--te-p-ocean-500)"/><polygon points="36,100 72,38 100,100" fill="var(--te-p-sky-500)"/><line x1="8" y1="74" x2="92" y2="48" stroke="var(--te-p-n-0)" stroke-width="3"/></svg>
+        </div>
+        <strong>Kashmir</strong>
+      </a>
+      <a class="sc-disc" href="02-listing-search.html"><div class="sc-disc__img" style="color:var(--te-p-orange-300);font-weight:800;">+3</div><strong>Sikkim &amp; More</strong></a>
+    </div>
+  </section>
+
+  <!-- PACKAGE GRID -->
+  <section style="background:var(--te-bg-subtle);padding:56px 0;" id="tours">
+    <div class="sc-container">
+      <p class="te-overline">Upcoming Departures</p>
+      <span class="te-flight-rule" aria-hidden="true"></span>
+      <h2 style="margin-bottom:24px;">Fixed Dates &amp; Published Pricing</h2>
+      <div class="ds-grid-3">
+        <article class="te-card te-card--featured te-card--interactive">
+          <div class="te-card__media">
+            <img src="../assets/img/card/cover-nepal-720.webp" alt="Explore Nepal group">
+            <span class="te-badge te-badge--featured" style="position:absolute;top:10px;left:10px;"><span>FEATURED · 5D/4N</span></span>
+          </div>
+          <p class="te-overline">Nepal</p>
+          <h3>Explore Nepal</h3>
+          <p style="font-size:14px;color:var(--te-text-muted);">Kathmandu · Nagarkot · Pokhara</p>
+          <p lang="bn" class="bn" style="margin-bottom:12px;">ঢাকা ↔ কাঠমুন্ডু রিটার্ন এয়ার টিকিট ও হোটেল</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--te-border-subtle);padding-top:12px;">
+            <span class="te-num" style="font-size:22px;font-weight:700;color:var(--te-text-heading);">৳58,500</span>
+            <a class="te-btn te-btn--sm te-btn--primary" href="04-onboarding-booking.html">Book Seat</a>
+          </div>
+        </article>
+
+        <article class="te-card te-card--interactive">
+          <div class="te-card__media">
+            <img src="../assets/img/card/meghalaya-dawki-600.webp" alt="Meghalaya Dawki waterfall group">
+            <span class="te-badge te-badge--success" style="position:absolute;top:10px;left:10px;">Booking Open</span>
+          </div>
+          <p class="te-overline">Meghalaya · 4 Days</p>
+          <h3>Shillong &amp; Dawki</h3>
+          <p style="font-size:14px;color:var(--te-text-muted);">Team of 13 · Laitlum · Krang Suri</p>
+          <p lang="bn" class="bn" style="margin-bottom:12px;">১৩ জনের টিম নিয়ে চারদিনের মেঘালয় প্ল্যান</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--te-border-subtle);padding-top:12px;">
+            <span style="font-size:15px;font-weight:700;color:var(--te-text-heading);">Custom Quote</span>
+            <a class="te-btn te-btn--sm te-btn--wa" href="https://wa.me/8801838754207">Ask on WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="te-card te-card--interactive">
+          <div class="te-card__media" style="background:var(--te-bg-dark-band);">
+            <svg viewBox="0 0 320 200" aria-label="Kashmir flat vector illustration (awaiting real tour photo)" style="width:100%;aspect-ratio:16/10;display:block;">
+              <circle cx="258" cy="54" r="30" fill="var(--te-p-orange-500)"/>
+              <polygon points="0,200 88,82 176,200" fill="var(--te-p-ocean-500)"/>
+              <polygon points="104,200 206,56 320,200" fill="var(--te-p-sky-500)"/>
+              <polygon points="206,56 248,108 214,116" fill="var(--te-p-orange-400)"/>
+              <line x1="18" y1="146" x2="296" y2="62" stroke="var(--te-p-n-0)" stroke-width="3"/>
+            </svg>
+            <span class="te-badge te-badge--warning" style="position:absolute;top:10px;left:10px;">Season 5</span>
+          </div>
+          <p class="te-overline">Kashmir · By Road</p>
+          <h3>Kashmir from Chattogram</h3>
+          <p style="font-size:14px;color:var(--te-text-muted);">Sonamarg · Gulmarg · Pahalgam</p>
+          <p lang="bn" class="bn" style="margin-bottom:12px;">বাইরোড কাশ্মীর ট্রিপ চট্টগ্রাম থেকে সিজন ৫</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--te-border-subtle);padding-top:12px;">
+            <span class="te-num" style="font-size:22px;font-weight:700;color:var(--te-text-heading);">৳35,000</span>
+            <a class="te-btn te-btn--sm te-btn--secondary" href="04-onboarding-booking.html">Reserve</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF GALLERY & ENQUIRY -->
+  <section class="sc-container" id="proof" style="padding-top:56px;padding-bottom:24px;">
+    <p class="te-overline">Real Departure Proof</p>
+    <span class="te-flight-rule" aria-hidden="true"></span>
+    <h2 style="margin-bottom:18px;">Completed Trips With Real Photos</h2>
+    <div class="ds-grid-3">
+      <button type="button" class="te-card" style="padding:8px;cursor:pointer;text-align:left;" onclick="openLightbox('../assets/img/card/meghalaya-hills-600.webp','Meghalaya Ridge - Team of 13')">
+        <img src="../assets/img/card/meghalaya-hills-600.webp" alt="Meghalaya group photo" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;">
+        <div style="padding:8px 4px 2px;font-size:13px;font-weight:600;">Meghalaya · Laitlum Canyon</div>
+      </button>
+      <button type="button" class="te-card" style="padding:8px;cursor:pointer;text-align:left;" onclick="openLightbox('../assets/img/card/nepal-pokhara-600.webp','Pokhara Sarangkot Morning')">
+        <img src="../assets/img/card/nepal-pokhara-600.webp" alt="Nepal Pokhara group" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;">
+        <div style="padding:8px 4px 2px;font-size:13px;font-weight:600;">Nepal · Pokhara Phewa Lake</div>
+      </button>
+      <button type="button" class="te-card" style="padding:8px;cursor:pointer;text-align:left;" onclick="openLightbox('../assets/img/card/cover-meghalaya-720.webp','Dawki River Boat Group')">
+        <img src="../assets/img/card/cover-meghalaya-720.webp" alt="Dawki clear water boat" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;">
+        <div style="padding:8px 4px 2px;font-size:13px;font-weight:600;">Dawki · Team Departure</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- 5-FIELD ENQUIRY -->
+  <section class="sc-container--narrow" id="enquire" style="padding-top:48px;padding-bottom:32px;">
+    <div class="te-card">
+      <p class="te-overline">Quick Seat Enquiry (5 Fields Max)</p>
+      <h2 style="margin-top:6px;">Talk to Our Chattogram Team</h2>
+      <form id="homeEnquiryForm" novalidate style="display:grid;gap:14px;margin-top:16px;">
+        <div class="ds-grid-2">
+          <div class="te-field"><label class="te-label" for="eqName">Full Name <span class="te-req">*</span></label><input class="te-input" id="eqName" required placeholder="e.g. MD Ayas Auvro"></div>
+          <div class="te-field"><label class="te-label" for="eqPhone">Mobile / WhatsApp <span class="te-req">*</span></label><input class="te-input te-num" id="eqPhone" type="tel" required placeholder="01838-754207"></div>
+        </div>
+        <div class="ds-grid-2">
+          <div class="te-field"><label class="te-label" for="eqDest">Destination</label><select class="te-select" id="eqDest"><option>Explore Nepal (৳58,500)</option><option>Kashmir by Road (৳35,000)</option><option>Meghalaya &amp; Shillong</option></select></div>
+          <div class="te-field"><label class="te-label" for="eqMonth">Preferred Month</label><input class="te-input" id="eqMonth" placeholder="Nov 2026"></div>
+        </div>
+        <div class="te-field"><label class="te-label" for="eqNote">Group Size / Notes</label><input class="te-input" id="eqNote" placeholder="2 seats, leaving from Chattogram"></div>
+        <div id="eqStatus" role="status" aria-live="polite" style="display:none;"></div>
+        <button class="te-btn te-btn--lg te-btn--primary" type="submit">Request Callback</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div class="sc-footer__cut" aria-hidden="true"></div>
+<footer class="sc-footer">
+  <div class="sc-container ds-grid-3">
+    <div>
+      <strong style="color:var(--te-p-n-0);font-size:18px;">Trip Express BD</strong>
+      <p style="font-size:14px;margin-top:8px;">1301, Mosjid Goli, Dui Number Gate (opposite Sermon School), Chattogram 4202</p>
+    </div>
+    <div>
+      <strong style="color:var(--te-p-n-0);">Phones &amp; WhatsApp</strong>
+      <p class="te-num" style="font-size:14px;margin-top:8px;">01621-785968 · 01838-754207 · 01840-004495<br>tripexpressb@gmail.com</p>
+    </div>
+    <div>
+      <strong style="color:var(--te-p-n-0);">Explore Prototypes</strong>
+      <p style="font-size:14px;margin-top:8px;"><a href="02-listing-search.html">Tour Search</a> · <a href="05-admin-dashboard.html">Admin Console</a> · <a href="../design-system/index.html">Design System</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+<div class="ds-dialog" id="lightboxDialog" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+    <strong id="lbTitle">Trip Photo</strong>
+    <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm" data-close-overlay type="button" aria-label="Close lightbox"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button>
+  </div>
+  <img id="lbImg" src="" alt="" style="width:100%;border-radius:12px;max-height:65dvh;object-fit:contain;">
+</div>
+<div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  function openLightbox(src, title) {
+    document.getElementById('lbImg').src = src;
+    document.getElementById('lbImg').alt = title;
+    document.getElementById('lbTitle').textContent = title;
+    window.scOpenModal('lightboxDialog');
+  }
+  document.getElementById('homeEnquiryForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const phone = document.getElementById('eqPhone').value.replace(/[\s\-()]/g, '').replace(/^\+?880/, '0');
+    const st = document.getElementById('eqStatus');
+    st.style.display = 'block';
+    if (!document.getElementById('eqName').value.trim() || !/^01[3-9]\d{8}$/.test(phone)) {
+      st.className = 'te-badge te-badge--error';
+      st.textContent = 'Please enter your name and a valid Bangladeshi mobile number.';
+      return;
+    }
+    st.className = 'te-badge te-badge--success';
+    st.textContent = 'Thank you. We will call you within one working day (demo only).';
+  });
+</script>
+</body>
+</html>

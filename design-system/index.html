@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Trip Express BD - Design System &amp; Foundation Reference (Prompt 3A)</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="assets/ds.css">
+</head>
+<body>
+
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<header class="ds-topbar">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="te-btn te-btn--ghost te-btn--icon ds-menu-btn" id="dsMenuBtn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="dsSidebar">
+      <svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg>
+    </button>
+    <a class="ds-brand" href="#overview">
+      <span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span>
+      <span>Trip Express BD · Design System</span>
+    </a>
+  </div>
+  <div class="ds-controls">
+    <span class="te-badge te-badge--info te-num" id="bpReadout" title="Active viewport breakpoint">xl (12-col)</span>
+    <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button" aria-pressed="false">Theme: Light</button>
+    <button class="te-btn te-btn--sm te-btn--outline" id="contrastToggle" type="button" aria-pressed="false">Contrast: Standard</button>
+    <button class="te-btn te-btn--sm te-btn--outline" id="densityToggle" type="button" aria-pressed="false">Density: Comfortable</button>
+    <button class="te-btn te-btn--sm te-btn--primary" id="openTokenRef" type="button">Quick Token Map</button>
+  </div>
+</header>
+
+<div class="ds-shell">
+  <aside class="ds-sidebar" id="dsSidebar" aria-label="Design system navigation">
+    <div class="ds-search">
+      <svg class="ic ic--sm ds-search__ic" aria-hidden="true"><use href="#i-search"></use></svg>
+      <input id="dsSearchInput" type="search" placeholder="Filter sections (/ or ⌘K)…" aria-label="Filter design system sections">
+    </div>
+
+    <div class="ds-nav-group">
+      <h2 class="ds-nav-title">Category Index</h2>
+      <ul class="ds-nav-list">
+        <li><a class="ds-nav-link is-active" href="#overview" data-tags="overview category index architecture">Category Index</a></li>
+        <li><a class="ds-nav-link" href="#logo" data-tags="logo identity clear space dark background">01 · Logo &amp; Identity</a></li>
+        <li><a class="ds-nav-link" href="#colors" data-tags="color palette ramps semantic contrast focus border">02 · Color Ramps &amp; Contrast</a></li>
+        <li><a class="ds-nav-link" href="#typography" data-tags="type scale bangla localization long text tabular">03 · Type &amp; Localization</a></li>
+        <li><a class="ds-nav-link" href="#layout" data-tags="spacing density comfortable compact grid breakpoints">04 · Spacing, Density &amp; Grid</a></li>
+        <li><a class="ds-nav-link" href="#visuals" data-tags="elevation shadows radii icons illustration textures motion">05 · Elevation, Radii, Icons &amp; Motion</a></li>
+        <li><a class="ds-nav-link" href="#a11y" data-tags="accessibility focus keyboard wcag reduced motion">06 · Accessibility Guidance</a></li>
+        <li><a class="ds-nav-link" href="#tokens-ref" data-tags="tokens reference json css themes aliases">07 · Visible Token Reference</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-nav-group">
+      <h2 class="ds-nav-title">Component Specimens (3A)</h2>
+      <ul class="ds-nav-list">
+        <li><a class="ds-nav-link" href="#comp-button" data-tags="button cta link icon loading chip toggle">Button, Link &amp; Toggle Chip</a></li>
+        <li><a class="ds-nav-link" href="#comp-input" data-tags="input form phone select checkbox validation readonly error">Form Controls &amp; Validation</a></li>
+        <li><a class="ds-nav-link" href="#comp-badge" data-tags="badge status pill featured">Badges &amp; Status Pills</a></li>
+        <li><a class="ds-nav-link" href="#comp-card" data-tags="card package kpi media nested radius">Package &amp; KPI Cards</a></li>
+        <li><a class="ds-nav-link" href="#comp-table" data-tags="tabs table ledger admin compact selectable">Tabs &amp; Selectable Data Table</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-nav-group">
+      <h2 class="ds-nav-title">Authoritative Files</h2>
+      <ul class="ds-nav-list">
+        <li><a class="ds-nav-link" href="../docs/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md</a></li>
+        <li><a class="ds-nav-link" href="../docs/COMPONENT_INVENTORY.md">COMPONENT_INVENTORY.md</a></li>
+        <li><a class="ds-nav-link" href="../brand-guide/index.html">Brand Guide (Gate 1)</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="ds-main" id="mainContent">
+
+    <!-- OVERVIEW & CATEGORY INDEX -->
+    <section class="ds-sec" id="overview" data-search="overview category index architecture tokens marketing admin">
+      <div class="ds-sec-head">
+        <p class="te-overline">Trip Express BD · Design System Reference (Prompt 3A)</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h1>Foundations, Tokens &amp; Core Component Specimens</h1>
+        <p>Static, zero-backend reference consuming <code>tokens/tokens.css</code> and <code>tokens/themes.css</code> as single source of truth. Test <strong>Light / Night Ocean Dark</strong>, <strong>High Contrast</strong>, and <strong>Comfortable / Compact Density</strong> live in the header.</p>
+      </div>
+
+      <div class="ds-grid-4" style="margin-bottom:24px;">
+        <a class="ds-index-card" href="#logo">
+          <span class="te-overline">01 · Identity</span>
+          <h4 style="margin-top:6px;">Logo &amp; Clear Space</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">SVG cutouts, chip rule, sizes</p>
+        </a>
+        <a class="ds-index-card" href="#colors">
+          <span class="te-overline">02 · Color</span>
+          <h4 style="margin-top:6px;">Ramps &amp; WCAG AA</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">4 ramps, focus, status ratios</p>
+        </a>
+        <a class="ds-index-card" href="#typography">
+          <span class="te-overline">03 · Type</span>
+          <h4 style="margin-top:6px;">Bilingual &amp; Long Text</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">17px Bangla floor, tabular</p>
+        </a>
+        <a class="ds-index-card" href="#layout">
+          <span class="te-overline">04 · Layout</span>
+          <h4 style="margin-top:6px;">Spacing, Density &amp; Grid</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">4px scale, 4/8/12 columns</p>
+        </a>
+        <a class="ds-index-card" href="#visuals">
+          <span class="te-overline">05 · Craft</span>
+          <h4 style="margin-top:6px;">Elevation, Radii &amp; Motion</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">Shadows, icons, textures</p>
+        </a>
+        <a class="ds-index-card" href="#tokens-ref">
+          <span class="te-overline">07 · Tokens</span>
+          <h4 style="margin-top:6px;">Visible Token Reference</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">3-layer searchable aliases</p>
+        </a>
+        <a class="ds-index-card" href="#comp-button">
+          <span class="te-overline">Specimens · 1–2</span>
+          <h4 style="margin-top:6px;">Actions &amp; Forms</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">States, +880 validation</p>
+        </a>
+        <a class="ds-index-card" href="#comp-card">
+          <span class="te-overline">Specimens · 3–5</span>
+          <h4 style="margin-top:6px;">Cards, Badges &amp; Tables</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">Marketing + Admin ledger</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 01 LOGO & IDENTITY -->
+    <section class="ds-sec" id="logo" data-search="logo identity svg monogram clear space dark background misuse">
+      <div class="ds-sec-head">
+        <p class="te-overline">01 · Logo &amp; Identity</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Supplied Artwork &amp; Clear-Space Rules</h2>
+        <p>Preserves <code>assets/brand/logo-mark.svg</code> (1839×1572, 4-layer <code>evenodd</code> cutouts) and <code>favicon.svg</code> untouched. Minimum clear space = <code>0.25 × disc diameter</code>; primary mark min height = <code>40px</code>.</p>
+      </div>
+
+      <div class="ds-grid-3">
+        <div class="ds-panel" style="text-align:center;">
+          <div style="background:var(--te-p-n-0);border:1px solid var(--te-border-subtle);border-radius:12px;padding:24px;margin-bottom:12px;">
+            <img src="../assets/brand/logo-mark.svg" alt="Primary full logo mark" style="height:82px;width:auto;">
+          </div>
+          <h4>Primary Mark (Light Surface)</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">Never clip the 17.12° overhanging wing/streak.</p>
+        </div>
+        <div class="ds-panel" style="text-align:center;background:var(--te-p-ocean-950);color:var(--te-p-n-0);">
+          <div style="width:104px;height:104px;margin:10px auto 14px;border-radius:50%;background:var(--te-p-n-0);display:grid;place-items:center;padding:10px;">
+            <img src="../assets/brand/logo-mark.svg" alt="Logo in white disc chip on Night Ocean" style="width:100%;height:auto;">
+          </div>
+          <h4 style="color:var(--te-p-n-0);">On Night Ocean (#132436)</h4>
+          <p style="font-size:13px;color:var(--te-p-n-300);margin:0;">White disc chip prevents dark background bleeding into <code>evenodd</code> holes.</p>
+        </div>
+        <div class="ds-panel" style="text-align:center;">
+          <div style="display:flex;justify-content:center;align-items:center;gap:18px;padding:34px 0;">
+            <img src="../favicon.svg" alt="Monogram 32px" width="32" height="32">
+            <img src="../favicon.svg" alt="Monogram 24px" width="24" height="24">
+            <img src="../favicon.svg" alt="Monogram 16px" width="16" height="16">
+          </div>
+          <h4>Monogram (16px–32px)</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;"><code>favicon.svg</code> replaces full mark below 32px.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 COLORS & CONTRAST -->
+    <section class="ds-sec" id="colors" data-search="colors palette orange sky ocean neutral semantic contrast ratios dark light focus border">
+      <div class="ds-sec-head">
+        <p class="te-overline">02 · Color Ramps, Semantic Roles &amp; Contrast Labels</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Primitive Ramps, Semantic Matrix &amp; WCAG Audits</h2>
+        <p>Click any swatch to copy its CSS variable. Never place white ink on <code>#ED7C30</code> (<code>2.79:1 FAIL</code>) - pair <code>#ED7C30</code> with <code>#111823</code> (<code>6.39:1 PASS AA</code>).</p>
+      </div>
+
+      <div id="rampMount"></div>
+
+      <h3 style="margin:24px 0 12px;">Text, Surface, Border, Focus &amp; Status Combinations</h3>
+      <div class="ds-grid-4">
+        <div class="ds-panel" style="background:var(--te-bg-canvas);">
+          <span class="te-badge te-badge--success" style="margin-bottom:8px;">6.39:1 PASS AA</span>
+          <h4>Primary Action</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);"><code>#111823</code> on <code>#ED7C30</code> (Hover <code>4.73:1</code>).</p>
+          <button class="te-btn te-btn--primary te-btn--sm" type="button">Book Nepal</button>
+        </div>
+        <div class="ds-panel" style="background:var(--te-bg-canvas);">
+          <span class="te-badge te-badge--success" style="margin-bottom:8px;">8.26:1 PASS AAA</span>
+          <h4>Secondary &amp; Links</h4>
+          <p style="font-size:13px;color:var(--te-text-muted);"><code>#FFFFFF</code> on <code>#25517B</code>; links <code>#25517B</code> / <code>#ACD0ED</code>.</p>
+          <button class="te-btn te-btn--secondary te-btn--sm" type="button">View Itinerary</button>
+        </div>
+        <div class="ds-panel ds-panel--warm">
+          <span class="te-badge te-badge--warning" style="margin-bottom:8px;">5.15:1 / 9.21:1</span>
+          <h4>Warm Band &amp; Warning</h4>
+          <p style="font-size:13px;"><code>--te-bg-warm</code> adapts Light ↔ Night Ocean.</p>
+          <span class="te-badge te-badge--warning">3 Seats Left</span>
+        </div>
+        <div class="ds-panel ds-panel--cool">
+          <span class="te-badge te-badge--info" style="margin-bottom:8px;">3.95:1 / 5.24:1 1.4.11</span>
+          <h4>Control Border &amp; Focus</h4>
+          <p style="font-size:13px;"><code>--te-border-control</code> + <code>3px</code> focus ring.</p>
+          <span class="te-badge te-badge--error">Sold Out · 5.61:1</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 TYPOGRAPHY & LOCALIZATION -->
+    <section class="ds-sec" id="typography" data-search="typography font scale bangla hind siliguri inter plus jakarta tabular long text localization">
+      <div class="ds-sec-head">
+        <p class="te-overline">03 · Type Scale, Sample Content &amp; Localization</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Bilingual Latin + Bangla Scale &amp; Long-Text Rules</h2>
+        <p>Enforces the <strong>17px Bangla floor</strong> (<code>line-height: 1.85</code>, zero tracking) and <strong>13px Latin UI floor</strong>. All prices and ledger columns enforce <code>tabular-nums</code>.</p>
+      </div>
+
+      <div class="ds-table-wrap" style="margin-bottom:24px;">
+        <table class="te-table">
+          <thead>
+            <tr><th>Role Token</th><th>Resolved Spec</th><th>Live Specimen (Real Copy)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>--te-p-fs-display-xl</code></td><td class="te-num">44→72px / 800</td><td><span style="font-family:var(--te-font-display);font-weight:800;font-size:clamp(26px,3vw,40px);letter-spacing:-0.03em;color:var(--te-text-heading);">Explore Nepal</span></td></tr>
+            <tr><td><code>--te-p-fs-h2</code></td><td class="te-num">24→34px / 700</td><td><span style="font-family:var(--te-font-display);font-weight:700;font-size:var(--te-p-fs-h2);color:var(--te-text-heading);">Fixed-Date Group Departures</span></td></tr>
+            <tr><td><code>--te-p-fs-body</code></td><td class="te-num">16px / LH 1.60</td><td><span>Guided small-team departures from Chattogram (7–15 travellers).</span></td></tr>
+            <tr><td><code>--te-p-fs-bn-min</code></td><td class="te-num">≥17px / LH 1.85</td><td><span lang="bn" class="bn">ঢাকা ↔ কাঠমুন্ডু রিটার্ন এয়ার টিকিট ও প্রাইভেট ট্রান্সফার</span></td></tr>
+            <tr><td><code>--te-p-fs-price-lg</code></td><td class="te-num">24→32px / tabular</td><td><span class="te-num" style="font-size:var(--te-p-fs-price-lg);font-weight:700;color:var(--te-text-heading);">৳58,500</span> <span style="font-size:14px;color:var(--te-text-muted);">per person · 5D/4N</span></td></tr>
+            <tr><td><code>--te-p-fs-micro</code></td><td class="te-num">13px / 700 / 0.09em</td><td><span class="te-overline">CHATTOGRAM · 5 DAYS / 4 NIGHTS</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ds-grid-2">
+        <div class="ds-panel">
+          <h4>Long Bangla &amp; Mixed-Script Wrapping (<code>lang="bn"</code>)</h4>
+          <p lang="bn" class="bn" style="margin-bottom:0;">আলহামদুলিল্লাহ দীর্ঘ সময়ের পর অবশেষে ভারতীয় ভিসা চালু হতে যাচ্ছে আগামী ২৮ জুন - Chattogram 1301 Mosjid Goli থেকে Kashmir Season 5 ও Meghalaya টিম পরিচালনা করা হবে।</p>
+        </div>
+        <div class="ds-panel">
+          <h4>Long Token Reflow (<code>overflow-wrap: anywhere</code>)</h4>
+          <p style="font-size:14px;margin-bottom:8px;">Booking IDs, account numbers, and emails wrap cleanly at 320px without horizontal scroll:</p>
+          <div class="te-mono" style="overflow-wrap:anywhere;padding:10px;background:var(--te-surface-raised);border-radius:8px;border:1px solid var(--te-border-subtle);">
+            TE-NEP-2026-11-CHATTOGRAM-ISLAMIBANK-20501620205843017 · tripexpressb@gmail.com
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SPACING, DENSITY & GRID -->
+    <section class="ds-sec" id="layout" data-search="spacing density comfortable compact grid breakpoints containers columns">
+      <div class="ds-sec-head">
+        <p class="te-overline">04 · Spacing, Density, Grid &amp; Breakpoints</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>4px Rhythm · Live 12-Col / 4-Col Responsive Grid</h2>
+        <p>Click <strong>Density: Comfortable / Compact</strong> in the header to test live spacing shifts (<code>44px → 36px</code> buttons, <code>48px → 40px</code> rows, <code>pill → 8px</code> admin radii).</p>
+      </div>
+
+      <div class="ds-panel" style="margin-bottom:20px;">
+        <h4 style="margin-bottom:10px;">Live Responsive Column Visualizer (12-Col Desktop → 4-Col Mobile)</h4>
+        <div class="ds-grid-viz">
+          <div class="ds-grid-col">1</div><div class="ds-grid-col">2</div><div class="ds-grid-col">3</div><div class="ds-grid-col">4</div>
+          <div class="ds-grid-col">5</div><div class="ds-grid-col">6</div><div class="ds-grid-col">7</div><div class="ds-grid-col">8</div>
+          <div class="ds-grid-col">9</div><div class="ds-grid-col">10</div><div class="ds-grid-col">11</div><div class="ds-grid-col">12</div>
+        </div>
+      </div>
+
+      <div class="ds-grid-2">
+        <div class="ds-panel">
+          <h4>Spacing Scale (4px Base)</h4>
+          <div style="display:grid;gap:8px;margin-top:12px;">
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-1 (4)</code><span style="height:10px;width:4px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-2 (8)</code><span style="height:10px;width:8px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-4 (16)</code><span style="height:10px;width:16px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-6 (24)</code><span style="height:10px;width:24px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-12 (48)</code><span style="height:10px;width:48px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><code style="width:104px;">space-24 (96)</code><span style="height:10px;width:96px;background:var(--te-action-primary-bg);border-radius:4px;"></span></div>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <h4>Breakpoints &amp; Container Widths</h4>
+          <ul style="margin:10px 0 0;padding-left:18px;font-size:14px;display:grid;gap:6px;">
+            <li><strong>xs / sm (&lt;640px):</strong> 4 cols, 16px gutter, 20px margin</li>
+            <li><strong>md (640–1023px):</strong> 8 cols, 20px gutter, 32px margin</li>
+            <li><strong>lg (1024–1279px):</strong> 12 cols, 24px gutter, <code>1120px</code></li>
+            <li><strong>xl / 2xl (≥1280px):</strong> 12 cols, 24–32px gutter, <code>1240px</code> (<code>1440px</code> admin)</li>
+            <li><strong>Narrow / Prose:</strong> <code>800px</code> itinerary / <code>68ch</code> Latin / <code>58ch</code> Bangla</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ELEVATION, RADII, ICONS, ILLUSTRATION & MOTION -->
+    <section class="ds-sec" id="visuals" data-search="elevation shadows radii icons lucide illustration textures motion presets">
+      <div class="ds-sec-head">
+        <p class="te-overline">05 · Elevation, Radii, Icons, Illustration &amp; Motion</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Deep-Ocean Shadows, Radii, Iconography &amp; Textures</h2>
+      </div>
+
+      <h3 style="margin-bottom:10px;">Elevation Ladder (Deep-Ocean Tinted)</h3>
+      <div class="ds-elev-grid" style="margin-bottom:24px;">
+        <div class="ds-elev-card" style="box-shadow:var(--te-shadow-xs);"><code>shadow-xs</code><span style="font-size:12px;color:var(--te-text-muted);">Inputs, chips</span></div>
+        <div class="ds-elev-card" style="box-shadow:var(--te-shadow-sm);"><code>shadow-sm</code><span style="font-size:12px;color:var(--te-text-muted);">Resting cards</span></div>
+        <div class="ds-elev-card" style="box-shadow:var(--te-shadow-md);"><code>shadow-md</code><span style="font-size:12px;color:var(--te-text-muted);">Hovered cards</span></div>
+        <div class="ds-elev-card" style="box-shadow:var(--te-shadow-lg);"><code>shadow-lg</code><span style="font-size:12px;color:var(--te-text-muted);">Popovers, FAB</span></div>
+        <div class="ds-elev-card" style="box-shadow:var(--te-shadow-xl);"><code>shadow-xl</code><span style="font-size:12px;color:var(--te-text-muted);">Modals, lightbox</span></div>
+        <div class="ds-elev-card" style="box-shadow:var(--te-p-shadow-warm);"><code>shadow-warm</code><span style="font-size:12px;color:var(--te-text-muted);">Primary CTA hover</span></div>
+      </div>
+
+      <h3 style="margin-bottom:10px;">Radii Scale (Nested Rule: <code>16px card − padding → 12px photo</code>)</h3>
+      <div class="ds-radii-grid" style="margin-bottom:24px;">
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-xs);">xs · 4px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-sm);">sm · 8px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-md);">md · 12px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-lg);">lg · 16px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-xl);">xl · 24px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-2xl);">2xl · 32px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-pill);">pill · 999px</div>
+        <div class="ds-radius-box" style="border-radius:var(--te-p-r-disc);">disc · 50%</div>
+      </div>
+
+      <div class="ds-grid-3" style="margin-bottom:24px;">
+        <div class="ds-panel">
+          <h4>Icons (Inherited Stroke-Width)</h4>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:12px 0;color:var(--te-text-heading);">
+            <svg class="ic ic--sm" aria-hidden="true"><use href="#i-plane"></use></svg>
+            <svg class="ic" aria-hidden="true"><use href="#i-bus"></use></svg>
+            <svg class="ic ic--md" aria-hidden="true"><use href="#i-mountain"></use></svg>
+            <svg class="ic ic--lg" aria-hidden="true"><use href="#i-ship"></use></svg>
+            <svg class="ic ic--xl" aria-hidden="true"><use href="#i-palm"></use></svg>
+            <svg class="ic" style="color:var(--te-wa-soft-ink);" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <svg class="ic" style="color:var(--te-text-link);" aria-hidden="true"><use href="#i-facebook"></use></svg>
+          </div>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;">Stroke scales <code>2.15 → 1.35</code> across <code>16px–32px</code> for ~1.5px optical weight. Brand marks stay solid.</p>
+        </div>
+
+        <div class="ds-panel">
+          <h4>Illustration, Ambient Glow &amp; Glassmorphism</h4>
+          <div class="ds-tex-box ds-tex-ambient">
+            <div class="ds-glass-chip">Frosted Glass · Background Dignity</div>
+          </div>
+          <p style="font-size:13px;color:var(--te-text-muted);margin:0;"><strong>Background dignity:</strong> Twin warm/sky radial halos keep 60%+ white luminance; 16px frosted glass is for nav chrome &amp; hero overlays only.</p>
+        </div>
+
+        <div class="ds-panel">
+          <h4>Motion Presets (<code>100–700ms</code>)</h4>
+          <div id="departDemoBox" class="te-depart-play" style="padding:10px;background:var(--te-bg-warm);border-radius:8px;margin-bottom:10px;font-size:13px;font-weight:600;">
+            Departing Chattogram → Kathmandu (260ms)
+          </div>
+          <button class="te-btn te-btn--sm te-btn--outline" id="replayDepartBtn" type="button">Replay te-depart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ACCESSIBILITY -->
+    <section class="ds-sec" id="a11y" data-search="accessibility wcag focus keyboard reduced motion touch targets">
+      <div class="ds-sec-head">
+        <p class="te-overline">06 · Accessibility Guidance</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>WCAG 2.2 AA Focus, Touch &amp; Motion Rules</h2>
+        <ul style="margin:0;padding-left:18px;font-size:15px;display:grid;gap:6px;">
+          <li><strong>Focus Rings:</strong> <code>3px solid var(--te-focus-ring)</code> with <code>2px</code> offset (<code>3px</code> in High Contrast); overridden to <code>#111823</code> on Sunset Orange buttons.</li>
+          <li><strong>Touch Targets:</strong> Minimum <code>44×44px</code> hit area via <code>::after</code> even on compact <code>36px</code> controls; minimum <code>8px</code> spacing.</li>
+          <li><strong>Status Clarity:</strong> Never rely on hue alone - pair icons/labels with status surfaces; input borders default to <code>3.95:1</code>.</li>
+          <li><strong>Motion Safety:</strong> <code>@media (prefers-reduced-motion: reduce)</code> collapses durations to <code>0.01ms</code>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 07 VISIBLE TOKEN REFERENCE -->
+    <section class="ds-sec" id="tokens-ref" data-search="tokens reference primitives semantics component css variables">
+      <div class="ds-sec-head">
+        <p class="te-overline">07 · Visible Token Reference</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Live Three-Layer Token Explorer</h2>
+        <p>Filter any token across Primitives, Semantics, and Components. Click any token name to copy.</p>
+      </div>
+      <div class="te-field" style="max-width:420px;margin-bottom:14px;">
+        <label class="te-label" for="tokenFilterInput">Filter tokens</label>
+        <input class="te-input" id="tokenFilterInput" type="search" placeholder="e.g. btn, input, table, status, orange…">
+      </div>
+      <div class="te-table-wrap">
+        <table class="te-table">
+          <thead><tr><th>Layer 3 Component</th><th>Layer 2 Semantic</th><th>Layer 1 Primitive (Light / Dark)</th></tr></thead>
+          <tbody id="tokenRefTableBody">
+            <tr><td><code>--te-btn-primary-bg</code></td><td><code>--te-action-primary-bg</code></td><td><code>--te-p-orange-500</code> (#ED7C30)</td></tr>
+            <tr><td><code>--te-btn-primary-ink</code></td><td><code>--te-action-primary-ink</code></td><td><code>--te-p-n-950</code> (#111823)</td></tr>
+            <tr><td><code>--te-btn-secondary-bg</code></td><td><code>--te-action-secondary-bg</code></td><td><code>--te-p-ocean-700</code> / <code>--te-p-dark-raised</code></td></tr>
+            <tr><td><code>--te-input-bg</code></td><td><code>--te-surface-field</code></td><td><code>--te-p-n-50</code> / <code>--te-p-dark-field</code></td></tr>
+            <tr><td><code>--te-input-border</code></td><td><code>--te-border-control</code></td><td><code>--te-p-n-500</code> / <code>--te-p-ocean-400</code></td></tr>
+            <tr><td><code>--te-input-border-error</code></td><td><code>--te-status-error-text</code></td><td><code>--te-p-red-700</code> / <code>--te-p-red-300</code></td></tr>
+            <tr><td><code>--te-table-row-selected-bg</code></td><td><code>--te-surface-selected</code></td><td><code>--te-p-ocean-100</code> / <code>--te-p-ocean-800</code></td></tr>
+            <tr><td><code>--te-card-bg</code></td><td><code>--te-surface-card</code></td><td><code>--te-p-n-0</code> / <code>--te-p-dark-elevated</code></td></tr>
+            <tr><td><code>--te-nav-active-indicator</code></td><td><code>--te-action-primary-bg</code></td><td><code>--te-p-orange-500</code></td></tr>
+            <tr><td><code>--te-glow-ambient</code></td><td><code>--te-glow-warm</code>, <code>--te-glow-sky</code></td><td><code>rgba(237,124,48,.08)</code> + <code>rgba(67,148,213,.08)</code></td></tr>
+            <tr><td><code>--te-glass-bg</code></td><td><code>--te-glass-bg-strong</code> fallback</td><td><code>rgba(255,255,255,.80)</code> / <code>rgba(19,36,54,.68)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SPECIMEN 01: BUTTON, LINK & TOGGLE CHIP -->
+    <section class="ds-sec" id="comp-button" data-search="button primary secondary outline ghost danger whatsapp icon link loading selected chip">
+      <div class="ds-sec-head">
+        <p class="te-overline">Specimen 01 · Actions</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Button, Text Link, Icon Button &amp; Toggle Chip</h2>
+      </div>
+      <div class="ds-specimen">
+        <div class="ds-specimen__stage">
+          <button class="te-btn te-btn--sm te-btn--primary" type="button">Small (36px)</button>
+          <button class="te-btn te-btn--md te-btn--primary" type="button">Book Your Seat (44px)</button>
+          <button class="te-btn te-btn--lg te-btn--primary" type="button">Confirm Tour (52px)</button>
+          <button class="te-btn te-btn--secondary" type="button">View Itinerary</button>
+          <button class="te-btn te-btn--outline" type="button">Download PDF</button>
+          <button class="te-btn te-btn--ghost" type="button">Cancel</button>
+          <button class="te-btn te-btn--danger" type="button">Cancel Booking</button>
+          <button class="te-btn te-btn--wa" type="button"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Ask us</button>
+          <button class="te-btn te-btn--outline te-btn--icon" type="button" aria-label="Search tours"><svg class="ic" aria-hidden="true"><use href="#i-search"></use></svg></button>
+          <button class="te-btn te-btn--primary" id="demoLoadBtn" type="button">Check Seats (Async)</button>
+          <button class="te-btn te-btn--primary" type="button" disabled aria-disabled="true">Sold Out</button>
+          <button class="te-chip" type="button" data-toggle aria-pressed="true">Kashmir (Selected)</button>
+          <button class="te-chip" type="button" data-toggle aria-pressed="false">Meghalaya</button>
+          <a class="te-link" href="#comp-input">View payment terms</a>
+        </div>
+        <div class="ds-specimen__meta">
+          <div>
+            <strong>Anatomy:</strong> <code>[leading-icon] [label] [trailing-icon]</code> · <strong>Sizes:</strong> <code>sm/md/lg/icon</code> · <strong>Keyboard:</strong> <code>Tab</code>, <code>Enter/Space</code>.<br>
+            <strong>Responsive:</strong> Full-width inside mobile forms/cards; radius switches <code>999px → 8px</code> in compact admin mode.
+            <div class="ds-do-dont">
+              <div class="ds-do"><strong>DO:</strong> Use one Primary CTA per viewport + <code>#111823</code> ink.</div>
+              <div class="ds-dont"><strong>DON’T:</strong> Use white text on <code>#ED7C30</code> or drop below 44px hit box.</div>
+            </div>
+          </div>
+          <pre class="ds-code">&lt;button class="te-btn te-btn--primary te-btn--md"&gt;Book Your Seat&lt;/button&gt;
+&lt;button class="te-chip" aria-pressed="true"&gt;Kashmir&lt;/button&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIMEN 02: FORM CONTROLS -->
+    <section class="ds-sec" id="comp-input" data-search="input form field select checkbox validation phone readonly disabled error success">
+      <div class="ds-sec-head">
+        <p class="te-overline">Specimen 02 · Forms &amp; Validation</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Input, Select, Checkbox &amp; State Matrix</h2>
+      </div>
+      <div class="ds-specimen">
+        <div class="ds-specimen__stage" style="align-items:flex-start;">
+          <div class="te-field">
+            <label class="te-label" for="demoPhoneInput">Mobile (WhatsApp) <span class="te-req">*</span></label>
+            <div class="te-input-wrap">
+              <span class="te-input-prefix">+880</span>
+              <input class="te-input te-input--prefixed te-num" id="demoPhoneInput" type="tel" inputmode="tel" placeholder="01838-754207" aria-describedby="demoPhoneMsg">
+            </div>
+            <span class="te-hint" id="demoPhoneMsg">Blur to validate; clears immediately on fix.</span>
+          </div>
+          <div class="te-field">
+            <label class="te-label" for="demoSelect">Destination</label>
+            <select class="te-select" id="demoSelect">
+              <option>Explore Nepal (5D/4N · ৳58,500)</option>
+              <option>Kashmir by Road (Season 5 · ৳35,000)</option>
+              <option>Meghalaya &amp; Dawki (4 Days)</option>
+            </select>
+          </div>
+          <div class="te-field">
+            <label class="te-label" for="demoReadonly">Islami Bank A/C (Read-Only)</label>
+            <input class="te-input te-mono" id="demoReadonly" type="text" readonly value="20501620205843017">
+          </div>
+          <div class="te-field">
+            <label class="te-label" for="demoErrStatic">Traveller Passport (Error State)</label>
+            <input class="te-input" id="demoErrStatic" type="text" value="A123" aria-invalid="true" aria-describedby="demoErrStaticMsg">
+            <span class="te-error-msg" id="demoErrStaticMsg">Passport number must be 9 alphanumeric characters.</span>
+          </div>
+          <div class="te-field">
+            <label class="te-label" for="demoDisabled">Closed Batch (Disabled)</label>
+            <input class="te-input" id="demoDisabled" type="text" disabled value="Nepal Nov 11–16 (Closed)">
+          </div>
+          <label class="te-check-row"><input type="checkbox" checked> Acknowledge non-refundable airfare policy</label>
+        </div>
+        <div class="ds-specimen__meta">
+          <div>
+            <strong>Anatomy:</strong> Label → Input (`--te-input-bg`) → Hint / Error (`aria-describedby`).<br>
+            <strong>Responsive &amp; Keyboard:</strong> <code>16px+</code> prevents iOS zoom; <code>Tab</code> navigates, paste never blocked.
+            <div class="ds-do-dont">
+              <div class="ds-do"><strong>DO:</strong> Validate on blur and clear error immediately on valid input.</div>
+              <div class="ds-dont"><strong>DON’T:</strong> Put white inputs on white cards or pre-disable Submit.</div>
+            </div>
+          </div>
+          <pre class="ds-code">&lt;input class="te-input" aria-invalid="true" aria-describedby="err"&gt;
+&lt;span id="err" class="te-error-msg"&gt;...&lt;/span&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIMEN 03: BADGES -->
+    <section class="ds-sec" id="comp-badge" data-search="badge chip status booking open seats filling sold out featured">
+      <div class="ds-sec-head">
+        <p class="te-overline">Specimen 03 · Status</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Badges &amp; Status Indicators</h2>
+      </div>
+      <div class="ds-specimen">
+        <div class="ds-specimen__stage">
+          <span class="te-badge te-badge--featured"><span>FEATURED · 5D/4N</span></span>
+          <span class="te-badge te-badge--success"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-check"></use></svg> Booking Open</span>
+          <span class="te-badge te-badge--warning">3 Seats Filling</span>
+          <span class="te-badge te-badge--error"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-x"></use></svg> Sold Out</span>
+          <span class="te-badge te-badge--info"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-info"></use></svg> Visa Update</span>
+        </div>
+        <div class="ds-specimen__meta">
+          <div><strong>Anatomy &amp; Density:</strong> Pill container (`--te-badge-radius`), optional `16px` icon, `13px` bold label. Featured `-6deg` skew auto-flattens to `0deg` in `[data-density="compact"]`.</div>
+          <pre class="ds-code">&lt;span class="te-badge te-badge--success"&gt;Booking Open&lt;/span&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIMEN 04: PACKAGE & KPI CARDS -->
+    <section class="ds-sec" id="comp-card" data-search="card package media kpi nested radius hover lift">
+      <div class="ds-sec-head">
+        <p class="te-overline">Specimen 04 · Content &amp; Metric Cards</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Featured Package Card &amp; Admin KPI Tile</h2>
+      </div>
+      <div class="ds-specimen">
+        <div class="ds-specimen__stage ds-grid-2" style="align-items:stretch;">
+          <article class="te-card te-card--featured te-card--interactive">
+            <div class="te-card__media">
+              <img src="../assets/img/card/cover-nepal-720.webp" alt="Trip Express BD group in Nepal">
+              <span class="te-badge te-badge--featured" style="position:absolute;top:10px;left:10px;"><span>FEATURED · 5D/4N</span></span>
+            </div>
+            <p class="te-overline">Nepal · Fixed Departure</p>
+            <h3 style="margin:4px 0;">Explore Nepal</h3>
+            <p lang="bn" class="bn" style="margin-bottom:10px;">ঢাকা ↔ কাঠমুন্ডু রিটার্ন এয়ার টিকিট</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--te-border-subtle);padding-top:12px;">
+              <span class="te-num" style="font-size:24px;font-weight:700;color:var(--te-text-heading);">৳58,500</span>
+              <button class="te-btn te-btn--primary te-btn--sm" type="button">Book Your Seat</button>
+            </div>
+          </article>
+          <article class="te-card" style="display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <p class="te-overline">Admin KPI · November Departures</p>
+              <div class="te-num" style="font-size:36px;font-weight:800;color:var(--te-text-heading);margin:8px 0;">৳8,19,000</div>
+              <span class="te-badge te-badge--success">14 / 15 Seats Paid</span>
+            </div>
+            <p style="font-size:13px;color:var(--te-text-muted);margin:12px 0 0;">Islami Bank (Chawkbazar) + Eastern Bank (Agrabad) verified deposits.</p>
+          </article>
+        </div>
+        <div class="ds-specimen__meta">
+          <div><strong>Anatomy &amp; Responsive:</strong> Card `16px` radius wraps `12px` media (`16:10`). 3-up desktop → 2-up tablet → 1-up mobile; hover lift disabled on touch.</div>
+          <pre class="ds-code">&lt;article class="te-card te-card--featured te-card--interactive"&gt;...&lt;/article&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIMEN 05: TABS & SELECTABLE DATA TABLE -->
+    <section class="ds-sec" id="comp-table" data-search="tabs table admin ledger selected row tabular keyboard">
+      <div class="ds-sec-head">
+        <p class="te-overline">Specimen 05 · Navigation &amp; Data Table</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2>Keyboard Tabs &amp; Interactive Deposit Ledger</h2>
+      </div>
+      <div class="ds-specimen">
+        <div class="ds-specimen__stage" style="display:block;">
+          <div class="te-tabs" role="tablist" aria-label="Departure views" style="margin-bottom:16px;">
+            <button class="te-tab" role="tab" aria-selected="true" tabindex="0" id="t1" aria-controls="p1">Booking Ledger</button>
+            <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="t2" aria-controls="p2">Bank Accounts</button>
+          </div>
+          <div id="p1" role="tabpanel" aria-labelledby="t1">
+            <div class="te-table-wrap">
+              <table class="te-table">
+                <thead>
+                  <tr><th>Select</th><th>ID</th><th>Traveller</th><th>Route</th><th class="is-num">Paid (BDT)</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="is-selected" data-selectable-row>
+                    <td><input type="checkbox" checked aria-label="Select Tariqul Hasan"></td>
+                    <td class="te-mono">TE-NEP-041</td>
+                    <td>Tariqul Hasan</td>
+                    <td>Explore Nepal (5D/4N)</td>
+                    <td class="is-num">৳58,500</td>
+                    <td><span class="te-badge te-badge--success">Confirmed</span></td>
+                  </tr>
+                  <tr data-selectable-row>
+                    <td><input type="checkbox" aria-label="Select Nusrat Jahan"></td>
+                    <td class="te-mono">TE-KSH-019</td>
+                    <td>Nusrat Jahan</td>
+                    <td>Kashmir by Road (Season 5)</td>
+                    <td class="is-num">৳20,000</td>
+                    <td><span class="te-badge te-badge--warning">Deposit Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+            <p style="margin:0;font-size:14px;"><strong>Islami Bank (Chawkbazar):</strong> <code class="te-mono">20501620205843017</code> · <strong>Eastern Bank (Agrabad):</strong> <code class="te-mono">0011450000514</code></p>
+          </div>
+        </div>
+        <div class="ds-specimen__meta">
+          <div><strong>Keyboard &amp; States:</strong> <code>ArrowLeft/Right</code> switches tabs; click rows to toggle <code>is-selected</code> (`7.05:1` light / `10.57:1` dark). Zero 17° skew inside tables.</div>
+          <pre class="ds-code">&lt;table class="te-table"&gt;&lt;tr class="is-selected"&gt;...&lt;/tr&gt;&lt;/table&gt;</pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+
+<div class="ds-dialog" id="tokenRefDialog" role="dialog" aria-modal="true" aria-labelledby="tokenRefTitle">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+    <h2 id="tokenRefTitle" style="font-size:20px;margin:0;">Quick Three-Layer Token Map</h2>
+    <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm" id="closeTokenRef" type="button" aria-label="Close token reference">
+      <svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg>
+    </button>
+  </div>
+  <p style="font-size:14px;color:var(--te-text-muted);">Jump to <a class="te-link" href="#tokens-ref" onclick="document.getElementById('closeTokenRef').click()">Section 07</a> for the full inline token filter.</p>
+  <div class="te-table-wrap">
+    <table class="te-table">
+      <thead><tr><th>Component</th><th>Semantic</th><th>Primitive</th></tr></thead>
+      <tbody>
+        <tr><td><code>--te-btn-primary-bg</code></td><td><code>--te-action-primary-bg</code></td><td><code>--te-p-orange-500</code></td></tr>
+        <tr><td><code>--te-input-border-error</code></td><td><code>--te-status-error-text</code></td><td><code>--te-p-red-700 / 300</code></td></tr>
+        <tr><td><code>--te-table-row-selected-bg</code></td><td><code>--te-surface-selected</code></td><td><code>--te-p-ocean-100 / 800</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+
+<script src="assets/ds.js"></script>
+<script>
+  (function () {
+    const mount = document.getElementById('rampMount');
+    if (!mount) return;
+    const families = [
+      { title: 'Orange (Primary)', prefix: '--te-p-orange-', steps: ['50','100','200','300','400','500','600','700','800','900','950'], darkInkUpTo: 500 },
+      { title: 'Sky Blue (Secondary)', prefix: '--te-p-sky-', steps: ['50','100','200','300','400','500','600','700','800','900','950'], darkInkUpTo: 500 },
+      { title: 'Deep Ocean (Anchor)', prefix: '--te-p-ocean-', steps: ['50','100','200','300','400','500','600','700','800','900','950'], darkInkUpTo: 400 },
+      { title: 'Slate Neutral', prefix: '--te-p-n-', steps: ['0','50','100','200','300','400','500','600','700','800','900','950'], darkInkUpTo: 400 }
+    ];
+    families.forEach(f => {
+      const h = document.createElement('h4');
+      h.textContent = f.title;
+      h.style.margin = '14px 0 8px';
+      mount.appendChild(h);
+      const grid = document.createElement('div');
+      grid.className = 'ds-ramp';
+      if (f.steps.length === 12) grid.style.gridTemplateColumns = 'repeat(12, minmax(56px, 1fr))';
+      f.steps.forEach(s => {
+        const varName = f.prefix + s;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ds-swatch';
+        btn.onclick = () => window.teCopy && window.teCopy('var(' + varName + ')');
+        const darkInk = Number(s) <= f.darkInkUpTo;
+        btn.innerHTML = `<div class="ds-swatch__box" style="background:var(${varName});color:${darkInk ? 'var(--te-p-n-950)' : 'var(--te-p-n-0)'}">${s}</div><div class="ds-swatch__lbl">${s}</div>`;
+        grid.appendChild(btn);
+      });
+      mount.appendChild(grid);
+    });
+  })();
+</script>
+</body>
+</html>

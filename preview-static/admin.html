@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Operations Admin Portal - Trip Express BD</title>
+  <meta name="description" content="Responsive compact operations admin portal built from Trip Express BD tokens with role-aware UI visibility, sortable ledger, detail drawer, and command search.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body id="psAdminRoot">
+
+<a class="skip-link" href="#main">Skip to workspace</a>
+
+<div class="ps-notice">
+  <div class="ps-pages-bar">
+    <strong>RBAC Warning:</strong>
+    <span id="admRoleNote">UI visibility demo only - production RBAC must be enforced server-side.</span>
+  </div>
+  <div class="cluster">
+    <a href="index.html">Public Home</a>
+    <a href="tours.html">Tours</a>
+    <button class="te-btn te-btn--sm te-btn--outline" id="psThemeBtn" type="button" aria-pressed="false">Night Ocean</button>
+  </div>
+</div>
+
+<div class="ps-backdrop" id="psBackdrop"></div>
+
+<div class="ps-adm-shell">
+  <aside class="ps-adm-side" id="psDrawer" aria-label="Operations navigation">
+    <div>
+      <a class="ps-brand" href="admin.html">
+        <span class="ps-brand__chip"><img src="assets/brand/logo-mark.svg" alt="" width="28" height="24" aria-hidden="true"></span>
+        <span>TEBD Ops</span>
+      </a>
+      <ul class="ps-adm-nav">
+        <li><button class="ps-adm-nav__btn is-active" type="button" data-adm-view="queue">Bookings &amp; Queue</button></li>
+        <li><button class="ps-adm-nav__btn" id="admNewBtn" type="button" data-adm-view="create">New Seat Intake</button></li>
+        <li><button class="ps-adm-nav__btn" id="admPermBtn" type="button" data-adm-view="perms">Roles &amp; Access <span class="te-badge te-badge--warning" id="admPermLock" hidden><svg class="ic ic--sm" aria-hidden="true"><use href="#i-lock"></use></svg></span></button></li>
+      </ul>
+    </div>
+    <div class="stack">
+      <p class="u-xs u-muted u-mb-0">1301 Mosjid Goli · <span class="te-num">01838-754207</span></p>
+      <a class="te-btn te-btn--sm te-btn--outline te-btn--block" href="index.html">Exit to Website</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="ps-adm-top">
+      <div class="cluster">
+        <button class="te-btn te-btn--outline te-btn--icon ps-menu-btn" id="psMenuBtn" type="button" aria-label="Toggle admin sidebar" aria-expanded="false" aria-controls="psDrawer"><svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+        <nav aria-label="Breadcrumb"><ol class="ps-crumbs u-mb-0"><li>Ops Portal</li><li aria-hidden="true">/</li><li aria-current="page" id="admCrumbCurrent">Bookings &amp; Queue</li></ol></nav>
+      </div>
+      <div class="cluster">
+        <button class="te-btn te-btn--sm te-btn--outline" id="admCmdBtn" type="button"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-search"></use></svg>Command (Ctrl+K)</button>
+        <label class="u-sr-only" for="admRoleSel">Simulated role</label>
+        <select class="te-select" id="admRoleSel" aria-label="Switch admin role">
+          <option value="ops_lead">Role: Operations Lead</option>
+          <option value="desk_agent">Role: Desk Agent</option>
+          <option value="finance">Role: Finance Verifier</option>
+        </select>
+        <button class="te-btn te-btn--sm te-btn--outline" id="admDensityBtn" type="button">Density: Compact</button>
+      </div>
+    </header>
+
+    <main id="main" class="ps-adm-body">
+      <!-- View 1: Queue -->
+      <section class="adm-pane stack" id="adm-queue" aria-labelledby="admQTitle">
+        <div class="cluster cluster--between">
+          <div><p class="te-overline">Batch Dispatch</p><h1 id="admQTitle">Bookings &amp; Deposit Queue</h1></div>
+          <div class="cluster">
+            <label class="u-sr-only" for="admStateSel">Preview data state</label>
+            <select class="te-select" id="admStateSel" aria-label="Table data state">
+              <option value="ready">State: Live Rows (6)</option>
+              <option value="loading">State: Loading Skeleton</option>
+              <option value="empty">State: Empty Results</option>
+              <option value="error">State: Server 503</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="ps-card"><span class="te-overline">Cleared Total</span><strong class="te-num">৳3,16,900</strong><span class="u-xs u-muted">Sample Queue</span></div>
+          <div class="ps-card"><span class="te-overline">Pending Verify</span><strong class="te-num">3 Slips</strong><span class="u-xs u-muted">Islami / EBL</span></div>
+          <div class="ps-card"><span class="te-overline">Air Ceiling</span><strong class="te-num">৳36,000</strong><span class="u-xs u-muted">DAC–KTM Cap</span></div>
+          <div class="ps-card"><span class="te-overline">Mode</span><strong>Compact</strong><span class="u-xs u-muted">Zero 17° skew</span></div>
+        </div>
+
+        <div class="ps-card">
+          <div class="cluster">
+            <div class="te-field">
+              <label class="te-label" for="admFilterQ">Quick filter</label>
+              <input class="te-input" id="admFilterQ" type="search" placeholder="Search booking ID, name or route…">
+            </div>
+            <button class="te-btn te-btn--sm te-btn--outline" id="admSortPaid" type="button"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg>Sort Paid ৳</button>
+          </div>
+        </div>
+
+        <div class="ps-table-wrap">
+          <div id="admTableScroll">
+            <table class="ps-table ps-table--stack">
+              <thead><tr><th>Sel</th><th>ID</th><th>Traveller</th><th>Route</th><th class="is-num">Paid</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="admTbody"></tbody>
+            </table>
+          </div>
+          <div id="admStateBox" hidden></div>
+          <div class="ps-adm-pag"><span class="te-num">Page 1 of 1</span><span class="u-muted">Responsive stacked layout below 768px</span></div>
+        </div>
+
+        <div class="ps-adm-bulk" id="admBulkBar" hidden>
+          <strong class="te-num" id="admBulkTxt">0 selected</strong>
+          <div class="cluster">
+            <button class="te-btn te-btn--sm te-btn--primary" id="admBulkVerify" type="button">Verify Slips</button>
+            <button class="te-btn te-btn--sm te-btn--danger" id="admBulkVoid" type="button">Void Selected</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 2: Intake Form Demo -->
+      <section class="adm-pane" id="adm-create" hidden aria-labelledby="admCreateTitle">
+        <div class="ps-card u-measure stack">
+          <p class="te-overline">Counter Intake</p>
+          <h1 id="admCreateTitle">Hold New Group Seats</h1>
+          <p class="u-sm u-muted u-mb-0">Counter validation preview reuses the identical phone and confirmation pattern from public enquiries.</p>
+          <a class="te-btn te-btn--primary" href="contact.html#enquiry">Open Validated Intake Form</a>
+        </div>
+      </section>
+
+      <!-- View 3: Roles Matrix -->
+      <section class="adm-pane stack" id="adm-perms" hidden aria-labelledby="admPermTitle">
+        <h1 id="admPermTitle">Role-Based Action Visibility &amp; Server RBAC</h1>
+        <div class="ps-alert ps-alert--error" id="admPermDenied" hidden>
+          <strong>HTTP 403 Preview - Access Restricted</strong><br>Hiding navigation/buttons in JS does not secure data. Production API routes must enforce role claims server-side.
+        </div>
+        <div class="ps-table-wrap" id="admPermMatrix">
+          <table class="ps-table">
+            <thead><tr><th>Capability</th><th>Operations Lead</th><th>Desk Agent</th><th>Finance</th></tr></thead>
+            <tbody>
+              <tr><td>View Queue &amp; Filters</td><td>Allowed</td><td>Allowed</td><td>Allowed</td></tr>
+              <tr><td>Verify Islami/EBL Slips</td><td>Allowed</td><td>Denied</td><td>Allowed</td></tr>
+              <tr><td>Void Bookings &amp; RBAC</td><td>Allowed</td><td>Denied</td><td>Denied</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- Detail & Edit Drawer -->
+<aside class="ps-drawer" id="admDetailDrawer" role="dialog" aria-modal="true" aria-labelledby="admDrawerTitle">
+  <div class="stack">
+    <div class="cluster cluster--between"><h2 id="admDrawerTitle">Booking Record</h2><button class="te-btn te-btn--ghost te-btn--icon" id="admDrawerClose" type="button" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button></div>
+    <div class="te-field"><label class="te-label" for="admDetailId">Booking Ref (Read-Only)</label><input class="te-input te-mono" id="admDetailId" readonly></div>
+    <div class="te-field"><label class="te-label" for="admDetailName">Lead Traveller</label><input class="te-input" id="admDetailName"></div>
+    <div class="te-field"><label class="te-label" for="admDetailNote">Ops / Bangla Notes</label><textarea class="te-textarea" id="admDetailNote" lang="bn" rows="3"></textarea></div>
+  </div>
+  <div class="ps-drawer__sticky-foot">
+    <button class="te-btn te-btn--sm te-btn--danger" id="admVoidBtn" type="button">Void</button>
+    <button class="te-btn te-btn--sm te-btn--primary" id="admSaveBtn" type="button">Save Changes</button>
+  </div>
+</aside>
+
+<!-- Command Palette Dialog -->
+<div class="ps-dialog" id="admCmdModal" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="cluster cluster--between">
+    <input class="te-input" id="admCmdIn" placeholder="Jump to view…" aria-label="Command filter">
+    <button class="te-btn te-btn--sm te-btn--ghost" id="admCmdClose" type="button">Esc</button>
+  </div>
+  <div class="stack u-mt-2">
+    <button class="te-btn te-btn--sm te-btn--outline" type="button" data-cmd-jump="queue">Bookings &amp; Queue</button>
+    <button class="te-btn te-btn--sm te-btn--outline" type="button" data-cmd-jump="create">New Seat Intake</button>
+    <button class="te-btn te-btn--sm te-btn--outline" type="button" data-cmd-jump="perms">Roles &amp; Access</button>
+  </div>
+</div>
+
+<!-- Destructive Confirm AlertDialog -->
+<div class="ps-dialog" id="admConfirmModal" role="alertdialog" aria-modal="true" aria-labelledby="admConfT">
+  <div class="ps-card stack">
+    <h2 id="admConfT">Confirm Void Booking?</h2>
+    <p class="u-sm u-muted u-mb-0">Demo action marks selected record voided in local memory.</p>
+    <div class="cluster cluster--end">
+      <button class="te-btn te-btn--sm te-btn--outline" id="admConfirmCancel" type="button">Cancel</button>
+      <button class="te-btn te-btn--sm te-btn--danger" id="admConfirmOk" type="button">Confirm Void</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

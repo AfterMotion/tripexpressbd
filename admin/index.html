@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Operations Portal - Trip Express BD Admin</title>
+  <meta name="description" content="Compact operations portal shell for Trip Express BD tour dispatch, seat intake, slip verification, audit ledger, and RBAC permission visibility.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to workspace</a>
+
+<!-- Security & Prototype Disclosure Strip -->
+<div class="adm-rbac-strip" role="region" aria-label="Role visibility disclosure">
+  <span><strong>RBAC Security Notice:</strong> <span id="roleBannerNote">Client UI visibility demo only - production APIs must enforce permissions server-side.</span></span>
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+    <a href="../preview/index.html" style="color:inherit;font-weight:700;text-decoration:underline;">Public Website</a>
+    <span>·</span>
+    <a href="../design-system/index.html" style="color:inherit;font-weight:700;text-decoration:underline;">Design System</a>
+  </div>
+</div>
+
+<div class="adm-backdrop" id="admBackdrop"></div>
+
+<div class="adm-shell">
+  <!-- Permission-Aware Sidebar -->
+  <aside class="adm-side" id="admSide" aria-label="Admin workspace navigation">
+    <div>
+      <a class="adm-brand" href="#top" onclick="return false;">
+        <span class="adm-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="" width="24" height="20" aria-hidden="true"></span>
+        <span>TEBD Ops Portal</span>
+      </a>
+
+      <div class="adm-nav-group">
+        <p class="adm-nav-label">Operations</p>
+        <ul class="adm-nav">
+          <li>
+            <button class="adm-nav__btn is-active" type="button" data-nav-view="bookings" aria-current="page">
+              <span class="adm-nav__left"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-list"></use></svg>Bookings &amp; Queue</span>
+              <span class="te-badge te-badge--neutral te-num">12</span>
+            </button>
+          </li>
+          <li>
+            <button class="adm-nav__btn" type="button" data-nav-view="intake">
+              <span class="adm-nav__left"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-plus"></use></svg>New Seat Intake</span>
+              <span class="adm-lock-tag te-badge te-badge--warning" hidden><svg class="ic ic--sm" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+            </button>
+          </li>
+          <li>
+            <button class="adm-nav__btn" type="button" data-nav-view="audit">
+              <span class="adm-nav__left"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-clock"></use></svg>Audit &amp; History</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="adm-nav-group">
+        <p class="adm-nav-label">Administration</p>
+        <ul class="adm-nav">
+          <li>
+            <button class="adm-nav__btn" type="button" data-nav-view="permissions">
+              <span class="adm-nav__left"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-shield"></use></svg>Roles &amp; Access</span>
+              <span class="adm-lock-tag te-badge te-badge--warning" hidden><svg class="ic ic--sm" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--te-border-subtle);padding-top:12px;display:grid;gap:8px;font-size:12px;color:var(--te-text-muted);">
+      <div><strong>Chattogram Desk</strong><br>1301 Mosjid Goli · <span class="te-num">01838-754207</span></div>
+      <a class="te-btn te-btn--sm te-btn--outline" href="../preview/tours.html">
+        <span>Open Public Tours</span>
+        <svg class="ic ic--sm" aria-hidden="true"><use href="#i-ext"></use></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Workspace Column -->
+  <div class="adm-main-col">
+    <header class="adm-top" id="top">
+      <div class="adm-top__left">
+        <button class="te-btn te-btn--outline te-btn--icon adm-menu-btn" id="admMenuBtn" type="button" aria-label="Toggle workspace menu" aria-expanded="false" aria-controls="admSide">
+          <svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+        <nav aria-label="Breadcrumb">
+          <ol class="adm-crumbs" id="admBreadcrumbs"></ol>
+        </nav>
+      </div>
+
+      <div class="adm-top__right">
+        <button class="adm-cmd-trigger" id="cmdBtn" type="button" aria-label="Open quick command search">
+          <span style="display:inline-flex;align-items:center;gap:6px;"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-search"></use></svg>Search ID or jump…</span>
+          <kbd class="adm-kbd">Ctrl+K</kbd>
+        </button>
+
+        <label class="te-label" for="roleSelect" style="position:absolute;left:-9999px;">Active Admin Role</label>
+        <select class="te-select" id="roleSelect" aria-label="Simulate active admin role" style="width:auto;min-height:var(--te-control-height);">
+          <option value="ops_lead">Role: Operations Lead</option>
+          <option value="desk_agent">Role: Booking Desk Agent</option>
+          <option value="finance">Role: Finance Verifier</option>
+        </select>
+
+        <div class="te-seg" role="group" aria-label="Density mode">
+          <button type="button" data-set-density="compact" aria-pressed="true">Compact</button>
+          <button type="button" data-set-density="comfortable" aria-pressed="false">Comfortable</button>
+        </div>
+
+        <div class="te-seg" role="group" aria-label="Color theme">
+          <button type="button" data-set-theme="light" aria-pressed="true">Light</button>
+          <button type="button" data-set-theme="dark" aria-pressed="false">Night</button>
+        </div>
+
+        <button class="te-btn te-btn--sm te-btn--outline" id="hcToggle" type="button" aria-pressed="false">High Contrast</button>
+      </div>
+    </header>
+
+    <main id="main" class="adm-body">
+
+      <!-- VIEW 1: BOOKINGS & DISPATCH QUEUE -->
+      <section class="adm-view" id="view-bookings" aria-labelledby="bookingsTitle">
+        <div class="adm-view-head">
+          <div>
+            <p class="adm-overline">Batch Ledger · Q4 Departures</p>
+            <h1 id="bookingsTitle">Bookings &amp; Deposit Queue</h1>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <label class="te-label" for="dataModeSelect" style="position:absolute;left:-9999px;">Simulate Data State</label>
+            <select class="te-select" id="dataModeSelect" aria-label="Preview table data state" style="width:auto;min-height:var(--te-control-height);">
+              <option value="ready">State: Live Queue (12)</option>
+              <option value="loading">State: Loading Skeleton</option>
+              <option value="empty">State: Empty Results</option>
+              <option value="error">State: Server 503 Error</option>
+            </select>
+            <button class="te-btn te-btn--primary" id="btnNewIntake" type="button">
+              <svg class="ic ic--sm" aria-hidden="true"><use href="#i-plus"></use></svg>
+              New Seat Intake
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Summary Strip (Pure Neutral Cards, Tabular Nums) -->
+        <div class="adm-kpi-grid" aria-label="Key metrics">
+          <div class="adm-card">
+            <span class="adm-overline">Cleared Deposits</span>
+            <div class="adm-kpi__val te-num" id="kpiDeposits">৳0</div>
+            <span class="te-badge te-badge--success">Islami / EBL Verified</span>
+          </div>
+          <div class="adm-card">
+            <span class="adm-overline">Active Seats Held</span>
+            <div class="adm-kpi__val te-num" id="kpiSeats">0 Held</div>
+            <span class="te-badge te-badge--info">Nepal / Kashmir / Meghalaya</span>
+          </div>
+          <div class="adm-card">
+            <span class="adm-overline">Pending Bank Verify</span>
+            <div class="adm-kpi__val te-num" id="kpiPending">0 Slips</div>
+            <span class="te-badge te-badge--warning">Awaiting Finance Match</span>
+          </div>
+          <div class="adm-card">
+            <span class="adm-overline">Airfare Ceiling (&gt;৳36k)</span>
+            <div class="adm-kpi__val te-num" id="kpiAirDiff">0 Files</div>
+            <span class="te-badge te-badge--neutral">DAC–KTM Cap Policy</span>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="adm-card">
+          <div class="adm-filter-bar">
+            <div class="adm-filter-bar__fields">
+              <div class="te-field" style="flex:1 1 220px;">
+                <label class="te-label" for="qSearch">Filter booking ID, traveller, phone or note</label>
+                <input class="te-input" id="qSearch" type="search" placeholder="Search TE-NEP-041, Tariqul, Tamabil…">
+              </div>
+              <div class="te-field" style="flex:0 1 170px;">
+                <label class="te-label" for="fStatus">Verification status</label>
+                <select class="te-select" id="fStatus">
+                  <option value="all">All statuses</option>
+                  <option value="pending_verify">Pending Verify</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="airfare_diff">Airfare &gt;৳36k</option>
+                  <option value="voided">Voided</option>
+                </select>
+              </div>
+              <div class="te-field" style="flex:0 1 180px;">
+                <label class="te-label" for="fRoute">Route corridor</label>
+                <select class="te-select" id="fRoute">
+                  <option value="all">All routes</option>
+                  <option value="nepal">Explore Nepal</option>
+                  <option value="kashmir">Kashmir Season 5</option>
+                  <option value="meghalaya">Meghalaya &amp; Dawki</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dense Table + Mobile Stacked Cards + Pagination -->
+        <div class="adm-table-wrap">
+          <div class="adm-table-scroll" id="tableScroll">
+            <table class="adm-table adm-table--stack">
+              <thead>
+                <tr>
+                  <th style="width:40px;"><input class="adm-check" id="selectAll" type="checkbox" aria-label="Select all visible rows"></th>
+                  <th><button class="adm-sort-btn" type="button" data-sort="id">Booking ID <svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg></button></th>
+                  <th><button class="adm-sort-btn" type="button" data-sort="name">Lead Traveller <svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg></button></th>
+                  <th><button class="adm-sort-btn" type="button" data-sort="route">Route (Seats) <svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg></button></th>
+                  <th class="is-num"><button class="adm-sort-btn" type="button" data-sort="paid">Paid (৳) <svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg></button></th>
+                  <th><button class="adm-sort-btn" type="button" data-sort="status">Status <svg class="ic ic--sm" aria-hidden="true"><use href="#i-sort"></use></svg></button></th>
+                  <th>Truncated Note</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTbody"></tbody>
+            </table>
+          </div>
+
+          <div class="adm-state-box" id="tableStateBox" hidden></div>
+
+          <div class="adm-pagination" id="pagBar">
+            <span class="te-num" id="pagInfo">Showing 1–6</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <label for="pageSizeSelect" style="color:var(--te-text-muted);">Rows:</label>
+              <select class="te-select" id="pageSizeSelect" aria-label="Rows per page" style="width:auto;min-height:32px;padding:2px 8px;">
+                <option value="6" selected>6</option>
+                <option value="10">10</option>
+              </select>
+              <button class="te-btn te-btn--sm te-btn--outline" id="pagPrev" type="button">Previous</button>
+              <button class="te-btn te-btn--sm te-btn--outline" id="pagNext" type="button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Bulk Action Bar -->
+        <div class="adm-bulk-bar" id="bulkBar" hidden role="region" aria-label="Bulk selection actions">
+          <strong class="te-num" id="bulkCount">0 selected</strong>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="te-btn te-btn--sm te-btn--primary" id="bulkVerifyBtn" type="button">Verify Slips</button>
+            <button class="te-btn te-btn--sm te-btn--danger" id="bulkVoidBtn" type="button">Void Selected</button>
+            <button class="te-btn te-btn--sm te-btn--ghost" id="bulkClearBtn" type="button" style="color:var(--te-p-n-0);">Clear</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: MULTI-STEP SEAT INTAKE (3-STEP WORKFLOW) -->
+      <section class="adm-view" id="view-intake" hidden aria-labelledby="intakeTitle">
+        <div class="adm-view-head">
+          <div>
+            <p class="adm-overline">Multi-Step Intake Workflow</p>
+            <h1 id="intakeTitle">Create New Group Seat Hold</h1>
+          </div>
+        </div>
+
+        <div class="adm-card" style="max-width:760px;">
+          <div class="adm-stepper" aria-label="Workflow steps">
+            <div class="adm-step is-active" id="wizInd1">1. Route &amp; Airfare Policy</div>
+            <div class="adm-step" id="wizInd2">2. Traveller &amp; Phone</div>
+            <div class="adm-step" id="wizInd3">3. Deposit &amp; Confirm</div>
+          </div>
+
+          <form id="intakeForm" novalidate style="display:grid;gap:14px;">
+            <div id="wizStep1" style="display:grid;gap:12px;">
+              <div class="adm-grid-2">
+                <div class="te-field">
+                  <label class="te-label" for="wRoute">Destination package</label>
+                  <select class="te-select" id="wRoute">
+                    <option value="Explore Nepal 5D/4N">Explore Nepal 5D/4N (৳58,500)</option>
+                    <option value="Kashmir Season 5">Kashmir Season 5 (৳35,000)</option>
+                    <option value="Meghalaya & Dawki">Meghalaya &amp; Dawki (4 Days)</option>
+                  </select>
+                </div>
+                <div class="te-field">
+                  <label class="te-label" for="wSeats">Seat count</label>
+                  <input class="te-input te-num" id="wSeats" type="number" min="1" max="15" value="2">
+                </div>
+              </div>
+              <label style="display:flex;align-items:flex-start;gap:8px;font-size:13px;cursor:pointer;">
+                <input class="adm-check" id="wCapAck" type="checkbox">
+                <span>Traveller briefed on Nepal ৳36,000 airfare ceiling / published exclusion rules before deposit.</span>
+              </label>
+              <span class="te-err" id="wErrCap">Confirm exclusion &amp; airfare ceiling briefing before continuing.</span>
+              <div style="display:flex;justify-content:flex-end;">
+                <button class="te-btn te-btn--primary" id="wizNext1" type="button">Continue to Step 2</button>
+              </div>
+            </div>
+
+            <div id="wizStep2" hidden style="display:grid;gap:12px;">
+              <div class="adm-grid-2">
+                <div class="te-field">
+                  <label class="te-label" for="wName">Lead traveller name *</label>
+                  <input class="te-input" id="wName" placeholder="e.g. Farhan Chowdhury">
+                  <span class="te-err" id="wErrName">Enter lead traveller name.</span>
+                </div>
+                <div class="te-field">
+                  <label class="te-label" for="wPhone">Bangladeshi mobile *</label>
+                  <input class="te-input te-num" id="wPhone" type="tel" placeholder="01838-754207">
+                  <span class="te-err" id="wErrPhone">Valid 11-digit BD mobile (01XXXXXXXXX) required.</span>
+                </div>
+              </div>
+              <div class="te-field">
+                <label class="te-label" for="wNote">Boarding / passport notes (Bangla supported)</label>
+                <input class="te-input" id="wNote" placeholder="e.g. চট্টগ্রাম অফিস থেকে পাসপোর্ট ভেরিফাইড">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:8px;">
+                <button class="te-btn te-btn--outline" id="wizBack2" type="button">Back</button>
+                <button class="te-btn te-btn--primary" id="wizNext2" type="button">Review Deposit</button>
+              </div>
+            </div>
+
+            <div id="wizStep3" hidden style="display:grid;gap:12px;">
+              <div style="padding:10px 12px;background:var(--te-status-info-surface);color:var(--te-status-info-text);border:1px solid var(--te-status-info-border);border-radius:var(--te-p-r-sm);font-size:13px;" id="wReviewSummary"></div>
+              <div class="adm-grid-2">
+                <div class="te-field">
+                  <label class="te-label" for="wBank">Deposit channel</label>
+                  <select class="te-select" id="wBank">
+                    <option value="Islami Bank (Chawkbazar) · 20501620205843017">Islami Bank · 20501620205843017</option>
+                    <option value="Eastern Bank (Agrabad) · 0011450000514">Eastern Bank · 0011450000514</option>
+                    <option value="Mosjid Goli Cash Desk">Mosjid Goli Desk Cash</option>
+                  </select>
+                </div>
+                <div class="te-field">
+                  <label class="te-label" for="wAmount">Deposit amount (৳)</label>
+                  <input class="te-input te-num" id="wAmount" type="number" min="0" value="25000">
+                </div>
+              </div>
+              <div class="te-field">
+                <label class="te-label" for="wSlip">Bank slip / reference ID</label>
+                <input class="te-input te-mono" id="wSlip" placeholder="e.g. IBBL-88601">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:8px;">
+                <button class="te-btn te-btn--outline" id="wizBack3" type="button">Back</button>
+                <button class="te-btn te-btn--primary" type="submit">Create Booking &amp; Log Audit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- VIEW 3: AUDIT & HISTORY TRAIL -->
+      <section class="adm-view" id="view-audit" hidden aria-labelledby="auditTitle">
+        <div class="adm-view-head">
+          <div>
+            <p class="adm-overline">Immutable Ledger Log</p>
+            <h1 id="auditTitle">Audit &amp; Deposit Verification History</h1>
+          </div>
+        </div>
+        <div class="adm-table-wrap">
+          <div class="adm-table-scroll">
+            <table class="adm-table adm-table--stack">
+              <thead>
+                <tr><th>Timestamp</th><th>Actor</th><th>Event</th><th>Record</th><th>Detail</th></tr>
+              </thead>
+              <tbody id="auditTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: ROLE PERMISSIONS MATRIX (RBAC GUARDED IN UI + SERVER NOTICE) -->
+      <section class="adm-view" id="view-permissions" hidden aria-labelledby="permTitle">
+        <div class="adm-view-head">
+          <div>
+            <p class="adm-overline">Access Control Specification</p>
+            <h1 id="permTitle">Role-Based Action Visibility &amp; Server RBAC Rules</h1>
+          </div>
+        </div>
+
+        <div class="adm-card" id="permDeniedBanner" hidden style="border-color:var(--te-status-error-border);background:var(--te-status-error-surface);color:var(--te-status-error-text);">
+          <strong>HTTP 403 Preview - Access Restricted for <span class="te-mono">desk_agent / finance</span></strong>
+          <p style="margin:6px 0 0;font-size:13px;">In production, the server must reject requests to <code>/api/admin/roles</code> with <code>403 Forbidden</code> even if the client alters local state or forces navigation. Switch role to <strong>Operations Lead</strong> to inspect the matrix.</p>
+        </div>
+
+        <div class="adm-table-wrap" id="permTableCard">
+          <div class="adm-table-scroll">
+            <table class="adm-table">
+              <thead>
+                <tr><th>Capability / API Endpoint</th><th>Operations Lead</th><th>Booking Desk Agent</th><th>Finance Verifier</th><th>Mandatory Server Enforcement</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>View Bookings &amp; Audit Queue</td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--success">Allowed</span></td><td class="te-mono">GET /api/bookings (branch scope)</td></tr>
+                <tr><td>Create Seat Intake &amp; Edit Traveller</td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--error">Denied</span></td><td class="te-mono">POST /api/bookings requires ops|desk</td></tr>
+                <tr><td>Verify Islami / EBL Deposit Slips</td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--error">Denied</span></td><td><span class="te-badge te-badge--success">Allowed</span></td><td class="te-mono">PATCH /api/slips/verify requires ops|finance</td></tr>
+                <tr><td>Void Booking / Bulk Delete &amp; Role Matrix</td><td><span class="te-badge te-badge--success">Allowed</span></td><td><span class="te-badge te-badge--error">Denied</span></td><td><span class="te-badge te-badge--error">Denied</span></td><td class="te-mono">DELETE/RBAC strictly ops_lead + audit log</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- DETAIL & EDIT SLIDE-OVER DRAWER WITH STICKY ACTION BAR -->
+<aside class="adm-drawer-right" id="detailDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerHeading">
+  <div class="adm-drawer-right__head">
+    <div>
+      <span class="adm-overline">Booking Record Inspector</span>
+      <h2 id="drawerHeading" style="font-size:17px;">TE-NEP-041</h2>
+    </div>
+    <button class="te-btn te-btn--ghost te-btn--icon" id="drawerCloseBtn" type="button" aria-label="Close detail drawer">
+      <svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg>
+    </button>
+  </div>
+
+  <div class="adm-drawer-right__body">
+    <div class="adm-tabs" role="tablist" aria-label="Record sections">
+      <button class="adm-tab" type="button" role="tab" aria-selected="true" aria-controls="tabDetails" data-dtab>Details &amp; Edit</button>
+      <button class="adm-tab" type="button" role="tab" aria-selected="false" aria-controls="tabHistory" data-dtab>Audit Trail</button>
+    </div>
+
+    <div id="tabDetails" role="tabpanel" style="display:grid;gap:12px;">
+      <div class="adm-grid-2">
+        <div class="te-field"><label class="te-label" for="dIdRo">Booking Ref (Read-Only)</label><input class="te-input te-mono" id="dIdRo" readonly></div>
+        <div class="te-field"><label class="te-label" for="dRouteRo">Route &amp; Seats (Read-Only)</label><input class="te-input" id="dRouteRo" readonly></div>
+      </div>
+      <div class="te-field"><label class="te-label" for="dBankRo">Deposit Channel &amp; Slip</label><input class="te-input te-mono" id="dBankRo" readonly></div>
+      <div class="adm-grid-2">
+        <div class="te-field">
+          <label class="te-label" for="dName">Traveller Name *</label>
+          <input class="te-input" id="dName">
+          <span class="te-err" id="dErrName">Traveller name required.</span>
+        </div>
+        <div class="te-field">
+          <label class="te-label" for="dPhone">BD Mobile *</label>
+          <input class="te-input te-num" id="dPhone">
+          <span class="te-err" id="dErrPhone">Invalid 11-digit BD mobile.</span>
+        </div>
+      </div>
+      <div class="adm-grid-2">
+        <div class="te-field"><label class="te-label" for="dPaid">Amount Paid (৳)</label><input class="te-input te-num" id="dPaid" type="number" min="0"></div>
+        <div class="te-field">
+          <label class="te-label" for="dStatus">Status</label>
+          <select class="te-select" id="dStatus">
+            <option value="pending_verify">Pending Verify</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="airfare_diff">Airfare &gt;৳36k</option>
+            <option value="voided">Voided</option>
+          </select>
+        </div>
+      </div>
+      <div class="te-field">
+        <label class="te-label" for="dNote">Ops / Bangla Pickup Notes</label>
+        <textarea class="te-textarea" id="dNote" lang="bn" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div id="tabHistory" role="tabpanel" hidden>
+      <div class="adm-timeline" id="drawerHistory"></div>
+    </div>
+  </div>
+
+  <div class="adm-drawer-right__foot">
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      <button class="te-btn te-btn--danger" id="dVoidBtn" type="button">Void</button>
+      <button class="te-btn te-btn--secondary" id="dVerifyBtn" type="button">Verify Slip</button>
+    </div>
+    <div style="display:flex;gap:6px;">
+      <button class="te-btn te-btn--outline" id="drawerCancelBtn" type="button">Cancel</button>
+      <button class="te-btn te-btn--primary" id="dSaveBtn" type="button">Save Changes</button>
+    </div>
+  </div>
+</aside>
+
+<!-- COMMAND / SEARCH PALETTE (CTRL+K) -->
+<div class="adm-dialog" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick command search">
+  <div style="display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--te-border-subtle);">
+    <svg class="ic" aria-hidden="true"><use href="#i-search"></use></svg>
+    <input class="te-input" id="cmdInput" style="border:none;background:transparent;min-height:32px;padding:0;" placeholder="Type booking ID, view name, or UI state…" aria-label="Command filter">
+    <button class="te-btn te-btn--sm te-btn--ghost" id="cmdClose" type="button" aria-label="Close command palette">Esc</button>
+  </div>
+  <ul class="adm-cmd-list" id="cmdList" role="listbox" aria-label="Command suggestions"></ul>
+</div>
+
+<!-- DESTRUCTIVE CONFIRMATION ALERTDIALOG -->
+<div class="adm-dialog" id="confirmModal" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmDesc">
+  <div style="padding:var(--te-p-space-5);display:grid;gap:12px;">
+    <div style="display:flex;align-items:center;gap:8px;color:var(--te-status-error-text);">
+      <svg class="ic" aria-hidden="true"><use href="#i-alert"></use></svg>
+      <h2 id="confirmTitle" style="font-size:18px;">Confirm Destructive Action</h2>
+    </div>
+    <p id="confirmDesc" style="margin:0;color:var(--te-text-body);"></p>
+    <div class="te-field">
+      <label class="te-label" for="confirmInput">Type <strong class="te-mono" id="confirmKeywordLabel">VOID</strong> to confirm</label>
+      <input class="te-input te-mono" id="confirmInput" autocomplete="off">
+      <span class="te-err" id="confirmErr">Confirmation keyword did not match.</span>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:4px;">
+      <button class="te-btn te-btn--outline" id="confirmCancel" type="button">Keep Booking</button>
+      <button class="te-btn te-btn--danger" id="confirmProceed" type="button">Confirm Void</button>
+    </div>
+  </div>
+</div>
+
+<!-- ACCESSIBLE TOAST STACK -->
+<div class="adm-toasts" id="toastStack" aria-live="polite" aria-relevant="additions"></div>
+
+<script src="assets/admin.js"></script>
+</body>
+</html>

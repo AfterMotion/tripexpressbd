@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traveller &amp; User CRUD - Trip Express BD Admin</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (06/09 · Compact Admin):</strong> Create, filter, bulk-select, inspect drawer &amp; destructive confirm work locally. <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+</div>
+<div class="sc-admin-shell">
+  <aside class="sc-admin-side" id="adminSidebar" aria-label="Admin navigation">
+    <div>
+      <a class="ds-brand" href="05-admin-dashboard.html" style="margin-bottom:20px;"><span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="TEBD"></span><span>TEBD Ops</span></a>
+      <ul class="ds-nav-list">
+        <li><a class="ds-nav-link" href="05-admin-dashboard.html">Dashboard</a></li>
+        <li><a class="ds-nav-link is-active" href="06-admin-users-crud.html">Travellers &amp; Users</a></li>
+        <li><a class="ds-nav-link" href="07-record-detail.html">Booking TE-NEP-041</a></li>
+        <li><a class="ds-nav-link" href="08-settings-profile.html">Settings &amp; Roles</a></li>
+        <li><a class="ds-nav-link" href="09-system-states.html">System States</a></li>
+      </ul>
+    </div>
+  </aside>
+  <div class="sc-admin-main">
+    <header class="sc-admin-top">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm ds-menu-btn" id="adminMenuBtn" type="button" aria-label="Toggle sidebar"><svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+        <h1 style="font-size:20px;margin:0;">Travellers &amp; Team Roles</h1>
+      </div>
+      <button class="te-btn te-btn--sm te-btn--primary" onclick="window.scOpenModal('addUserModal', this)" type="button">+ Add Traveller</button>
+    </header>
+    <main id="main" class="sc-admin-body">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;">
+        <input class="te-input" id="crudSearch" type="search" placeholder="Filter name or phone…" style="max-width:260px;">
+        <select class="te-select" id="crudRole" style="max-width:180px;"><option value="all">All Roles</option><option value="Traveller">Traveller</option><option value="Tour Lead">Tour Lead</option></select>
+        <span id="bulkBar" class="te-badge te-badge--info" style="display:none;">0 selected · <button class="te-link" id="bulkExportBtn" type="button" style="background:none;border:none;cursor:pointer;">Export CSV</button></span>
+      </div>
+      <div class="te-table-wrap">
+        <table class="te-table sc-table-stack" id="crudTable">
+          <thead>
+            <tr><th><input type="checkbox" id="selAll" aria-label="Select all"></th><th aria-sort="none"><button type="button" id="sortNameBtn" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;">Name ↕</button></th><th>Role</th><th>Phone</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="crudBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+<!-- ADD USER MODAL -->
+<div class="ds-dialog" id="addUserModal" role="dialog" aria-modal="true" aria-labelledby="addTitle">
+  <h2 id="addTitle" style="font-size:18px;margin-bottom:12px;">Add Traveller</h2>
+  <form id="addUserForm" style="display:grid;gap:12px;">
+    <div class="te-field"><label class="te-label" for="uName">Name</label><input class="te-input" id="uName" required></div>
+    <div class="te-field"><label class="te-label" for="uPhone">Phone</label><input class="te-input te-num" id="uPhone" required placeholder="01838-754207"></div>
+    <div class="te-field"><label class="te-label" for="uRole">Role</label><select class="te-select" id="uRole"><option>Traveller</option><option>Tour Lead</option></select></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;"><button class="te-btn te-btn--outline" data-close-overlay type="button">Cancel</button><button class="te-btn te-btn--primary" type="submit">Save</button></div>
+  </form>
+</div>
+<!-- DESTRUCTIVE CONFIRM -->
+<div class="ds-dialog" id="delModal" role="alertdialog" aria-modal="true" aria-labelledby="delTitle">
+  <h2 id="delTitle" style="font-size:18px;margin-bottom:8px;">Remove Traveller Record?</h2>
+  <p style="font-size:14px;color:var(--te-text-muted);">This removes the demo row from the local roster.</p>
+  <div style="display:flex;justify-content:flex-end;gap:8px;"><button class="te-btn te-btn--outline" data-close-overlay type="button">Keep</button><button class="te-btn te-btn--danger" id="confirmDelBtn" type="button">Remove</button></div>
+</div>
+<!-- DETAIL DRAWER -->
+<aside class="sc-drawer-right" id="detailDrawer" aria-label="Traveller details">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><h2 id="drName" style="font-size:18px;margin:0;">Details</h2><button class="te-btn te-btn--ghost te-btn--icon te-btn--sm" data-close-overlay type="button" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button></div>
+  <p id="drMeta" style="font-size:14px;"></p>
+  <a class="te-btn te-btn--primary te-btn--sm" href="07-record-detail.html">Open Full Booking Record</a>
+</aside>
+<div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  let users = [
+    { id: 1, name: 'Tariqul Hasan', role: 'Traveller', phone: '01819-442190', status: 'Confirmed', badge: 'success' },
+    { id: 2, name: 'MD Mirajul Islam', role: 'Tour Lead', phone: '01838-754207', status: 'Active Lead', badge: 'info' },
+    { id: 3, name: 'Nusrat Jahan', role: 'Traveller', phone: '01711-883214', status: 'Deposit Pending', badge: 'warning' }
+  ];
+  let pendingDelId = null; let asc = true;
+  function renderUsers() {
+    const q = document.getElementById('crudSearch').value.toLowerCase();
+    const r = document.getElementById('crudRole').value;
+    const rows = users.filter(u => (r === 'all' || u.role === r) && (!q || (u.name + u.phone).toLowerCase().includes(q)));
+    document.getElementById('crudBody').innerHTML = rows.map(u => `
+      <tr>
+        <td data-label="Select"><input type="checkbox" class="row-cb" onchange="updateBulk()" aria-label="Select ${u.name}"></td>
+        <td data-label="Name"><strong>${u.name}</strong></td>
+        <td data-label="Role">${u.role}</td>
+        <td data-label="Phone" class="te-num">${u.phone}</td>
+        <td data-label="Status"><span class="te-badge te-badge--${u.badge}">${u.status}</span></td>
+        <td data-label="Actions">
+          <button class="te-btn te-btn--ghost te-btn--sm" type="button" onclick="inspectUser(${u.id}, this)">Inspect</button>
+          <button class="te-btn te-btn--ghost te-btn--sm" type="button" style="color:var(--te-status-error-text);" onclick="askDel(${u.id}, this)">Delete</button>
+        </td>
+      </tr>`).join('');
+  }
+  function updateBulk() {
+    const n = document.querySelectorAll('.row-cb:checked').length;
+    const bar = document.getElementById('bulkBar');
+    bar.style.display = n ? 'inline-flex' : 'none';
+    bar.firstChild.textContent = n + ' selected · ';
+  }
+  function inspectUser(id, btn) {
+    const u = users.find(x => x.id === id);
+    document.getElementById('drName').textContent = u.name;
+    document.getElementById('drMeta').textContent = `${u.role} · ${u.phone} · ${u.status}`;
+    window.scOpenDrawer('detailDrawer', btn);
+  }
+  function askDel(id, btn) { pendingDelId = id; window.scOpenModal('delModal', btn); }
+  document.getElementById('confirmDelBtn').addEventListener('click', () => {
+    users = users.filter(u => u.id !== pendingDelId);
+    window.scCloseOverlays(); renderUsers(); window.teToast('Removed locally.');
+  });
+  document.getElementById('addUserForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    users.push({ id: Date.now(), name: document.getElementById('uName').value, role: document.getElementById('uRole').value, phone: document.getElementById('uPhone').value, status: 'New', badge: 'info' });
+    window.scCloseOverlays(); e.target.reset(); renderUsers(); window.teToast('Traveller added (demo).');
+  });
+  document.getElementById('sortNameBtn').addEventListener('click', () => {
+    users.sort((a, b) => asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+    asc = !asc; renderUsers();
+  });
+  document.getElementById('crudSearch').addEventListener('input', renderUsers);
+  document.getElementById('crudRole').addEventListener('change', renderUsers);
+  document.getElementById('selAll').addEventListener('change', function () {
+    document.querySelectorAll('.row-cb').forEach(c => c.checked = this.checked); updateBulk();
+  });
+  document.getElementById('bulkExportBtn').addEventListener('click', () => window.teToast('CSV exported locally (demo).'));
+  renderUsers();
+</script>
+</body>
+</html>

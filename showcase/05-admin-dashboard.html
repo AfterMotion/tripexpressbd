@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operations Dashboard - Trip Express BD Admin</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (05/09 · Compact Admin):</strong> KPIs, charts &amp; notifications use client-side mock data. <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+</div>
+
+<div class="sc-admin-shell">
+  <aside class="sc-admin-side" id="adminSidebar" aria-label="Admin navigation">
+    <div>
+      <a class="ds-brand" href="05-admin-dashboard.html" style="margin-bottom:20px;">
+        <span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span>
+        <span>TEBD Ops</span>
+      </a>
+      <ul class="ds-nav-list">
+        <li><a class="ds-nav-link is-active" href="05-admin-dashboard.html">Dashboard</a></li>
+        <li><a class="ds-nav-link" href="06-admin-users-crud.html">Travellers &amp; Users</a></li>
+        <li><a class="ds-nav-link" href="07-record-detail.html">Booking TE-NEP-041</a></li>
+        <li><a class="ds-nav-link" href="08-settings-profile.html">Settings &amp; Roles</a></li>
+        <li><a class="ds-nav-link" href="09-system-states.html">System States</a></li>
+      </ul>
+    </div>
+    <a class="te-btn te-btn--sm te-btn--outline" href="01-marketing-home.html">View Public Site</a>
+  </aside>
+
+  <div class="sc-admin-main">
+    <header class="sc-admin-top">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm ds-menu-btn" id="adminMenuBtn" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="adminSidebar"><svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+        <h1 style="font-size:20px;margin:0;">Operations Overview</h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <select class="te-select" id="dashPeriod" aria-label="Date range" style="width:auto;height:36px;">
+          <option value="nov">November 2026</option>
+          <option value="q4">Q4 2026 (Oct–Dec)</option>
+        </select>
+        <button class="te-btn te-btn--outline te-btn--icon te-btn--sm" onclick="window.scOpenModal('notifModal', this)" type="button" aria-label="Open notifications (2 unread)">
+          <svg class="ic ic--sm" aria-hidden="true"><use href="#i-bell"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="sc-admin-body">
+      <div class="ds-grid-4" style="margin-bottom:20px;">
+        <div class="te-card"><span class="te-overline">Confirmed Deposits</span><div class="te-num" id="kpiRev" style="font-size:26px;font-weight:800;margin:6px 0;color:var(--te-text-heading);">৳11,69,000</div><span class="te-badge te-badge--success">↑ +18% vs Oct</span></div>
+        <div class="te-card"><span class="te-overline">Booked Seats</span><div class="te-num" id="kpiSeats" style="font-size:26px;font-weight:800;margin:6px 0;color:var(--te-text-heading);">27 / 32</div><span class="te-badge te-badge--warning">5 Seats Remaining</span></div>
+        <div class="te-card"><span class="te-overline">Pending Bank Verify</span><div class="te-num" id="kpiPend" style="font-size:26px;font-weight:800;margin:6px 0;color:var(--te-text-heading);">4 Slips</div><span class="te-badge te-badge--info">Islami / EBL</span></div>
+        <div class="te-card"><span class="te-overline">Visa Approved</span><div class="te-num" id="kpiVisa" style="font-size:26px;font-weight:800;margin:6px 0;color:var(--te-text-heading);">92%</div><span class="te-badge te-badge--success">24 / 26 Clear</span></div>
+      </div>
+
+      <div class="ds-grid-2">
+        <section class="te-card" aria-labelledby="chartTitle1">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <h2 id="chartTitle1" style="font-size:17px;margin:0;">Seats Booked by Destination</h2>
+            <span class="te-badge te-badge--info">Colorblind-Safe Series</span>
+          </div>
+          <svg viewBox="0 0 360 170" role="img" aria-label="Bar chart showing Nepal 14 seats, Kashmir 8 seats, Meghalaya 13 seats, Kolkata 10 seats" style="width:100%;height:auto;">
+            <line x1="36" y1="20" x2="340" y2="20" stroke="var(--te-chart-gridline)"/><line x1="36" y1="80" x2="340" y2="80" stroke="var(--te-chart-gridline)"/><line x1="36" y1="140" x2="340" y2="140" stroke="var(--te-chart-gridline)"/>
+            <rect x="56" y="42" width="44" height="98" rx="4" fill="var(--te-chart-series-1)"/><text x="78" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="var(--te-text-heading)">14</text><text x="78" y="158" text-anchor="middle" font-size="12" fill="var(--te-chart-axis-ink)">Nepal</text>
+            <rect x="132" y="84" width="44" height="56" rx="4" fill="var(--te-chart-series-2)"/><text x="154" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="var(--te-text-heading)">8</text><text x="154" y="158" text-anchor="middle" font-size="12" fill="var(--te-chart-axis-ink)">Kashmir</text>
+            <rect x="208" y="49" width="44" height="91" rx="4" fill="var(--te-chart-series-3)"/><text x="230" y="41" text-anchor="middle" font-size="12" font-weight="700" fill="var(--te-text-heading)">13</text><text x="230" y="158" text-anchor="middle" font-size="12" fill="var(--te-chart-axis-ink)">Meghalaya</text>
+            <rect x="284" y="70" width="44" height="70" rx="4" fill="var(--te-chart-series-4)"/><text x="306" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="var(--te-text-heading)">10</text><text x="306" y="158" text-anchor="middle" font-size="12" fill="var(--te-chart-axis-ink)">Kolkata</text>
+          </svg>
+          <details style="margin-top:10px;font-size:13px;">
+            <summary class="te-link" style="cursor:pointer;">Accessible data table</summary>
+            <table class="te-table" style="margin-top:8px;"><thead><tr><th>Route</th><th class="is-num">Seats</th></tr></thead><tbody><tr><td>Nepal</td><td class="is-num">14</td></tr><tr><td>Kashmir</td><td class="is-num">8</td></tr><tr><td>Meghalaya</td><td class="is-num">13</td></tr><tr><td>Kolkata</td><td class="is-num">10</td></tr></tbody></table>
+          </details>
+        </section>
+
+        <section class="te-card">
+          <h2 style="font-size:17px;margin-bottom:12px;">Recent Deposit Queue</h2>
+          <div class="te-table-wrap">
+            <table class="te-table">
+              <thead><tr><th>Booking</th><th>Bank</th><th class="is-num">Amount</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td class="te-mono">TE-NEP-041</td><td>Islami Bank</td><td class="is-num">৳36,000</td><td><a class="te-link" href="07-record-detail.html">Inspect</a></td></tr>
+                <tr><td class="te-mono">TE-KSH-019</td><td>Eastern Bank</td><td class="is-num">৳20,000</td><td><a class="te-link" href="07-record-detail.html">Inspect</a></td></tr>
+                <tr><td class="te-mono">TE-MEG-008</td><td>Office Cash</td><td class="is-num">৳15,000</td><td><a class="te-link" href="07-record-detail.html">Inspect</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+<div class="ds-dialog" id="notifModal" role="dialog" aria-modal="true" aria-labelledby="notifTitle">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <h2 id="notifTitle" style="font-size:18px;margin:0;">Notification Center (2)</h2>
+    <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm" data-close-overlay type="button" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button>
+  </div>
+  <div style="display:grid;gap:10px;font-size:14px;">
+    <div class="ds-panel ds-panel--subtle"><strong>Islami Bank deposit uploaded</strong> · TE-NEP-042 (৳20,000)</div>
+    <div class="ds-panel ds-panel--subtle"><strong>Indian Visa update</strong> · Kashmir Season 5 batch ready</div>
+  </div>
+</div>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  document.getElementById('dashPeriod').addEventListener('change', function () {
+    const q4 = this.value === 'q4';
+    document.getElementById('kpiRev').textContent = q4 ? '৳34,82,500' : '৳11,69,000';
+    document.getElementById('kpiSeats').textContent = q4 ? '78 / 85' : '27 / 32';
+    document.getElementById('kpiPend').textContent = q4 ? '9 Slips' : '4 Slips';
+  });
+</script>
+</body>
+</html>

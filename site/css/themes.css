@@ -1,0 +1,299 @@
+/* ============================================================
+   Trip Express BD - Semantic Theme, High-Contrast & Density Layer
+   Synced verbatim from tokens/themes.css.
+   ============================================================ */
+
+:root,
+[data-theme="light"] {
+  --te-bg-canvas:          var(--te-p-n-0);
+  --te-bg-subtle:          var(--te-p-n-50);
+  --te-bg-warm:            var(--te-p-orange-50);
+  --te-bg-cool:            var(--te-p-sky-50);
+  --te-bg-dark-band:       var(--te-p-ocean-950);
+  --te-surface-card:       var(--te-p-n-0);
+  --te-surface-raised:     var(--te-p-n-50);
+  --te-surface-field:      var(--te-p-n-50);
+  --te-surface-readonly:   var(--te-p-n-100);
+  --te-surface-selected:   var(--te-p-ocean-100);
+  --te-surface-disabled:   var(--te-p-n-100);
+  --te-surface-overlay:    rgba(19, 36, 54, 0.55);
+  --te-border-subtle:      var(--te-p-n-200);
+  --te-border-strong:      var(--te-p-n-300);
+  --te-border-control:     var(--te-p-n-500);
+  --te-text-heading:       var(--te-p-n-900);
+  --te-text-body:          var(--te-p-n-700);
+  --te-text-muted:         var(--te-p-n-600);
+  --te-text-readonly:      var(--te-p-n-600);
+  --te-text-disabled:      var(--te-p-n-500);
+  --te-text-inverse:       var(--te-p-n-0);
+  --te-text-overline:      var(--te-p-orange-700);
+  --te-text-link:          var(--te-p-ocean-700);
+  --te-text-link-hover:    var(--te-p-orange-700);
+  --te-action-primary-bg:        var(--te-p-orange-500);
+  --te-action-primary-bg-hover:  var(--te-p-orange-600);
+  --te-action-primary-bg-active: var(--te-p-orange-600);
+  --te-action-primary-ink:       var(--te-p-n-950);
+  --te-action-secondary-bg:        var(--te-p-ocean-700);
+  --te-action-secondary-bg-hover:  var(--te-p-ocean-800);
+  --te-action-secondary-bg-active: var(--te-p-ocean-900);
+  --te-action-secondary-ink:       var(--te-p-n-0);
+  --te-action-danger-bg:        var(--te-p-red-700);
+  --te-action-danger-bg-hover:  var(--te-p-red-800);
+  --te-action-danger-ink:       var(--te-p-n-0);
+  --te-focus-ring:         var(--te-p-ocean-500);
+  --te-status-success-text:    var(--te-p-green-700);
+  --te-status-success-surface: var(--te-p-green-50);
+  --te-status-success-border:  var(--te-p-green-200);
+  --te-status-warning-text:    var(--te-p-amber-700);
+  --te-status-warning-surface: var(--te-p-amber-50);
+  --te-status-warning-border:  var(--te-p-amber-200);
+  --te-status-error-text:      var(--te-p-red-700);
+  --te-status-error-surface:   var(--te-p-red-50);
+  --te-status-error-border:    var(--te-p-red-200);
+  --te-status-info-text:       var(--te-p-ocean-700);
+  --te-status-info-surface:    var(--te-p-ocean-100);
+  --te-status-info-border:     var(--te-p-ocean-300);
+  --te-wa-solid-bg:        var(--te-p-wa-500);
+  --te-wa-solid-hover:     var(--te-p-wa-600);
+  --te-wa-solid-ink:       var(--te-p-wa-950);
+  --te-wa-soft-bg:         var(--te-p-wa-50);
+  --te-wa-soft-ink:        var(--te-p-wa-700);
+  --te-wa-soft-border:     var(--te-p-wa-200);
+  --te-chart-series-1:     var(--te-p-ocean-500);
+  --te-chart-series-2:     var(--te-p-orange-600);
+  --te-chart-series-3:     var(--te-p-sky-700);
+  --te-chart-series-4:     var(--te-p-green-700);
+  --te-chart-series-5:     var(--te-p-amber-700);
+  --te-shadow-xs:   var(--te-p-shadow-xs);
+  --te-shadow-sm:   var(--te-p-shadow-sm);
+  --te-shadow-md:   var(--te-p-shadow-md);
+  --te-shadow-lg:   var(--te-p-shadow-lg);
+  --te-shadow-xl:   var(--te-p-shadow-xl);
+  --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.08), transparent 68%);
+  --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.08), transparent 70%);
+  --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
+  --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.085), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.08), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.06), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.07), transparent 70%);
+  --te-glass-bg:        rgba(255, 255, 255, 0.80);
+  --te-glass-bg-strong: rgba(255, 255, 255, 0.95);
+  --te-glass-border:    rgba(223, 229, 236, 0.85);
+  --te-glass-shadow:    0 8px 24px rgba(19, 36, 54, 0.08);
+}
+
+[data-theme="dark"] {
+  --te-bg-canvas:          var(--te-p-ocean-950);
+  --te-bg-subtle:          var(--te-p-dark-subtle);
+  --te-bg-warm:            var(--te-p-dark-warm);
+  --te-bg-cool:            var(--te-p-dark-cool);
+  --te-bg-dark-band:       var(--te-p-dark-deep);
+  --te-surface-card:       var(--te-p-dark-elevated);
+  --te-surface-raised:     var(--te-p-dark-raised);
+  --te-surface-field:      var(--te-p-dark-field);
+  --te-surface-readonly:   var(--te-p-dark-raised);
+  --te-surface-selected:   var(--te-p-ocean-800);
+  --te-surface-disabled:   var(--te-p-dark-subtle);
+  --te-surface-overlay:    rgba(13, 26, 40, 0.72);
+  --te-border-subtle:      var(--te-p-dark-border);
+  --te-border-strong:      var(--te-p-dark-border-strong);
+  --te-border-control:     var(--te-p-ocean-400);
+  --te-text-heading:       var(--te-p-n-0);
+  --te-text-body:          var(--te-p-n-300);
+  --te-text-muted:         var(--te-p-dark-muted);
+  --te-text-readonly:      var(--te-p-n-300);
+  --te-text-disabled:      var(--te-p-dark-muted);
+  --te-text-inverse:       var(--te-p-n-950);
+  --te-text-overline:      var(--te-p-orange-400);
+  --te-text-link:          var(--te-p-sky-300);
+  --te-text-link-hover:    var(--te-p-orange-400);
+  --te-action-primary-bg:        var(--te-p-orange-500);
+  --te-action-primary-bg-hover:  var(--te-p-orange-400);
+  --te-action-primary-bg-active: var(--te-p-orange-300);
+  --te-action-primary-ink:       var(--te-p-n-950);
+  --te-action-secondary-bg:        var(--te-p-dark-raised);
+  --te-action-secondary-bg-hover:  var(--te-p-ocean-700);
+  --te-action-secondary-bg-active: var(--te-p-ocean-800);
+  --te-action-secondary-ink:       var(--te-p-n-0);
+  --te-action-danger-bg:        var(--te-p-red-700);
+  --te-action-danger-bg-hover:  var(--te-p-red-800);
+  --te-action-danger-ink:       var(--te-p-n-0);
+  --te-focus-ring:         var(--te-p-sky-300);
+  --te-status-success-text:    var(--te-p-green-300);
+  --te-status-success-surface: var(--te-p-green-950);
+  --te-status-success-border:  var(--te-p-green-800);
+  --te-status-warning-text:    var(--te-p-amber-300);
+  --te-status-warning-surface: var(--te-p-amber-950);
+  --te-status-warning-border:  var(--te-p-amber-800);
+  --te-status-error-text:      var(--te-p-red-300);
+  --te-status-error-surface:   var(--te-p-red-950);
+  --te-status-error-border:    var(--te-p-red-900);
+  --te-status-info-text:       var(--te-p-ocean-300);
+  --te-status-info-surface:    var(--te-p-dark-info-bg);
+  --te-status-info-border:     var(--te-p-dark-info-bd);
+  --te-wa-solid-bg:        var(--te-p-wa-500);
+  --te-wa-solid-hover:     var(--te-p-wa-600);
+  --te-wa-solid-ink:       var(--te-p-wa-950);
+  --te-wa-soft-bg:         var(--te-p-green-950);
+  --te-wa-soft-ink:        var(--te-p-green-300);
+  --te-wa-soft-border:     var(--te-p-green-800);
+  --te-chart-series-1:     var(--te-p-sky-400);
+  --te-chart-series-2:     var(--te-p-orange-500);
+  --te-chart-series-3:     var(--te-p-ocean-300);
+  --te-chart-series-4:     var(--te-p-green-300);
+  --te-chart-series-5:     var(--te-p-amber-300);
+  --te-shadow-xs:   0 1px 2px   rgba(0, 0, 0, 0.30);
+  --te-shadow-sm:   0 2px 6px   rgba(0, 0, 0, 0.34);
+  --te-shadow-md:   0 8px 20px  rgba(0, 0, 0, 0.40);
+  --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
+  --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
+  --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.15), transparent 68%);
+  --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.16), transparent 70%);
+  --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
+  --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.14), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.15), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.11), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.12), transparent 70%);
+  --te-glass-bg:        rgba(19, 36, 54, 0.68);
+  --te-glass-bg-strong: rgba(19, 36, 54, 0.92);
+  --te-glass-border:    rgba(164, 193, 219, 0.18);
+  --te-glass-shadow:    0 12px 32px rgba(0, 0, 0, 0.36);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --te-bg-canvas:          var(--te-p-ocean-950);
+    --te-bg-subtle:          var(--te-p-dark-subtle);
+    --te-bg-warm:            var(--te-p-dark-warm);
+    --te-bg-cool:            var(--te-p-dark-cool);
+    --te-bg-dark-band:       var(--te-p-dark-deep);
+    --te-surface-card:       var(--te-p-dark-elevated);
+    --te-surface-raised:     var(--te-p-dark-raised);
+    --te-surface-field:      var(--te-p-dark-field);
+    --te-surface-readonly:   var(--te-p-dark-raised);
+    --te-surface-selected:   var(--te-p-ocean-800);
+    --te-surface-disabled:   var(--te-p-dark-subtle);
+    --te-surface-overlay:    rgba(13, 26, 40, 0.72);
+    --te-border-subtle:      var(--te-p-dark-border);
+    --te-border-strong:      var(--te-p-dark-border-strong);
+    --te-border-control:     var(--te-p-ocean-400);
+    --te-text-heading:       var(--te-p-n-0);
+    --te-text-body:          var(--te-p-n-300);
+    --te-text-muted:         var(--te-p-dark-muted);
+    --te-text-readonly:      var(--te-p-n-300);
+    --te-text-disabled:      var(--te-p-dark-muted);
+    --te-text-inverse:       var(--te-p-n-950);
+    --te-text-overline:      var(--te-p-orange-400);
+    --te-text-link:          var(--te-p-sky-300);
+    --te-text-link-hover:    var(--te-p-orange-400);
+    --te-action-primary-bg:        var(--te-p-orange-500);
+    --te-action-primary-bg-hover:  var(--te-p-orange-400);
+    --te-action-primary-bg-active: var(--te-p-orange-300);
+    --te-action-primary-ink:       var(--te-p-n-950);
+    --te-action-secondary-bg:        var(--te-p-dark-raised);
+    --te-action-secondary-bg-hover:  var(--te-p-ocean-700);
+    --te-action-secondary-bg-active: var(--te-p-ocean-800);
+    --te-action-secondary-ink:       var(--te-p-n-0);
+    --te-action-danger-bg:        var(--te-p-red-700);
+    --te-action-danger-bg-hover:  var(--te-p-red-800);
+    --te-action-danger-ink:       var(--te-p-n-0);
+    --te-focus-ring:         var(--te-p-sky-300);
+    --te-status-success-text:    var(--te-p-green-300);
+    --te-status-success-surface: var(--te-p-green-950);
+    --te-status-success-border:  var(--te-p-green-800);
+    --te-status-warning-text:    var(--te-p-amber-300);
+    --te-status-warning-surface: var(--te-p-amber-950);
+    --te-status-warning-border:  var(--te-p-amber-800);
+    --te-status-error-text:      var(--te-p-red-300);
+    --te-status-error-surface:   var(--te-p-red-950);
+    --te-status-error-border:    var(--te-p-red-900);
+    --te-status-info-text:       var(--te-p-ocean-300);
+    --te-status-info-surface:    var(--te-p-dark-info-bg);
+    --te-status-info-border:     var(--te-p-dark-info-bd);
+    --te-wa-solid-bg:        var(--te-p-wa-500);
+    --te-wa-solid-hover:     var(--te-p-wa-600);
+    --te-wa-solid-ink:       var(--te-p-wa-950);
+    --te-wa-soft-bg:         var(--te-p-green-950);
+    --te-wa-soft-ink:        var(--te-p-green-300);
+    --te-wa-soft-border:     var(--te-p-green-800);
+    --te-chart-series-1:     var(--te-p-sky-400);
+    --te-chart-series-2:     var(--te-p-orange-500);
+    --te-chart-series-3:     var(--te-p-ocean-300);
+    --te-chart-series-4:     var(--te-p-green-300);
+    --te-chart-series-5:     var(--te-p-amber-300);
+    --te-shadow-xs:   0 1px 2px   rgba(0, 0, 0, 0.30);
+    --te-shadow-sm:   0 2px 6px   rgba(0, 0, 0, 0.34);
+    --te-shadow-md:   0 8px 20px  rgba(0, 0, 0, 0.40);
+    --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
+    --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
+    --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.15), transparent 68%);
+    --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.16), transparent 70%);
+    --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
+    --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.14), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.15), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.11), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.12), transparent 70%);
+    --te-glass-bg:        rgba(19, 36, 54, 0.68);
+    --te-glass-bg-strong: rgba(19, 36, 54, 0.92);
+    --te-glass-border:    rgba(164, 193, 219, 0.18);
+    --te-glass-shadow:    0 12px 32px rgba(0, 0, 0, 0.36);
+  }
+}
+
+[data-contrast="high"] {
+  --te-border-width:    var(--te-p-bw-emphasis);
+  --te-border-subtle:   var(--te-p-n-600);
+  --te-border-strong:   var(--te-p-n-800);
+  --te-border-control:  var(--te-p-n-900);
+  --te-text-body:       var(--te-p-n-900);
+  --te-text-muted:      var(--te-p-n-700);
+  --te-focus-offset:    3px;
+  --te-glow-ambient:    none;
+  --te-glow-infinity:   none;
+  --te-glass-bg:        var(--te-p-n-0);
+  --te-glass-border:    var(--te-p-n-800);
+}
+
+[data-theme="dark"][data-contrast="high"] {
+  --te-border-subtle:   var(--te-p-ocean-300);
+  --te-border-strong:   var(--te-p-n-0);
+  --te-border-control:  var(--te-p-n-0);
+  --te-text-body:       var(--te-p-n-0);
+  --te-text-muted:      var(--te-p-n-200);
+  --te-glow-ambient:    none;
+  --te-glow-infinity:   none;
+  --te-glass-bg:        var(--te-p-dark-elevated);
+  --te-glass-border:    var(--te-p-n-0);
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-contrast="standard"]) {
+    --te-border-width:    var(--te-p-bw-emphasis);
+    --te-border-subtle:   var(--te-p-n-600);
+    --te-border-strong:   var(--te-p-n-800);
+    --te-border-control:  var(--te-p-n-900);
+    --te-text-body:       var(--te-p-n-900);
+    --te-text-muted:      var(--te-p-n-700);
+    --te-focus-offset:    3px;
+    --te-glow-ambient:    none;
+  --te-glow-infinity:   none;
+    --te-glass-bg:        var(--te-p-n-0);
+    --te-glass-border:    var(--te-p-n-800);
+  }
+  [data-theme="dark"] {
+    --te-border-subtle:   var(--te-p-ocean-300);
+    --te-border-strong:   var(--te-p-n-0);
+    --te-border-control:  var(--te-p-n-0);
+    --te-text-body:       var(--te-p-n-0);
+    --te-text-muted:      var(--te-p-n-200);
+    --te-glow-ambient:    none;
+  --te-glow-infinity:   none;
+    --te-glass-bg:        var(--te-p-dark-elevated);
+    --te-glass-border:    var(--te-p-n-0);
+  }
+}
+
+[data-density="compact"] {
+  --te-space-section-y:  var(--te-p-space-8);
+  --te-space-card-pad:   var(--te-p-space-4);
+  --te-space-grid-gap:   var(--te-p-space-4);
+  --te-control-height:   36px;
+  --te-input-height:     38px;
+  --te-table-row-height: 40px;
+  --te-table-cell-x:     var(--te-p-space-3);
+  --te-table-cell-y:     var(--te-p-space-2);
+  --te-page-title-size:  var(--te-p-fs-h2);
+  --te-btn-radius:       var(--te-p-r-sm);
+  --te-card-radius:      var(--te-p-r-sm);
+}

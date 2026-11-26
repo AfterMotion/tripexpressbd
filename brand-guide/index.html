@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Express BD - Gate 1 Brand Guide &amp; Visual Foundations</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --te-orange-50: #FEF8F5; --te-orange-100: #FDEFE6; --te-orange-200: #FADDC9;
+      --te-orange-300: #F7C5A4; --te-orange-400: #F2A16A; --te-orange-500: #ED7C30;
+      --te-orange-600: #C96A2B; --te-orange-700: #A45826; --te-orange-800: #804621;
+      --te-orange-900: #60371C; --te-orange-950: #402718;
+      --te-sand-source: #F2A15F;
+
+      --te-sky-50: #F6FAFD; --te-sky-100: #E8F2FA; --te-sky-200: #CEE3F4;
+      --te-sky-300: #ACD0ED; --te-sky-400: #78B2E1; --te-sky-500: #4394D5;
+      --te-sky-600: #3A7EB5; --te-sky-700: #316896; --te-sky-800: #285376;
+      --te-sky-900: #20405B; --te-sky-950: #182D3F;
+
+      --te-deep-50: #F5F8FB; --te-deep-100: #E6EEF5; --te-deep-200: #C9DAEA;
+      --te-deep-300: #A4C1DB; --te-deep-400: #6B99C5; --te-deep-500: #3171AE;
+      --te-deep-600: #2B6195; --te-deep-700: #25517B; --te-deep-800: #1E4162;
+      --te-deep-900: #19324C; --te-deep-950: #132436;
+
+      --te-n-0: #FFFFFF; --te-n-50: #F7F9FB; --te-n-100: #EFF3F7; --te-n-200: #DFE5EC;
+      --te-n-300: #C6CFDA; --te-n-400: #9AA6B6; --te-n-500: #6F7D90; --te-n-600: #556274;
+      --te-n-700: #3F4A5A; --te-n-800: #2B3442; --te-n-900: #1B2330; --te-n-950: #111823;
+
+      --te-success-text: #15784F; --te-success-bg: #E7F7F0; --te-success-bd: #A7E3CB;
+      --te-warning-text: #8A6100; --te-warning-bg: #FFF6E0; --te-warning-bd: #F5DB9B;
+      --te-error-text: #B02E2E; --te-error-bg: #FDECEC; --te-error-bd: #F3B9B9;
+      --te-info-text: #25517B; --te-info-bg: #E6EEF5; --te-info-bd: #A4C1DB;
+      --te-wa-base: #25D366; --te-wa-ink: #0B3D22; --te-wa-soft: #E4F8EC; --te-wa-soft-ink: #10693C;
+
+      --bg: var(--te-n-0);
+      --bg-subtle: var(--te-n-50);
+      --bg-warm: var(--te-orange-50);
+      --bg-cool: var(--te-sky-50);
+      --surface: var(--te-n-0);
+      --surface-2: var(--te-n-50);
+      --border: var(--te-n-200);
+      --border-strong: var(--te-n-300);
+      --text-heading: var(--te-n-900);
+      --text-body: var(--te-n-700);
+      --text-muted: var(--te-n-600);
+      --overline: var(--te-orange-700);
+      --link: var(--te-deep-600);
+      --hdr-bg: rgba(255, 255, 255, 0.92);
+
+      --grad-sunset: linear-gradient(17deg, #F2A16A 0%, #ED7C30 100%);
+      --grad-ocean: linear-gradient(17deg, #4394D5 0%, #3171AE 100%);
+      --grad-horizon: linear-gradient(17deg, #ED7C30 0%, #F2A16A 34%, #FFFFFF 50%, #4394D5 66%, #3171AE 100%);
+      --scrim: linear-gradient(to top, rgba(19,36,54,0.88) 0%, rgba(19,36,54,0.55) 42%, rgba(19,36,54,0) 100%);
+
+      --shadow-sm: 0 2px 6px rgba(19,36,54,0.08);
+      --shadow-md: 0 8px 20px rgba(19,36,54,0.10);
+
+      --font-display: 'Plus Jakarta Sans', 'Hind Siliguri', 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'Inter', 'Hind Siliguri', 'Segoe UI', system-ui, sans-serif;
+      --font-bn: 'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--te-deep-950);
+      --bg-subtle: #17293C;
+      --bg-warm: #241A13;
+      --bg-cool: #14293D;
+      --surface: #1A2E43;
+      --surface-2: #21384F;
+      --border: #2A4763;
+      --border-strong: #37587A;
+      --text-heading: #FFFFFF;
+      --text-body: #C6CFDA;
+      --text-muted: #93A6BB;
+      --overline: var(--te-orange-400);
+      --link: var(--te-sky-300);
+      --hdr-bg: rgba(19, 36, 54, 0.92);
+
+      --te-success-text: #6FD9AC; --te-success-bg: #14342A; --te-success-bd: #2A6A52;
+      --te-warning-text: #F3C969; --te-warning-bg: #33280F; --te-warning-bd: #6B5424;
+      --te-error-text: #F3A3A3; --te-error-bg: #361B1B; --te-error-bd: #6E3636;
+      --te-info-text: #A4C1DB; --te-info-bg: #17304A; --te-info-bd: #2F557A;
+      --te-wa-soft: #14342A; --te-wa-soft-ink: #6FD9AC;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-body);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--text-heading);
+      margin: 0 0 0.5rem;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+    p { margin: 0 0 1rem; }
+    code, pre { font-family: var(--font-mono); }
+    :lang(bn), .bn {
+      font-family: var(--font-bn);
+      line-height: 1.85;
+      letter-spacing: 0;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .num { font-variant-numeric: tabular-nums; }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .section { padding: clamp(52px, 6vw, 84px) 0; border-bottom: 1px solid var(--border); }
+    .section--subtle { background: var(--bg-subtle); }
+    .section--warm { background: var(--bg-warm); }
+    .section--cool { background: var(--bg-cool); }
+
+    /* Gate badges */
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 999px;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+      border: 1px solid transparent; white-space: nowrap;
+    }
+    .tag--verified { background: var(--te-success-bg); color: var(--te-success-text); border-color: var(--te-success-bd); }
+    .tag--proposed { background: var(--te-warning-bg); color: var(--te-warning-text); border-color: var(--te-warning-bd); }
+    .tag--assumption { background: var(--te-info-bg); color: var(--te-info-text); border-color: var(--te-info-bd); }
+    .tag--fail { background: var(--te-error-bg); color: var(--te-error-text); border-color: var(--te-error-bd); }
+
+    /* Section Header */
+    .sec-head { margin-bottom: 32px; max-width: 78ch; }
+    .sec-head__top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .overline {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--overline);
+    }
+    .flight-rule {
+      width: 68px; height: 3px; border-radius: 999px;
+      background: var(--grad-sunset);
+      transform: rotate(-17deg); transform-origin: left center;
+      margin: 10px 0 18px;
+    }
+
+    /* Header */
+    .hdr {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--hdr-bg); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr__in {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; min-height: 68px; flex-wrap: wrap; padding: 10px 0;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-heading); }
+    .brand__chip {
+      width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF;
+      display: grid; place-items: center; padding: 4px; border: 1px solid var(--te-n-200);
+    }
+    .brand__title { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+    .brand__title i { font-style: normal; color: var(--te-orange-500); }
+    .nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    .nav a {
+      text-decoration: none; color: var(--text-body); font-size: 14px; font-weight: 600;
+      padding: 6px 8px; border-radius: 8px;
+    }
+    .nav a:hover { color: var(--overline); background: var(--surface-2); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      border-radius: 999px; padding: 9px 16px; font-size: 14px; font-weight: 600;
+      font-family: var(--font-body); border: 1px solid var(--border-strong);
+      background: var(--surface); color: var(--text-heading); text-decoration: none;
+    }
+    .btn--primary { background: var(--te-orange-500); color: var(--te-n-950); border-color: transparent; font-weight: 700; }
+    .btn--secondary { background: var(--te-deep-700); color: #FFFFFF; border-color: transparent; }
+
+    /* Hero Gate Banner */
+    .hero {
+      background: var(--te-deep-950); color: #C6CFDA; padding: clamp(40px, 6vw, 72px) 0 0;
+      position: relative; overflow: hidden;
+    }
+    .hero__grid { display: grid; grid-template-columns: 1.25fr 0.85fr; gap: 36px; align-items: center; padding-bottom: 68px; }
+    .hero h1 { color: #FFFFFF; font-size: clamp(2rem, 1.4rem + 2.5vw, 3.25rem); margin-bottom: 14px; }
+    .hero__lead { font-size: 18px; max-width: 60ch; color: #C6CFDA; }
+    .hero__meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .hero__card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px; padding: 24px; text-align: center;
+    }
+    .hero__disc {
+      width: min(260px, 75%); aspect-ratio: 1; margin: 0 auto 16px;
+      background: #FFFFFF; border-radius: 50%; display: grid; place-items: center; padding: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+    .hero__seam {
+      height: min(14vw, 96px);
+      background: var(--bg);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Cards & Grids */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px; box-shadow: var(--shadow-sm);
+    }
+    .card h3 { font-size: 19px; margin-bottom: 8px; }
+    .card--accent { border-top: 4px solid var(--te-orange-500); }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: var(--surface-2); color: var(--text-heading); font-weight: 700; font-size: 13px; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Logo demos */
+    .clearspace-box {
+      position: relative; display: inline-grid; place-items: center;
+      padding: 40px; border: 2px dashed var(--te-sky-500); background: #FFFFFF;
+      border-radius: 12px; color: #1B2330;
+    }
+    .clearspace-box__inner {
+      border: 1.5px solid var(--te-orange-500); padding: 4px; position: relative;
+    }
+    .clearspace-label {
+      position: absolute; font-size: 13px; font-weight: 700; color: var(--te-deep-700);
+      background: var(--te-sky-100); padding: 2px 8px; border-radius: 999px;
+    }
+    .clearspace-label--top { top: 8px; left: 50%; transform: translateX(-50%); }
+    .clearspace-label--left { left: 6px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
+    .bg-demo {
+      border-radius: 14px; padding: 20px; border: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; min-height: 180px; text-align: center;
+    }
+    .bg-demo img { height: 74px; width: auto; display: block; }
+    .misuse-card {
+      border: 1.5px solid var(--te-error-bd); background: var(--surface);
+      border-radius: 14px; padding: 16px; text-align: center;
+    }
+    .misuse-stage {
+      height: 110px; display: grid; place-items: center; background: #F7F9FB;
+      border-radius: 10px; margin-bottom: 10px; overflow: hidden;
+    }
+    .misuse-stage img { height: 70px; width: auto; }
+
+    /* Swatches */
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 14px; }
+    .swatch {
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      background: var(--surface); cursor: pointer; transition: transform 180ms ease;
+    }
+    .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .swatch__color { height: 84px; padding: 10px; display: flex; justify-content: space-between; align-items: flex-end; font-size: 13px; font-weight: 700; }
+    .swatch__meta { padding: 11px 12px; font-size: 13px; }
+    .swatch__meta strong { display: block; color: var(--text-heading); font-size: 14px; }
+    .swatch__codes { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    .ramp-strip { display: grid; grid-template-columns: repeat(11, minmax(64px, 1fr)); gap: 6px; margin-bottom: 18px; overflow-x: auto; }
+    .ramp-cell {
+      border-radius: 8px; border: 1px solid var(--border); overflow: hidden;
+      background: var(--surface); font-size: 12px; cursor: pointer;
+    }
+    .ramp-cell__box { height: 48px; display: grid; place-items: center; font-weight: 700; font-size: 12px; }
+    .ramp-cell__txt { padding: 6px; font-family: var(--font-mono); font-size: 11px; text-align: center; }
+
+    /* Imagery & Textures */
+    .photo-card { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .photo-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .photo-card__overlay {
+      position: absolute; inset: 0; background: var(--scrim);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: #FFFFFF;
+    }
+    .texture-box { height: 140px; border-radius: 12px; border: 1px solid var(--border); position: relative; overflow: hidden; margin-bottom: 10px; }
+    .tex-horizon { background: var(--grad-horizon); }
+    .tex-streak {
+      background-color: var(--bg-subtle);
+      background-image: repeating-linear-gradient(107deg, rgba(237,124,48,0.09) 0px, rgba(237,124,48,0.09) 2px, transparent 2px, transparent 18px);
+    }
+
+    /* Device previews */
+    .preview-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .device-frame {
+      border: 2px solid var(--border-strong); border-radius: 20px; overflow: hidden;
+      background: var(--bg); box-shadow: var(--shadow-md);
+    }
+    .device-chrome {
+      background: var(--surface-2); padding: 10px 16px; border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600;
+    }
+    .mobile-shell { max-width: 375px; margin: 0 auto; border-width: 6px; border-radius: 28px; }
+    .pkg-card {
+      background: var(--surface); border: 1.5px solid var(--te-orange-500); border-radius: 16px;
+      padding: 16px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+    }
+    .pkg-card__top { height: 4px; background: var(--grad-sunset); margin: -16px -16px 14px; }
+    .pkg-card__media { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+    .pkg-card__media img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+    .skew-badge {
+      position: absolute; top: 10px; left: 10px; background: var(--grad-sunset); color: #111823;
+      padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; transform: skewX(-6deg);
+    }
+    .skew-badge span { display: inline-block; transform: skewX(6deg); }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 20px; right: 20px; z-index: 500;
+      background: var(--te-deep-950); color: #FFFFFF; padding: 10px 16px;
+      border-radius: 999px; font-size: 14px; font-weight: 600;
+      opacity: 0; pointer-events: none; transition: opacity 180ms ease;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .toast.is-on { opacity: 1; }
+
+    @media (max-width: 960px) {
+      .hero__grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top">
+      <span class="brand__chip">
+        <img src="../assets/brand/logo-mark.svg" alt="Trip Express BD mark" width="32" height="28">
+      </span>
+      <span class="brand__title"><i>Trip</i> Express BD <span style="font-weight:500;font-size:13px;color:var(--text-muted)">· Brand Guide</span></span>
+    </a>
+    <nav class="nav" aria-label="Brand guide sections">
+      <a href="#audit">Audit</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#logo">Logo</a>
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#imagery">Imagery</a>
+      <a href="#previews">Previews</a>
+      <a href="#gate1">Gate 1</a>
+    </nav>
+    <button class="btn" id="themeToggle" type="button">Toggle Night Ocean</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="sec-head__top">
+        <span class="tag tag--warning-bg" style="background:rgba(237,124,48,0.18);color:#F7C5A4;border-color:rgba(242,161,106,0.4)">GATE 1 - FOUNDATION REVIEW</span>
+        <span class="tag" style="background:rgba(67,148,213,0.18);color:#ACD0ED;border-color:rgba(172,208,237,0.35)">NO MAIN UI LIBRARY SHIPPED YET</span>
+      </div>
+      <h1>Trip Express BD Brand Foundations</h1>
+      <p class="hero__lead">
+        Visual identity audit, strategy, contrast-verified palette, bilingual Bangla/English typography, and dual-mode rules for marketing pages and dense operations interfaces.
+      </p>
+      <div class="hero__meta">
+        <span class="tag tag--verified">Source Assets Preserved Untouched</span>
+        <span class="tag tag--proposed">Proposed Choices Marked for Approval</span>
+      </div>
+    </div>
+    <div class="hero__card">
+      <div class="hero__disc">
+        <img src="../assets/brand/logo-mark.svg" alt="Trip Express BD primary vector mark" style="width:100%;height:auto;">
+      </div>
+      <div style="font-size:13px;color:#ACD0ED;">
+        Source SVG: <code>assets/brand/logo-mark.svg</code> (1839×1572, 4 layers)<br>
+        Shown on white disc chip due to transparent <code>evenodd</code> cutouts
+      </div>
+    </div>
+  </div>
+  <div class="hero__seam" aria-hidden="true"></div>
+</section>
+
+<main>
+
+<!-- 1. ASSET AUDIT & OBSERVATIONS -->
+<section class="section" id="audit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">01 · Asset Inventory &amp; Epistemology</span>
+        <span class="tag tag--verified">VERIFIED SOURCE</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Supplied Files vs. Proposed System Decisions</h2>
+      <p>Observed facts from <code>assets/brand/</code>, <code>logo.jpg</code>, <code>favicon.svg</code>, and <code>plan.md</code> are strictly separated from derived recommendations and assumptions.</p>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr><th>Asset Path</th><th>Type / Size</th><th>Observed Properties</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>assets/brand/logo-mark.svg</code></td>
+            <td>SVG · 7,439 B · <code>1839×1572</code></td>
+            <td>4 flat <code>&lt;path&gt;</code> layers (<code>#ED7C30</code>, <code>#4394D5</code>, <code>#F2A15F</code>, <code>#3171AE</code>), <code>fill-rule="evenodd"</code> transparent holes, zero wordmark, zero white backing layer.</td>
+            <td><span class="tag tag--verified">VERIFIED SOURCE</span></td>
+          </tr>
+          <tr>
+            <td><code>logo.jpg</code> &amp; skill <code>logo-primary.jpg</code></td>
+            <td>JPEG · 97,572 B · <code>2048×2048</code></td>
+            <td>Byte-identical (<code>ad41024459467f95</code>). Vertical disc span <code>1575px</code> (<strong>76.90%</strong> of canvas). Blue streak bottom edge = <strong>17.12°</strong>. Includes subtle lower sea shadow wave gradient (<code>#387DB4</code>).</td>
+            <td><span class="tag tag--verified">VERIFIED SOURCE</span></td>
+          </tr>
+          <tr>
+            <td><code>favicon.svg</code></td>
+            <td>SVG · 314 B · <code>64×64</code></td>
+            <td>Simplified monogram: Sunset Orange <code>#ED7C30</code> disc + solid <code>#FFFFFF</code> aircraft silhouette.</td>
+            <td><span class="tag tag--verified">VERIFIED SOURCE</span></td>
+          </tr>
+          <tr>
+            <td><code>plan.md</code> &amp; <code>assets/img/</code></td>
+            <td>Brief + 23 WebP sets</td>
+            <td>Chattogram office (<code>1301, Mosjid Goli</code>), 3 phones, WhatsApp, 5.9K FB followers, partner <strong>তাঁবু নিবাসী</strong>, Islami &amp; EBL banks, Nepal <code>৳58,500</code>, Kashmir <code>৳35,000</code>. Gap: no Kashmir photo.</td>
+            <td><span class="tag tag--verified">VERIFIED BRIEF</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3">
+      <div class="card card--accent">
+        <span class="tag tag--verified" style="margin-bottom:10px;">Verified Visual Clues</span>
+        <h3>Emblem-Only Mark</h3>
+        <p style="font-size:14px;">Upper half: 4-window minibus, 2 palms, faceted mountains illuminated from upper right. Center: ascending 17° aircraft overhanging disc edges. Lower half: top-down 2-blade kayak + water. <strong>Zero lettering exists in the artwork.</strong></p>
+      </div>
+      <div class="card card--accent">
+        <span class="tag tag--proposed" style="margin-bottom:10px;">Proposed Recommendations</span>
+        <h3>Derived System Layers</h3>
+        <p style="font-size:14px;">Reverse white-backed &amp; monochrome SVGs, Plus Jakarta Sans wordmark lockups, 50–950 contrast-safe ramps, Night Ocean dark theme, Hind Siliguri Bangla scale, and high-density admin table rules.</p>
+      </div>
+      <div class="card card--accent">
+        <span class="tag tag--assumption" style="margin-bottom:10px;">Assumptions to Confirm</span>
+        <h3>Audience &amp; Ops Scope</h3>
+        <p style="font-size:14px;">22–45 Android-first Chattogram/Dhaka demographic, corporate custom-tour pillar, and internal admin deposit/visa queue workflow inferred from published Facebook &amp; bank-deposit text.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. BRAND STRATEGY -->
+<section class="section section--subtle" id="strategy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">02 · Brand Strategy Foundations</span>
+        <span class="tag tag--proposed">PROPOSED DIRECTION</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Positioning, Audience, Voice &amp; Visual Rationale</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Positioning &amp; Audience</h3>
+        <p><strong>Positioning:</strong> For Bangladeshi travellers-especially from Chattogram-who want guided South Asian &amp; international tours without assembling logistics alone, Trip Express BD runs small-group departures with fixed dates, published <code>৳</code> prices, real trip photography, and human phone/office access.</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong>Primary:</strong> Chattogram/greater-Chattogram adults (22–45), mobile-first, WhatsApp-native, bilingual. <strong>Secondary:</strong> Dhaka air-departure joiners. <strong>Tertiary:</strong> Corporate/friend-group custom trips.</p>
+      </div>
+      <div class="card">
+        <h3>Attributes, Mood &amp; Voice</h3>
+        <p><strong>Attributes:</strong> Warm · Trustworthy · Energetic · Local · Proof-Driven.</p>
+        <p><strong>Mood Words:</strong> Sunlit, Upward, Grounded, Communal, Transparent, Horizon-bound.</p>
+        <p style="font-size:14px;"><strong>Voice &amp; Microcopy:</strong> First-person communal (<code>"our team"</code>, concrete counts like <code>7 travellers</code>), honest exclusions, Bangla-primary itineraries + English chrome. Cultural expressions (<em>Alhamdulillah</em>, <em>Insha'Allah</em>) stay in trip reports, omitted from form errors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. LOGO SYSTEM -->
+<section class="section" id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">03 · Logo Architecture &amp; Usage Rules</span>
+        <span class="tag tag--verified">SOURCE GEOMETRY</span>
+        <span class="tag tag--proposed">DERIVED VARIANTS REQUIRE APPROVAL</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Clear Space, Minimum Sizes, Backgrounds &amp; Misuse</h2>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:28px;align-items:center;">
+      <div class="card" style="text-align:center;">
+        <h3 style="text-align:left;">Clear-Space Methodology (<code>0.25 × Disc Diameter</code>)</h3>
+        <div class="clearspace-box" style="margin:14px auto;">
+          <span class="clearspace-label clearspace-label--top">0.25 × D</span>
+          <span class="clearspace-label clearspace-label--left">0.25 × D</span>
+          <div class="clearspace-box__inner">
+            <img src="../assets/brand/logo-mark.svg" alt="Clear space demonstration" style="width:180px;height:auto;display:block;">
+          </div>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin:0;">Overhanging streak tips (<code>17.12°</code>) sit inside the mark's bounding box and must never be clipped. Minimum sizes: <strong>40px</strong> Primary Mark · <strong>32px</strong> Disc-Only (proposed) · <strong>16px</strong> Monogram (<code>favicon.svg</code>).</p>
+      </div>
+
+      <div class="card">
+        <h3>Source vs. Proposed Variants</h3>
+        <div style="display:grid;gap:12px;margin-top:12px;">
+          <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--border);border-radius:12px;">
+            <img src="../assets/brand/logo-mark.svg" alt="Primary mark" style="width:54px;height:auto;background:#fff;padding:4px;border-radius:8px;">
+            <div><strong>Primary 4-Color Mark</strong> <span class="tag tag--verified">SOURCE</span><div style="font-size:13px;color:var(--text-muted);"><code>assets/brand/logo-mark.svg</code> · Light backgrounds ≥40px.</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--border);border-radius:12px;">
+            <img src="../favicon.svg" alt="Monogram favicon" style="width:44px;height:44px;">
+            <div><strong>Monogram</strong> <span class="tag tag--verified">SOURCE</span><div style="font-size:13px;color:var(--text-muted);"><code>favicon.svg</code> · Favicons &amp; badges 16px–32px.</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--border);border-radius:12px;">
+            <span style="width:54px;height:54px;border-radius:50%;background:#FFFFFF;border:1px solid #DFE5EC;display:grid;place-items:center;padding:5px;">
+              <img src="../assets/brand/logo-mark.svg" alt="" style="width:100%;height:auto;">
+            </span>
+            <div><strong>White-Backed Reverse + Horizontal/Stacked Lockups + Monochrome</strong> <span class="tag tag--proposed">PROPOSED</span><div style="font-size:13px;color:var(--text-muted);">Plus Jakarta Sans 800 wordmark, <code>0.32×H</code> gap, aligned to disc center.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:14px;">Background Compatibility (Live SVG Cutout Demonstration)</h3>
+    <div class="grid-4" style="margin-bottom:28px;">
+      <div class="bg-demo" style="background:#FFFFFF;color:#1B2330;">
+        <img src="../assets/brand/logo-mark.svg" alt="Logo on white">
+        <span class="tag tag--verified">PASS · White #FFFFFF</span>
+      </div>
+      <div class="bg-demo" style="background:#FEF8F5;color:#1B2330;">
+        <img src="../assets/brand/logo-mark.svg" alt="Logo on warm 50">
+        <span class="tag tag--verified">PASS · Sunset-50</span>
+      </div>
+      <div class="bg-demo" style="background:#132436;color:#FFFFFF;">
+        <img src="../assets/brand/logo-mark.svg" alt="Raw SVG bleeding on Night Ocean">
+        <span class="tag tag--fail">WARNING · Transparent holes bleed dark!</span>
+      </div>
+      <div class="bg-demo" style="background:#132436;color:#FFFFFF;">
+        <span style="width:94px;height:94px;border-radius:50%;background:#FFFFFF;display:grid;place-items:center;padding:8px;">
+          <img src="../assets/brand/logo-mark.svg" alt="Logo in white disc chip" style="height:64px;">
+        </span>
+        <span class="tag tag--verified">APPROVED WORKAROUND · White Chip</span>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:14px;">Misuse Examples (Never Do)</h3>
+    <div class="grid-4">
+      <div class="misuse-card">
+        <div class="misuse-stage"><img src="../assets/brand/logo-mark.svg" alt="" style="transform:scaleX(1.55) scaleY(0.75);"></div>
+        <strong style="font-size:14px;color:var(--te-error-text);">Non-uniform stretch</strong>
+      </div>
+      <div class="misuse-card">
+        <div class="misuse-stage"><img src="../assets/brand/logo-mark.svg" alt="" style="transform:rotate(-24deg);"></div>
+        <strong style="font-size:14px;color:var(--te-error-text);">Rotating / altering 17° angle</strong>
+      </div>
+      <div class="misuse-card">
+        <div class="misuse-stage"><img src="../assets/brand/logo-mark.svg" alt="" style="filter:hue-rotate(110deg) drop-shadow(0 6px 8px #000);"></div>
+        <strong style="font-size:14px;color:var(--te-error-text);">Recoloring &amp; drop shadows</strong>
+      </div>
+      <div class="misuse-card">
+        <div class="misuse-stage"><span style="width:66px;height:66px;border-radius:50%;overflow:hidden;border:2px solid #C6CFDA;display:grid;place-items:center;"><img src="../assets/brand/logo-mark.svg" alt="" style="height:72px;"></span></div>
+        <strong style="font-size:14px;color:var(--te-error-text);">Clipping streak overhang</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COLOR PALETTE -->
+<section class="section section--subtle" id="colors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">04 · Color Architecture &amp; Contrast Audit</span>
+        <span class="tag tag--verified">6 SOURCE PIXELS</span>
+        <span class="tag tag--proposed">DERIVED RAMPS REQUIRE APPROVAL</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Source Artwork Samples vs. Derived Accessible Ramps</h2>
+      <p>Click any swatch to copy its HEX code. Note the critical distinction: <code>#F2A15F</code> is the literal mountain highlight inside <code>logo.jpg</code>/<code>logo-mark.svg</code>, while <code>#F2A16A</code> is the hue-locked <code>orange-400</code> ramp token.</p>
+    </div>
+
+    <h3 style="margin-bottom:12px;">A. Literal Source Colors (Sampled from <code>logo.jpg</code>)</h3>
+    <div class="swatch-grid" id="sourceSwatches" style="margin-bottom:28px;"></div>
+
+    <h3 style="margin-bottom:12px;">B. Contrast-Aware Rules (Why Derived Tokens Are Mandatory)</h3>
+    <div class="grid-3" style="margin-bottom:28px;">
+      <div class="card" style="background:#ED7C30;color:#FFFFFF;border:none;">
+        <span class="tag" style="background:#111823;color:#F3A3A3;">2.79:1 FAIL WCAG AA</span>
+        <h3 style="color:#FFFFFF;margin-top:10px;">White on #ED7C30</h3>
+        <p style="font-size:14px;margin:0;">Never place white text on Sunset Orange. Fails normal and large text contrast.</p>
+      </div>
+      <div class="card" style="background:#ED7C30;color:#111823;border:none;">
+        <span class="tag" style="background:#111823;color:#6FD9AC;">6.39:1 PASS AA</span>
+        <h3 style="color:#111823;margin-top:10px;">Ink #111823 on #ED7C30</h3>
+        <p style="font-size:14px;margin:0;">Approved Primary CTA pairing. High legibility in sunlight on mobile screens.</p>
+      </div>
+      <div class="card" style="background:#FFFFFF;color:#A45826;border:1px solid #DFE5EC;">
+        <span class="tag tag--verified">5.25:1 PASS AA</span>
+        <h3 style="color:#A45826;margin-top:10px;">#A45826 on White</h3>
+        <p style="font-size:14px;color:#3F4A5A;margin:0;">Derived <code>orange-700</code> replaces raw <code>#ED7C30</code> (2.79:1) for light-mode overlines &amp; hover links.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:12px;">C. Derived 50–950 Ramps <span class="tag tag--proposed">PROPOSED</span></h3>
+    <div id="rampContainer"></div>
+
+    <h3 style="margin:24px 0 12px;">D. Semantic Feedback &amp; Theme Parity</h3>
+    <div class="grid-2">
+      <div class="card" style="background:#FFFFFF;color:#3F4A5A;">
+        <h4 style="color:#1B2330;">Light Theme Feedback Pills</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <span class="tag" style="background:#E7F7F0;color:#15784F;border-color:#A7E3CB;">Booking Open · 4.95:1</span>
+          <span class="tag" style="background:#FFF6E0;color:#8A6100;border-color:#F5DB9B;">Seats Filling · 5.15:1</span>
+          <span class="tag" style="background:#FDECEC;color:#B02E2E;border-color:#F3B9B9;">Sold Out · 5.61:1</span>
+          <span class="tag" style="background:#E6EEF5;color:#25517B;border-color:#A4C1DB;">Visa Update · 7.05:1</span>
+          <span class="tag" style="background:#25D366;color:#0B3D22;">WhatsApp · 6.21:1</span>
+        </div>
+      </div>
+      <div class="card" style="background:#132436;color:#C6CFDA;border-color:#2A4763;">
+        <h4 style="color:#FFFFFF;">Night Ocean Dark Theme Pills</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <span class="tag" style="background:#14342A;color:#6FD9AC;border-color:#2A6A52;">Booking Open · 7.85:1</span>
+          <span class="tag" style="background:#33280F;color:#F3C969;border-color:#6B5424;">Seats Filling · 9.21:1</span>
+          <span class="tag" style="background:#361B1B;color:#F3A3A3;border-color:#6E3636;">Sold Out · 7.96:1</span>
+          <span class="tag" style="background:#17304A;color:#A4C1DB;border-color:#2F557A;">Visa Update · 7.21:1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TYPOGRAPHY -->
+<section class="section" id="typography">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">05 · Bilingual Typography &amp; Data Numerals</span>
+        <span class="tag tag--proposed">PROPOSED SYSTEM</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Plus Jakarta Sans · Inter · Hind Siliguri · JetBrains Mono</h2>
+      <p>All four families carry free SIL Open Font License 1.1. Two strict readability floors protect mobile users: <strong>17px minimum</strong> for Bangla prose and <strong>13px minimum</strong> for Latin UI text.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px;">
+      <div class="card">
+        <span class="overline">Display &amp; Bilingual Specimen</span>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1.1;color:var(--text-heading);margin:10px 0;">
+          Explore Nepal - Kathmandu &amp; Pokhara
+        </div>
+        <p class="bn" style="color:var(--text-body);margin-bottom:12px;">
+          ভিসা প্রক্রিয়া স্বাভাবিক হওয়ার সাথে সাথে আমাদের রেগুলার ট্রিপ অপেন হবে ইনশাআল্লাহ।
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;border-top:1px solid var(--border);padding-top:12px;">
+          <span class="num" style="font-size:28px;font-weight:700;color:var(--text-heading);">৳58,500</span>
+          <span style="font-size:14px;color:var(--text-muted);">per person · 5 Days / 4 Nights</span>
+          <code style="font-size:13px;background:var(--surface-2);padding:2px 8px;border-radius:6px;">A/C 20501620205843017</code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Type Role &amp; Scale Rules</h3>
+        <ul style="margin:8px 0 0;padding-left:18px;font-size:14px;display:grid;gap:6px;">
+          <li><strong>Display / Wordmark:</strong> Plus Jakarta Sans (variable <code>700..800</code>), tight tracking <code>-0.02em</code> to <code>-0.03em</code>.</li>
+          <li><strong>Body / UI / Forms:</strong> Inter (variable <code>400..700</code>, incl. 550/650), <code>16px</code> body, <code>13px</code> overline floor.</li>
+          <li><strong>Bangla:</strong> Hind Siliguri (static <code>400;500;600;700</code>), <code>line-height: 1.85</code>, <code>letter-spacing: 0</code>, never uppercase.</li>
+          <li><strong>Data / Ledger:</strong> <code>tabular-nums</code> mandatory on prices, dates, seats; optional JetBrains Mono for booking &amp; bank IDs.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. IMAGERY & TEXTURES -->
+<section class="section section--cool" id="imagery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">06 · Imagery, Icons &amp; Texture Direction</span>
+        <span class="tag tag--verified">REAL ARCHIVE</span>
+        <span class="tag tag--proposed">TEXTURES &amp; KASHMIR POLICY</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Proof-Driven Photography &amp; Brand-Vocabulary Textures</h2>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:24px;">
+      <div class="photo-card">
+        <img src="../assets/img/hero/cliff-wide-1600.webp" alt="Trip Express BD group in Meghalaya hills">
+        <div class="photo-card__overlay">
+          <span class="tag" style="background:rgba(255,255,255,0.16);color:#fff;width:fit-content;margin-bottom:6px;">HERO PROOF + SCRIM</span>
+          <strong style="font-size:17px;">Real group departure · Night Ocean scrim</strong>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="../assets/img/card/meghalaya-dawki-600.webp" alt="Group at Dawki waterfall">
+        <div class="photo-card__overlay">
+          <span class="tag" style="background:rgba(255,255,255,0.16);color:#fff;width:fit-content;margin-bottom:6px;">WATER + PEOPLE</span>
+          <strong style="font-size:17px;">Natural skin tones · Golden-hour warmth</strong>
+        </div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;background:#132436;color:#C6CFDA;border-color:#2A4763;">
+        <div>
+          <span class="tag tag--proposed" style="margin-bottom:10px;">PHOTO GAP POLICY</span>
+          <h3 style="color:#FFFFFF;">No Stock for Kashmir</h3>
+          <p style="font-size:14px;">Because no real Kashmir trip photo was supplied, use flat 5-color brand illustration (mountains + sun + flight streak) rather than generic stock.</p>
+        </div>
+        <svg viewBox="0 0 320 110" aria-hidden="true" style="width:100%;height:auto;border-radius:10px;background:#19324C;">
+          <circle cx="255" cy="34" r="20" fill="#ED7C30"/>
+          <polygon points="0,110 75,46 145,110" fill="#3171AE"/>
+          <polygon points="85,110 185,30 285,110" fill="#4394D5"/>
+          <polygon points="185,30 225,64 195,70" fill="#F2A15F"/>
+          <line x1="20" y1="82" x2="290" y2="18" stroke="#FFFFFF" stroke-width="2.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="texture-box tex-horizon"></div>
+        <h4>1. Horizon Split (<code>17deg</code>)</h4>
+        <p style="font-size:13px;color:var(--text-muted);margin:0;">White midpoint prevents muddy brown mix.</p>
+      </div>
+      <div class="card">
+        <div class="texture-box" style="background-color:var(--bg);background-image:radial-gradient(240px circle at 85% 18%, rgba(237,124,48,0.16), transparent 68%), radial-gradient(220px circle at 14% 84%, rgba(67,148,213,0.16), transparent 70%);display:flex;align-items:center;justify-content:center;padding:12px;">
+          <div style="background:rgba(255,255,255,0.78);backdrop-filter:saturate(140%) blur(14px);border:1px solid rgba(223,229,236,0.9);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;color:var(--text-heading);box-shadow:var(--shadow-sm);">Frosted Glass + Ambient Glow</div>
+        </div>
+        <h4>2. Radial Glow &amp; Glassmorphism</h4>
+        <p style="font-size:13px;color:var(--text-muted);margin:0;">Subtle twin halos preserve white dignity; 16px frosted surfaces for nav/hero.</p>
+      </div>
+      <div class="card">
+        <div class="texture-box tex-streak"></div>
+        <h4>3. Flight Streak (<code>107deg</code>)</h4>
+        <p style="font-size:13px;color:var(--text-muted);margin:0;">Subtle 7% orange contrail lines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DESKTOP, MOBILE & ADMIN PREVIEWS -->
+<section class="section" id="previews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">07 · Marketing &amp; Admin Interface Previews</span>
+        <span class="tag tag--proposed">GATE 1 PREVIEW MOCKUPS</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Desktop Marketing · Mobile 360px · Dense Operations Admin</h2>
+      <p>Demonstrates how the same tokens govern airy marketing cards (with <code>17°</code> Flight Angle geometry) and high-density back-office ledgers (strictly flat, zero skew, <code>tabular-nums</code>).</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:28px;align-items:start;">
+      <!-- Desktop Marketing Preview -->
+      <div class="device-frame">
+        <div class="device-chrome">
+          <span>Desktop Marketing (1440px Grid · 12-Col)</span>
+          <span class="tag tag--proposed">PROPOSED</span>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:18px;">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;color:var(--text-heading);">
+              <img src="../assets/brand/logo-mark.svg" alt="" width="30" height="26" style="background:#fff;border-radius:4px;"> Trip Express BD
+            </span>
+            <div style="display:flex;gap:10px;align-items:center;font-size:13px;">
+              <span>Destinations</span><span>Tours</span>
+              <span class="btn btn--primary" style="padding:6px 12px;font-size:13px;">Book a seat</span>
+            </div>
+          </div>
+          <div class="pkg-card">
+            <div class="pkg-card__top"></div>
+            <div class="pkg-card__media">
+              <img src="../assets/img/card/cover-nepal-720.webp" alt="Nepal tour group">
+              <div class="skew-badge"><span>FEATURED · 5D / 4N</span></div>
+            </div>
+            <span class="overline">NEPAL · FIXED DEPARTURE</span>
+            <h3 style="margin-top:4px;">Explore Nepal</h3>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:10px;">Kathmandu · Nagarkot · Pokhara · 7–15 travellers</p>
+            <p class="bn" style="margin-bottom:12px;">ঢাকা ↔ কাঠমুন্ডু রিটার্ন এয়ার টিকিট ও প্রাইভেট ট্রান্সফার</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:12px;">
+              <div>
+                <div style="font-size:13px;color:var(--text-muted);">Per person</div>
+                <div class="num" style="font-size:24px;font-weight:700;color:var(--text-heading);">৳58,500</div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <span class="btn" style="background:var(--te-wa-soft);color:var(--te-wa-soft-ink);border-color:var(--te-success-bd);padding:8px 12px;font-size:13px;">WhatsApp</span>
+                <span class="btn btn--primary" style="padding:8px 14px;font-size:13px;">Book Your Seat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile 360px Preview -->
+      <div class="device-frame mobile-shell">
+        <div class="device-chrome">
+          <span>Mobile 360px (4-Col)</span>
+          <span class="tag tag--proposed">PROPOSED</span>
+        </div>
+        <div style="padding:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:800;font-size:15px;color:var(--text-heading);">
+              <img src="../assets/brand/logo-mark.svg" alt="" width="28" height="24" style="background:#fff;border-radius:4px;"> Trip Express BD
+            </span>
+            <span class="tag" style="background:var(--te-wa-soft);color:var(--te-wa-soft-ink);">01838-754207</span>
+          </div>
+          <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--border);">
+            <span class="tag" style="background:var(--te-orange-500);color:#111823;">Tours</span>
+            <span class="tag" style="background:var(--surface-2);color:var(--text-body);">Destinations</span>
+            <span class="tag" style="background:var(--surface-2);color:var(--text-body);">Portfolio</span>
+          </div>
+          <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:12px;">
+            <img src="../assets/img/card/meghalaya-hills-600.webp" alt="Meghalaya departure" style="width:100%;height:150px;object-fit:cover;display:block;">
+            <div style="padding:12px;">
+              <span class="overline">MEGHALAYA · 4 DAYS</span>
+              <h4 style="margin:4px 0;">Shillong &amp; Dawki Team</h4>
+              <p class="bn" style="margin:0 0 10px;">১৩ জনের টিম নিয়ে মেঘালয় ভ্রমণ</p>
+              <span class="btn btn--primary" style="width:100%;justify-content:center;min-height:44px;">Chat on WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dense Admin Interface Preview -->
+    <div class="device-frame">
+      <div class="device-chrome">
+        <span>Dense Admin Interface Preview - Departure &amp; Bank Deposit Ledger (Zero 17° Skew · 42px Rows · Tabular Numerals)</span>
+        <span class="tag tag--proposed">ADMIN RULES</span>
+      </div>
+      <div style="padding:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px;">
+          <div>
+            <h3 style="margin:0;font-size:20px;">Nepal Nov 11–16 · Seat &amp; Bank Reconciliation</h3>
+            <div style="font-size:13px;color:var(--text-muted);">Islami Bank (Chawkbazar) &amp; Eastern Bank (Agrabad) · 11 of 14 seats filled</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span style="padding:7px 12px;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:8px;font-size:13px;color:var(--text-muted);">Search ID / Phone…</span>
+            <span class="btn btn--secondary" style="border-radius:8px;padding:7px 14px;font-size:13px;">Export Manifest</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Traveller &amp; Phone</th>
+                <th>Bank / Reference</th>
+                <th>Deposit (BDT)</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>TE-NEP-041</code></td>
+                <td>Tariqul Hasan · <span class="num">01819-442190</span></td>
+                <td>Islami Bank · <code>20501620205843017</code></td>
+                <td class="num"><strong>৳36,000</strong> / ৳58,500</td>
+                <td><span class="tag" style="background:var(--te-success-bg);color:var(--te-success-text);border-color:var(--te-success-bd);">Airfare Confirmed</span></td>
+              </tr>
+              <tr>
+                <td><code>TE-NEP-042</code></td>
+                <td>Nusrat Jahan · <span class="num">01711-883214</span></td>
+                <td>Eastern Bank · <code>0011450000514</code></td>
+                <td class="num"><strong>৳20,000</strong> / ৳58,500</td>
+                <td><span class="tag" style="background:var(--te-warning-bg);color:var(--te-warning-text);border-color:var(--te-warning-bd);">Deposit Pending</span></td>
+              </tr>
+              <tr>
+                <td><code>TE-KSH-019</code></td>
+                <td>Sajib Chowdhury · <span class="num">01621-785968</span></td>
+                <td>Office Cash · Mosjid Goli</td>
+                <td class="num"><strong>৳35,000</strong> / ৳35,000</td>
+                <td><span class="tag" style="background:var(--te-info-bg);color:var(--te-info-text);border-color:var(--te-info-bd);">Visa Submitted</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GATE 1 REVIEW -->
+<section class="section section--warm" id="gate1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-head__top">
+        <span class="overline">08 · Gate 1 Decision Sign-Off</span>
+        <span class="tag tag--proposed">APPROVAL REQUIRED</span>
+      </div>
+      <div class="flight-rule" aria-hidden="true"></div>
+      <h2>Items Awaiting Review Before Main UI Library Implementation</h2>
+    </div>
+    <div class="card">
+      <ol style="margin:0;padding-left:20px;display:grid;gap:10px;font-size:15px;">
+        <li><strong>Logo Fidelity:</strong> Approve preserving `assets/brand/logo-mark.svg` and `logo.jpg` untouched (17.12° overhanging streak, 76.9% disc) and generating proposed white-backed reverse, disc-only, monochrome, and wordmark lockup SVGs.</li>
+        <li><strong>Color Palette:</strong> Approve contrast-derived 50–950 ramps, `#111823` ink on `#ED7C30` buttons (`6.39:1`), `#A45826` text orange (`5.25:1`), Night Ocean `#132436` dark theme, and `#F2A15F` (logo) vs `#F2A16A` (`orange-400`) reconciliation.</li>
+        <li><strong>Typography:</strong> Approve Plus Jakarta Sans + Inter + Hind Siliguri (+ optional JetBrains Mono for admin IDs), `17px` Bangla floor, and `13px` Latin UI floor.</li>
+        <li><strong>Strategy &amp; Dual-Mode Rules:</strong> Approve positioning, bilingual voice, real-photo-first Kashmir gap illustration policy, and marketing vs. dense admin interface standards.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+  const SOURCE_COLORS = [
+    { name: 'Sunset Orange', hex: '#ED7C30', rgb: '237, 124, 48', hsl: '24, 84%, 56%', note: '17.70% canvas · Ink #111823 (6.39:1)', darkText: true },
+    { name: 'Sand Orange (Source)', hex: '#F2A15F', rgb: '242, 161, 95', hsl: '27, 85%, 66%', note: '1.89% canvas · Literal mountain facet', darkText: true },
+    { name: 'Sky Blue', hex: '#4394D5', rgb: '67, 148, 213', hsl: '207, 63%, 55%', note: '13.66% canvas · Lower water disc', darkText: true },
+    { name: 'Deep Ocean', hex: '#3171AE', rgb: '49, 113, 174', hsl: '209, 56%, 44%', note: '6.29% canvas · White text safe (5.12:1)', darkText: false },
+    { name: 'Sea Shadow (JPEG)', hex: '#387DB4', rgb: '56, 125, 180', hsl: '207, 53%, 46%', note: 'Soft lower-disc wave in logo.jpg', darkText: false },
+    { name: 'Horizon White', hex: '#FFFFFF', rgb: '255, 255, 255', hsl: '0, 0%, 100%', note: '58.94% canvas · Logo negative space', darkText: true }
+  ];
+
+  const RAMPS = {
+    'Orange (Primary Derived)': [
+      ['50','#FEF8F5',1],['100','#FDEFE6',1],['200','#FADDC9',1],['300','#F7C5A4',1],
+      ['400','#F2A16A',1],['500','#ED7C30',1],['600','#C96A2B',0],['700','#A45826',0],
+      ['800','#804621',0],['900','#60371C',0],['950','#402718',0]
+    ],
+    'Sky Blue (Secondary Derived)': [
+      ['50','#F6FAFD',1],['100','#E8F2FA',1],['200','#CEE3F4',1],['300','#ACD0ED',1],
+      ['400','#78B2E1',1],['500','#4394D5',1],['600','#3A7EB5',0],['700','#316896',0],
+      ['800','#285376',0],['900','#20405B',0],['950','#182D3F',0]
+    ],
+    'Deep Ocean (Anchor Derived)': [
+      ['50','#F5F8FB',1],['100','#E6EEF5',1],['200','#C9DAEA',1],['300','#A4C1DB',1],
+      ['400','#6B99C5',1],['500','#3171AE',0],['600','#2B6195',0],['700','#25517B',0],
+      ['800','#1E4162',0],['900','#19324C',0],['950','#132436',0]
+    ],
+    'Blue-Tinted Slate Neutrals': [
+      ['0','#FFFFFF',1],['50','#F7F9FB',1],['100','#EFF3F7',1],['200','#DFE5EC',1],
+      ['300','#C6CFDA',1],['400','#9AA6B6',1],['500','#6F7D90',0],['600','#556274',0],
+      ['700','#3F4A5A',0],['800','#2B3442',0],['900','#1B2330',0],['950','#111823',0]
+    ]
+  };
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function copyHex(hex) {
+    navigator.clipboard?.writeText(hex).catch(() => {});
+    toast.textContent = 'Copied ' + hex;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('is-on'), 1400);
+  }
+
+  const srcEl = document.getElementById('sourceSwatches');
+  SOURCE_COLORS.forEach(c => {
+    const el = document.createElement('div');
+    el.className = 'swatch';
+    el.onclick = () => copyHex(c.hex);
+    el.innerHTML = `
+      <div class="swatch__color" style="background:${c.hex};color:${c.darkText ? '#111823' : '#FFFFFF'};border-bottom:1px solid var(--border);">
+        <span>${c.hex}</span><span style="font-size:11px;opacity:0.85;">SOURCE</span>
+      </div>
+      <div class="swatch__meta">
+        <strong>${c.name}</strong>
+        <div class="swatch__codes">rgb(${c.rgb})<br>hsl(${c.hsl})</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">${c.note}</div>
+      </div>`;
+    srcEl.appendChild(el);
+  });
+
+  const rampEl = document.getElementById('rampContainer');
+  Object.entries(RAMPS).forEach(([title, cells]) => {
+    const h = document.createElement('h4');
+    h.textContent = title;
+    h.style.margin = '14px 0 8px';
+    rampEl.appendChild(h);
+    const strip = document.createElement('div');
+    strip.className = 'ramp-strip';
+    if (cells.length === 12) strip.style.gridTemplateColumns = 'repeat(12, minmax(60px, 1fr))';
+    cells.forEach(([step, hex, dark]) => {
+      const cell = document.createElement('div');
+      cell.className = 'ramp-cell';
+      cell.onclick = () => copyHex(hex);
+      cell.innerHTML = `
+        <div class="ramp-cell__box" style="background:${hex};color:${dark ? '#111823' : '#FFFFFF'}">${step}</div>
+        <div class="ramp-cell__txt">${hex}</div>`;
+      strip.appendChild(cell);
+    });
+    rampEl.appendChild(strip);
+  });
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    document.getElementById('themeToggle').textContent = next === 'dark' ? 'Switch to Light' : 'Toggle Night Ocean';
+  });
+</script>
+</body>
+</html>

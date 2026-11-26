@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traveller Portal Auth - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (03/09):</strong> Auth &amp; OTP flows are intentionally mocked locally (try OTP <code>123456</code>). <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+</div>
+<main id="main" class="sc-container--narrow" style="padding:48px 20px;">
+  <div style="text-align:center;margin-bottom:24px;">
+    <a class="ds-brand" href="01-marketing-home.html" style="justify-content:center;"><span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span><span>Trip Express BD Portal</span></a>
+  </div>
+
+  <div class="te-card" style="max-width:480px;margin:0 auto;">
+    <div class="te-tabs" role="tablist" aria-label="Authentication steps" style="margin-bottom:20px;">
+      <button class="te-tab" role="tab" aria-selected="true" tabindex="0" id="authT1" aria-controls="authP1">Sign In</button>
+      <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="authT2" aria-controls="authP2">Reset Password</button>
+      <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="authT3" aria-controls="authP3">Verify OTP</button>
+    </div>
+
+    <div id="authServerMsg" role="alert" style="display:none;margin-bottom:14px;"></div>
+
+    <!-- SIGN IN -->
+    <form id="authP1" role="tabpanel" aria-labelledby="authT1" novalidate style="display:grid;gap:14px;">
+      <div class="te-field">
+        <label class="te-label" for="loginEmail">Email or Mobile <span class="te-req">*</span></label>
+        <input class="te-input" id="loginEmail" type="text" autocomplete="username" placeholder="tripexpressb@gmail.com">
+      </div>
+      <div class="te-field">
+        <label class="te-label" for="loginPass">Password <span class="te-req">*</span></label>
+        <div class="te-input-wrap">
+          <input class="te-input" id="loginPass" type="password" autocomplete="current-password" style="padding-right:48px;" placeholder="Minimum 8 characters">
+          <button type="button" class="te-btn te-btn--ghost te-btn--icon te-btn--sm" id="togglePwBtn" aria-label="Show password" style="position:absolute;right:4px;">
+            <svg class="ic ic--sm" aria-hidden="true"><use href="#i-eye"></use></svg>
+          </button>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="te-btn te-btn--primary" type="submit" style="flex:1;">Sign In</button>
+        <button class="te-btn te-btn--outline" id="simServerErrBtn" type="button">Simulate Server Error</button>
+      </div>
+    </form>
+
+    <!-- RESET PASSWORD -->
+    <form id="authP2" role="tabpanel" aria-labelledby="authT2" hidden novalidate style="display:grid;gap:14px;">
+      <p style="font-size:14px;color:var(--te-text-muted);margin:0;">Enter your registered email or WhatsApp number for a 6-digit verification code.</p>
+      <div class="te-field"><label class="te-label" for="resetContact">Registered Email / Phone</label><input class="te-input" id="resetContact" placeholder="01838-754207"></div>
+      <button class="te-btn te-btn--primary" type="submit">Send Recovery Code</button>
+    </form>
+
+    <!-- OTP VERIFY -->
+    <form id="authP3" role="tabpanel" aria-labelledby="authT3" hidden novalidate style="display:grid;gap:14px;">
+      <p style="font-size:14px;color:var(--te-text-muted);margin:0;">Paste or enter 6-digit code (demo valid: <code>123456</code>):</p>
+      <div class="te-field">
+        <label class="te-label" for="otpCode">One-Time Passcode</label>
+        <input class="te-input te-mono" id="otpCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456" style="letter-spacing:0.35em;text-align:center;font-size:20px;">
+      </div>
+      <button class="te-btn te-btn--primary" type="submit">Verify &amp; Continue</button>
+    </form>
+  </div>
+</main>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  const msg = document.getElementById('authServerMsg');
+  function showAuth(type, text) {
+    msg.style.display = 'block';
+    msg.className = 'te-badge te-badge--' + type;
+    msg.textContent = text;
+  }
+  document.getElementById('togglePwBtn').addEventListener('click', function () {
+    const inp = document.getElementById('loginPass');
+    const isPw = inp.type === 'password';
+    inp.type = isPw ? 'text' : 'password';
+    this.setAttribute('aria-label', isPw ? 'Hide password' : 'Show password');
+  });
+  document.getElementById('simServerErrBtn').addEventListener('click', () => {
+    showAuth('error', 'Server 401: Incorrect password or locked session. Reset via OTP.');
+  });
+  document.getElementById('authP1').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!document.getElementById('loginEmail').value.trim() || document.getElementById('loginPass').value.length < 8) {
+      showAuth('error', 'Enter email/mobile and password (8+ characters).');
+      return;
+    }
+    showAuth('success', 'Signed in (mock). Proceed to OTP or Booking.');
+  });
+  document.getElementById('authP2').addEventListener('submit', (e) => {
+    e.preventDefault();
+    showAuth('info', 'Mock recovery code sent. Switch to Verify OTP tab and enter 123456.');
+  });
+  document.getElementById('authP3').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (document.getElementById('otpCode').value.trim() === '123456') {
+      showAuth('success', 'Verified! Redirecting to your booking dashboard…');
+    } else {
+      showAuth('error', 'Invalid OTP code. Demo valid code is 123456.');
+    }
+  });
+</script>
+</body>
+</html>

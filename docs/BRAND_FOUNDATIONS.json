@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "brandName": "Trip Express BD",
+    "namingRules": {
+      "canonical": "Trip Express BD",
+      "forbidden": ["TripExpress", "Trip Express Bangladesh", "TEBD", "tripexpress"],
+      "lowercaseAllowedOnlyIn": ["urls", "handles", "filenames"]
+    },
+    "gate": "GATE_1_FOUNDATIONS_REVIEW",
+    "status": "awaiting_approval",
+    "doNotImplementMainUiLibraryYet": true,
+    "doNotAlterOriginalIdentityWithoutApproval": true
+  },
+  "assetInventory": {
+    "suppliedInAssetsBrand": [
+      {
+        "path": "assets/brand/logo-mark.svg",
+        "type": "image/svg+xml",
+        "bytes": 7439,
+        "sha256Prefix": "d3be186492e6db0a",
+        "viewBox": "0 0 1839 1572",
+        "pathsCount": 4,
+        "fills": ["#ED7C30", "#4394D5", "#F2A15F", "#3171AE"],
+        "hasWordmark": false,
+        "hasWhiteBackingLayer": false,
+        "fillRule": "evenodd",
+        "status": "source_verified"
+      }
+    ],
+    "suppliedElsewhereInRepo": [
+      {
+        "path": "logo.jpg",
+        "type": "image/jpeg",
+        "bytes": 97572,
+        "sha256Prefix": "ad41024459467f95",
+        "dimensions": { "w": 2048, "h": 2048 },
+        "colorMode": "RGB",
+        "background": "#FFFFFF",
+        "identicalTo": ".claude/skills/trip-express-brand/assets/logo-primary.jpg",
+        "status": "source_verified"
+      },
+      {
+        "path": "favicon.svg",
+        "type": "image/svg+xml",
+        "bytes": 314,
+        "sha256Prefix": "f4ce9a2be3e36d8e",
+        "viewBox": "0 0 64 64",
+        "fills": ["#ED7C30", "#FFFFFF"],
+        "description": "Simplified monogram: Sunset Orange disc with solid white plane silhouette",
+        "status": "source_verified"
+      },
+      {
+        "path": "plan.md",
+        "type": "text/markdown",
+        "bytes": 39530,
+        "role": "Brand brief / Facebook export containing published tours, prices, phones, office address, banks, and partner",
+        "status": "source_verified"
+      }
+    ]
+  },
+  "epistemology": {
+    "verifiedObservations": [
+      "Only assets/brand/logo-mark.svg exists inside assets/brand/.",
+      "logo.jpg and .claude/skills/trip-express-brand/assets/logo-primary.jpg are byte-identical 2048x2048 RGB JPEGs.",
+      "Logo artwork contains zero typography or wordmark.",
+      "Upper hemisphere depicts a 4-window minibus, two palm trees, and faceted mountains in #ED7C30 and #F2A15F.",
+      "Lower hemisphere depicts a top-down 2-blade kayak and soft wave shadow in #4394D5, #3171AE, and #387DB4 (JPEG only).",
+      "Diagonal ascending aircraft streak overhangs both left and right disc edges; bottom blue edge measures 17.12 deg.",
+      "assets/brand/logo-mark.svg uses evenodd transparent cutouts with no white backing fill, causing dark backgrounds to bleed into the aircraft, bus, palms, and kayak.",
+      "Photography exists in assets/img/ for Meghalaya, Dawki, and Nepal; no Kashmir photo is supplied."
+    ],
+    "proposedDecisionsRequiringApproval": [
+      "Derived logo variants not yet in assets/brand/: white-backed reverse SVG, disc-only avatar, monochrome single-ink SVG, horizontal lockup, stacked lockup.",
+      "Derived 50-950 color ramps, blue-tinted slate neutrals (#111823 darkest ink), Night Ocean (#132436) dark mode, and contrast-adjusted text tokens (#A45826, #316896, #25517B).",
+      "Reconciliation of literal logo mountain highlight #F2A15F vs UI ramp step orange-400 #F2A16A.",
+      "Typography pairing: Plus Jakarta Sans (display/wordmark), Inter (body/UI/tabular-nums), Hind Siliguri (Bangla), optional JetBrains Mono (admin IDs).",
+      "Type floors: 17px Bangla running text minimum, 13px Latin UI minimum.",
+      "17-degree Flight Angle layout geometry (tan 17 deg = 0.3057) for marketing, banned inside dense admin tables and forms.",
+      "Dual-mode layout specifications separating airy marketing pages from high-density admin interfaces."
+    ],
+    "assumptions": [
+      "Primary audience demographics (Bangladeshi adults 22-45, Chattogram/Dhaka, Android mobile-first) inferred from Facebook posts and BDT pricing.",
+      "Corporate/institutional custom group tours and standalone air ticketing/visa assistance inferred as secondary service pillars.",
+      "Dense back-office admin UI needs (booking ledger, bank deposit reconciliation, seat caps, visa queue) inferred from manual bank-deposit confirmation workflow in plan.md."
+    ]
+  },
+  "verifiedBrandFacts": {
+    "officeAddress": "1301, Mosjid Goli, Dui Number Gate (opposite Sermon School), Chattogram 4202, Bangladesh",
+    "phones": ["01621-785968", "01838-754207", "01840-004495"],
+    "whatsapp": "https://wa.me/8801838754207",
+    "email": "tripexpressb@gmail.com",
+    "facebookFollowers": "5.9K",
+    "partner": "তাঁবু নিবাসী",
+    "banks": [
+      { "bank": "Islami Bank", "accountName": "MD Mirajul Islam", "accountNumber": "20501620205843017", "branch": "Chawkbazar, Chattogram" },
+      { "bank": "Eastern Bank Bangladesh", "accountName": "Faysal Jahor Chowdhury", "accountNumber": "0011450000514", "branch": "Agrabad Branch" }
+    ],
+    "publishedDestinations": ["Kashmir", "Meghalaya/Shillong", "Sikkim", "Darjeeling", "Nepal", "Kolkata", "Maldives", "Sri Lanka"],
+    "publishedPricingSamples": [
+      { "trip": "Explore Nepal (Kathmandu - Nagarkot - Pokhara)", "duration": "5 Days / 4 Nights", "priceBDT": 58500 },
+      { "trip": "Kashmir by Road from Chattogram (Season 5)", "duration": null, "priceBDT": 35000 }
+    ]
+  },
+  "strategy": {
+    "positioning": "For Bangladeshi travellers-especially from Chattogram-who want guided South Asian and international group tours without assembling logistics alone, Trip Express BD runs small-group departures with fixed dates, published prices in BDT, real departure photography, and direct human support.",
+    "attributes": ["Warm", "Trustworthy", "Energetic", "Local", "Proof-Driven"],
+    "antiAttributes": ["Aloof luxury", "Aggressive discount-shouty", "Corporate coldness", "Generic stock-photo polish"],
+    "moodWords": ["Sunlit", "Upward", "Grounded", "Communal", "Transparent", "Horizon-bound"],
+    "permittedUseCases": [
+      "Public marketing pages, tour detail itineraries, and real-photo trip archives",
+      "WhatsApp/Facebook campaign graphics and 1200x630 Open Graph cards",
+      "Co-branded partner lockups (e.g., তাঁবু নিবাসী)",
+      "Operations & booking admin portal, payment reconciliation ledgers, and printed vouchers"
+    ]
+  },
+  "logoSystem": {
+    "measuredGeometry": {
+      "rasterCanvas": { "w": 2048, "h": 2048 },
+      "nonWhiteBbox": { "x": 80, "y": 241, "w": 1868, "h": 1575 },
+      "discVerticalSpanPx": 1575,
+      "discCanvasRatio": 0.769,
+      "streakTips": { "left": [80, 1428], "right": [1947, 858] },
+      "measuredBlueStreakAngleDeg": 17.12,
+      "measuredOrangeSeamAngleDeg": 9.13,
+      "svgViewBox": { "w": 1839, "h": 1572 }
+    },
+    "rules": {
+      "clearSpaceFormula": "0.25 * discDiameter",
+      "minSizesPx": { "primaryMark": 40, "discOnly": 32, "monogram": 16, "horizontalLockupWidth": 120 },
+      "minSizesMmPrint": { "primaryMark": 15, "horizontalLockupWidth": 35 },
+      "lockupProportions": {
+        "horizontalGap": "0.32 * markHeight",
+        "horizontalCapHeight": "0.40 * markHeight",
+        "horizontalAlignment": "disc vertical center",
+        "stackedGap": "0.22 * markHeight",
+        "stackedCapHeight": "0.26 * markHeight"
+      }
+    },
+    "variants": [
+      { "id": "primary-mark", "status": "source_verified", "asset": "assets/brand/logo-mark.svg", "notes": "Full 4-color mark with overhanging streak; requires light surface or white disc chip due to transparent evenodd cutouts." },
+      { "id": "monogram", "status": "source_verified", "asset": "favicon.svg", "notes": "White aircraft on #ED7C30 circle for 16px-32px." },
+      { "id": "white-backed-reverse", "status": "proposed_requires_approval", "asset": null, "notes": "Adds white interior fill layer + white wordmark for dark Night Ocean surfaces." },
+      { "id": "disc-only", "status": "proposed_requires_approval", "asset": null, "notes": "Clips overhang to 1:1 disc for avatars and PWA maskable icons." },
+      { "id": "monochrome-dark-light", "status": "proposed_requires_approval", "asset": null, "notes": "Single-color #132436 or #FFFFFF silhouette for print/orange-bg." },
+      { "id": "horizontal-stacked-lockups", "status": "proposed_requires_approval", "asset": null, "notes": "Pairs mark with Plus Jakarta Sans 800 wordmark 'Trip Express BD'." }
+    ],
+    "misuse": [
+      "Recoloring or swapping orange/blue hemispheres",
+      "Rotating, mirroring, or altering the 17-degree flight angle",
+      "Stretching or skewing non-uniformly",
+      "Applying drop shadows, strokes, glows, or bevels",
+      "Clipping overhanging streak tips with border-radius: 50% on primary mark",
+      "Placing transparent-cutout logo-mark.svg directly onto #132436 or #ED7C30 without backing"
+    ]
+  },
+  "colorSystem": {
+    "sourceSampled": {
+      "sunsetOrange": { "hex": "#ED7C30", "rgb": [237, 124, 48], "hsl": [24, 84, 56], "canvasShare": 0.177, "contrastVsWhite": 2.79, "contrastVsN950": 6.39, "status": "source_verified" },
+      "sandOrangeSource": { "hex": "#F2A15F", "rgb": [242, 161, 95], "hsl": [27, 85, 66], "canvasShare": 0.0189, "contrastVsWhite": 2.09, "contrastVsNight": 7.53, "status": "source_verified" },
+      "skyBlue": { "hex": "#4394D5", "rgb": [67, 148, 213], "hsl": [207, 63, 55], "canvasShare": 0.1366, "contrastVsWhite": 3.26, "contrastVsNight": 4.83, "status": "source_verified" },
+      "deepOcean": { "hex": "#3171AE", "rgb": [49, 113, 174], "hsl": [209, 56, 44], "canvasShare": 0.0629, "contrastVsWhite": 5.12, "contrastVsNight": 3.08, "status": "source_verified" },
+      "seaShadowJpeg": { "hex": "#387DB4", "rgb": [56, 125, 180], "hsl": [207, 53, 46], "canvasShare": null, "contrastVsWhite": 4.41, "contrastVsNight": 3.57, "status": "source_verified" },
+      "horizonWhite": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "hsl": [0, 0, 100], "canvasShare": 0.5894, "contrastVsNight": 15.75, "status": "source_verified" }
+    },
+    "derivedRamps": {
+      "status": "proposed_requires_approval",
+      "pageProportionTarget": { "whiteNearWhite": 0.60, "orangeFamily": 0.25, "blueFamily": 0.12, "inkAndSemantic": 0.03 },
+      "orange": {
+        "50":  { "hex": "#FEF8F5", "rgb": [254, 248, 245], "hsl": [20, 82, 98], "vsWhite": 1.05, "vsNight": 14.97 },
+        "100": { "hex": "#FDEFE6", "rgb": [253, 239, 230], "hsl": [23, 85, 95], "vsWhite": 1.13, "vsNight": 14.00 },
+        "200": { "hex": "#FADDC9", "rgb": [250, 221, 201], "hsl": [24, 83, 88], "vsWhite": 1.29, "vsNight": 12.19 },
+        "300": { "hex": "#F7C5A4", "rgb": [247, 197, 164], "hsl": [24, 84, 81], "vsWhite": 1.56, "vsNight": 10.11 },
+        "400": { "hex": "#F2A16A", "rgb": [242, 161, 106], "hsl": [24, 84, 68], "vsWhite": 2.08, "vsNight": 7.56 },
+        "500": { "hex": "#ED7C30", "rgb": [237, 124, 48],  "hsl": [24, 84, 56], "vsWhite": 2.79, "vsNight": 5.65 },
+        "600": { "hex": "#C96A2B", "rgb": [201, 106, 43],  "hsl": [24, 65, 48], "vsWhite": 3.76, "vsNight": 4.19 },
+        "700": { "hex": "#A45826", "rgb": [164, 88, 38],   "hsl": [24, 62, 40], "vsWhite": 5.25, "vsNight": 3.00 },
+        "800": { "hex": "#804621", "rgb": [128, 70, 33],   "hsl": [23, 59, 32], "vsWhite": 7.46, "vsNight": 2.11 },
+        "900": { "hex": "#60371C", "rgb": [96, 55, 28],    "hsl": [24, 55, 24], "vsWhite": 10.19, "vsNight": 1.55 },
+        "950": { "hex": "#402718", "rgb": [64, 39, 24],    "hsl": [23, 45, 17], "vsWhite": 13.80, "vsNight": 1.14 }
+      },
+      "sky": {
+        "50":  { "hex": "#F6FAFD", "rgb": [246, 250, 253], "hsl": [206, 64, 98], "vsWhite": 1.05, "vsNight": 15.01 },
+        "100": { "hex": "#E8F2FA", "rgb": [232, 242, 250], "hsl": [207, 64, 95], "vsWhite": 1.13, "vsNight": 13.88 },
+        "200": { "hex": "#CEE3F4", "rgb": [206, 227, 244], "hsl": [207, 63, 88], "vsWhite": 1.32, "vsNight": 11.94 },
+        "300": { "hex": "#ACD0ED", "rgb": [172, 208, 237], "hsl": [207, 64, 80], "vsWhite": 1.62, "vsNight": 9.75 },
+        "400": { "hex": "#78B2E1", "rgb": [120, 178, 225], "hsl": [207, 64, 68], "vsWhite": 2.27, "vsNight": 6.94 },
+        "500": { "hex": "#4394D5", "rgb": [67, 148, 213],  "hsl": [207, 63, 55], "vsWhite": 3.26, "vsNight": 4.83 },
+        "600": { "hex": "#3A7EB5", "rgb": [58, 126, 181],  "hsl": [207, 51, 47], "vsWhite": 4.35, "vsNight": 3.62 },
+        "700": { "hex": "#316896", "rgb": [49, 104, 150],  "hsl": [207, 51, 39], "vsWhite": 5.91, "vsNight": 2.66 },
+        "800": { "hex": "#285376", "rgb": [40, 83, 118],   "hsl": [207, 49, 31], "vsWhite": 8.11, "vsNight": 1.94 },
+        "900": { "hex": "#20405B", "rgb": [32, 64, 91],    "hsl": [207, 48, 24], "vsWhite": 10.79, "vsNight": 1.46 },
+        "950": { "hex": "#182D3F", "rgb": [24, 45, 63],    "hsl": [208, 45, 17], "vsWhite": 14.13, "vsNight": 1.11 }
+      },
+      "ocean": {
+        "50":  { "hex": "#F5F8FB", "rgb": [245, 248, 251], "hsl": [210, 43, 97], "vsWhite": 1.07, "vsNight": 14.78 },
+        "100": { "hex": "#E6EEF5", "rgb": [230, 238, 245], "hsl": [208, 43, 93], "vsWhite": 1.17, "vsNight": 13.43 },
+        "200": { "hex": "#C9DAEA", "rgb": [201, 218, 234], "hsl": [209, 44, 85], "vsWhite": 1.43, "vsNight": 11.03 },
+        "300": { "hex": "#A4C1DB", "rgb": [164, 193, 219], "hsl": [208, 43, 75], "vsWhite": 1.87, "vsNight": 8.42 },
+        "400": { "hex": "#6B99C5", "rgb": [107, 153, 197], "hsl": [209, 44, 60], "vsWhite": 3.01, "vsNight": 5.24 },
+        "500": { "hex": "#3171AE", "rgb": [49, 113, 174],  "hsl": [209, 56, 44], "vsWhite": 5.12, "vsNight": 3.08 },
+        "600": { "hex": "#2B6195", "rgb": [43, 97, 149],   "hsl": [209, 55, 38], "vsWhite": 6.47, "vsNight": 2.43 },
+        "700": { "hex": "#25517B", "rgb": [37, 81, 123],   "hsl": [209, 54, 31], "vsWhite": 8.26, "vsNight": 1.91 },
+        "800": { "hex": "#1E4162", "rgb": [30, 65, 98],    "hsl": [209, 53, 25], "vsWhite": 10.57, "vsNight": 1.49 },
+        "900": { "hex": "#19324C", "rgb": [25, 50, 76],    "hsl": [211, 50, 20], "vsWhite": 13.11, "vsNight": 1.20 },
+        "950": { "hex": "#132436", "rgb": [19, 36, 54],    "hsl": [211, 48, 14], "vsWhite": 15.75, "vsNight": 1.00 }
+      },
+      "neutral": {
+        "0":   { "hex": "#FFFFFF", "rgb": [255, 255, 255], "hsl": [0, 0, 100],   "vsWhite": 1.00, "vsNight": 15.75 },
+        "50":  { "hex": "#F7F9FB", "rgb": [247, 249, 251], "hsl": [210, 33, 98], "vsWhite": 1.06, "vsNight": 14.92 },
+        "100": { "hex": "#EFF3F7", "rgb": [239, 243, 247], "hsl": [210, 33, 95], "vsWhite": 1.12, "vsNight": 14.13 },
+        "200": { "hex": "#DFE5EC", "rgb": [223, 229, 236], "hsl": [212, 25, 90], "vsWhite": 1.27, "vsNight": 12.42 },
+        "300": { "hex": "#C6CFDA", "rgb": [198, 207, 218], "hsl": [213, 21, 82], "vsWhite": 1.57, "vsNight": 10.00 },
+        "400": { "hex": "#9AA6B6", "rgb": [154, 166, 182], "hsl": [214, 16, 66], "vsWhite": 2.47, "vsNight": 6.38 },
+        "500": { "hex": "#6F7D90", "rgb": [111, 125, 144], "hsl": [215, 13, 50], "vsWhite": 4.19, "vsNight": 3.76 },
+        "600": { "hex": "#556274", "rgb": [85, 98, 116],   "hsl": [215, 15, 39], "vsWhite": 6.20, "vsNight": 2.54 },
+        "700": { "hex": "#3F4A5A", "rgb": [63, 74, 90],    "hsl": [216, 18, 30], "vsWhite": 8.98, "vsNight": 1.75 },
+        "800": { "hex": "#2B3442", "rgb": [43, 52, 66],    "hsl": [217, 21, 21], "vsWhite": 12.56, "vsNight": 1.25 },
+        "900": { "hex": "#1B2330", "rgb": [27, 35, 48],    "hsl": [217, 28, 15], "vsWhite": 15.79, "vsNight": 1.00 },
+        "950": { "hex": "#111823", "rgb": [17, 24, 35],    "hsl": [217, 35, 10], "vsWhite": 17.82, "vsNight": 1.13 }
+      }
+    },
+    "semantic": {
+      "status": "proposed_requires_approval",
+      "success": { "base": "#1E9E6A", "lightText": "#15784F", "lightSurface": "#E7F7F0", "lightBorder": "#A7E3CB", "lightRatio": 4.95, "darkText": "#6FD9AC", "darkSurface": "#14342A", "darkBorder": "#2A6A52", "darkRatio": 7.85 },
+      "warning": { "base": "#E0A000", "lightText": "#8A6100", "lightSurface": "#FFF6E0", "lightBorder": "#F5DB9B", "lightRatio": 5.15, "darkText": "#F3C969", "darkSurface": "#33280F", "darkBorder": "#6B5424", "darkRatio": 9.21 },
+      "error":   { "base": "#D64545", "lightText": "#B02E2E", "lightSurface": "#FDECEC", "lightBorder": "#F3B9B9", "lightRatio": 5.61, "darkText": "#F3A3A3", "darkSurface": "#361B1B", "darkBorder": "#6E3636", "darkRatio": 7.96 },
+      "info":    { "base": "#3171AE", "lightText": "#25517B", "lightSurface": "#E6EEF5", "lightBorder": "#A4C1DB", "lightRatio": 7.05, "darkText": "#A4C1DB", "darkSurface": "#17304A", "darkBorder": "#2F557A", "darkRatio": 7.21 },
+      "whatsapp": { "base": "#25D366", "hover": "#1FBE5A", "solidInk": "#0B3D22", "solidRatio": 6.21, "softText": "#10693C", "softSurface": "#E4F8EC", "softBorder": "#B6E7CB", "softRatio": 6.09 }
+    },
+    "themes": {
+      "light": {
+        "bg": "#FFFFFF", "bgSubtle": "#F7F9FB", "bgWarm": "#FEF8F5", "bgCool": "#F6FAFD",
+        "surface": "#FFFFFF", "border": "#DFE5EC", "borderStrong": "#C6CFDA",
+        "textHeading": "#1B2330", "textBody": "#3F4A5A", "textMuted": "#556274",
+        "overline": "#A45826", "link": "#2B6195", "linkHover": "#A45826",
+        "primaryBg": "#ED7C30", "primaryInk": "#111823", "secondaryBg": "#25517B", "secondaryInk": "#FFFFFF",
+        "fieldBg": "#F7F9FB", "fieldBorder": "#C6CFDA", "fieldPh": "#6F7D90"
+      },
+      "darkNightOcean": {
+        "bg": "#132436", "bgSubtle": "#17293C", "bgWarm": "#241A13", "bgCool": "#14293D",
+        "surface": "#1A2E43", "surface2": "#21384F", "border": "#2A4763", "borderStrong": "#37587A",
+        "textHeading": "#FFFFFF", "textBody": "#C6CFDA", "textMuted": "#93A6BB",
+        "overline": "#F2A16A", "link": "#ACD0ED", "linkHover": "#F2A16A",
+        "primaryBg": "#ED7C30", "primaryInk": "#111823", "secondaryBg": "#21384F", "secondaryInk": "#FFFFFF",
+        "fieldBg": "#14273A", "fieldBorder": "#37587A", "fieldPh": "#8EA2B8"
+      }
+    }
+  },
+  "typography": {
+    "status": "proposed_requires_approval",
+    "families": {
+      "display": { "name": "Plus Jakarta Sans", "license": "SIL OFL 1.1", "weights": "700..800", "fallback": "'Plus Jakarta Sans', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif" },
+      "body": { "name": "Inter", "license": "SIL OFL 1.1", "weights": "400..700", "fallback": "'Inter', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif" },
+      "bangla": { "name": "Hind Siliguri", "license": "SIL OFL 1.1", "weights": "400;500;600;700", "fallback": "'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', 'Segoe UI', sans-serif" },
+      "numerals": { "name": "Inter (tabular-nums)", "license": "SIL OFL 1.1", "weights": "600;700", "fallback": "'Inter', 'Hind Siliguri', system-ui, sans-serif" },
+      "adminMono": { "name": "JetBrains Mono (optional)", "license": "SIL OFL 1.1", "weights": "500", "fallback": "'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace" }
+    },
+    "floors": {
+      "banglaRunningMinPx": 17,
+      "banglaChipMinPx": 16,
+      "latinUiMinPx": 13,
+      "banglaLineHeight": 1.85,
+      "banglaLetterSpacing": 0
+    },
+    "scale": [
+      { "token": "display-xl", "clamp": "clamp(2.75rem, 1.6rem + 4.6vw, 4.5rem)", "weight": 800, "lh": 1.04, "tracking": "-0.03em", "role": "Marketing Hero H1" },
+      { "token": "display-lg", "clamp": "clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem)", "weight": 800, "lh": 1.08, "tracking": "-0.025em", "role": "Sub-hero / Page title" },
+      { "token": "h1", "clamp": "clamp(1.875rem, 1.35rem + 2.2vw, 2.75rem)", "weight": 700, "lh": 1.15, "tracking": "-0.02em", "role": "Section headline" },
+      { "token": "h2", "clamp": "clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem)", "weight": 700, "lh": 1.20, "tracking": "-0.015em", "role": "Sub-section" },
+      { "token": "h3", "clamp": "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)", "weight": 700, "lh": 1.30, "tracking": "-0.01em", "role": "Package card title" },
+      { "token": "h4", "clamp": "1.125rem", "weight": 600, "lh": 1.40, "tracking": "0", "role": "Small card / Drawer header" },
+      { "token": "body-lg", "clamp": "1.125rem", "weight": 400, "lh": 1.65, "tracking": "0", "role": "Lead paragraph" },
+      { "token": "body", "clamp": "1rem", "weight": 400, "lh": 1.60, "tracking": "0", "role": "Default Latin body" },
+      { "token": "body-bn", "clamp": "1.0625rem", "weight": 500, "lh": 1.85, "tracking": "0", "role": "Default Bangla body" },
+      { "token": "body-sm", "clamp": "0.9375rem", "weight": 400, "lh": 1.55, "tracking": "0", "role": "Admin table cells / compact lists" },
+      { "token": "caption", "clamp": "0.875rem", "weight": 500, "lh": 1.45, "tracking": "0.005em", "role": "Captions & secondary metadata" },
+      { "token": "overline", "clamp": "0.8125rem", "weight": 700, "lh": 1.30, "tracking": "0.09em", "role": "Eyebrow labels (Latin uppercase only)" },
+      { "token": "price-lg", "clamp": "clamp(1.5rem, 1.2rem + 1.2vw, 2rem)", "weight": 700, "lh": 1.10, "tracking": "-0.01em", "role": "Package price (tabular-nums)" },
+      { "token": "price-sm", "clamp": "1.125rem", "weight": 600, "lh": 1.20, "tracking": "0", "role": "Card / Ledger price (tabular-nums)" }
+    ]
+  },
+  "imageryAndTextures": {
+    "status": "proposed_requires_approval",
+    "photographyRules": [
+      "Real tour photos over stock always; label unphotographed destinations (Kashmir) with flat brand illustration instead of stock.",
+      "Prefer golden-hour group shots showing people + landscape/transport.",
+      "Warm white balance (+100K to +250K); preserve natural skin tones.",
+      "Text over photos requires Night Ocean scrim (--te-scrim), solid card, or 72% duotone."
+    ],
+    "textures": ["Horizon Split (17deg gradient with white midpoint)", "Flight Streak (107deg lines <=0.10 opacity)", "Contour Ridge (1.5px open contours)", "Wave Shelf (flat stacked shallow waves)"],
+    "icons": "24x24 Lucide stroke icons with inherited stroke-width; solid fill reserved for WhatsApp/Facebook marks."
+  },
+  "layoutAndModes": {
+    "flightAngleDeg": 17,
+    "tan17": 0.3057,
+    "breakpoints": { "mobile": "<640px (4 col, 20px margin)", "tablet": "640-1023px (8 col, 32px margin)", "laptop": "1024-1279px (12 col, 1120px)", "desktop": ">=1280px (12 col, 1240px)", "wide": ">=1536px (12 col, 1280px)" },
+    "marketingRules": {
+      "sectionPaddingY": "clamp(4rem, 8vw, 7rem)",
+      "flightAngle": "Active on hero cuts, section wedges, Flight Rules, featured badge skew (-6deg), and card lift translate(2px, -6px)",
+      "motion": "Depart reveal (-14px, 10px -> 0,0) in 260ms ease-out; prefers-reduced-motion shows static frame"
+    },
+    "adminInterfaceRules": {
+      "status": "proposed_requires_approval",
+      "density": "Compact workspace: 12-16px panel padding, 40-44px table row height, max-width 1440px",
+      "flightAngle": "Banned inside tables, toolbars, and form controls",
+      "typography": "H1 capped at 24-28px; 14px tabular-nums cells; 17px minimum for Bangla remarks; monospace 13px for Booking IDs and bank accounts",
+      "surfaces": "1px #DFE5EC borders, 8px/12px radii, #F7F9FB sticky table headers, zero heavy elevation",
+      "motion": "Instant 100-180ms state feedback only; zero scroll reveals or 3D"
+    }
+  },
+  "microcopy": {
+    "cta": {
+      "book": { "en": "Book Your Seat", "bn": "সিট বুক করুন" },
+      "whatsapp": { "en": "Chat on WhatsApp", "bn": "হোয়াটসঅ্যাপে চ্যাট করুন" },
+      "itinerary": { "en": "View Itinerary", "bn": "বিস্তারিত দেখুন" },
+      "call": { "en": "Call 01838-754207", "bn": "কল করুন" }
+    },
+    "states": {
+      "formSuccess": "Thank you. We will call you within one working day.",
+      "formError": "Please enter a valid Bangladeshi mobile number.",
+      "soldOut": "This departure is full. Ask us about the next one.",
+      "emptyGallery": "Photos from this trip are on the way.",
+      "notFound": "This route does not exist yet."
+    }
+  }
+}

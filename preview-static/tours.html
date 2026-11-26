@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tours, Filter &amp; Comparison - Trip Express BD</title>
+  <meta name="description" content="Search and compare Trip Express BD group tours by region, travel mode, duration and published BDT pricing.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="ps-notice">
+  <div class="ps-pages-bar" aria-label="Static showcase routes">
+    <span><strong>Static Preview:</strong></span>
+    <a href="index.html">Home</a>
+    <a href="tours.html" aria-current="page">Tours</a>
+    <a href="nepal-tour.html">Nepal 5D/4N</a>
+    <a href="about.html">About</a>
+    <a href="reports.html">Reports &amp; Guides</a>
+    <a href="contact.html">Contact &amp; FAQ</a>
+    <a href="admin.html">Admin Portal</a>
+    <a href="legal.html">Legal</a>
+    <a href="404.html">404</a>
+  </div>
+  <button class="te-btn te-btn--sm te-btn--outline" id="psThemeBtn" type="button" aria-pressed="false">Night Ocean</button>
+</div>
+
+<header class="ps-hdr" id="top">
+  <div class="wrap ps-hdr__in">
+    <a class="ps-brand" href="index.html" aria-label="Trip Express BD home">
+      <span class="ps-brand__chip"><img src="assets/brand/logo-mark.svg" alt="" width="32" height="27" aria-hidden="true"></span>
+      <span><i class="ps-brand__hi">Trip</i> Express BD</span>
+    </a>
+    <nav class="ps-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="tours.html" aria-current="page">Tours</a>
+      <a href="nepal-tour.html">Nepal 5D/4N</a>
+      <a href="about.html">About</a>
+      <a href="reports.html">Reports</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="ps-hdr__act">
+      <a class="te-btn te-btn--sm te-btn--primary" href="contact.html#enquiry">Book Seat</a>
+      <button class="te-btn te-btn--ghost te-btn--icon ps-menu-btn" id="psMenuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="psDrawer"><svg class="ic" aria-hidden="true"><use href="#i-menu"></use></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="ps-backdrop" id="psBackdrop"></div>
+<aside class="ps-drawer" id="psDrawer" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <div>
+    <div class="cluster cluster--between"><strong>Trip Express BD</strong><button class="te-btn te-btn--ghost te-btn--icon" id="psDrawerClose" type="button" aria-label="Close menu"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button></div>
+    <nav class="ps-drawer__links" aria-label="Mobile navigation">
+      <a href="index.html"><span>Home</span><span lang="bn" class="bn-ui">হোম</span></a>
+      <a href="tours.html" aria-current="page"><span>Tours &amp; Compare</span><span lang="bn" class="bn-ui">ট্যুর প্যাকেজ</span></a>
+      <a href="nepal-tour.html"><span>Nepal 5D/4N</span><span lang="bn" class="bn-ui">নেপাল ট্যুর</span></a>
+      <a href="about.html"><span>About &amp; Events</span><span lang="bn" class="bn-ui">আমাদের সম্পর্কে</span></a>
+      <a href="reports.html"><span>Reports &amp; Guides</span><span lang="bn" class="bn-ui">ভ্রমণ গাইড</span></a>
+      <a href="contact.html"><span>Contact &amp; FAQ</span><span lang="bn" class="bn-ui">যোগাযোগ</span></a>
+      <a href="admin.html"><span>Ops Admin Portal</span><span lang="bn" class="bn-ui">অ্যাডমিন পোর্টাল</span></a>
+    </nav>
+  </div>
+  <div class="ps-drawer__foot"><a class="te-btn te-btn--primary te-btn--block" href="contact.html#enquiry">Book Your Seat</a></div>
+</aside>
+
+<main id="main">
+  <section class="ps-subhero">
+    <div class="wrap">
+      <nav aria-label="Breadcrumb"><ol class="ps-crumbs"><li><a href="index.html">Home</a></li><li aria-hidden="true">/</li><li aria-current="page">Tours &amp; Comparison</li></ol></nav>
+      <p class="te-overline">8 Corridors · Published &amp; On-Request Routes</p>
+      <span class="te-flight-rule" aria-hidden="true"></span>
+      <h1>Search destinations &amp; compare packages</h1>
+      <p class="lead u-measure">Filter by region or travel mode. Unphotographed seasonal routes use our 5-color flat brand graphics rather than stock photos.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Filterable tour directory">
+    <div class="wrap stack stack--lg">
+      <div class="ps-card stack">
+        <div class="grid-3 align-center">
+          <div class="te-field">
+            <label class="te-label" for="psTourSearch">Search route or note</label>
+            <input class="te-input" id="psTourSearch" type="search" placeholder="Nepal, Dawki, 58500, bus…">
+          </div>
+          <div class="te-field">
+            <label class="te-label" for="psTourSort">Sort packages</label>
+            <select class="te-select" id="psTourSort">
+              <option value="featured">Recommended order</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+          </div>
+          <div class="te-field">
+            <span class="te-label">Results</span>
+            <div class="cluster cluster--between">
+              <strong class="te-num" id="psTourCount">6 of 6 routes shown</strong>
+              <button class="te-btn te-btn--sm te-btn--outline" id="psTourReset" type="button">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="cluster">
+          <span class="te-label">Region:</span>
+          <div class="ps-chips" role="group" aria-label="Filter region">
+            <button class="ps-chip" type="button" data-filter-region="all" aria-pressed="true">All</button>
+            <button class="ps-chip" type="button" data-filter-region="himalayas" aria-pressed="false">Himalayas &amp; NE India</button>
+            <button class="ps-chip" type="button" data-filter-region="islands" aria-pressed="false">Islands</button>
+            <button class="ps-chip" type="button" data-filter-region="city" aria-pressed="false">City</button>
+          </div>
+          <span class="te-label">Mode:</span>
+          <div class="ps-chips" role="group" aria-label="Filter mode">
+            <button class="ps-chip" type="button" data-filter-mode="all" aria-pressed="true">All</button>
+            <button class="ps-chip" type="button" data-filter-mode="flight" aria-pressed="false">By Air</button>
+            <button class="ps-chip" type="button" data-filter-mode="road" aria-pressed="false">By Road</button>
+            <button class="ps-chip" type="button" data-filter-mode="open" aria-pressed="false">Published ৳</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3" id="psTourGrid">
+        <article class="ps-card ps-card--featured" data-region="himalayas" data-mode="flight" data-open="true" data-price="58500" data-tags="nepal kathmandu pokhara air 58500">
+          <div class="ps-card__media"><img src="../assets/img/card/cover-nepal-720.webp" width="720" height="450" loading="eager" alt="Trip Express BD Nepal mountain group"></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--featured"><span>Featured</span></span><strong class="te-num">৳58,500</strong></div>
+          <h2 class="u-mt-2">Explore Nepal · 5D / 4N</h2>
+          <p class="u-sm u-muted">Kathmandu, Nagarkot sunrise, Pokhara lakeside, Sarangkot. Includes ৳36,000 airfare ceiling.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--primary" href="nepal-tour.html">Full itinerary</a><a class="te-btn te-btn--sm te-btn--outline" href="contact.html?tour=nepal#enquiry">Enquire</a></div>
+        </article>
+
+        <article class="ps-card" data-region="himalayas" data-mode="road" data-open="false" data-price="0" data-tags="meghalaya dawki shillong tamabil road 4 days">
+          <div class="ps-card__media"><img src="../assets/img/card/meghalaya-dawki-600.webp" width="600" height="375" loading="lazy" alt="Boats on clear Dawki River water"></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--success">Group Proof Verified</span><span class="u-xs u-muted">Rate on request</span></div>
+          <h2 class="u-mt-2">Meghalaya &amp; Dawki · 4 Days</h2>
+          <p class="u-sm u-muted">Tamabil crossing, Mawlynnong, Shillong, Cherrapunji. Co-hosted 13-person tour with তাঁবু নিবাসী.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--secondary" href="reports.html#meghalaya-report">Trip report</a><a class="te-btn te-btn--sm te-btn--outline" href="contact.html?tour=meghalaya#enquiry">Request quote</a></div>
+        </article>
+
+        <article class="ps-card" data-region="himalayas" data-mode="road" data-open="true" data-price="35000" data-tags="kashmir season 5 road bus 35000">
+          <div class="ps-card__media"><svg viewBox="0 0 600 375" role="img" aria-label="Flat vector illustration representing Kashmir mountains"><rect width="600" height="375" fill="var(--te-p-ocean-500)"></rect><circle cx="475" cy="95" r="44" fill="var(--te-p-orange-500)"></circle><polygon points="0,375 190,120 360,285 480,150 600,375" fill="var(--te-p-sky-500)"></polygon><rect x="0" y="290" width="600" height="85" fill="var(--te-p-orange-400)"></rect></svg></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--info">Season 5 · Illustration</span><strong class="te-num">৳35,000</strong></div>
+          <h2 class="u-mt-2">Kashmir by Road</h2>
+          <p class="u-sm u-muted">Published overland package reference. Ask desk for active Indian tourist visa batch dates.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--outline" href="contact.html?tour=kashmir#enquiry">Ask dates</a></div>
+        </article>
+
+        <article class="ps-card" data-region="islands" data-mode="flight" data-open="false" data-price="0" data-tags="maldives sri lanka 7 days island air">
+          <div class="ps-card__media"><svg viewBox="0 0 600 375" role="img" aria-label="Flat vector graphic representing Maldives islands"><rect width="600" height="375" fill="var(--te-p-sky-500)"></rect><circle cx="135" cy="95" r="42" fill="var(--te-p-orange-500)"></circle><path d="M0 245 Q150 205 300 245 T600 245 L600 375 L0 375 Z" fill="var(--te-p-ocean-500)"></path><circle cx="435" cy="242" r="24" fill="var(--te-p-n-0)"></circle></svg></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--info">7 Days · Twin Country</span><span class="u-xs u-muted">[PLACEHOLDER: RATE_TBD]</span></div>
+          <h2 class="u-mt-2">Maldives &amp; Sri Lanka</h2>
+          <p class="u-sm u-muted">Twin-island circuit by air. Custom quoted on seasonal fare brackets.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--outline" href="contact.html?tour=maldives#enquiry">Ask rate</a></div>
+        </article>
+
+        <article class="ps-card" data-region="himalayas" data-mode="road" data-open="false" data-price="0" data-tags="sikkim darjeeling overland permit road">
+          <div class="ps-card__media"><svg viewBox="0 0 600 375" role="img" aria-label="Flat alpine vector representing Sikkim and Darjeeling"><rect width="600" height="375" fill="var(--te-p-ocean-500)"></rect><polygon points="0,375 210,105 420,375" fill="var(--te-p-sky-500)"></polygon><polygon points="240,375 430,135 600,375" fill="var(--te-p-orange-500)"></polygon><circle cx="430" cy="85" r="28" fill="var(--te-p-n-0)"></circle></svg></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--warning">Permit Required</span><span class="u-xs u-muted">[PLACEHOLDER: RATE_TBD]</span></div>
+          <h2 class="u-mt-2">Sikkim &amp; Darjeeling</h2>
+          <p class="u-sm u-muted">Eastern Himalaya overland route subject to Bangladeshi tourist visa &amp; Sikkim RAP clearance.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--outline" href="reports.html#visa-guide">Visa advisory</a></div>
+        </article>
+
+        <article class="ps-card" data-region="city" data-mode="road" data-open="false" data-price="0" data-tags="kolkata city trip benapole road 3rd 4th">
+          <div class="ps-card__media"><svg viewBox="0 0 600 375" role="img" aria-label="Flat bridge graphic representing Kolkata trips"><rect width="600" height="375" fill="var(--te-p-sky-500)"></rect><rect x="0" y="250" width="600" height="125" fill="var(--te-p-ocean-500)"></rect><path d="M120 250 L210 120 L390 120 L480 250" stroke="var(--te-p-orange-500)" stroke-width="18" fill="none"></path></svg></div>
+          <div class="cluster cluster--between"><span class="te-badge te-badge--success">4 Series Operated</span><span class="u-xs u-muted">[PLACEHOLDER: RATE_TBD]</span></div>
+          <h2 class="u-mt-2">Kolkata City &amp; Heritage</h2>
+          <p class="u-sm u-muted">Short-break overland series (3rd &amp; 4th city editions) from Chattogram &amp; Dhaka.</p>
+          <div class="ps-card__actions"><a class="te-btn te-btn--sm te-btn--outline" href="contact.html#enquiry">Enquire</a></div>
+        </article>
+      </div>
+
+      <div class="ps-card u-center" id="psTourEmpty" hidden>
+        <p class="te-overline">No Matches</p>
+        <h2>No routes match that search or filter</h2>
+        <div class="u-mt-2"><button class="te-btn te-btn--primary" id="psTourEmptyReset" type="button">Reset all filters</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factual Comparison Table -->
+  <section class="sec sec--subtle" aria-labelledby="cmpHeading">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="te-overline">Comparison Matrix</p>
+        <span class="te-flight-rule" aria-hidden="true"></span>
+        <h2 id="cmpHeading">Published prices vs verified group routes</h2>
+      </div>
+      <div class="ps-table-wrap">
+        <table class="ps-table ps-table--stack">
+          <thead><tr><th>Route</th><th>Duration</th><th>Mode</th><th>Rate</th><th>Entry Rule</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Route"><strong>Explore Nepal</strong></td><td data-label="Duration" class="te-num">5D / 4N</td><td data-label="Mode">By Air (DAC)</td><td data-label="Rate" class="te-num"><strong>৳58,500</strong></td><td data-label="Entry Rule">On-arrival visa</td><td data-label="Action"><a class="te-link" href="nepal-tour.html">Detail page</a></td></tr>
+            <tr><td data-label="Route"><strong>Kashmir Season 5</strong></td><td data-label="Duration">Overland</td><td data-label="Mode">By Road</td><td data-label="Rate" class="te-num"><strong>৳35,000</strong></td><td data-label="Entry Rule">Indian tourist visa</td><td data-label="Action"><a class="te-link" href="contact.html?tour=kashmir#enquiry">Enquire</a></td></tr>
+            <tr><td data-label="Route"><strong>Meghalaya &amp; Dawki</strong></td><td data-label="Duration" class="te-num">4 Days</td><td data-label="Mode">By Road</td><td data-label="Rate">[PLACEHOLDER: RATE_TBD]</td><td data-label="Entry Rule">Tamabil crossing</td><td data-label="Action"><a class="te-link" href="reports.html#meghalaya-report">Trip report</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="ps-ftr-cut" aria-hidden="true"></div>
+<footer class="ps-ftr">
+  <div class="wrap ps-ftr__grid">
+    <div><strong>Trip Express BD</strong><p class="u-sm u-mt-2">Chattogram-based group tour operator.</p></div>
+    <div><strong>Pages</strong><ul><li><a href="index.html">Home</a></li><li><a href="tours.html">Tours</a></li><li><a href="nepal-tour.html">Nepal 5D/4N</a></li><li><a href="about.html">About</a></li></ul></div>
+    <div><strong>Portal &amp; Legal</strong><ul><li><a href="reports.html">Reports &amp; Guides</a></li><li><a href="contact.html">Contact &amp; FAQ</a></li><li><a href="admin.html">Admin Portal</a></li><li><a href="legal.html">Legal &amp; Terms</a></li></ul></div>
+    <div><strong>Desk</strong><p class="te-num u-sm u-mt-2">01621-785968 · 01838-754207 · 01840-004495</p></div>
+  </div>
+</footer>
+</body>
+</html>

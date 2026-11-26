@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Tours - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock">
+  <span><strong>Demo Mode (02/09):</strong> Client-side filter, sort, skeleton &amp; empty states. <a class="te-link" href="index.html">All 9 Prototypes</a></span>
+  <button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button>
+</div>
+<header class="sc-hdr">
+  <div class="sc-container sc-hdr__in">
+    <a class="ds-brand" href="01-marketing-home.html"><span class="ds-brand__chip"><img src="../assets/brand/logo-mark.svg" alt="Trip Express BD"></span><span>Trip Express BD</span></a>
+    <nav class="sc-nav" aria-label="Primary"><a href="01-marketing-home.html">Home</a><a href="02-listing-search.html" aria-current="page">Tours</a><a href="04-onboarding-booking.html">Book</a><a href="03-auth-flow.html">Portal</a></nav>
+    <button class="te-btn te-btn--sm te-btn--outline ds-menu-btn" onclick="window.scOpenDrawer('filterDrawer', this)" type="button"><svg class="ic ic--sm" aria-hidden="true"><use href="#i-filter"></use></svg> Filters</button>
+  </div>
+</header>
+
+<main id="main" class="sc-container" style="padding-top:32px;padding-bottom:64px;">
+  <p class="te-overline">Tour Catalog &amp; Search</p>
+  <span class="te-flight-rule" aria-hidden="true"></span>
+  <h1>Find Your Next Departure</h1>
+
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin:20px 0 24px;">
+    <div class="te-field" style="flex:2 1 260px;">
+      <label class="te-label" for="tourSearch">Search destination or route</label>
+      <input class="te-input" id="tourSearch" type="search" placeholder="Kashmir, Nepal, Meghalaya, Pokhara…">
+    </div>
+    <div class="te-field" style="flex:1 1 180px;">
+      <label class="te-label" for="tourSort">Sort by</label>
+      <select class="te-select" id="tourSort">
+        <option value="featured">Featured First</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+    </div>
+    <button class="te-btn te-btn--outline" id="simSkeletonBtn" type="button">Simulate Loading</button>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;" id="regionChips">
+    <button class="te-chip" type="button" data-region="all" aria-pressed="true">All Tours</button>
+    <button class="te-chip" type="button" data-region="india" aria-pressed="false">India Hills</button>
+    <button class="te-chip" type="button" data-region="himalaya" aria-pressed="false">Nepal</button>
+    <button class="te-chip" type="button" data-region="island" aria-pressed="false">Islands</button>
+  </div>
+
+  <div id="skeletonGrid" class="ds-grid-3" style="display:none;margin-bottom:24px;">
+    <div class="te-card"><div class="sc-skel" style="height:160px;margin-bottom:12px;"></div><div class="sc-skel" style="width:60%;margin-bottom:8px;"></div><div class="sc-skel" style="width:40%;"></div></div>
+    <div class="te-card"><div class="sc-skel" style="height:160px;margin-bottom:12px;"></div><div class="sc-skel" style="width:60%;margin-bottom:8px;"></div><div class="sc-skel" style="width:40%;"></div></div>
+    <div class="te-card"><div class="sc-skel" style="height:160px;margin-bottom:12px;"></div><div class="sc-skel" style="width:60%;margin-bottom:8px;"></div><div class="sc-skel" style="width:40%;"></div></div>
+  </div>
+
+  <div id="resultsGrid" class="ds-grid-3"></div>
+  <div id="emptyResults" class="te-card" style="display:none;text-align:center;padding:40px;">
+    <h3>No matching departures</h3>
+    <p style="color:var(--te-text-muted);">Try clearing your search or switching destination filters.</p>
+    <button class="te-btn te-btn--primary" id="resetFiltersBtn" type="button">Reset Filters</button>
+  </div>
+</main>
+
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+<aside class="sc-drawer-right" id="filterDrawer" aria-label="Mobile tour filters">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="font-size:20px;margin:0;">Filter Tours</h2>
+    <button class="te-btn te-btn--ghost te-btn--icon te-btn--sm" data-close-overlay type="button" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-x"></use></svg></button>
+  </div>
+  <p style="font-size:14px;color:var(--te-text-muted);">Select a region filter to update the list immediately.</p>
+  <div style="display:grid;gap:10px;">
+    <button class="te-btn te-btn--outline" onclick="setRegion('all');scCloseOverlays()" type="button">All Destinations</button>
+    <button class="te-btn te-btn--outline" onclick="setRegion('india');scCloseOverlays()" type="button">Kashmir, Meghalaya &amp; Sikkim</button>
+    <button class="te-btn te-btn--outline" onclick="setRegion('himalaya');scCloseOverlays()" type="button">Nepal (Kathmandu–Pokhara)</button>
+    <button class="te-btn te-btn--outline" onclick="setRegion('island');scCloseOverlays()" type="button">Maldives &amp; Sri Lanka</button>
+  </div>
+</aside>
+
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+<script>
+  const TOURS = [
+    { id: 1, title: 'Explore Nepal', sub: 'Kathmandu · Nagarkot · Pokhara', region: 'himalaya', price: 58500, status: 'Booking Open', badge: 'success', img: '../assets/img/card/cover-nepal-720.webp' },
+    { id: 2, title: 'Kashmir by Road (Season 5)', sub: 'Sonamarg · Gulmarg · Pahalgam', region: 'india', price: 35000, status: '3 Seats Left', badge: 'warning', img: '' },
+    { id: 3, title: 'Meghalaya & Dawki', sub: 'Shillong · Cherrapunji · Laitlum', region: 'india', price: 24500, status: 'Booking Open', badge: 'success', img: '../assets/img/card/meghalaya-dawki-600.webp' },
+    { id: 4, title: 'Maldives & Sri Lanka (7 Days)', sub: 'Male · Maafushi · Colombo', region: 'island', price: 98000, status: 'Sold Out', badge: 'error', img: '../assets/img/card/nepal-pokhara-600.webp' }
+  ];
+  let activeRegion = 'all';
+  function setRegion(r) {
+    activeRegion = r;
+    document.querySelectorAll('#regionChips .te-chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.region === r)));
+    renderTours();
+  }
+  document.querySelectorAll('#regionChips .te-chip').forEach(c => c.addEventListener('click', () => setRegion(c.dataset.region)));
+  document.getElementById('tourSearch').addEventListener('input', renderTours);
+  document.getElementById('tourSort').addEventListener('change', renderTours);
+  document.getElementById('resetFiltersBtn').addEventListener('click', () => { document.getElementById('tourSearch').value = ''; setRegion('all'); });
+  document.getElementById('simSkeletonBtn').addEventListener('click', () => {
+    document.getElementById('resultsGrid').style.display = 'none';
+    document.getElementById('skeletonGrid').style.display = 'grid';
+    setTimeout(() => { document.getElementById('skeletonGrid').style.display = 'none'; document.getElementById('resultsGrid').style.display = 'grid'; }, 750);
+  });
+  function renderTours() {
+    const q = document.getElementById('tourSearch').value.trim().toLowerCase();
+    const sort = document.getElementById('tourSort').value;
+    let list = TOURS.filter(t => (activeRegion === 'all' || t.region === activeRegion) && (!q || (t.title + t.sub).toLowerCase().includes(q)));
+    if (sort === 'price-asc') list.sort((a, b) => a.price - b.price);
+    if (sort === 'price-desc') list.sort((a, b) => b.price - a.price);
+    const grid = document.getElementById('resultsGrid');
+    const empty = document.getElementById('emptyResults');
+    empty.style.display = list.length ? 'none' : 'block';
+    grid.innerHTML = list.map(t => `
+      <article class="te-card te-card--interactive">
+        <div class="te-card__media" style="background:var(--te-bg-dark-band);">
+          ${t.img ? `<img src="${t.img}" alt="${t.title}">` : `<svg viewBox="0 0 320 200" style="width:100%;aspect-ratio:16/10;display:block;"><circle cx="258" cy="54" r="30" fill="var(--te-p-orange-500)"/><polygon points="0,200 88,82 176,200" fill="var(--te-p-ocean-500)"/><polygon points="104,200 206,56 320,200" fill="var(--te-p-sky-500)"/><line x1="18" y1="146" x2="296" y2="62" stroke="var(--te-p-n-0)" stroke-width="3"/></svg>`}
+          <span class="te-badge te-badge--${t.badge}" style="position:absolute;top:10px;left:10px;">${t.status}</span>
+        </div>
+        <h3>${t.title}</h3>
+        <p style="font-size:14px;color:var(--te-text-muted);">${t.sub}</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--te-border-subtle);padding-top:12px;">
+          <span class="te-num" style="font-size:20px;font-weight:700;color:var(--te-text-heading);">৳${t.price.toLocaleString()}</span>
+          <a class="te-btn te-btn--sm te-btn--primary" href="04-onboarding-booking.html">Select</a>
+        </div>
+      </article>`).join('');
+  }
+  renderTours();
+</script>
+</body>
+</html>

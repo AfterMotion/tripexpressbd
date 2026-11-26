@@ -1,0 +1,330 @@
+/* ============================================================
+   Trip Express BD - Three-Layer Design Tokens (Core & Primitives)
+   Synced verbatim from tokens/tokens.css. Load BEFORE themes.css.
+   ============================================================ */
+
+:root {
+  /* Orange ramp (Sunset Orange #ED7C30 source primary) */
+  --te-p-orange-50:  #FEF8F5;
+  --te-p-orange-100: #FDEFE6;
+  --te-p-orange-200: #FADDC9;
+  --te-p-orange-300: #F7C5A4;
+  --te-p-orange-400: #F2A16A;
+  --te-p-orange-500: #ED7C30;
+  --te-p-orange-600: #C96A2B;
+  --te-p-orange-700: #A45826;
+  --te-p-orange-800: #804621;
+  --te-p-orange-900: #60371C;
+  --te-p-orange-950: #402718;
+
+  /* Sky Blue ramp (Sky Blue #4394D5 source secondary) */
+  --te-p-sky-50:  #F6FAFD;
+  --te-p-sky-100: #E8F2FA;
+  --te-p-sky-200: #CEE3F4;
+  --te-p-sky-300: #ACD0ED;
+  --te-p-sky-400: #78B2E1;
+  --te-p-sky-500: #4394D5;
+  --te-p-sky-600: #3A7EB5;
+  --te-p-sky-700: #316896;
+  --te-p-sky-800: #285376;
+  --te-p-sky-900: #20405B;
+  --te-p-sky-950: #182D3F;
+
+  /* Deep Ocean ramp */
+  --te-p-ocean-50:  #F5F8FB;
+  --te-p-ocean-100: #E6EEF5;
+  --te-p-ocean-200: #C9DAEA;
+  --te-p-ocean-300: #A4C1DB;
+  --te-p-ocean-400: #6B99C5;
+  --te-p-ocean-500: #3171AE;
+  --te-p-ocean-600: #2B6195;
+  --te-p-ocean-700: #25517B;
+  --te-p-ocean-800: #1E4162;
+  --te-p-ocean-900: #19324C;
+  --te-p-ocean-950: #132436;
+
+  /* Blue-tinted slate neutrals (pure #000000 forbidden) */
+  --te-p-n-0:   #FFFFFF;
+  --te-p-n-50:  #F7F9FB;
+  --te-p-n-100: #EFF3F7;
+  --te-p-n-200: #DFE5EC;
+  --te-p-n-300: #C6CFDA;
+  --te-p-n-400: #9AA6B6;
+  --te-p-n-500: #6F7D90;
+  --te-p-n-600: #556274;
+  --te-p-n-700: #3F4A5A;
+  --te-p-n-800: #2B3442;
+  --te-p-n-900: #1B2330;
+  --te-p-n-950: #111823;
+
+  /* Semantic raw hues */
+  --te-p-green-50:  #E7F7F0;
+  --te-p-green-200: #A7E3CB;
+  --te-p-green-300: #6FD9AC;
+  --te-p-green-500: #1E9E6A;
+  --te-p-green-700: #15784F;
+  --te-p-green-800: #2A6A52;
+  --te-p-green-950: #14342A;
+
+  --te-p-amber-50:  #FFF6E0;
+  --te-p-amber-200: #F5DB9B;
+  --te-p-amber-300: #F3C969;
+  --te-p-amber-500: #E0A000;
+  --te-p-amber-700: #8A6100;
+  --te-p-amber-800: #6B5424;
+  --te-p-amber-950: #33280F;
+
+  --te-p-red-50:  #FDECEC;
+  --te-p-red-200: #F3B9B9;
+  --te-p-red-300: #F3A3A3;
+  --te-p-red-500: #D64545;
+  --te-p-red-700: #B02E2E;
+  --te-p-red-800: #8E2424;
+  --te-p-red-900: #6E3636;
+  --te-p-red-950: #361B1B;
+
+  --te-p-wa-50:  #E4F8EC;
+  --te-p-wa-200: #B6E7CB;
+  --te-p-wa-500: #25D366;
+  --te-p-wa-600: #1FBE5A;
+  --te-p-wa-700: #10693C;
+  --te-p-wa-950: #0B3D22;
+
+  /* Dark surface primitives */
+  --te-p-dark-subtle:       #17293C;
+  --te-p-dark-elevated:     #1A2E43;
+  --te-p-dark-raised:       #21384F;
+  --te-p-dark-warm:         #241A13;
+  --te-p-dark-cool:         #14293D;
+  --te-p-dark-deep:         #0D1A28;
+  --te-p-dark-border:       #2A4763;
+  --te-p-dark-border-strong:#37587A;
+  --te-p-dark-muted:        #93A6BB;
+  --te-p-dark-field:        #14273A;
+  --te-p-dark-info-bg:      #17304A;
+  --te-p-dark-info-bd:      #2F557A;
+
+  /* Typography */
+  --te-p-font-display: 'Plus Jakarta Sans', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --te-p-font-body:    'Inter', 'Hind Siliguri', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --te-p-font-bangla:  'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', 'Segoe UI', sans-serif;
+  --te-p-font-num:     'Inter', 'Hind Siliguri', system-ui, sans-serif;
+  --te-p-font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --te-p-fs-micro:      0.8125rem;
+  --te-p-fs-caption:    0.875rem;
+  --te-p-fs-body-sm:    0.9375rem;
+  --te-p-fs-body:       1rem;
+  --te-p-fs-bn-ui-min:  1rem;
+  --te-p-fs-bn-min:     1.0625rem;
+  --te-p-fs-body-lg:    1.125rem;
+  --te-p-fs-h4:         1.125rem;
+  --te-p-fs-h3:         clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --te-p-fs-h2:         clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem);
+  --te-p-fs-h1:         clamp(1.875rem, 1.35rem + 2.2vw, 2.75rem);
+  --te-p-fs-display-lg: clamp(2.25rem, 1.5rem + 3.2vw, 3.5rem);
+  --te-p-fs-display-xl: clamp(2.75rem, 1.6rem + 4.6vw, 4.5rem);
+  --te-p-fs-price-sm:   1.125rem;
+  --te-p-fs-price-lg:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+
+  --te-p-lh-tight:   1.08;
+  --te-p-lh-snug:    1.25;
+  --te-p-lh-compact: 1.40;
+  --te-p-lh-normal:  1.60;
+  --te-p-lh-relaxed: 1.75;
+  --te-p-lh-bangla:  1.85;
+
+  --te-p-track-display:    -0.03em;
+  --te-p-track-heading:    -0.02em;
+  --te-p-track-normal:      0em;
+  --te-p-track-overline:    0.09em;
+  --te-p-track-overline-sm: 0.07em;
+
+  --te-p-space-0:  0px;
+  --te-p-space-1:  4px;
+  --te-p-space-2:  8px;
+  --te-p-space-3:  12px;
+  --te-p-space-4:  16px;
+  --te-p-space-5:  20px;
+  --te-p-space-6:  24px;
+  --te-p-space-8:  32px;
+  --te-p-space-10: 40px;
+  --te-p-space-12: 48px;
+  --te-p-space-16: 64px;
+  --te-p-space-20: 80px;
+  --te-p-space-24: 96px;
+  --te-p-space-32: 128px;
+
+  --te-p-r-xs:   4px;
+  --te-p-r-sm:   8px;
+  --te-p-r-md:   12px;
+  --te-p-r-lg:   16px;
+  --te-p-r-xl:   24px;
+  --te-p-r-2xl:  32px;
+  --te-p-r-pill: 999px;
+  --te-p-r-disc: 50%;
+
+  --te-p-bw-hairline: 1px;
+  --te-p-bw-emphasis: 1.5px;
+  --te-p-bw-focus:    3px;
+
+  --te-p-shadow-xs:   0 1px 2px   rgba(19, 36, 54, 0.06);
+  --te-p-shadow-sm:   0 2px 6px   rgba(19, 36, 54, 0.08);
+  --te-p-shadow-md:   0 8px 20px  rgba(19, 36, 54, 0.10);
+  --te-p-shadow-lg:   0 16px 40px rgba(19, 36, 54, 0.14);
+  --te-p-shadow-xl:   0 28px 64px rgba(19, 36, 54, 0.18);
+  --te-p-shadow-warm: 0 10px 28px rgba(237, 124, 48, 0.32);
+
+  --te-p-dur-instant: 100ms;
+  --te-p-dur-fast:    180ms;
+  --te-p-dur-base:    260ms;
+  --te-p-dur-slow:    420ms;
+  --te-p-dur-scenic:  700ms;
+
+  --te-p-ease-out:   cubic-bezier(0.16, 1, 0.30, 1);
+  --te-p-ease-in:    cubic-bezier(0.70, 0, 0.84, 0);
+  --te-p-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --te-p-ease-lift:  cubic-bezier(0.34, 1.26, 0.64, 1);
+
+  --te-p-z-base:     0;
+  --te-p-z-raised:   10;
+  --te-p-z-sticky:   100;
+  --te-p-z-dropdown: 200;
+  --te-p-z-whatsapp: 300;
+  --te-p-z-overlay:  400;
+  --te-p-z-modal:    500;
+  --te-p-z-toast:    600;
+
+  --te-p-container-narrow: 800px;
+  --te-p-container:        1240px;
+  --te-p-container-wide:   1440px;
+  --te-p-flight-angle:     17deg;
+  --te-p-flight-angle-neg: -17deg;
+  --te-p-cut-rise:         min(30.57vw, 170px);
+  --te-p-ic-sm: 16px;
+  --te-p-ic-md: 20px;
+  --te-p-ic-lg: 26px;
+  --te-p-ic-xl: 32px;
+
+  --te-grad-sunset: linear-gradient(17deg, var(--te-p-orange-400) 0%, var(--te-p-orange-500) 100%);
+  --te-grad-ocean:  linear-gradient(17deg, var(--te-p-sky-500) 0%, var(--te-p-ocean-500) 100%);
+  --te-grad-night:  linear-gradient(17deg, var(--te-p-ocean-900) 0%, var(--te-p-ocean-950) 100%);
+  --te-grad-horizon: linear-gradient(17deg, var(--te-p-orange-500) 0%, var(--te-p-orange-400) 34%, var(--te-p-n-0) 50%, var(--te-p-sky-500) 66%, var(--te-p-ocean-500) 100%);
+  --te-scrim: linear-gradient(to top, rgba(19, 36, 54, 0.88) 0%, rgba(19, 36, 54, 0.55) 38%, rgba(19, 36, 54, 0.00) 100%);
+  --te-glass-blur: 16px;
+  --te-glass-dark-bd: rgba(255, 255, 255, 0.32);
+
+  /* Layer 2 structural defaults */
+  --te-font-display: var(--te-p-font-display);
+  --te-font-body:    var(--te-p-font-body);
+  --te-font-bangla:  var(--te-p-font-bangla);
+  --te-font-num:     var(--te-p-font-num);
+  --te-font-mono:    var(--te-p-font-mono);
+
+  --te-space-section-y:   clamp(4rem, 8vw, 7rem);
+  --te-space-card-pad:    var(--te-p-space-6);
+  --te-space-grid-gap:    var(--te-p-space-6);
+  --te-space-page-x:      clamp(1.25rem, 4vw, 3rem);
+  --te-control-height:    44px;
+  --te-input-height:      48px;
+  --te-table-row-height:  48px;
+  --te-table-cell-x:      var(--te-p-space-4);
+  --te-table-cell-y:      var(--te-p-space-3);
+  --te-page-title-size:   var(--te-p-fs-h1);
+  --te-focus-width:       var(--te-p-bw-focus);
+  --te-focus-offset:      2px;
+  --te-border-width:      var(--te-p-bw-hairline);
+  --te-disabled-opacity:  0.5;
+  --te-measure:           68ch;
+  --te-measure-bangla:    58ch;
+
+  /* Layer 3 component hooks */
+  --te-btn-primary-bg:        var(--te-action-primary-bg);
+  --te-btn-primary-bg-hover:  var(--te-action-primary-bg-hover);
+  --te-btn-primary-bg-active: var(--te-action-primary-bg-active);
+  --te-btn-primary-ink:       var(--te-action-primary-ink);
+  --te-btn-secondary-bg:      var(--te-action-secondary-bg);
+  --te-btn-secondary-bg-hover:var(--te-action-secondary-bg-hover);
+  --te-btn-secondary-bg-active:var(--te-action-secondary-bg-active);
+  --te-btn-secondary-ink:     var(--te-action-secondary-ink);
+  --te-btn-outline-border:    var(--te-border-control);
+  --te-btn-outline-ink:       var(--te-text-link);
+  --te-btn-outline-hover-bg:  var(--te-bg-cool);
+  --te-btn-ghost-ink:         var(--te-text-body);
+  --te-btn-ghost-hover-bg:    var(--te-surface-raised);
+  --te-btn-danger-bg:         var(--te-action-danger-bg);
+  --te-btn-danger-bg-hover:   var(--te-action-danger-bg-hover);
+  --te-btn-danger-ink:        var(--te-action-danger-ink);
+  --te-btn-radius:            var(--te-p-r-pill);
+  --te-btn-height:            var(--te-control-height);
+
+  --te-input-bg:              var(--te-surface-field);
+  --te-input-bg-readonly:     var(--te-surface-readonly);
+  --te-input-bg-disabled:     var(--te-surface-disabled);
+  --te-input-fg:              var(--te-text-heading);
+  --te-input-fg-readonly:     var(--te-text-readonly);
+  --te-input-placeholder:     var(--te-text-muted);
+  --te-input-border:          var(--te-border-control);
+  --te-input-border-focus:    var(--te-focus-ring);
+  --te-input-border-error:    var(--te-status-error-text);
+  --te-input-border-success:  var(--te-status-success-text);
+  --te-input-radius:          var(--te-p-r-sm);
+  --te-input-pad-x:           var(--te-p-space-3);
+
+  --te-table-header-bg:       var(--te-surface-raised);
+  --te-table-header-ink:      var(--te-text-heading);
+  --te-table-row-bg:          var(--te-surface-card);
+  --te-table-row-hover-bg:    var(--te-bg-subtle);
+  --te-table-row-selected-bg: var(--te-surface-selected);
+  --te-table-row-ink:         var(--te-text-body);
+  --te-table-border:          var(--te-border-subtle);
+
+  --te-nav-bg:                var(--te-bg-canvas);
+  --te-nav-border:            var(--te-border-subtle);
+  --te-nav-link-ink:          var(--te-text-body);
+  --te-nav-link-hover-ink:    var(--te-text-link-hover);
+  --te-nav-link-active-ink:   var(--te-text-heading);
+  --te-nav-active-indicator:  var(--te-action-primary-bg);
+  --te-nav-rail-bg:           var(--te-surface-raised);
+  --te-nav-rail-active-bg:    var(--te-action-primary-bg);
+  --te-nav-rail-active-ink:   var(--te-action-primary-ink);
+  --te-nav-sidebar-bg:        var(--te-bg-subtle);
+  --te-nav-sidebar-selected:  var(--te-surface-selected);
+  --te-nav-hdr-h-mobile:      64px;
+  --te-nav-hdr-h-desktop:     76px;
+  --te-nav-rail-h:            46px;
+
+  --te-card-bg:               var(--te-surface-card);
+  --te-card-border:           var(--te-border-subtle);
+  --te-card-featured-border:  var(--te-action-primary-bg);
+  --te-card-radius:           var(--te-p-r-lg);
+  --te-card-media-radius:     var(--te-p-r-md);
+  --te-card-pad:              var(--te-space-card-pad);
+  --te-card-shadow:           var(--te-shadow-sm);
+  --te-card-shadow-hover:     var(--te-shadow-md);
+
+  --te-badge-radius:          var(--te-p-r-pill);
+  --te-dialog-bg:             var(--te-surface-card);
+  --te-dialog-border:         var(--te-border-subtle);
+  --te-dialog-radius:         var(--te-p-r-lg);
+  --te-dialog-shadow:         var(--te-shadow-xl);
+  --te-chart-gridline:        var(--te-border-subtle);
+  --te-chart-axis-ink:        var(--te-text-muted);
+  --te-chart-tooltip-bg:      var(--te-p-ocean-950);
+  --te-chart-tooltip-ink:     var(--te-p-n-0);
+}
+
+:lang(bn), .bn {
+  font-family: var(--te-font-bangla);
+  font-size: max(1em, var(--te-p-fs-bn-min));
+  line-height: var(--te-p-lh-bangla);
+  letter-spacing: 0;
+}
+.bn-ui { font-family: var(--te-font-bangla); font-size: max(1em, var(--te-p-fs-bn-ui-min)); line-height: 1.5; letter-spacing: 0; }
+.te-num { font-family: var(--te-font-num); font-variant-numeric: tabular-nums; }
+.te-mono { font-family: var(--te-font-mono); font-variant-numeric: tabular-nums; }
+:focus-visible { outline: var(--te-focus-width) solid var(--te-focus-ring); outline-offset: var(--te-focus-offset); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

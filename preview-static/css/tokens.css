@@ -1,0 +1,8 @@
+/* ============================================================
+   Trip Express BD - Single Authoritative Token Entrypoint
+   Imports canonical tokens/tokens.css + tokens/themes.css
+   from repository root without duplicating color palettes.
+   ============================================================ */
+
+@import url("../../tokens/tokens.css");
+@import url("../../tokens/themes.css");

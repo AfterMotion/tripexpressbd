@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Trip Express BD - Guided group tours from Chattogram to Kashmir, Meghalaya &amp; Nepal</title>
 <meta name="description" content="Trip Express BD runs guided group departures from Chattogram to Kashmir, Meghalaya, Nepal, Sikkim, Darjeeling, Kolkata, the Maldives and Sri Lanka. Fixed itineraries, published prices, a phone number that answers.">
-<meta name="theme-color" content="#132436" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ED7C30" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/brand/logo-mark.svg">
 <link rel="canonical" href="https://tripexpressbd.com/">
@@ -31,27 +30,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/hero/falls-tall-720.webp" media="(max-width: 1039px)">
+<link rel="preload" as="image" href="assets/img/card/cover-meghalaya-720.webp" media="(max-width: 1039px)">
 <link rel="preload" as="image" href="assets/img/hero/cliff-wide-1600.webp" media="(min-width: 1040px)">
-<!-- Variable ranges, not a list of static cuts: the CSS uses 550 and 650, which a
-     static 400/500/600/700 set silently rounds to the nearest cut. Hind Siliguri
-     has no variable build, so Bengali ships three weights and no more - each
-     Bengali cut is roughly six times the weight of a Latin one. -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
-
-<script>
-  /* Theme resolves before first paint so nothing flashes. */
-  try {
-    var t = localStorage.getItem('te-theme');
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) {}
-</script>
-
-<script type="importmap">
-{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}
-</script>
 
 <script type="application/ld+json">
 {
@@ -84,7 +67,7 @@
 <header class="hdr" id="hdr">
   <div class="wrap hdr__in">
     <a class="brand" href="#top" aria-label="Trip Express BD - home">
-      <img src="assets/brand/logo-mark.svg" alt="" width="42" height="42" aria-hidden="true">
+      <img class="brand__mark" src="assets/brand/logo-mark.svg" alt="" width="47" height="40" aria-hidden="true">
       <span class="brand__name"><i>Trip</i> Express BD</span>
     </a>
 
@@ -102,14 +85,11 @@
         <svg class="ic ic--sm" aria-hidden="true"><use href="assets/icons.svg#i-phone"></use></svg>
         <span class="te-num">01838-754207</span>
       </a>
-      <button class="iconbtn" id="themeBtn" aria-label="Switch to light theme" title="Switch theme">
-        <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-sun" id="themeIcon"></use></svg>
-      </button>
       <a class="btn btn--primary" href="#contact">Book a seat</a>
       <a class="iconbtn iconbtn--wa" href="https://wa.me/8801838754207" aria-label="Chat with Trip Express BD on WhatsApp">
         <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-whatsapp"></use></svg>
       </a>
-      <button class="iconbtn iconbtn--menu" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <button class="iconbtn iconbtn--menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
         <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-menu"></use></svg>
       </button>
     </div>
@@ -117,26 +97,16 @@
   <div class="hdr__progress" id="progress" aria-hidden="true"></div>
 </header>
 
-<!-- ==================== JOURNEY RAIL (mobile "you are here") ==================== -->
-<nav class="rail" id="rail" data-show="false" aria-label="Section">
-  <div class="rail__in" id="railIn">
-    <a href="#top"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-compass"></use></svg>The journey</a>
-    <a href="#destinations"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-globe"></use></svg>Destinations</a>
-    <a href="#tours"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-plane"></use></svg>Tours</a>
-    <a href="#included"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-badge-check"></use></svg>Included</a>
-    <a href="#portfolio"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-camera"></use></svg>Portfolio</a>
-    <a href="#reports"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-quote"></use></svg>Reports</a>
-    <a href="#contact"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-message"></use></svg>Contact</a>
-  </div>
-</nav>
-
 <!-- ==================== DRAWER ==================== -->
 <div class="drawer" id="drawer" data-open="false" role="dialog" aria-modal="true" aria-label="Menu">
-  <button class="drawer__bd" id="drawerBd" tabindex="-1" aria-hidden="true"></button>
-  <div class="drawer__pn">
+  <button class="drawer__bd" id="drawerBd" type="button" tabindex="-1" aria-hidden="true"></button>
+  <div class="drawer__pn" tabindex="-1">
     <div class="drawer__hd">
-      <span class="brand__name"><i>Trip</i> Express BD</span>
-      <button class="iconbtn" id="drawerClose" aria-label="Close menu">
+      <span class="brand">
+        <img class="brand__mark" src="assets/brand/logo-mark.svg" alt="" width="40" height="34" aria-hidden="true">
+        <span class="brand__name"><i>Trip</i> Express BD</span>
+      </span>
+      <button class="iconbtn" id="drawerClose" type="button" aria-label="Close menu">
         <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-x"></use></svg>
       </button>
     </div>
@@ -190,122 +160,279 @@
 
 <main id="main">
 
-<!-- ==================== THE JOURNEY ==================== -->
-<section class="journey" id="top">
-  <div class="journey__stage" id="stage">
-    <!-- Real content until (and unless) WebGL takes over. -->
-    <picture>
-      <source media="(min-width: 1040px)" srcset="assets/img/hero/cliff-wide-1600.webp 1600w, assets/img/hero/cliff-wide-2400.webp 2400w" sizes="100vw">
-      <img class="journey__still" src="assets/img/hero/falls-tall-720.webp"
-           srcset="assets/img/hero/falls-tall-720.webp 720w, assets/img/hero/falls-tall-1080.webp 1080w"
-           sizes="100vw" width="1600" height="686" fetchpriority="high" decoding="async"
-           alt="The Trip Express BD team with arms raised on a cliff viewpoint above a Meghalaya valley">
-    </picture>
-    <canvas class="te-canvas" id="journeyCanvas" aria-hidden="true"></canvas>
+<!-- ==================== HERO (Full-Bleed Tour Image Slider + Frosted Glass) ==================== -->
+<section class="hero hero--fullbleed" id="top">
+  <div class="hero-slider" id="heroSlider" role="region" aria-roledescription="carousel" aria-label="Real departure highlights">
+    <div class="hero-slider__viewport">
+      <figure class="hero-slide is-active" data-slide="0" aria-hidden="false">
+        <picture>
+          <source media="(min-width: 1040px)" srcset="assets/img/hero/cliff-wide-1600.webp 1600w, assets/img/hero/cliff-wide-2400.webp 2400w" sizes="100vw">
+          <img src="assets/img/card/cover-meghalaya-720.webp"
+               srcset="assets/img/card/cover-meghalaya-720.webp 720w, assets/img/card/cover-meghalaya-1440.webp 1440w"
+               sizes="100vw" width="1440" height="960" fetchpriority="high" decoding="async"
+               alt="The Trip Express BD team with arms raised on a cliff viewpoint above a Meghalaya valley">
+        </picture>
+        <figcaption class="hero-slide__cap">
+          <span class="hero-slide__tag">Meghalaya</span>
+          <strong>Cliff viewpoint above Cherrapunji</strong>
+        </figcaption>
+      </figure>
 
-    <div class="wp" id="wp" data-on="false" aria-hidden="true">
-      <span class="wp__dot"></span>
-      <span class="wp__tx"><b id="wpName">Chattogram</b><span id="wpSub">Departure</span></span>
+      <figure class="hero-slide" data-slide="1" aria-hidden="true">
+        <img src="assets/img/card/nepal-pokhara-600.webp"
+             srcset="assets/img/card/nepal-pokhara-600.webp 600w, assets/img/card/nepal-pokhara-1200.webp 1200w"
+             sizes="100vw" width="1200" height="750" loading="lazy" decoding="async"
+             alt="Tourist coaches at Pokhara bus park with the snow-covered Annapurna range behind">
+        <figcaption class="hero-slide__cap">
+          <span class="hero-slide__tag">Explore Nepal</span>
+          <strong>Pokhara &amp; Annapurna skyline · ৳58,500</strong>
+        </figcaption>
+      </figure>
+
+      <figure class="hero-slide" data-slide="2" aria-hidden="true">
+        <img src="assets/img/card/meghalaya-dawki-600.webp"
+             srcset="assets/img/card/meghalaya-dawki-600.webp 600w, assets/img/card/meghalaya-dawki-1200.webp 1200w"
+             sizes="100vw" width="1200" height="750" loading="lazy" decoding="async"
+             alt="The Trip Express BD team on the rocks beside the turquoise Umngot river pool at Dawki">
+        <figcaption class="hero-slide__cap">
+          <span class="hero-slide__tag">Dawki · Umngot</span>
+          <strong>Overland group by the turquoise river</strong>
+        </figcaption>
+      </figure>
+
+      <figure class="hero-slide" data-slide="3" aria-hidden="true">
+        <img src="assets/img/card/meghalaya-hills-600.webp"
+             srcset="assets/img/card/meghalaya-hills-600.webp 600w, assets/img/card/meghalaya-hills-1200.webp 1200w"
+             sizes="100vw" width="1200" height="750" loading="lazy" decoding="async"
+             alt="Guided group standing together across the open rolling hills of Meghalaya">
+        <figcaption class="hero-slide__cap">
+          <span class="hero-slide__tag">Shillong · 13 guests</span>
+          <strong>Four-day guided overland departure</strong>
+        </figcaption>
+      </figure>
     </div>
-    <div class="flightbar" aria-hidden="true"><i id="flightbar"></i></div>
-  </div>
 
-  <div class="journey__flow">
-    <div class="hero">
-      <div class="wrap">
-        <div class="hero__inner">
-          <p class="overline">Chattogram · Travel service</p>
-          <h1>Small teams.<br>Real itineraries.<br><em>Photographs to prove it.</em></h1>
-          <p class="hero__lead">
-            We take Bangladeshi travellers across South Asia on guided group departures -
-            fixed dates, a published price, and a phone number a human answers.
-          </p>
-          <p class="hero__lead bn bn-body" lang="bn">
-            চট্টগ্রাম থেকে কাশ্মীর, মেঘালয়, নেপালসহ দেশ-বিদেশের ট্যুর - নির্দিষ্ট তারিখ, নির্দিষ্ট প্যাকেজ মূল্য।
-          </p>
+    <div class="wrap hero__wrap">
+      <div class="hero__content">
+        <p class="overline">Chattogram · Travel service</p>
+        <h1>Small teams.<br>Real itineraries.<br><em>Photographs to prove it.</em></h1>
+        <p class="hero__lead">
+          Guided South Asia group departures from Chattogram - fixed dates,
+          transparent BDT pricing, and a human phone line.
+        </p>
+        <p class="hero__lead bn bn-body" lang="bn">
+          চট্টগ্রাম থেকে কাশ্মীর, মেঘালয়, নেপালসহ দেশ-বিদেশের ট্যুর - নির্দিষ্ট তারিখ, নির্দিষ্ট প্যাকেজ মূল্য।
+        </p>
 
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="#tours">
-              See upcoming tours
-              <svg class="ic arw" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg>
-            </a>
-            <a class="btn btn--outline btn--lg" href="#portfolio" style="color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.32)">
-              <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-image"></use></svg>
-              See the portfolio
-            </a>
-          </div>
-
-          <ul class="hero__meta">
-            <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-plane"></use></svg> Air &amp; overland departures</li>
-            <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> Teams of 7–15</li>
-            <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg> Office in Chattogram</li>
-          </ul>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#tours">
+            See upcoming tours
+            <svg class="ic arw" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg>
+          </a>
+          <a class="btn btn--outline btn--lg" href="#portfolio">
+            <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-image"></use></svg>
+            See the portfolio
+          </a>
         </div>
+
+        <ul class="hero__meta">
+          <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-plane"></use></svg> Air &amp; overland departures</li>
+          <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> Teams of 7–15</li>
+          <li><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg> Office in Chattogram</li>
+        </ul>
       </div>
-    </div>
 
-    <!-- destinations ride the same journey -->
-    <div class="dests" id="destinations">
-      <div class="wrap">
-        <div class="head rv">
-          <p class="overline">Destinations</p>
-          <span class="rule" aria-hidden="true"></span>
-          <h2>Where we take you</h2>
-          <p class="lead">Eight signature destinations. Pick one and the flight above jumps to it.</p>
+      <div class="hero-slider__glass">
+        <div class="hero-slider__status" aria-live="polite">
+          <span class="hero-slider__eyebrow" id="slideTag">Meghalaya</span>
+          <span class="hero-slider__title" id="slideTitle">Cliff viewpoint above Cherrapunji</span>
         </div>
-
-        <div class="slider rv">
-          <ul class="slider__track" id="destTrack">
-            <li><button class="dest" data-fly="chattogram" data-go="#contact">
-              <span class="dest__disc dest__disc--art dest__disc--sun">
-                <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg></span>
-              <span class="dest__name">Chattogram</span><span class="dest__note">Where we start</span>
-            </button></li>
-            <li><button class="dest" data-fly="nepal" data-go="#tours">
-              <span class="dest__disc"><img src="assets/img/disc/nepal-240.webp" srcset="assets/img/disc/nepal-240.webp 240w, assets/img/disc/nepal-480.webp 480w" sizes="116px" width="240" height="240" loading="lazy" decoding="async" alt="Tourist coaches at Pokhara bus park with the Annapurna range behind"></span>
-              <span class="dest__name">Nepal</span><span class="dest__note">Kathmandu · Pokhara</span>
-            </button></li>
-            <li><button class="dest" data-fly="meghalaya" data-go="#tours">
-              <span class="dest__disc"><img src="assets/img/disc/meghalaya-240.webp" srcset="assets/img/disc/meghalaya-240.webp 240w, assets/img/disc/meghalaya-480.webp 480w" sizes="116px" width="240" height="240" loading="lazy" decoding="async" alt="Travellers on a cliff viewpoint above a Meghalaya valley"></span>
-              <span class="dest__name">Meghalaya</span><span class="dest__note">Shillong · Cherrapunji</span>
-            </button></li>
-            <li><button class="dest" data-fly="dawki" data-go="#portfolio">
-              <span class="dest__disc"><img src="assets/img/disc/dawki-240.webp" srcset="assets/img/disc/dawki-240.webp 240w, assets/img/disc/dawki-480.webp 480w" sizes="116px" width="240" height="240" loading="lazy" decoding="async" alt="The team beside the turquoise pool at Dawki"></span>
-              <span class="dest__name">Dawki</span><span class="dest__note">Umngot river</span>
-            </button></li>
-            <li><button class="dest" data-fly="kashmir" data-go="#tours">
-              <span class="dest__disc dest__disc--art">
-                <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-mountain"></use></svg></span>
-              <span class="dest__name">Kashmir</span><span class="dest__note">By road · Season 5</span>
-            </button></li>
-            <li><a class="dest" href="#contact">
-              <span class="dest__disc"><img src="assets/img/disc/shillong-240.webp" srcset="assets/img/disc/shillong-240.webp 240w, assets/img/disc/shillong-480.webp 480w" sizes="116px" width="240" height="240" loading="lazy" decoding="async" alt="Evening at Police Bazar, Shillong"></span>
-              <span class="dest__name">Shillong</span><span class="dest__note">Police Bazar</span>
-            </a></li>
-            <li><a class="dest" href="#contact">
-              <span class="dest__disc dest__disc--art">
-                <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-layers"></use></svg></span>
-              <span class="dest__name">Sikkim</span><span class="dest__note">Gangtok · mega trip</span>
-            </a></li>
-            <li><a class="dest" href="#contact">
-              <span class="dest__disc dest__disc--art">
-                <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-palm"></use></svg></span>
-              <span class="dest__name">Maldives</span><span class="dest__note">with Sri Lanka</span>
-            </a></li>
-          </ul>
-          <div class="slider__bar" aria-hidden="true"><i id="destBar"></i></div>
-          <p class="slider__hint" aria-hidden="true">
-            <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg>
-            Swipe for all eight
-          </p>
+        <div class="hero-slider__ctrls">
+          <button class="hero-slider__btn" id="slidePrev" type="button" aria-label="Previous departure photo">
+            <svg class="ic ic--sm" aria-hidden="true"><use href="assets/icons.svg#i-chev-left"></use></svg>
+          </button>
+          <div class="hero-slider__dots" role="tablist" aria-label="Choose slide">
+            <button class="hero-slider__dot is-active" type="button" data-to="0" aria-label="Slide 1: Meghalaya cliff" aria-selected="true"></button>
+            <button class="hero-slider__dot" type="button" data-to="1" aria-label="Slide 2: Explore Nepal" aria-selected="false"></button>
+            <button class="hero-slider__dot" type="button" data-to="2" aria-label="Slide 3: Dawki Umngot" aria-selected="false"></button>
+            <button class="hero-slider__dot" type="button" data-to="3" aria-label="Slide 4: Shillong hills" aria-selected="false"></button>
+          </div>
+          <button class="hero-slider__btn" id="slideNext" type="button" aria-label="Next departure photo">
+            <svg class="ic ic--sm" aria-hidden="true"><use href="assets/icons.svg#i-chev-right"></use></svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ==================== DESTINATIONS: INTERACTIVE ROUTE MAP & TIMELINE ==================== -->
+<section class="section route-section" id="destinations">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="overline">Departure Coverage Map</p>
+      <span class="rule" aria-hidden="true"></span>
+      <h2>Where we take you</h2>
+      <p class="lead">Every route starts from Chattogram across two networks - overland coaches &amp; air group departures. Select any corridor to inspect coverage.</p>
+    </div>
+
+    <div class="route-hub rv" id="routeHub">
+      <div class="route-map__card">
+        <div class="route-map__hd">
+          <div>
+            <span class="route-map__kicker">South Asia Route Network</span>
+            <h3 id="routeFocusTitle">All 8 signature destinations</h3>
+          </div>
+          <div class="route-map__legend" aria-label="Route transport legend">
+            <span class="legend-chip legend-chip--air"><i></i> By Air</span>
+            <span class="legend-chip legend-chip--road"><i></i> By Road</span>
+          </div>
+        </div>
+
+        <div class="route-map__canvas">
+          <!-- Brand-palette schematic map strictly following Section 6.2 flat vector colors -->
+          <svg class="route-map__svg" viewBox="0 0 640 400" role="img" aria-label="Schematic route map from Chattogram across Bangladesh, India highlands, Nepal, Kashmir, and Maldives &amp; Sri Lanka">
+            <!-- Soft calm background horizon -->
+            <rect width="640" height="400" rx="16" fill="#F6FAFD"/>
+            <!-- stylized ocean wash bottom -->
+            <path d="M0 300 Q160 282 320 306 T640 288 L640 400 L0 400 Z" fill="#E8F2FA"/>
+            <path d="M0 340 Q180 326 360 346 T640 330 L640 400 L0 400 Z" fill="#CEE3F4"/>
+            <!-- subtle topographic contour ridges -->
+            <path d="M40 170 Q150 110 280 148 T540 112" fill="none" stroke="#FADDC9" stroke-width="1.5"/>
+            <path d="M20 130 Q180 76 340 118 T600 72" fill="none" stroke="#FADDC9" stroke-width="1.5"/>
+
+            <!-- Overland corridor curves (Deep Ocean #3171AE) -->
+            <!-- Chattogram -> Kolkata -> Jammu -> Kashmir -->
+            <path class="route-arc route-arc--road" data-route="kashmir" d="M412 246 Q305 224 236 164 T114 78" fill="none" stroke="#3171AE" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+            <!-- Chattogram -> Dawki -> Shillong -> Cherrapunji -->
+            <path class="route-arc route-arc--road" data-route="meghalaya" d="M412 246 Q456 202 486 168" fill="none" stroke="#3171AE" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+            <!-- Chattogram -> Sikkim & Darjeeling -->
+            <path class="route-arc route-arc--road" data-route="sikkim" d="M412 246 Q388 184 366 136" fill="none" stroke="#4394D5" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round"/>
+
+            <!-- Air corridor curves (Sunset Orange #ED7C30) -->
+            <!-- Chattogram -> Kathmandu & Pokhara (Nepal) -->
+            <path class="route-arc route-arc--air" data-route="nepal" d="M412 246 Q344 176 286 144" fill="none" stroke="#ED7C30" stroke-width="2.8" stroke-linecap="round"/>
+            <!-- Chattogram -> Maldives & Sri Lanka -->
+            <path class="route-arc route-arc--air" data-route="maldives" d="M412 246 Q314 316 208 352" fill="none" stroke="#ED7C30" stroke-width="2.6" stroke-linecap="round"/>
+
+            <!-- Direction aircraft icon along 17deg Nepal climb -->
+            <path d="M332 184 l16 -5 l-4 5 l4 5 z" fill="#ED7C30"/>
+          </svg>
+
+          <!-- Interactive accessible map pins positioned on schematic coordinates -->
+          <button class="map-pin map-pin--origin is-active" type="button" data-stop="chattogram" style="--x:64.4%;--y:61.5%;">
+            <span class="map-pin__dot"></span>
+            <span class="map-pin__lbl"><b>Chattogram</b><small>Origin Hub</small></span>
+          </button>
+
+          <button class="map-pin" type="button" data-stop="kashmir" style="--x:17.8%;--y:19.5%;">
+            <span class="map-pin__dot map-pin__dot--road"></span>
+            <span class="map-pin__lbl"><b>Kashmir</b><small>Kolkata · Jammu</small></span>
+          </button>
+
+          <button class="map-pin" type="button" data-stop="nepal" style="--x:44.7%;--y:36%;">
+            <span class="map-pin__dot map-pin__dot--air"></span>
+            <span class="map-pin__lbl"><b>Nepal</b><small>Kathmandu · Pokhara</small></span>
+          </button>
+
+          <button class="map-pin" type="button" data-stop="sikkim" style="--x:57.2%;--y:34%;">
+            <span class="map-pin__dot map-pin__dot--road"></span>
+            <span class="map-pin__lbl"><b>Sikkim</b><small>Gangtok · Darjeeling</small></span>
+          </button>
+
+          <button class="map-pin" type="button" data-stop="meghalaya" style="--x:75.9%;--y:42%;">
+            <span class="map-pin__dot map-pin__dot--road"></span>
+            <span class="map-pin__lbl"><b>Meghalaya</b><small>Dawki · Shillong</small></span>
+          </button>
+
+          <button class="map-pin" type="button" data-stop="maldives" style="--x:32.5%;--y:88%;">
+            <span class="map-pin__dot map-pin__dot--air"></span>
+            <span class="map-pin__lbl"><b>Maldives</b><small>&amp; Sri Lanka</small></span>
+          </button>
+        </div>
+
+        <div class="route-map__detail" id="routeDetail">
+          <div class="route-map__meta">
+            <span class="badge-mode" id="routeMode">Chattogram Hub</span>
+            <strong id="routeAreas">1301, Mosjid Goli, Dui Number Gate · Direct Departure Desk</strong>
+          </div>
+          <a class="btn btn--sm btn--primary" id="routeCta" href="#tours">Explore Tours</a>
+        </div>
+      </div>
+
+      <ol class="route-timeline" aria-label="Journey route coverage timeline">
+        <li class="route-stop is-active" data-stop="chattogram">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb route-stop__thumb--brand">
+              <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-pin"></use></svg>
+            </span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>01 · Chattogram Origin</b><span class="route-pill">Head Office</span></span>
+              <span class="route-stop__sub">Reporting &amp; overland coach departure point for every group tour</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="route-stop" data-stop="meghalaya" data-slide-jump="0">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb"><img src="assets/img/disc/meghalaya-240.webp" width="96" height="96" loading="lazy" alt="Meghalaya group cliff view"></span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>02 · Meghalaya &amp; Dawki</b><span class="route-pill route-pill--road">By Road · 4D/3N</span></span>
+              <span class="route-stop__sub">Dawki Land Port · Umngot River · Shillong Police Bazar · Cherrapunji</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="route-stop" data-stop="nepal" data-slide-jump="1">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb"><img src="assets/img/disc/nepal-240.webp" width="96" height="96" loading="lazy" alt="Nepal Annapurna coach park"></span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>03 · Explore Nepal</b><span class="route-pill route-pill--air">By Air · ৳58,500</span></span>
+              <span class="route-stop__sub">Dhaka Flight · Kathmandu · Nagarkot Sunrise · Pokhara · Sarangkot</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="route-stop" data-stop="kashmir">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb route-stop__thumb--flat">
+              <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-mountain"></use></svg>
+            </span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>04 · Kashmir by Road</b><span class="route-pill route-pill--road">Season 5 · ৳35,000</span></span>
+              <span class="route-stop__sub">Chattogram · Kolkata · Jammu · Srinagar Valley · 11 Nights Overland</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="route-stop" data-stop="sikkim" data-slide-jump="3">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb"><img src="assets/img/disc/shillong-240.webp" width="96" height="96" loading="lazy" alt="Eastern Himalayan hill departures"></span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>05 · Sikkim &amp; Darjeeling</b><span class="route-pill route-pill--road">Overland · Mega Trip</span></span>
+              <span class="route-stop__sub">Siliguri · Gangtok · North Sikkim Passes · Darjeeling Tea Hills</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="route-stop" data-stop="maldives">
+          <button class="route-stop__btn" type="button">
+            <span class="route-stop__thumb route-stop__thumb--sky">
+              <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-palm"></use></svg>
+            </span>
+            <span class="route-stop__body">
+              <span class="route-stop__top"><b>06 · Maldives &amp; Sri Lanka</b><span class="route-pill route-pill--air">By Air · 7 Days</span></span>
+              <span class="route-stop__sub">Dhaka · Colombo · Kandy · Male Island Group Departures</span>
+            </span>
+          </button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== TOURS ==================== -->
-<section class="section section--subtle" id="tours">
+<section class="section" id="tours">
   <div class="wrap">
     <div class="head rv">
       <p class="overline">Tour packages</p>
@@ -392,48 +519,41 @@
         </div>
       </article>
 
-      <!-- Brand rule 4: no stock. The Kashmir card carries the brand's own artwork
-           until a real Kashmir photograph exists. -->
+      <!-- Brand Guidelines 6.2: Strict 5-color zero-gradient flat vector illustration until a Kashmir team photograph is supplied -->
       <article class="tilt rv">
         <div class="card">
           <div class="card__media card__media--art">
-            <!-- No Kashmir photograph exists yet. This is the same world the 3D journey
-                 renders - first-light sky, four ridge layers in aerial perspective, a
-                 cloud deck under the wing, one contrail at 17 degrees - drawn flat, so
-                 the card reads as ours and never as stock. Every value is a brand ramp
-                 step. Replace the whole block with a photograph the day we have one. -->
             <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" role="img"
-                 aria-label="Illustration in the Trip Express BD palette: a dawn ridge line with an aircraft climbing at the brand's 17 degree flight angle">
-              <defs>
-                <linearGradient id="k-sky" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#1E4162"/>
-                  <stop offset="0.42" stop-color="#2B6195"/>
-                  <stop offset="0.74" stop-color="#ED7C30"/>
-                  <stop offset="1" stop-color="#F2A16A"/>
-                </linearGradient>
-                <linearGradient id="k-near" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#19324C"/>
-                  <stop offset="1" stop-color="#132436"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="250" fill="url(#k-sky)"/>
-              <circle cx="286" cy="150" r="26" fill="#FFFFFF" opacity=".92"/>
-              <circle cx="286" cy="150" r="52" fill="#F2A16A" opacity=".28"/>
-              <!-- far ridge: washed out by haze -->
-              <path d="M0 250V150l44-34 38 26 46-44 40 34 52-52 44 46 40-28 56 40v112z" fill="#6B99C5" opacity=".72"/>
-              <!-- mid ridge -->
-              <path d="M0 250V178l52-30 40 24 58-38 46 32 50-26 54 34 40-18v94z" fill="#2B6195"/>
-              <!-- cloud deck, under the wing -->
-              <ellipse cx="96" cy="196" rx="34" ry="8" fill="#FFFFFF" opacity=".5"/>
-              <ellipse cx="300" cy="204" rx="28" ry="7" fill="#FFFFFF" opacity=".42"/>
-              <ellipse cx="196" cy="214" rx="40" ry="9" fill="#FFFFFF" opacity=".34"/>
-              <!-- near ridge: silhouette -->
-              <path d="M0 250V214l58-22 52 26 60-30 54 28 62-24 58 26 56-14v36z" fill="url(#k-near)"/>
-              <!-- the flight angle: 17 degrees, rising to the right -->
-              <path d="M22 128 L352 27" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-              <path d="M338 40 l34-10 l-9 10 l9 9 z" fill="#FFFFFF"/>
+                 aria-label="Flat 5-color brand illustration for Kashmir by Road: golden sun over faceted mountain peaks, Dal Lake waters, and climbing aircraft at 17 degrees">
+              <!-- Daylight Sky Band (Sand Orange tint / flat sky + clean horizon) -->
+              <rect width="400" height="250" fill="#F2A15F"/>
+              <!-- Crisp High Sky & Sun Disc -->
+              <rect width="400" height="156" fill="#FFFFFF"/>
+              <path d="M0 156 L400 94 L400 170 L0 170 Z" fill="#F2A15F"/>
+              <circle cx="308" cy="72" r="30" fill="#ED7C30"/>
+              <!-- Flat Geometric Clouds -->
+              <path d="M44 54 H114 A10 10 0 0 1 114 74 H44 A10 10 0 0 1 44 54 Z" fill="#4394D5"/>
+              <path d="M62 44 H102 A9 9 0 0 1 102 62 H62 A9 9 0 0 1 62 44 Z" fill="#4394D5"/>
+              <!-- Far Faceted Ridge (Sand Orange lit / Deep Ocean shadow) -->
+              <polygon points="0,184 68,112 134,184" fill="#F2A15F"/>
+              <polygon points="68,112 96,184 134,184" fill="#ED7C30"/>
+              <polygon points="94,184 188,88 282,184" fill="#ED7C30"/>
+              <polygon points="188,88 228,184 282,184" fill="#3171AE"/>
+              <polygon points="188,88 206,112 192,118 178,108" fill="#FFFFFF"/>
+              <polygon points="246,184 334,116 400,184" fill="#F2A15F"/>
+              <polygon points="334,116 364,184 400,184" fill="#3171AE"/>
+              <!-- Foreground Kashmir Dal Lake (Sky Blue + Deep Ocean wave shelf) -->
+              <rect y="184" width="400" height="66" fill="#4394D5"/>
+              <path d="M0 206 Q100 198 200 206 T400 202 L400 250 L0 250 Z" fill="#3171AE"/>
+              <!-- Stylized White Shikara Hull & Ripples -->
+              <polygon points="148,200 226,200 214,210 158,210" fill="#FFFFFF"/>
+              <rect x="172" y="191" width="28" height="9" fill="#ED7C30"/>
+              <rect x="142" y="216" width="88" height="3" rx="1.5" fill="#FFFFFF"/>
+              <!-- 17-Degree Flight Path & Brand Aircraft -->
+              <polygon points="24,104 294,22 295,25 25,107" fill="#4394D5"/>
+              <path d="M294 23 L324 14 L315 24 L323 32 L294 23 Z" fill="#3171AE"/>
             </svg>
-            <span class="badge badge--open">Booking open</span>
+            <span class="badge badge--open">Route Illustration</span>
             <span class="chip">Season 5</span>
           </div>
           <div class="card__body">
@@ -507,7 +627,7 @@
           <li><svg class="ic no" aria-hidden="true"><use href="assets/icons.svg#i-x"></use></svg> ট্রাভেল ইন্স্যুরেন্স</li>
           <li><svg class="ic no" aria-hidden="true"><use href="assets/icons.svg#i-x"></use></svg> যেকোনো অতিরিক্ত খরচ</li>
         </ul>
-        <div class="note" style="margin-top:var(--te-space-5)">
+        <div class="note note--spaced">
           <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-info"></use></svg>
           <span lang="bn" class="bn">বুকিংয়ের সময় এয়ার ফেয়ার ৳৩৬,০০০-এর বেশি হলে অতিরিক্ত টাকা ট্যুর ফি-র সাথে যোগ হবে।</span>
         </div>
@@ -517,7 +637,7 @@
 </section>
 
 <!-- ==================== PORTFOLIO ==================== -->
-<section class="section section--cool" id="portfolio">
+<section class="section" id="portfolio">
   <div class="wrap">
     <div class="head rv">
       <p class="overline">Portfolio</p>
@@ -570,10 +690,10 @@
       </article>
     </div>
 
-    <div class="head rv" style="margin-top:var(--te-space-16);margin-bottom:var(--te-space-6)">
-      <h3 style="font-size:var(--te-fs-h3)">Every frame from the road</h3>
+    <div class="head head--gallery rv">
+      <h3 class="gal__heading">Every frame from the road</h3>
       <p class="lead">Keep scrolling - photographs load as you go, in black and white.
-        Hover one, or bring it to the middle of a phone screen, to see it in colour.</p>
+        Hover or scroll them into focus to see them in full colour.</p>
     </div>
 
     <div class="gal" id="gallery" aria-label="Trip photographs"></div>
@@ -635,15 +755,19 @@
         </footer>
       </article>
     </div>
+    <p class="reports__hint" aria-hidden="true">
+      <svg class="ic ic--sm" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"></use></svg>
+      Swipe horizontally for all trip reports
+    </p>
   </div>
 </section>
 
 <!-- ==================== CONTACT ==================== -->
-<section class="section section--warm" id="contact">
+<section class="section" id="contact">
   <div class="wrap">
     <div class="contact">
       <div>
-        <div class="head rv" style="margin-bottom:var(--te-space-8)">
+        <div class="head head--contact rv">
           <p class="overline">Book a seat</p>
           <span class="rule" aria-hidden="true"></span>
           <h2>Tell us where you want to go</h2>
@@ -653,7 +777,7 @@
         <div class="formcard rv">
           <div class="form-ok" id="formOk" role="status">
             <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"></use></svg>
-            Thank you. We will call you within one working day.
+            <span id="formOkText">Enquiry validated locally (static mode - no server POST). Send details on WhatsApp or call 01838-754207.</span>
           </div>
 
           <form id="enquiry" novalidate>
@@ -718,7 +842,7 @@
       </div>
 
       <div class="rv">
-        <div class="head" style="margin-bottom:var(--te-space-6)">
+        <div class="head head--compact">
           <p class="overline">Office</p>
           <span class="rule" aria-hidden="true"></span>
           <h3>Come and sit with us</h3>
@@ -754,7 +878,7 @@
           </div>
         </div>
 
-        <a class="btn btn--secondary btn--lg btn--block" style="margin-top:var(--te-space-6)" href="https://wa.me/8801838754207">
+        <a class="btn btn--secondary btn--lg btn--block office-wa-btn" href="https://wa.me/8801838754207">
           <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-whatsapp"></use></svg>
           Message us on WhatsApp
         </a>
@@ -765,23 +889,40 @@
 
 </main>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- ==================== FOOTER (Premium Night Ocean + Glass Highlight Strip) ==================== -->
 <footer class="ftr">
-  <span class="ftr__cut" aria-hidden="true"></span>
+  <span class="ftr__horizon" aria-hidden="true"></span>
   <div class="wrap">
+    <div class="ftr__glass">
+      <div class="ftr__glass-copy">
+        <span class="ftr__kicker">Direct Departure Desk · Chattogram</span>
+        <p>Questions about next dates, group size, or verified Islami Bank &amp; EBL seat deposits? Talk directly with a trip coordinator.</p>
+      </div>
+      <div class="ftr__glass-act">
+        <a class="btn btn--primary" href="https://wa.me/8801838754207">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-whatsapp"></use></svg>
+          WhatsApp Desk
+        </a>
+        <a class="btn btn--ftr-ghost" href="tel:+8801838754207">
+          <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-phone"></use></svg>
+          <span class="te-num">01838-754207</span>
+        </a>
+      </div>
+    </div>
+
     <div class="ftr__grid">
       <div>
         <div class="ftr__brand">
-          <img src="assets/brand/logo-mark.svg" alt="" width="46" height="46" aria-hidden="true">
+          <span class="brand__chip brand__chip--footer"><img src="assets/brand/logo-mark.svg" alt="" width="47" height="40" aria-hidden="true"></span>
           <span>Trip Express BD</span>
         </div>
-        <p style="font-size:.9375rem;max-width:38ch;line-height:1.6">
+        <p class="ftr__desc">
           A Chattogram-based group tour operator. We assemble small teams, lead them ourselves,
           and publish the photographs afterwards.
         </p>
         <div class="ftr__soc">
-          <a href="https://www.facebook.com/" aria-label="Trip Express BD on Facebook" rel="noopener">
-            <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-facebook"></use></svg>
+          <a href="tel:+8801838754207" aria-label="Call Trip Express BD on 01838-754207">
+            <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-phone"></use></svg>
           </a>
           <a href="https://wa.me/8801838754207" aria-label="Trip Express BD on WhatsApp" rel="noopener">
             <svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-whatsapp"></use></svg>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-contrast="standard" data-density="compact">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking Record TE-NEP-041 - Trip Express BD</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700..800&family=Inter:wght@400..700&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../tokens/tokens.css">
+  <link rel="stylesheet" href="../tokens/themes.css">
+  <link rel="stylesheet" href="../design-system/assets/ds.css">
+  <link rel="stylesheet" href="assets/showcase.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="sc-banner-mock"><span><strong>Demo Mode (07/09 · Record Detail):</strong> Tabs, timeline, docs &amp; confirm dialog. <a class="te-link" href="index.html">All 9 Prototypes</a></span><button class="te-btn te-btn--sm te-btn--outline" id="themeToggle" type="button">Theme: Light</button></div>
+<main id="main" class="sc-container" style="padding-top:24px;padding-bottom:48px;">
+  <nav aria-label="Breadcrumb" style="font-size:13px;margin-bottom:12px;"><a class="te-link" href="05-admin-dashboard.html">Dashboard</a> / <a class="te-link" href="06-admin-users-crud.html">Bookings</a> / <span class="te-mono">TE-NEP-041</span></nav>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+    <div><h1 style="margin:0;">Tariqul Hasan · <span class="te-mono">TE-NEP-041</span></h1><span class="te-badge te-badge--success" style="margin-top:6px;">Airfare Confirmed · ৳58,500 Paid</span></div>
+    <div style="display:flex;gap:8px;"><a class="te-btn te-btn--outline te-btn--sm" href="06-admin-users-crud.html">Back</a><button class="te-btn te-btn--danger te-btn--sm" onclick="window.scOpenModal('voidModal', this)" type="button">Void Seat</button></div>
+  </div>
+
+  <div class="te-tabs" role="tablist" aria-label="Booking sections" style="margin-bottom:20px;">
+    <button class="te-tab" role="tab" aria-selected="true" tabindex="0" id="rT1" aria-controls="rP1">Overview</button>
+    <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="rT2" aria-controls="rP2">Payment Timeline</button>
+    <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="rT3" aria-controls="rP3">Documents</button>
+    <button class="te-tab" role="tab" aria-selected="false" tabindex="-1" id="rT4" aria-controls="rP4">Audit History</button>
+  </div>
+
+  <div id="rP1" role="tabpanel" aria-labelledby="rT1" class="ds-grid-2">
+    <div class="te-card"><h3>Departure Summary</h3><p style="font-size:14px;">Explore Nepal (5D/4N) · 11–15 Nov · Double/Triple Sharing · Chattogram Team.</p></div>
+    <div class="te-card"><h3>Bank Reference (Read-Only)</h3><input class="te-input te-mono" readonly value="Islami Bank · 20501620205843017 · Verified"></div>
+  </div>
+  <div id="rP2" role="tabpanel" aria-labelledby="rT2" hidden class="te-card"><h3>Payment Timeline</h3><ul><li>10 Oct: ৳36,000 Airfare Deposit (Islami Bank Chawkbazar)</li><li>01 Nov: ৳22,500 Final Balance (Office Cash, Mosjid Goli)</li></ul></div>
+  <div id="rP3" role="tabpanel" aria-labelledby="rT3" hidden class="te-card"><h3>Traveller Documents</h3><p style="font-size:14px;">Passport_Tariqul_Hasan.pdf (Verified) · Flight_DAC_KTM.pdf (Issued)</p></div>
+  <div id="rP4" role="tabpanel" aria-labelledby="rT4" hidden class="te-card"><h3>Activity Audit</h3><p class="te-mono" style="font-size:13px;">[2026-11-01 14:12] Admin MD Mirajul Islam marked balance paid.</p></div>
+</main>
+<div class="ds-drawer-backdrop" id="dsBackdrop"></div>
+<div class="ds-dialog" id="voidModal" role="alertdialog" aria-modal="true" aria-labelledby="voidTitle">
+  <h2 id="voidTitle" style="font-size:18px;">Void Seat TE-NEP-041?</h2>
+  <p style="font-size:14px;color:var(--te-text-muted);">Airfare ceiling policies apply if ticket is already issued.</p>
+  <div style="display:flex;justify-content:flex-end;gap:8px;"><button class="te-btn te-btn--outline" data-close-overlay type="button">Cancel</button><button class="te-btn te-btn--danger" onclick="scCloseOverlays();teToast('Seat voided in demo state.')" type="button">Confirm Void</button></div>
+</div>
+<div class="ds-toast" id="dsToast" role="status" aria-live="polite"></div>
+<script src="../design-system/assets/ds.js"></script>
+<script src="assets/showcase.js"></script>
+</body>
+</html>
