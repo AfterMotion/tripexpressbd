@@ -109,8 +109,8 @@ Rules: one primary CTA per viewport. WhatsApp is always available. Never use
 | Thing | Format | Example |
 |---|---|---|
 | Single date | `DD Mon YYYY` | `11 Nov 2025` |
-| Range, same month | `DD–DD Mon YYYY` | `11–15 Nov 2025` |
-| Range, cross-month | `DD Mon – DD Mon YYYY` | `28 Dec 2025 – 03 Jan 2026` |
+| Range, same month | `DD-DD Mon YYYY` | `11-15 Nov 2025` |
+| Range, cross-month | `DD Mon - DD Mon YYYY` | `28 Dec 2025 - 03 Jan 2026` |
 | Time | 12-hour with AM/PM | `10:05 AM` |
 | Duration | `N Days / N Nights` | `5 Days / 4 Nights` |
 | Phone display | `01838-754207` | with a hyphen after 5 digits |

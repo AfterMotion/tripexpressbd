@@ -13,7 +13,7 @@
 - **Focus Trap & Return:** All modal overlays (`Dialog`, `Drawer`, `Lightbox`) trap `Tab`/`Shift+Tab`, close on `Escape`, lock background scroll cleanly, and restore focus to the opener.
 - **Validation Policy:** Validate on blur/submit (`no-premature-validation`), clear errors immediately on fix, focus error summary on failed submit, and never block paste.
 - **Bilingual Support:** Any slot accepting Bangla text inherits `:lang(bn)` (`Hind Siliguri`, `≥ 17px` body / `≥ 16px` UI chip, `1.85` line-height, zero uppercase/tracking).
-- **Section Header & Flight Rule Clearance:** Text-adjacent Flight Rules (`.rule`, `.te-flight-rule`) MUST use `--te-p-rule-angle-neg` (`-3deg`, `~3.4–3.8px` rise) with `margin: 12px 0 16px` (`10px 0 12px` on `<640px` mobile) — never `-17deg` under overlines/headings, preventing overlap on responsive screens.
+- **Section Header & Flight Rule Clearance:** Text-adjacent Flight Rules (`.rule`, `.te-flight-rule`) MUST use `--te-p-rule-angle-neg` (`-3deg`, `~3.4-3.8px` rise) with `margin: 12px 0 16px` (`10px 0 12px` on `<640px` mobile) — never `-17deg` under overlines/headings, preventing overlap on responsive screens.
 - **Command Palette & Bulk Action Contracts:** `Ctrl+K` / `Cmd+K` opens modal (`role="dialog"`, `aria-modal="true"`) with live filtered list (`role="listbox"` / `ArrowUp`/`ArrowDown`/`Enter` navigation, `Escape` closes and returns focus). Compact admin shells enforce `[data-density="compact"]` (`40px` rows, `36px` controls, `8px` card/button radii, zero `17°` skew), and client-side RBAC role switching only controls UI visibility while documenting mandatory server-side enforcement.
 
 ---
@@ -26,10 +26,10 @@
 | **1.2 Text Link** | `inline-prose`, `standalone-arrow` | Inherited / `caption` | `--te-text-link`, `--te-text-link-hover` | [Design System](../design-system/index.html#comp-button) | `implemented` |
 | **1.3 Icon Button** | `ghost`, `outline`, notification bell, password eye | `sm`, `md` (44px hit) | `--te-btn-ghost-*` | [Dashboard](../showcase/05-admin-dashboard.html) | `implemented` |
 | **1.4 Split Button & Button Group** | `primary-split`, `segmented-group` | `sm`, `md` | `--te-btn-*` | - | `spec-only` |
-| **1.5 Floating Action (WhatsApp)** | `brand-surface-pill` / header WA pill | `44px–56px` | `--te-wa-*` | [Marketing Home](../showcase/01-marketing-home.html) | `implemented` |
+| **1.5 Floating Action (WhatsApp)** | `brand-surface-pill` / header WA pill | `44px-56px` | `--te-wa-*` | [Marketing Home](../showcase/01-marketing-home.html) | `implemented` |
 | **1.6 Toggle & Toolbar** | `theme-switch`, `contrast-switch`, `density-switch`, `te-chip` | `sm`, `md` | `--te-surface-selected` | [Design System](../design-system/index.html#comp-button) | `implemented` |
 | **1.7 Status Badge & Chip** | `featured (-6deg)`, `success`, `warning`, `error`, `info`, `te-chip` | `sm`, `md` | `--te-status-*` | [Design System](../design-system/index.html#comp-badge) | `implemented` |
-| **1.8 Avatar & Counter** | `traveller-disc`, `group-stack (+N)` | `24–64px` | `--te-p-r-disc` | - | `spec-only` |
+| **1.8 Avatar & Counter** | `traveller-disc`, `group-stack (+N)` | `24-64px` | `--te-p-r-disc` | - | `spec-only` |
 | **1.9 Progress Bar & Stepper** | `3-step-wizard-bar` | `md` | `--te-action-primary-bg`, `--te-status-success-*` | [Booking Wizard](../showcase/04-onboarding-booking.html) | `implemented` |
 | **1.10 Skeleton & Spinner** | `sc-skel`, `te-spin` | `block`, `16px` | `--te-surface-raised` | [Tour Listing](../showcase/02-listing-search.html) | `implemented` |
 | **1.11 Toast, Banner, Alert & Confirm** | `ds-toast`, `sc-banner-mock`, `alertdialog` | `compact`, `standard` | `--te-status-*`, `--te-p-z-toast` | [User CRUD](../showcase/06-admin-users-crud.html) | `implemented` |

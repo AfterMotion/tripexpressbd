@@ -213,7 +213,7 @@
         phoneInput.setAttribute('aria-invalid', 'true');
         phoneInput.classList.remove('is-valid');
         phoneMsg.className = 'te-error-msg';
-        phoneMsg.textContent = 'Must be 11 digits starting with 013–019 (spaces/hyphens allowed).';
+        phoneMsg.textContent = 'Must be 11 digits starting with 013-019 (spaces/hyphens allowed).';
       } else {
         phoneInput.removeAttribute('aria-invalid');
         phoneInput.classList.add('is-valid');

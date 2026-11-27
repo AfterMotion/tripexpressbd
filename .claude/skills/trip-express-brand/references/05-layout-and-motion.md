@@ -5,8 +5,8 @@
 | Breakpoint | Name | Columns | Gutter | Page margin | Container |
 |---|---|---|---|---|---|
 | `<640px` | mobile | 4 | 16px | 20px | fluid |
-| `640–1023` | tablet | 8 | 20px | 32px | fluid |
-| `1024–1279` | laptop | 12 | 24px | 40px | 1120px |
+| `640-1023` | tablet | 8 | 20px | 32px | fluid |
+| `1024-1279` | laptop | 12 | 24px | 40px | 1120px |
 | `≥1280` | desktop | 12 | 24px | 48px | **1240px** |
 | `≥1536` | wide | 12 | 32px | 64px | 1280px max |
 

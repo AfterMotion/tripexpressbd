@@ -7,12 +7,12 @@ Master file: `../assets/logo-primary.jpg` (2048 × 2048, JPEG, white background)
 | Property | Value |
 |---|---|
 | Canvas | 2048 × 2048 |
-| Full mark bounding box | x 80–1944, y 244–1812 (1864 × 1568) |
+| Full mark bounding box | x 80-1944, y 244-1812 (1864 × 1568) |
 | Disc diameter | 1568 px = **76.6% of canvas height** |
 | Disc centre | approx. (1060, 1028) - slightly right of and above centre |
 | Aircraft streak | left tip (80, 1430) → right tip (1944, 859) |
 | **Flight Angle** | **17°** rising left → right |
-| Sun/sea seam inside disc | 11°–17° (the aircraft body widens it) |
+| Sun/sea seam inside disc | 11°-17° (the aircraft body widens it) |
 
 The streak **overhangs the disc on both sides**. That overhang is part of the mark -
 never crop it to make a tidy circle.
@@ -23,7 +23,7 @@ never crop it to make a tidy circle.
 |---|---|---|
 | **Primary mark** | Full disc + streak, transparent background | Default, ≥40px |
 | **Disc-only** | Disc clipped at its circle, streak trimmed at the edge | Avatars, favicons ≥32px, app icon, social profile |
-| **Monogram** | White aircraft silhouette on `orange-500` disc | Favicon 16–32px, notification badge |
+| **Monogram** | White aircraft silhouette on `orange-500` disc | Favicon 16-32px, notification badge |
 | **Horizontal lockup** | Mark left, `Trip Express BD` right | Site header, letterhead, email |
 | **Stacked lockup** | Mark above, wordmark centred below | Hero, print, square social |
 | **Reverse** | Mark unchanged, wordmark in `#FFFFFF` | Dark sections, footer, photo overlay |

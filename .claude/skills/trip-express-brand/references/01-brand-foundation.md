@@ -3,7 +3,7 @@
 ## 1. Who they are
 
 Trip Express BD is a **Chattogram-based group-tour operator**. They are not an OTA,
-not a flight aggregator, not a luxury concierge. They assemble small teams (7–15
+not a flight aggregator, not a luxury concierge. They assemble small teams (7-15
 travellers is typical) and personally lead them across borders, then publish the
 photographs and the safe-return note afterwards.
 
@@ -32,7 +32,7 @@ influencer gloss.
 
 ## 4. Audience
 
-1. **Primary** - Bangladeshi adults 22–45, Chattogram and greater Chattogram, mixed
+1. **Primary** - Bangladeshi adults 22-45, Chattogram and greater Chattogram, mixed
    Bangla/English readers, mobile-first, WhatsApp-native, price-aware, travelling in
    friend groups or with family.
 2. **Secondary** - Dhaka-based travellers joining flagship trips.
@@ -53,7 +53,7 @@ render correctly at every size.
 
 ## 6. Proof assets the brand already owns
 
-- A public Facebook page with ~5.9K followers and a deep archive of completed tours
+- A public Facebook page with ~3.3K followers and a deep archive of completed tours
 - Real tour photography from Nepal, Kashmir, Meghalaya, Maldives, Sri Lanka, Kolkata
 - A physical office in Chattogram with a documented opening event
 - A **Mother Company — Sister Concern** lineage: **Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)** operates as Parent / Mother Company (`assets/brand/taabu-nibashi-logo.jpg`), with **Trip Express BD** serving as its specialized Outbound & Group Tour Sister Concern (featured in the frosted glassmorphism welcome modal on first load)

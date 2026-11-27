@@ -149,7 +149,7 @@ language.
 - Use a **generated** environment, not a downloaded HDRI: build a small gradient
   environment from the Horizon Gradient via `PMREMGenerator` and a
   `GradientTexture`/canvas source.
-- Environment intensity `0.4`–`0.7`. Above that, brand hues get overwhelmed by the
+- Environment intensity `0.4`-`0.7`. Above that, brand hues get overwhelmed by the
   environment and everything drifts grey-blue.
 - Never ship an HDRI larger than 512×256 RGBE, and never a photographic studio HDRI
   - it introduces colours that are not in the palette.
@@ -166,9 +166,9 @@ dimension"* - not photoreal, not cartoon-glossy.
 | Base material | `MeshStandardMaterial` | `MeshPhysicalMaterial` only where transmission is genuinely needed |
 | `metalness` | `0.0` for brand-coloured surfaces | Metal tints reflections and breaks palette fidelity |
 | `toneMapped` | `false` on every flat, unlit brand-colour element | Tone mapping shifts even a `MeshBasicMaterial` - see the table above |
-| `roughness` | `0.55`–`0.85` | Matte. Never below `0.35` on a brand-coloured surface |
+| `roughness` | `0.55`-`0.85` | Matte. Never below `0.35` on a brand-coloured surface |
 | `flatShading` | `true` for terrain, mountains, low-poly forms | This is the logo's language |
-| `envMapIntensity` | `0.4`–`0.7` | |
+| `envMapIntensity` | `0.4`-`0.7` | |
 | `clearcoat` | `0` | Banned on brand surfaces |
 | Emissive | Only `WHITE` or `SAND`, intensity ≤ `0.6` | For the flight path ribbon and highlights |
 
@@ -234,7 +234,7 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 120);
 
 Camera motion rules:
 
-- Movement is **damped, never linear.** Lerp factor `0.06`–`0.10` per frame at 60fps,
+- Movement is **damped, never linear.** Lerp factor `0.06`-`0.10` per frame at 60fps,
   frame-rate-normalised.
 - The camera **eases along the Flight Angle** - when it travels, it rises slightly
   to the right.

@@ -8,7 +8,7 @@ performance are decided here rather than discovered in production.
 
 | Role | Device | Why |
 |---|---|---|
-| **Primary** | Mid-range Android, 360×800 CSS px, DPR 2–3, 4G | The actual majority of this audience |
+| **Primary** | Mid-range Android, 360×800 CSS px, DPR 2-3, 4G | The actual majority of this audience |
 | Secondary | iPhone 13/14, 390×844 | Second-largest share |
 | Tablet | iPad, 768×1024 and 1024×768 | Both orientations |
 | **Desktop baseline** | 1440×900 laptop | Design desktop at 1440, not 1920 |
@@ -21,11 +21,11 @@ Design the **360px view first**, then 1440. Everything between is interpolation.
 ## 1. Breakpoints
 
 ```
-xs    0–479      small phones           single column, 4-col grid
-sm    480–639    large phones           single column, slightly larger type
-md    640–1023   tablet / phone landscape   8-col grid, 2-up cards
-lg    1024–1279  small laptop           12-col grid, 3-up cards
-xl    1280–1535  desktop (baseline)     12-col, container 1200
+xs    0-479      small phones           single column, 4-col grid
+sm    480-639    large phones           single column, slightly larger type
+md    640-1023   tablet / phone landscape   8-col grid, 2-up cards
+lg    1024-1279  small laptop           12-col grid, 3-up cards
+xl    1280-1535  desktop (baseline)     12-col, container 1200
 2xl   1536+      wide                   12-col, container 1280 max, larger gutters
 ```
 
@@ -116,7 +116,7 @@ the resolved endpoints to verify against.
    `-0.02em` at 44px. Tight tracking on small text hurts legibility.
 4. Headlines wrap to a **maximum of 3 lines** at 360px. If a headline needs 4, the
    copy is too long - rewrite it, do not shrink the type.
-5. Line length target is **32–40 characters** for mobile body; Bangla 28–34.
+5. Line length target is **32-40 characters** for mobile body; Bangla 28-34.
 6. Never rely on `text-overflow: ellipsis` for a package title. Clamp to 2 lines with
    `-webkit-line-clamp` and make sure the full title is on the detail page.
 7. Form inputs use **16px** font on mobile - anything smaller triggers iOS
@@ -140,7 +140,7 @@ the resolved endpoints to verify against.
 | **Nav** | Right-slide drawer, 88% width, full-size tap rows (56px), Bangla labels included | Inline links with 3px orange active underline; hover dropdowns |
 | **Hero** | 4:5 media, text below media, single CTA, 3D simplified or static | 21:9 media, text overlaid left, two CTAs, full 3D scene |
 | **Package cards** | 1 column, full-width, image 16:10, price and CTA stacked | 3 columns, hover lift `translate(2px,-6px)`, price and CTA side by side |
-| **Destination tiles** | Horizontal scroll-snap rail, 96px discs, 16px gap, edge-peek next item | 4–6 disc grid, 128px, hover ring turns orange |
+| **Destination tiles** | Horizontal scroll-snap rail, 96px discs, 16px gap, edge-peek next item | 4-6 disc grid, 128px, hover ring turns orange |
 | **Itinerary** | Accordion, one day open, chips above route text | Accordion with a left timeline rail, first day open, sticky day index |
 | **Gallery** | 1 column masonry (or 2 at ≥ 480px), tap opens lightbox | 3 column masonry, hover scale 1.03, click opens lightbox |
 | **Lightbox** | Full screen, swipe left/right, 44px close disc top-right | Centred, max 92vh, arrow keys, click-outside to close |

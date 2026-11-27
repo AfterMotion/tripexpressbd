@@ -1,7 +1,7 @@
  
 Search Facebook
 
-5.9K followers • 0 following
+3.3K followers • 0 following
 
 
 01621-785968
@@ -223,7 +223,7 @@ o͏
  ·
 Alhamdulillah, we have successfully completed our 5-night, 6-day Nepal tour and returned home safely this morning.
 With a team of 7, this trip was truly memorable and enjoyable. Heartfelt love and appreciation to every member of the team. ❤️
-📌 Bookings are now open for the next Nepal tour (6–10 January). 
+📌 Bookings are now open for the next Nepal tour (6-10 January). 
 For details, please contact: 01838754207 || 01840004495 See less
 No photo description available.. No photo description available.. No photo description available.. No photo description available.. No photo description available.
 Shared post
@@ -469,7 +469,7 @@ f͏
  ·
 We’re setting off today as a team of seven for an exciting 5-night, 6-day Nepal tour. 🇳🇵✈️
 Looking forward to exploring the beauty of the Himalayas and creating unforgettable memories together. 🌄✨
-🚩 Next Nepal Trip: January 6–10, 2026 See less
+🚩 Next Nepal Trip: January 6-10, 2026 See less
 No photo description available.. No photo description available.. No photo description available.
 Shared post
 
@@ -549,9 +549,9 @@ f͏
 ,͏
 9͏
  ·
-Nepal Tour – November 11–16 🇳🇵✨
+Nepal Tour - November 11-16 🇳🇵✨
 Bookings are now open for our upcoming Nepal trip!
-Only 3–4 slots left - so if you’ve been planning to join, don’t wait too long. Airfares are rising every day!
+Only 3-4 slots left - so if you’ve been planning to join, don’t wait too long. Airfares are rising every day!
 ✈️ Secure your seat now and confirm your flight as early as possible.
 Our trip is family-friendly, and female travelers are most welcome to join!
 📞 For booking and details: wa.me/+8801838754207
@@ -635,7 +635,7 @@ f͏
  ·
 আলহামদুলিল্লাহ আজকে মোট ৫ জন ১১-১৬ নভেম্বর নেপাল ট্যুরের বুকিং কনফার্ম করছেন। 🇳🇵🇧🇩
 আরো ৪-৫ জন নিবো ইনশাআল্লাহ। টিমে ফিমেল থাকাতে আপুরাও জয়েন করতে পারবেন নিশ্চিন্তে। ❤️
-ইভেন্ট ডিটেইলস: ✈️ Explore Nepal: Kathmandu – Nagarkot – Pokhara || 11-15 November 2025
+ইভেন্ট ডিটেইলস: ✈️ Explore Nepal: Kathmandu - Nagarkot - Pokhara || 11-15 November 2025
 বুকিং করতে যোগাযোগ: wa.me/+8801838754207 See less
 Shared post
 
@@ -719,10 +719,10 @@ r͏
 0͏8͏u͏t͏2͏
  ·
 ✈️ Explore Nepal
-Kathmandu – Nagarkot – Pokhara 
+Kathmandu - Nagarkot - Pokhara 
 With Trip Express BD
  Tour Package (5 Days / 4 Nights)
-📍 ঢাকা – কাঠমুন্ডু – নাগারকোঠ – পোখারা
+📍 ঢাকা - কাঠমুন্ডু - নাগারকোঠ - পোখারা
 ➡️ Dhaka to Kathmandu Flight:- 
 ▪️ 11 November 2025, ⏱️ 10:05 AM
 ↩️ Kathmandu to Dhaka Flight:- 
@@ -765,7 +765,7 @@ With Trip Express BD
 জনপ্রতি মাত্র ৫৮,৫০০/- টাকা 
 ✅ প্যাকেজে যা যা থাকছে:
 * ঢাকা ↔ কাঠমুন্ডু রিটার্ন এয়ার টিকিট
-* কাঠমুন্ডু এয়ারপোর্ট – হোটেল – এয়ারপোর্ট ট্রান্সফার।
+* কাঠমুন্ডু এয়ারপোর্ট - হোটেল - এয়ারপোর্ট ট্রান্সফার।
 * কাঠমুন্ডু ↔ নাগারকোঠ প্রাইভে জীপ/কার।
 * কাঠমুন্ডু ↔ পোখারা নন-এসি ভলভো/ডিলাক্স বাস।
 * ২/৩-স্টার হোটেলে থাকা (ডাবল/ট্রিপল শেয়ারিং বেসিসে)

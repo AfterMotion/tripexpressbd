@@ -162,7 +162,7 @@ illustration behind headings and in empty states.
 Two or three stacked flat wave bands echoing the sea shadows in the mark.
 
 - Colours: `blue-500`, `blue-600`, `deep-500` - flat fills, no gradients
-- Each band offset vertically by 12–20px
+- Each band offset vertically by 12-20px
 - Used as the top edge of a blue section, or the base of a page
 - Wave crest amplitude never exceeds 10% of the band height - the logo's waves are
   shallow and calm

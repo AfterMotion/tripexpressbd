@@ -329,7 +329,7 @@
     });
 
     // Pagination UI
-    $('#pagInfo').textContent = `Showing ${start + 1}–${Math.min(start + state.pageSize, rows.length)} of ${rows.length}`;
+    $('#pagInfo').textContent = `Showing ${start + 1}-${Math.min(start + state.pageSize, rows.length)} of ${rows.length}`;
     $('#pagPrev').disabled = state.page <= 1;
     $('#pagNext').disabled = state.page >= totalPages;
 

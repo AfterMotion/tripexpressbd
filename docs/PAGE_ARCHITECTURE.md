@@ -16,7 +16,7 @@ Header (+ Mobile Journey Rail)
   → S3: Open Departures & Published Pricing Grid (Nepal ৳58,500 · Meghalaya · Kashmir ৳35,000)
   → S4: Radical Transparency Split - Included vs. Not Included + ৳36,000 Airfare Ceiling Note
   → S5: Completed Trip Archive + Filterable Real-Photo Proof Wall (with Lightbox)
-  → S6: Verified Scale Band (5.9K · 8 · 5 · 4) + Verbatim Bangla/English Road Reports
+  → S6: Verified Scale Band (3.3K · 8 · 5 · 4) + Verbatim Bangla/English Road Reports
   → S7: Chattogram Office, Bank Deposit Trust & 5-Field / WhatsApp Conversion Desk
   → Footer (Night Ocean 17° seam, 3 phones, Mosjid Goli address)
 ```
@@ -33,7 +33,7 @@ Header
 ```
 
 ### Why Flow A Is Recommended Over Flow B (And Avoids Generic `Hero → 3 Cards → Testimonials → CTA`)
-1. **Matches Chattogram Facebook Traffic Behavior:** Primary visitors arrive on `360px` Android phones from Facebook group posts (`5.9K` followers) looking to verify *two* anxieties immediately: *"Are these real Bangladeshi teams?"* and *"What is the actual total cost without hidden extras?"* Flow A answers both within the first three scroll stops via **real group photography (S1/S2)** + **BDT prices (S3)** + the **Bangla Inclusion/Exclusion & Airfare-Ceiling split (S4)**-something a generic SaaS feature/card grid ignores.
+1. **Matches Chattogram Facebook Traffic Behavior:** Primary visitors arrive on `360px` Android phones from Facebook group posts (`3.3K` followers) looking to verify *two* anxieties immediately: *"Are these real Bangladeshi teams?"* and *"What is the actual total cost without hidden extras?"* Flow A answers both within the first three scroll stops via **real group photography (S1/S2)** + **BDT prices (S3)** + the **Bangla Inclusion/Exclusion & Airfare-Ceiling split (S4)**-something a generic SaaS feature/card grid ignores.
 2. **Avoids Cliché Testimonials & Unpriced Confusion:** Instead of fabricated 5-star quote cards, Flow A places **verified completed trip dossiers + verbatim Bangla/English road reports (S5/S6)** immediately after inclusions, proving execution before the final **Chattogram office + bank deposit + WhatsApp desk (S7)**.
 3. **Why Flow B Loses on `/`:** Burying Meghalaya and Kashmir below a full 5-day Nepal accordion forces overland travellers to scroll past ~1,400px of Kathmandu details before seeing `৳35,000` Kashmir or `4-day` Meghalaya options. Flow B belongs on `/tours/explore-nepal`, not the root hub.
 
@@ -60,13 +60,13 @@ Header
 
 | Section | User Question Answered | Proof / Content Required | Headline Direction | Interaction | Candidate Component | Image Type | CTA |
 |---|---|---|---|---|---|---|---|
-| **S1 · Hero Stage** | *"Who are you, where do you depart from, and are these real tours?"* | Chattogram origin, `7–15` team size, fixed dates, bilingual sub-line (`lang="bn"`). | Declarative, <8 words, no hype: *"Small teams. Real itineraries. Photographs to prove it."* | Progressive WebGL flight (desktop/high-tier) or static hero; `prefers-reduced-motion` shows photo immediately. | `4.1 Hero (Scrim + 17° Cut)` + `1.1 Button` | Real group cliff photo (`cliff-wide-1600.webp` desktop `21:9` / `falls-tall-720.webp` mobile `4:5`) + `--te-scrim`. | Primary: `Explore Departures` (`#tours`); Secondary: `See Real Photos` (`#portfolio`). |
+| **S1 · Hero Stage** | *"Who are you, where do you depart from, and are these real tours?"* | Chattogram origin, `7-15` team size, fixed dates, bilingual sub-line (`lang="bn"`). | Declarative, <8 words, no hype: *"Small teams. Real itineraries. Photographs to prove it."* | Progressive WebGL flight (desktop/high-tier) or static hero; `prefers-reduced-motion` shows photo immediately. | `4.1 Hero (Scrim + 17° Cut)` + `1.1 Button` | Real group cliff photo (`cliff-wide-1600.webp` desktop `21:9` / `falls-tall-720.webp` mobile `4:5`) + `--te-scrim`. | Primary: `Explore Departures` (`#tours`); Secondary: `See Real Photos` (`#portfolio`). |
 | **S2 · 8-Destination Jump Rail** | *"Do you run trips to the place I want to visit?"* | All 8 routes: `Chattogram (Start)`, `Nepal`, `Meghalaya`, `Dawki`, `Kashmir`, `Shillong`, `Sikkim`, `Maldives & Sri Lanka`. | Plain factual: *"Where we take you"* | Click flies 3D waypoint (if active) or smooth-scrolls to matching package/contact; mobile horizontal `scroll-snap` rail. | `4.2 Destination Discs` (`120px` desktop / `96px` mobile) | Real `1:1` WebP discs for Nepal/Meghalaya/Dawki/Shillong; Night-Ocean brand icon disc for Kashmir/Sikkim/Maldives. | Tap disc → jumps to package or enquiry pre-filled with destination. |
 | **S3 · Open Departures & Pricing** | *"What trips can I join now, how long are they, and what do they cost in ৳?"* | **Explore Nepal** (`5D/4N`, `৳58,500`, air), **Meghalaya by Road** (`4D/3N`, team of 13, `[PLACEHOLDER: PRICE_ON_REQUEST]`), **Kashmir by Road** (`Season 5`, `৳35,000`, `11N`). | Action-oriented: *"Departures you can join"* | Cards stretch-link to detail/enquiry; WhatsApp button pre-fills trip query (`?text=...`); desktop `17°` card lift (`translate(2px,-6px)`). | `4.3 Package Card` + `1.7 Status Badge` (`-6deg` featured) + `1.5 WhatsApp Pill` | `16:10` real photos (Nepal Pokhara, Dawki pool); **5-color flat brand illustration** for Kashmir (zero stock). | Per card: `Ask us` (WhatsApp soft pill) + card link to `#contact` / `/tours/:slug`. |
 | **S4 · Inclusions, Exclusions & Airfare Clause** | *"What is actually included in ৳58,500, and are there hidden costs?"* | Verbatim Bangla inclusion list (8 items: return flight, transfers, 2/3-star hotels, breakfast+dinner, guide) & exclusion list (5 items: lunch, rides, personal, insurance, extras) + `৳36,000` airfare ceiling note. | Trust-first: *"What ৳58,500 covers"* | Static scannable two-column check/cross panels (`n-50` surface); stacks cleanly on mobile. | `4.6 Inclusion / Exclusion Split` (`spec-only` upgrade to `implemented` in site build) | Icon-led (`i-check` `#15784F`, `i-x` `#B02E2E`, `i-info`) - no stock photo. | Inline anchor to `Book Your Seat` (`#contact`) or WhatsApp question. |
-| **S5 · Completed Trip Archive & Proof Wall** | *"Have you successfully completed these trips before?"* | Completed dossiers (`Explore Nepal · Nov 2025 · Team of 7`, `Meghalaya · Team of 13`) + `23` real gallery frames (`g00–g22`) + partner attribution `Trip Express BD × তাঁবু নিবাসী` (text). | Evidence-led: *"Trips we have already run"* | Incremental gallery batch reveal; monochrome resting → color on hover (desktop) or center-viewport intersection (mobile); click opens keyboard-trapped Lightbox. | `4.4 Proof Photo Grid` + `5.1 Modal Lightbox` + `1.10 Skeleton` | Real tour WebP photos at native aspect ratios (`1:1`/`4:3`/`3:4`) - never face-cropped squares. | Tap photo → Lightbox (`Prev/Next/Esc`); `Ask about next run` inside empty/end status. |
-| **S6 · Verified Scale & Road Reports** | *"How experienced is the team, and what did real trips look like?"* | Night Ocean band (`5.9K` FB followers, `8` destinations, `5` Kashmir seasons, `4` Kolkata–Jammu runs) + 3 verbatim Bangla/English posts from `plan.md`. | Grounded: *"Straight from the road"* | Static high-contrast counters (`tabular-nums`); count-up optional on first view (instant under `prefers-reduced-motion`). | `4.7 Stats Band` + Verbatim Report Cards (`3px` Sunset left border) | Real `42px` circular team thumbnails (`g00`, `g01`, `g14`) - zero fabricated avatars. | None (pure trust bridge into S7). |
-| **S7 · Chattogram Office, Bank Trust & Conversion Desk** | *"How do I book safely, pay, or meet you in person?"* | 5-field Enquiry Form (`Name`, `+880 Phone`, `Destination`, `Month`, `Notes`) + Chattogram Office (`1301, Mosjid Goli`), 3 clickable phone links, email, Islami Bank / Eastern Bank deposit method (`lang="bn"`). | Direct: *"Tell us where you want to go"* | Blur-triggered validation (no pre-validation), forgiving BD phone normalization, clear-on-fix, live `role="status"` confirmation (`"Thank you. We will call you within one working day."`). | `2.1 Field Wrapper` + `2.2 Tel (+880)` + `1.1 Primary Button` + `1.5 WhatsApp CTA` | Pin/Phone/Shield Lucide icons (`16–20px`) - clean high-contrast card. | Primary: `Send enquiry` (`#111823` on `#ED7C30`); Secondary: `Message us on WhatsApp`. |
+| **S5 · Completed Trip Archive & Proof Wall** | *"Have you successfully completed these trips before?"* | Completed dossiers (`Explore Nepal · Nov 2025 · Team of 7`, `Meghalaya · Team of 13`) + `23` real gallery frames (`g00-g22`) + partner attribution `Trip Express BD × তাঁবু নিবাসী` (text). | Evidence-led: *"Trips we have already run"* | Incremental gallery batch reveal; monochrome resting → color on hover (desktop) or center-viewport intersection (mobile); click opens keyboard-trapped Lightbox. | `4.4 Proof Photo Grid` + `5.1 Modal Lightbox` + `1.10 Skeleton` | Real tour WebP photos at native aspect ratios (`1:1`/`4:3`/`3:4`) - never face-cropped squares. | Tap photo → Lightbox (`Prev/Next/Esc`); `Ask about next run` inside empty/end status. |
+| **S6 · Verified Scale & Road Reports** | *"How experienced is the team, and what did real trips look like?"* | Night Ocean band (`3.3K` FB followers, `8` destinations, `5` Kashmir seasons, `4` Kolkata-Jammu runs) + 3 verbatim Bangla/English posts from `plan.md`. | Grounded: *"Straight from the road"* | Static high-contrast counters (`tabular-nums`); count-up optional on first view (instant under `prefers-reduced-motion`). | `4.7 Stats Band` + Verbatim Report Cards (`3px` Sunset left border) | Real `42px` circular team thumbnails (`g00`, `g01`, `g14`) - zero fabricated avatars. | None (pure trust bridge into S7). |
+| **S7 · Chattogram Office, Bank Trust & Conversion Desk** | *"How do I book safely, pay, or meet you in person?"* | 5-field Enquiry Form (`Name`, `+880 Phone`, `Destination`, `Month`, `Notes`) + Chattogram Office (`1301, Mosjid Goli`), 3 clickable phone links, email, Islami Bank / Eastern Bank deposit method (`lang="bn"`). | Direct: *"Tell us where you want to go"* | Blur-triggered validation (no pre-validation), forgiving BD phone normalization, clear-on-fix, live `role="status"` confirmation (`"Thank you. We will call you within one working day."`). | `2.1 Field Wrapper` + `2.2 Tel (+880)` + `1.1 Primary Button` + `1.5 WhatsApp CTA` | Pin/Phone/Shield Lucide icons (`16-20px`) - clean high-contrast card. | Primary: `Send enquiry` (`#111823` on `#ED7C30`); Secondary: `Message us on WhatsApp`. |
 
 ---
 
@@ -104,7 +104,7 @@ Header
 |   [Explore Departures]  [See Real Photos]                                        |
 |  /  17° angled white cut seam rising left -> right                              /|
 +----------------------------------------------------------------------------------+
-| [DESTINATIONS: 6–8 CIRCULAR DISCS ACROSS]                                        |
+| [DESTINATIONS: 6-8 CIRCULAR DISCS ACROSS]                                        |
 |  (Ctg)    (Nepal)    (Meghalaya)    (Dawki)    (Kashmir Art)    (Shillong)       |
 +----------------------------------------------------------------------------------+
 | [OPEN DEPARTURES: 3-UP PACKAGE CARDS]                                            |
@@ -122,7 +122,7 @@ Header
 +----------------------------------------------------------------------------------+
 | [PROOF ARCHIVE: 2 COMPLETED TRIP CARDS] -> [3-COL REAL-PHOTO MASONRY + LIGHTBOX] |
 +----------------------------------------------------------------------------------+
-| [NIGHT OCEAN STATS BAND: 5.9K  |  8  |  5  |  4 ]                                |
+| [NIGHT OCEAN STATS BAND: 3.3K  |  8  |  5  |  4 ]                                |
 | [VERBATIM TRIP REPORTS: 3-COL QUOTES (ENGLISH + BANGLA)]                         |
 +----------------------------------------------------------------------------------+
 | [CONVERSION DESK: 7/5 SPLIT]                                                     |
@@ -170,7 +170,7 @@ Header
 | Trips we have run (1-col cards)  |
 | [1-col Photo Masonry -> Tap LB]  |
 +----------------------------------+
-| Stats (2×2 Grid: 5.9K/8 & 5/4)   |
+| Stats (2×2 Grid: 3.3K/8 & 5/4)   |
 | Trip Reports (1-col Stack)       |
 +----------------------------------+
 | Book a seat (5-Field Form)       |

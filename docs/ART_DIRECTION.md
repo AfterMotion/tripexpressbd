@@ -9,12 +9,12 @@
 
 ### Concept 1: **The Horizon Dispatch** *(Asymmetric Editorial-Proof Split)* - **RECOMMENDED**
 - **Rationale:** Built directly around the split-disc anatomy of `logo-mark.svg` while optimizing `360px` Android first-fold clarity. Breaks the generic "centered hero → 3 identical cards" SaaS pattern by pairing real group proof (`7/5` desktop split) with an **unequal flagship-plus-stack departure layout** (`7-col` featured Nepal dossier + inline Bangla inclusions preview alongside `5-col` stacked Kashmir & Meghalaya rows).
-- **Typography Roles:** Sentence-case `Plus Jakarta Sans` (`700/800`, hero capped at `clamp(2.375rem, 1.55rem + 3.3vw, 3.875rem)` so headline + CTA + proof fit above the fold on `360×800`), `Inter` (`400–700`, `tabular-nums` for `৳` & phones), `Hind Siliguri` (`≥17px`, `1.85` LH for Bangla inclusions/reports). Eyebrow labels appear **only** on major section shifts-never repeated on every card.
+- **Typography Roles:** Sentence-case `Plus Jakarta Sans` (`700/800`, hero capped at `clamp(2.375rem, 1.55rem + 3.3vw, 3.875rem)` so headline + CTA + proof fit above the fold on `360×800`), `Inter` (`400-700`, `tabular-nums` for `৳` & phones), `Hind Siliguri` (`≥17px`, `1.85` LH for Bangla inclusions/reports). Eyebrow labels appear **only** on major section shifts-never repeated on every card.
 - **Hero Concept:** Asymmetric `5 / 7` split on desktop (`132436` Night Ocean copy block on left + full-height Meghalaya `cliff-wide-1600.webp` group photo on right, separated by `--te-scrim` fade); `4:5` `falls-tall-720.webp` photo above compact copy block on mobile.
 - **Grid Rhythm:** Alternates `5/7` hero → `8`-disc horizontal/grid strip → `7/5` asymmetric departures → `6/6` Included/Not-Included ledger → `3-col` proof masonry → `7/5` Enquiry/Office desk.
 - **Section Transitions:** Crisp alternating `--te-bg-canvas` (`#FFFFFF`), `--te-bg-subtle` (`#F7F9FB`), `--te-bg-warm` (`#FEF8F5`), and `--te-bg-dark-band` (`#132436`). Only **two** `17°` diagonal cuts per page (Hero exit & Footer entry, `tan(17°) = 0.3057`).
-- **Real Photography & Graphics:** Real group photos in hero, discs, Nepal/Meghalaya departures, and `23`-frame masonry (`g00–g22`); strict 5-color flat brand illustration (`#ED7C30`, `#F2A15F`, `#4394D5`, `#3171AE`, `#FFFFFF`) for unphotographed Kashmir.
-- **Distinctive Brand Motif:** **The 17° Horizon Seam** - a `4px` `#FFFFFF` diagonal line echoing the aircraft corridor dividing warm land from cool sea, echoed once in the hero cut, once in the footer cut, and softened to `-3deg` in the `64–72×3px` Flight Rule so it never overlaps overlines or headings.
+- **Real Photography & Graphics:** Real group photos in hero, discs, Nepal/Meghalaya departures, and `23`-frame masonry (`g00-g22`); strict 5-color flat brand illustration (`#ED7C30`, `#F2A15F`, `#4394D5`, `#3171AE`, `#FFFFFF`) for unphotographed Kashmir.
+- **Distinctive Brand Motif:** **The 17° Horizon Seam** - a `4px` `#FFFFFF` diagonal line echoing the aircraft corridor dividing warm land from cool sea, echoed once in the hero cut, once in the footer cut, and softened to `-3deg` in the `64-72×3px` Flight Rule so it never overlaps overlines or headings.
 
 ---
 
@@ -40,7 +40,7 @@
 
 ---
 
-## 2. Concept Scoring Matrix (1–10 Scale)
+## 2. Concept Scoring Matrix (1-10 Scale)
 
 | Criterion | Concept 1: Horizon Dispatch *(Rec.)* | Concept 2: Field Dossier | Concept 3: Route Atlas | Notes |
 |---|---|---|---|---|
@@ -60,8 +60,8 @@
 |---|---|
 | **1. Unmotivated gradient backgrounds** | **Eliminated:** No purple/teal washes or gradient card fills. `--te-grad-horizon` is banned from text and general cards; `--te-grad-sunset` is restricted to the `72×3px` Flight Rule and Featured badge. Pages stay `60%` clean white/near-white. |
 | **2. Repeated equal cards** | **Rejected in Concept 1:** Instead of 3 identical `16:10` boxes, Featured Nepal (`7-col` horizontal card with route + quick-facts + Bangla inclusion summary) sits beside `5-col` stacked Kashmir & Meghalaya rows, breaking visual monotony while marking hierarchy (`Explore Nepal` is the only full itinerary published in `plan.md`). |
-| **3. Generic metrics** | **Eliminated:** Zero invented "10,000+ happy clients" or "99% satisfaction". Only verified `plan.md` figures appear (`5.9K` FB followers, `8` destinations, `5` Kashmir seasons, `4` Kolkata runs). |
-| **4. Random decorative ornaments** | **Eliminated:** No floating blobs, meaningless `01/02/03` step numbers on non-sequential content, or confetti shapes. Section cuts map to the aircraft corridor in `logo-mark.svg`, while text-adjacent Flight Rules stay at a gentle `-3deg` (`3.4–3.8px` rise) to avoid text overlap. |
+| **3. Generic metrics** | **Eliminated:** Zero invented "10,000+ happy clients" or "99% satisfaction". Only verified `plan.md` figures appear (`3.3K` FB followers, `8` destinations, `5` Kashmir seasons, `4` Kolkata runs). |
+| **4. Random decorative ornaments** | **Eliminated:** No floating blobs, meaningless `01/02/03` step numbers on non-sequential content, or confetti shapes. Section cuts map to the aircraft corridor in `logo-mark.svg`, while text-adjacent Flight Rules stay at a gentle `-3deg` (`3.4-3.8px` rise) to avoid text overlap. |
 | **5. Oversized type that hides information** | **Eliminated in Concept 1 & 2:** Hero display is capped at `3.875rem` (`62px` desktop / `38px` mobile) instead of `72px+`, ensuring headline, Bangla sub-copy, and CTA fit cleanly alongside the photo on `360×800` phones. (Concept 3 penalized for `72px` risk.) |
 | **6. Repeated badges / tracked ALL-CAPS eyebrows** | **Eliminated:** Removed redundant eyebrows inside every card and report; overlines (`13px / 0.09em`) appear **strictly once per top-level section header** to anchor wayfinding, never stacked inside sub-cards. Status badges appear only where booking state genuinely differs (`Featured`, `Booking Open`, `Season 5`). |
 | **7. Fake testimonials** | **Eliminated:** Replaced generic 5-star review cards with **verbatim dated Facebook trip close-outs & route reports** attributed to Trip Express BD departures with real road photos. |
@@ -73,7 +73,7 @@
 
 ### Live Root Evolution: Seamless Infinity Flow & Glassmorphism Baseline
 - **Background & Seamless Flow:** The root marketing page (`index.html`) uses one global fixed `--te-glow-infinity` canvas (`body::before`) with transparent sections (`background: transparent`) and a **feathered Hero Slider bottom dissolve** (`mask-image: linear-gradient(...)`) so no hard section seam separates the Hero from Destinations or later bands.
-- **Stronger Frosted Glassmorphism:** Interactive cards, hero overlay (`hero__content`), slider dock (`hero-slider__glass`), and `#brandModal` render on `0.58–0.74` translucent glass layers with `24–30px` backdrop blur and specular inset top highlights (`--te-glass-highlight`), tinted subtly by underlying Sunset Orange `#ED7C30` and Sky Blue `#4394D5` radial glows.
+- **Stronger Frosted Glassmorphism:** Interactive cards, hero overlay (`hero__content`), slider dock (`hero-slider__glass`), and `#brandModal` render on `0.58-0.74` translucent glass layers with `24-30px` backdrop blur and specular inset top highlights (`--te-glass-highlight`), tinted subtly by underlying Sunset Orange `#ED7C30` and Sky Blue `#4394D5` radial glows.
 - **Mobile Hero Unobstructed Photo Stage:** Mobile (`<1040px`) exposes the upper `16:11` hero photograph unobstructed (`object-position: center 22%`) with the frosted slider dock and compact glass headline card overlapping below into the mist fade.
 
 ---

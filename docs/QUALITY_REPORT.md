@@ -1,6 +1,6 @@
 # Trip Express BD - Design System Quality & Validation Report
 
-**Package Version:** `2.2.0` (Stages 1–4 + Seamless Glassmorphism Hero + Corporate Lineage System)  
+**Package Version:** `2.2.0` (Stages 1-4 + Seamless Glassmorphism Hero + Corporate Lineage System)  
 **Validation Date:** 2026-11-27  
 **Scope:** Root `index.html` (`site.css`, `main.js`), brand assets (`assets/brand/`), 3-layer tokens (`tokens/`), legacy token bridge (`assets/css/tokens.css`), `brand-guide/index.html`, `design-system/`, `showcase/*.html`, `docs/`, and `.claude/skills/trip-express-brand/`.
 

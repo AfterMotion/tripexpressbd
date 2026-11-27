@@ -22,21 +22,21 @@ Every claim in this system is separated into one of three tiers so reviewers can
 | **Observable type clues** | **Trip Express BD:** Emblem-only mark in source files; wordmark lockup uses Plus Jakarta Sans 800 with `Trip` in Sunset Orange `#ED7C30` and `Express BD` in Night Ocean `#111823`.<br>**Taabu Nibash Travel Group:** "TAABU NIBASH" in charcoal brown `#1F1610` (`#2D161E`), "TRAVEL GROUP" in forest green `#0A8B48` (`#118C49`), campfire/tent in sunset orange `#ED7C30` (`#E68D27`). | Pixel sampling & SVG XML inspection |
 | **Measured geometry (`logo.jpg`)** | Non-white bounding box: `x: 80..1947`, `y: 241..1815` (`1868×1575` px). Vertical disc span: `y: 241..1815` (`1575` px = **76.90%** of `2048` px canvas). Left tip `(80, 1428)`, right tip `(1947, 858)`. Blue streak bottom edge angle: **17.12°** rising left-to-right; upper orange seam angle: **9.13°** (widens leftward). | Python/NumPy pixel measurement |
 | **Measured `logo-mark.svg` structure** | 4 `<path>` layers using `fill-rule="evenodd"` (`#ED7C30`, `#4394D5`, `#F2A15F`, `#3171AE`) with **transparent cutouts** (no `#FFFFFF` backing layer and no soft gradient wave). | XML parse of `logo-mark.svg` |
-| **Sampled artwork colors (`logo.jpg`)** | Sunset Orange `#ED7C30` (17.70% of canvas), Sand Orange `#F2A15F` (1.89%), Sky Blue `#4394D5` (13.66%), Deep Ocean `#3171AE` (6.29%), Sea Shadow wave gradient `#387DB4`–`#3C83B9` (visible in JPEG only), White background + negative space (58.94% of full canvas). | Median/mode RGB pixel sampling |
-| **Verified brand facts (`plan.md`)** | Name: **Trip Express BD**; 5.9K Facebook followers; Location: **1301, Mosjid Goli, Dui Number Gate (opposite Sermon School), Chattogram 4202**; Phones: `01621-785968`, `01838-754207`, `01840-004495`; WhatsApp: `wa.me/+8801838754207`; Email: `tripexpressb@gmail.com`; Parent Umbrella: **তাঁবু নিবাসী ট্রাভেল গ্রুপ**; Banks: Islami Bank (Chawkbazar, Chattogram) & Eastern Bank Bangladesh (Agrabad Branch); Published tours: Explore Nepal (`৳58,500`, 5D/4N), Kashmir by road (`৳35,000`, Season 5), Meghalaya (4 days, team of 13), Kolkata (3rd/4th city trips), Maldives & Sri Lanka (7 days), Sikkim, Darjeeling. | `plan.md` Facebook export & Client Brief |
+| **Sampled artwork colors (`logo.jpg`)** | Sunset Orange `#ED7C30` (17.70% of canvas), Sand Orange `#F2A15F` (1.89%), Sky Blue `#4394D5` (13.66%), Deep Ocean `#3171AE` (6.29%), Sea Shadow wave gradient `#387DB4`-`#3C83B9` (visible in JPEG only), White background + negative space (58.94% of full canvas). | Median/mode RGB pixel sampling |
+| **Verified brand facts (`plan.md`)** | Name: **Trip Express BD**; 3.3K Facebook followers; Location: **1301, Mosjid Goli, Dui Number Gate (opposite Sermon School), Chattogram 4202**; Phones: `01621-785968`, `01838-754207`, `01840-004495`; WhatsApp: `wa.me/+8801838754207`; Email: `tripexpressb@gmail.com`; Parent Umbrella: **তাঁবু নিবাসী ট্রাভেল গ্রুপ**; Banks: Islami Bank (Chawkbazar, Chattogram) & Eastern Bank Bangladesh (Agrabad Branch); Published tours: Explore Nepal (`৳58,500`, 5D/4N), Kashmir by road (`৳35,000`, Season 5), Meghalaya (4 days, team of 13), Kolkata (3rd/4th city trips), Maldives & Sri Lanka (7 days), Sikkim, Darjeeling. | `plan.md` Facebook export & Client Brief |
 | **Verified photography gap** | Real group tour photos exist in `assets/img/` for Meghalaya, Dawki, Nepal, etc. **No Kashmir photograph** is supplied in `assets/img/` or `images/`. | File inventory & `README.md` |
 
 ### 1.2 Proposed Recommendations `[PROPOSED - GATE 1 APPROVAL REQUIRED]`
 
 1. **Missing Logo Variants:** Source files provide only the 4-color `logo-mark.svg` and `favicon.svg` monogram. Proposed variants-disc-only avatar, white-backed reverse mark (critical for dark surfaces because `logo-mark.svg` has transparent cutouts), single-color monochrome (`#132436` / `#FFFFFF`), and horizontal/stacked wordmark lockups-require Gate 1 approval before generating SVG assets.
-2. **Contrast-Adjusted Derived Palette:** Raw logo orange (`#ED7C30`) fails WCAG AA with white text (`2.79:1`) and as text on white (`2.79:1`). Proposed solution pairs `#ED7C30` fills with `#111823` ink (`6.39:1` AA) and shifts text orange on white to derived `#A45826` (`5.25:1` AA). Derived ramps (`50–950`), blue-tinted slate neutrals (`#111823` floor), Night Ocean dark mode (`#132436`), and semantic colors are **derived system tokens**, not literal logo colors.
-3. **Wordmark & UI Typography:** Because the logo contains no type, **Plus Jakarta Sans** (700/800) is proposed for display & wordmark, **Inter** (400–700, `tabular-nums`) for Latin body/UI/prices, and **Hind Siliguri** (400/500/600/700) for Bangla, with an optional monospace role (**JetBrains Mono**) for dense admin booking IDs and bank account references.
+2. **Contrast-Adjusted Derived Palette:** Raw logo orange (`#ED7C30`) fails WCAG AA with white text (`2.79:1`) and as text on white (`2.79:1`). Proposed solution pairs `#ED7C30` fills with `#111823` ink (`6.39:1` AA) and shifts text orange on white to derived `#A45826` (`5.25:1` AA). Derived ramps (`50-950`), blue-tinted slate neutrals (`#111823` floor), Night Ocean dark mode (`#132436`), and semantic colors are **derived system tokens**, not literal logo colors.
+3. **Wordmark & UI Typography:** Because the logo contains no type, **Plus Jakarta Sans** (700/800) is proposed for display & wordmark, **Inter** (400-700, `tabular-nums`) for Latin body/UI/prices, and **Hind Siliguri** (400/500/600/700) for Bangla, with an optional monospace role (**JetBrains Mono**) for dense admin booking IDs and bank account references.
 4. **17° Flight Angle System & 3° Text-Safe Flight Rule:** Formalizes the logo's measured `17.12°` streak angle into section dividers (`tan(17°) = 0.3057`), gradients, and departure animations, while text-adjacent Flight Rules under overlines use a gentle `-3deg` (`--te-p-rule-angle-neg`) with safe margins so rules never collide with text on desktop or mobile—banned inside dense admin tables and forms.
 5. **Dual-Mode Layout Rules:** Distinct density rules for public **marketing pages** vs. back-office **admin interfaces** (booking ledger, bank deposit verification, seat-cap tracking, visa queue).
 
 ### 1.3 Explicit Assumptions (Flagged for Validation)
 
-- **Audience demographics:** Primary target (Bangladeshi adults aged 22–45 in Chattogram/Dhaka, Android-first, WhatsApp-native, mixed Bangla/English readers) is inferred from Facebook posts, BDT pricing, and mobile-centric booking flow rather than analytics telemetry.
+- **Audience demographics:** Primary target (Bangladeshi adults aged 22-45 in Chattogram/Dhaka, Android-first, WhatsApp-native, mixed Bangla/English readers) is inferred from Facebook posts, BDT pricing, and mobile-centric booking flow rather than analytics telemetry.
 - **Secondary service pillars:** Corporate/institutional custom trips and standalone air ticketing / visa assistance are inferred as expansion pillars beyond the core published group departures.
 - **Admin operational workflow:** Need for high-density admin tables (seat inventory, Islami Bank / Eastern Bank deposit reconciliation, passport/visa checklists) is inferred from the manual bank-deposit confirmation rules in `plan.md`.
 
@@ -46,7 +46,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 
 - **Positioning Statement:** For Bangladeshi travellers-especially from Chattogram-who want guided South Asian and international group tours (Kashmir, Meghalaya, Nepal, Sikkim, Darjeeling, Kolkata, Maldives, Sri Lanka) without assembling logistics alone, **Trip Express BD** delivers fixed-date departures, transparent published prices in BDT (`৳`), real departure photography, and direct human support by phone, WhatsApp, and physical office.
 - **Target Audience:**
-  - *Primary `[ASSUMPTION]`*: Bangladeshi young professionals, friend groups, and families (ages 22–45) in Chattogram and greater Chattogram; Android mobile-first, WhatsApp-native, bilingual (Bangla + English), trust-seeking (verify real photos, inclusions, exclusions, and physical office).
+  - *Primary `[ASSUMPTION]`*: Bangladeshi young professionals, friend groups, and families (ages 22-45) in Chattogram and greater Chattogram; Android mobile-first, WhatsApp-native, bilingual (Bangla + English), trust-seeking (verify real photos, inclusions, exclusions, and physical office).
   - *Secondary*: Dhaka-based travellers joining air departures (e.g., Kathmandu, Maldives/Sri Lanka).
   - *Tertiary `[ASSUMPTION]`*: University, friend-circle, or corporate custom group departures.
 - **Brand Attributes:**
@@ -73,7 +73,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 | Variant | Current Status | Description & Geometry | Permitted Contexts |
 |---|---|---|---|
 | **Primary Full Mark** | **VERIFIED SOURCE** (`assets/brand/logo-mark.svg`, `logo.jpg`) | Full split disc + overhanging `17°` aircraft streak in 4 flat colors (`#ED7C30`, `#F2A15F`, `#4394D5`, `#3171AE`). | Light surfaces (`#FFFFFF`, `#F7F9FB`, `#FEF8F5`, `#F6FAFD`) at `≥ 40px` height. |
-| **Monogram (Favicon)** | **VERIFIED SOURCE** (`favicon.svg`) | `#ED7C30` circle with solid `#FFFFFF` aircraft silhouette (`64×64` viewBox). | Small UI badges and browser favicons `16px–32px` where bus/palms/kayak collapse. |
+| **Monogram (Favicon)** | **VERIFIED SOURCE** (`favicon.svg`) | `#ED7C30` circle with solid `#FFFFFF` aircraft silhouette (`64×64` viewBox). | Small UI badges and browser favicons `16px-32px` where bus/palms/kayak collapse. |
 | **White-Backed / Reverse Mark** | `[PROPOSED - APPROVAL REQUIRED]` | Identical 4-color mark with an explicit `#FFFFFF` interior backing disc/fuselage layer so dark backgrounds do not bleed through `evenodd` holes, paired with `#FFFFFF` wordmark. | **Required** for Night Ocean (`#132436`) headers, dark footers, and dark photo scrims. |
 | **Disc-Only Avatar** | `[PROPOSED - APPROVAL REQUIRED]` | Disc clipped to `1:1` circle without overhanging streak tips. | Circular social avatars, app icons (`180×180`, `192×192`, `512×512` maskable) where overhang would clip awkwardly. |
 | **Single-Color Monochrome** | `[PROPOSED - APPROVAL REQUIRED]` | Single-ink silhouette (`#132436` Night Ocean on light; `#FFFFFF` on `#ED7C30` or dark photos). | Embossing, single-color print receipts, thermal vouchers, watermarks, `#ED7C30` solid banners. |
@@ -92,9 +92,9 @@ Every claim in this system is separated into one of three tiers so reviewers can
   - Disc-only avatar `[PROPOSED]`: **`32px`** (screen).
   - Monogram (`favicon.svg`): **`16px`** (screen).
   - Horizontal lockup `[PROPOSED]`: **`120px` wide** (screen) / **`35mm` wide** (print).
-- **Corporate Lineage & Parent-Group Co-Branding:** **Taabu Nibash Travel Group** (`assets/brand/taabu-nibashi-logo.jpg`, pigments `#ED7C30`, `#0A8B48`, `#1F1610`) is the parent group of **Trip Express BD** (`assets/brand/logo-mark.svg`). Announce this lineage cleanly via an **ultra-minimalist centered glass modal** (`#brandModal`, `max-width: 390px`) opening with a `700ms` slow glide `2000ms` after every page load/reload: centered oversized circular Taabu Nibash emblem (`112–128px`, `border-radius: 50%`), concise centered `"Sister Concern by Taabu Nibash"` label, one short relevant EN+BN line, top-right `✕`, and outside-click close (**zero** second logo, zero Mother Company label, zero redundant name dump, zero trigger/CTA buttons).
-- **Glassmorphism & Continuous Infinity Radial Glow:** Interactive panels, hero containers, floating slider controls, and `#brandModal` render on stronger frosted glass (`0.58–0.74` opacity, `24–30px` blur, inset white specular top highlight `--te-glass-highlight`) floating over a fixed continuous quad radial glow backdrop (`--te-glow-infinity`). Hero imagery uses a feathered bottom `mask-image` dissolve so section boundaries disappear cleanly.
-- **Mobile Spacing & Touch Clarity (`<640px`):** Adjacent action CTAs below `480px` stack cleanly (`12px+` vertical separation, `>=46px` touch height, never squeezed into 2 narrow columns). Mobile containers, route timeline cards, and footer direct-desk strips enforce calm vertical padding (`14px–18px`) so copy never crowds surrounding buttons or edges.
+- **Corporate Lineage & Parent-Group Co-Branding:** **Taabu Nibash Travel Group** (`assets/brand/taabu-nibashi-logo.jpg`, pigments `#ED7C30`, `#0A8B48`, `#1F1610`) is the parent group of **Trip Express BD** (`assets/brand/logo-mark.svg`). Announce this lineage cleanly via an **ultra-minimalist centered glass modal** (`#brandModal`, `max-width: 390px`) opening with a `700ms` slow glide `2000ms` after every page load/reload: centered oversized circular Taabu Nibash emblem (`112-128px`, `border-radius: 50%`), concise centered `"Sister Concern by Taabu Nibash"` label, one short relevant EN+BN line, top-right `✕`, and outside-click close (**zero** second logo, zero Mother Company label, zero redundant name dump, zero trigger/CTA buttons).
+- **Glassmorphism & Continuous Infinity Radial Glow:** Interactive panels, hero containers, floating slider controls, and `#brandModal` render on stronger frosted glass (`0.58-0.74` opacity, `24-30px` blur, inset white specular top highlight `--te-glass-highlight`) floating over a fixed continuous quad radial glow backdrop (`--te-glow-infinity`). Hero imagery uses a feathered bottom `mask-image` dissolve so section boundaries disappear cleanly.
+- **Mobile Spacing & Touch Clarity (`<640px`):** Adjacent action CTAs below `480px` stack cleanly (`12px+` vertical separation, `>=46px` touch height, never squeezed into 2 narrow columns). Mobile containers, route timeline cards, and footer direct-desk strips enforce calm vertical padding (`14px-18px`) so copy never crowds surrounding buttons or edges.
 
 ### 3.3 Background Compatibility & Misuse Examples
 
@@ -113,7 +113,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 
 ## 4. Color System & Contrast Architecture
 
-> **Critical Distinction:** Only the **6 sampled colors** below exist literally in the logo artwork. All 50–950 ramps, blue-tinted slate neutrals, Night Ocean dark theme surfaces, and semantic colors are **contrast-aware derived tokens** `[PROPOSED - APPROVAL REQUIRED]`-never treat them as literal original logo colors.
+> **Critical Distinction:** Only the **6 sampled colors** below exist literally in the logo artwork. All 50-950 ramps, blue-tinted slate neutrals, Night Ocean dark theme surfaces, and semantic colors are **contrast-aware derived tokens** `[PROPOSED - APPROVAL REQUIRED]`-never treat them as literal original logo colors.
 
 ### 4.1 Literal Source Colors (Sampled from `logo.jpg` & `logo-mark.svg`)
 
@@ -225,7 +225,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 | **Numerals, Prices, Dates** | **Inter** (`tabular-nums`) | SIL OFL 1.1 (Free) | `600, 700` | `'Inter', 'Hind Siliguri', system-ui, sans-serif` *(Hind supplies `৳` glyph)* |
 | **Admin Monospace IDs / Bank A/C** `[PROPOSED]` | **JetBrains Mono** or system mono | SIL OFL 1.1 (Free) | `500` | `'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace` |
 
-- **Critical Variable vs. Static Rule:** Load Latin faces as variable ranges (`Plus+Jakarta+Sans:wght@700..800`, `Inter:wght@400..700`) because UI specs use `550` and `650` weights. Hind Siliguri lacks a variable build-ship at most 3–4 static cuts (`400, 500, 600` minimum; `700` if Bangla H1s are heavy) and subset Latin + Bengali before production to stay under the `180 KB` font budget.
+- **Critical Variable vs. Static Rule:** Load Latin faces as variable ranges (`Plus+Jakarta+Sans:wght@700..800`, `Inter:wght@400..700`) because UI specs use `550` and `650` weights. Hind Siliguri lacks a variable build-ship at most 3-4 static cuts (`400, 500, 600` minimum; `700` if Bangla H1s are heavy) and subset Latin + Bengali before production to stay under the `180 KB` font budget.
 
 ### 5.2 Type Scale (Marketing vs. Admin) & Bilingual Floors
 
@@ -244,7 +244,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 | `body-lg` | `1.125rem` (`18px`) | Body | 400 | 1.65 | `0` | Marketing lead |
 | `body` | `1rem` (`16px`) | Body | 400 | 1.60 | `0` | Default Latin prose |
 | `body-bn` | `1.0625rem` (`17px` min) | Bangla | 400/500 | 1.85 | `0` | Default Bangla prose / itineraries |
-| `body-sm` | `0.9375rem` (`15px`) | Body | 400 | 1.55 | `0` | Dense marketing lists / Admin table cells (`14px`–`15px` Latin; `17px` if Bangla) |
+| `body-sm` | `0.9375rem` (`15px`) | Body | 400 | 1.55 | `0` | Dense marketing lists / Admin table cells (`14px`-`15px` Latin; `17px` if Bangla) |
 | `caption` | `0.875rem` (`14px`) | Body | 500 | 1.45 | `0.005em` | Photo captions, table secondary meta |
 | `overline` | `0.8125rem` (`13px`) | Body | 700 | 1.30 | `0.09em` | Eyebrow label (UPPERCASE Latin only) |
 | `price-lg` | `clamp(1.5rem, 1.2rem + 1.2vw, 2rem)` (`24→32px`) | Num | 700 | 1.10 | `-0.01em` | Package price (`tabular-nums`) |
@@ -274,7 +274,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
 3. **Frosted Glassmorphism** (`--te-glass-bg`, `--te-glass-border`, `--te-glass-blur`): `backdrop-filter: saturate(140%) blur(16px)` white frosted panels (`rgba(255, 255, 255, 0.80)`, hairline border `rgba(223, 229, 236, 0.85)`) applied across floating navigation chrome, mobile slide-over drawers, full-bleed Hero copy panels, Hero slide controller bars, interactive Route Map stop cards, review cards, and subtle footer highlight chips-never on dense admin data tables or tiny multi-line inputs. Must include solid `--te-glass-bg-strong` fallback inside `@supports not (backdrop-filter: blur(1px))` and collapse cleanly in high-contrast mode.
 4. **Flight Streak**: `repeating-linear-gradient(107deg, rgba(237,124,48,0.07) 0 2px, transparent 2px 18px)` - max opacity `0.10` light / `0.14` dark; never behind body copy at `>0.06`.
 5. **Contour Ridge**: `1.5px` stroked open topographic lines in `orange-200` (light) or `#24405C` (dark), max 6 nested lines bleeding off an edge.
-6. **Wave Shelf**: 2–3 flat stacked shallow wave layers (`#4394D5`, `#3A7EB5`, `#3171AE`), crest amplitude ≤10% of band height.
+6. **Wave Shelf**: 2-3 flat stacked shallow wave layers (`#4394D5`, `#3A7EB5`, `#3171AE`), crest amplitude ≤10% of band height.
 
 ### 6.4 Photography Direction
 - **Proof Over Stock:** Use authentic group photos from `assets/img/` (Meghalaya, Dawki, Nepal). **Rule:** Never substitute generic stock photos for Kashmir-show a brand-vocabulary illustration until a real Kashmir trip photo is supplied.
@@ -290,16 +290,16 @@ Every claim in this system is separated into one of three tiers so reviewers can
 | Breakpoint | Range | Columns | Gutter | Margin | Container |
 |---|---|---|---|---|---|
 | `xs / sm` | `< 640px` | 4 | 16px | 20px | Fluid (`360px` baseline) |
-| `md` | `640–1023px` | 8 | 20px | 32px | Fluid |
-| `lg` | `1024–1279px` | 12 | 24px | 40px | 1120px |
-| `xl` | `1280–1535px` | 12 | 24px | 48px | 1240px (1200–1240px baseline) |
+| `md` | `640-1023px` | 8 | 20px | 32px | Fluid |
+| `lg` | `1024-1279px` | 12 | 24px | 40px | 1120px |
+| `xl` | `1280-1535px` | 12 | 24px | 48px | 1240px (1200-1240px baseline) |
 | `2xl` | `≥ 1536px` | 12 | 32px | 64px | 1280px max |
 
 ### 7.2 17° Flight Angle Arithmetic
 - Because `tan(17°) = 0.3057`, a diagonal cut is only genuinely `17°` when its vertical rise equals **`30.57%` of its horizontal run** (`--te-cut-rise: min(30.57vw, 170px)`). Never stretch a shallow 36px full-width strip and call it `17°`-if vertical space is tight, shorten the horizontal run into a corner wedge.
-- **Gentle / Crisp Seam Rule:** Never stretch a deep vertical triangle wedge across narrow mobile viewports (which reads steeper than 35°–45° and pushes footer branding down). For the footer top transition, use either a clean **`4px` full-width Horizon Split accent (`--te-grad-horizon`)** flush above Night Ocean `#132436` or a gentle shallow accent stripe; reserve angled wedges for subtle accent marks (`64–72px × 3px` Flight Rule).
-- **Text-Safe Flight Rule Angle (`-3deg`, Never `-17deg` Near Text):** A `64–72px` rule rotated `-17deg` swings `19–21px` vertically and collides with overlines above or headings below, especially on `<640px` mobile viewports. All overline underlines / Flight Rules (`.rule`, `.te-flight-rule`, `.flight-rule`) MUST use **`-3deg`** (`--te-p-rule-angle-neg: -3deg`, `~3.4–3.8px` vertical rise) with `transform-origin: left center` (or `center` when centered) and `margin: 12px 0 16px` (`10px 0 12px` below `640px`).
-- **Permitted uses:** `64–72px × 3px` Flight Rule rotated `-3deg` under section overlines, `4px` Horizon Split footer accent, subtle nav underline climb (`-1.6deg`), `skewX(-6deg)` featured badges (counter-skewed text), and card hover lift `translate(2px, -6px)`.
+- **Gentle / Crisp Seam Rule:** Never stretch a deep vertical triangle wedge across narrow mobile viewports (which reads steeper than 35°-45° and pushes footer branding down). For the footer top transition, use either a clean **`4px` full-width Horizon Split accent (`--te-grad-horizon`)** flush above Night Ocean `#132436` or a gentle shallow accent stripe; reserve angled wedges for subtle accent marks (`64-72px × 3px` Flight Rule).
+- **Text-Safe Flight Rule Angle (`-3deg`, Never `-17deg` Near Text):** A `64-72px` rule rotated `-17deg` swings `19-21px` vertically and collides with overlines above or headings below, especially on `<640px` mobile viewports. All overline underlines / Flight Rules (`.rule`, `.te-flight-rule`, `.flight-rule`) MUST use **`-3deg`** (`--te-p-rule-angle-neg: -3deg`, `~3.4-3.8px` vertical rise) with `transform-origin: left center` (or `center` when centered) and `margin: 12px 0 16px` (`10px 0 12px` below `640px`).
+- **Permitted uses:** `64-72px × 3px` Flight Rule rotated `-3deg` under section overlines, `4px` Horizon Split footer accent, subtle nav underline climb (`-1.6deg`), `skewX(-6deg)` featured badges (counter-skewed text), and card hover lift `translate(2px, -6px)`.
 - **Forbidden uses:** Inside data tables, inside form controls, navigation bars, or dense admin panels.
 
 ---
@@ -315,7 +315,7 @@ Every claim in this system is separated into one of three tiers so reviewers can
   - *Sold out:* `"This departure is full. Ask us about the next one."`
   - *Empty gallery:* `"Photos from this trip are on the way."`
   - *404:* `"This route does not exist yet."` + link to all tours.
-- **Formatting:** Prices always `৳58,500` (no space after `৳`, Western digits, `tabular-nums`); dates `11–15 Nov 2025` (en dash); phone display `01838-754207`.
+- **Formatting:** Prices always `৳58,500` (no space after `৳`, Western digits, `tabular-nums`); dates `11-15 Nov 2025` (en dash); phone display `01838-754207`.
 
 ### 8.2 Motion Principles
 - **Durations:** `instant 100ms`, `fast 180ms`, `base 260ms`, `slow 420ms`, `scenic 700ms`.
@@ -331,13 +331,13 @@ Both experiences share the exact same **color tokens, font families, semantic ba
 
 | Dimension | Public Marketing Pages | Dense Admin Interfaces (Bookings, Bank Verification, Visa Queue) |
 |---|---|---|
-| **Goal** | Inspire trust, showcase real group proof, convert via WhatsApp/booking. | Scan 20–50 rows at once, verify Islami/EBL deposits, manage seats & passports. |
-| **Whitespace & Rhythm** | Airy: 60% white field, `--te-section-y: clamp(4rem, 8vw, 7rem)`, `16px–24px` card padding. | Compact: `12px–16px` panel padding, `40px–44px` table rows, `16px` grid gutters, max-width `1440px` fluid workspace. |
+| **Goal** | Inspire trust, showcase real group proof, convert via WhatsApp/booking. | Scan 20-50 rows at once, verify Islami/EBL deposits, manage seats & passports. |
+| **Whitespace & Rhythm** | Airy: 60% white field, `--te-section-y: clamp(4rem, 8vw, 7rem)`, `16px-24px` card padding. | Compact: `12px-16px` panel padding, `40px-44px` table rows, `16px` grid gutters, max-width `1440px` fluid workspace. |
 | **17° Flight Angle & 3° Flight Rule** | Active: hero cuts, `-3deg` Flight Rules (`margin: 12px 0 16px` / `10px 0 12px` mobile), `translate(2px, -6px)` card hover, `skewX(-6deg)` featured pills. | **Restricted:** Zero diagonal cuts, zero skewed badges, zero diagonal hover lifts. At most one subtle `2px` orange top accent bar in the sidebar/header. |
-| **Typography & Numerals** | Hero up to `72px` (`display-xl`), `body` `16px`, `body-bn` `17px`. | Page title capped at `24px–28px`; table cells `14px` Latin (`tabular-nums` mandatory on `৳` amounts, seat counts, dates) / `17px` minimum for any Bangla notes; monospace `13px` for Booking IDs & A/C numbers (`20501620205843017`). |
+| **Typography & Numerals** | Hero up to `72px` (`display-xl`), `body` `16px`, `body-bn` `17px`. | Page title capped at `24px-28px`; table cells `14px` Latin (`tabular-nums` mandatory on `৳` amounts, seat counts, dates) / `17px` minimum for any Bangla notes; monospace `13px` for Booking IDs & A/C numbers (`20501620205843017`). |
 | **Surfaces & Borders** | Cards (`16px` radius), `--te-shadow-sm`, `orange-50` / `blue-50` alternating bands. | Crisp `1px solid #DFE5EC` hairlines, `--te-r-sm` (`8px`) / `--te-r-md` (`12px`) containers, `#F7F9FB` sticky table headers, zero heavy drop shadows. |
-| **Controls & Forms** | Large `44px–52px` pill CTAs, single primary CTA per viewport. | Compact `36px–40px` pill/rounded-8px toolbar actions (still `44px` touch hit-area on tablet), `--te-field-bg` (`#F7F9FB`) inline filter inputs, explicit semantic status pills (`Confirmed`, `Deposit Pending`, `Visa Hold`, `Sold Out`). |
-| **Motion** | Scroll-triggered `te-depart`, `700ms` scenic image reveals, optional WebGL journey. | Instant state feedback (`100ms–180ms`), zero scroll reveals, zero 3D canvas, zero decorative parallax. |
+| **Controls & Forms** | Large `44px-52px` pill CTAs, single primary CTA per viewport. | Compact `36px-40px` pill/rounded-8px toolbar actions (still `44px` touch hit-area on tablet), `--te-field-bg` (`#F7F9FB`) inline filter inputs, explicit semantic status pills (`Confirmed`, `Deposit Pending`, `Visa Hold`, `Sold Out`). |
+| **Motion** | Scroll-triggered `te-depart`, `700ms` scenic image reveals, optional WebGL journey. | Instant state feedback (`100ms-180ms`), zero scroll reveals, zero 3D canvas, zero decorative parallax. |
 
 ---
 
@@ -347,6 +347,6 @@ Approve or request revisions on the following proposed decisions before any UI c
 
 - [ ] **Logo Fidelity:** Confirm `assets/brand/logo-mark.svg` and `logo.jpg` observations match the authoritative artwork and approve preserving the `17°` overhang without cropping.
 - [ ] **Proposed Logo Derivatives:** Approve generating SVG files for: (a) White-backed Reverse Mark for dark backgrounds, (b) Disc-Only Avatar, (c) Single-Color Monochrome (`#132436` / `#FFFFFF`), and (d) Horizontal & Stacked Wordmark Lockups in Plus Jakarta Sans 800.
-- [ ] **Derived Palette & Sand Orange Reconciliation:** Approve the 50–950 ramps, blue-tinted slate neutrals (`#111823` ink floor), Night Ocean (`#132436`) dark theme, `#A45826` text orange, `#111823` ink on `#ED7C30` buttons, and keeping `#F2A15F` inside logo artwork vs. `#F2A16A` (`orange-400`) in UI ramps.
+- [ ] **Derived Palette & Sand Orange Reconciliation:** Approve the 50-950 ramps, blue-tinted slate neutrals (`#111823` ink floor), Night Ocean (`#132436`) dark theme, `#A45826` text orange, `#111823` ink on `#ED7C30` buttons, and keeping `#F2A15F` inside logo artwork vs. `#F2A16A` (`orange-400`) in UI ramps.
 - [ ] **Typography Pairing:** Approve Plus Jakarta Sans + Inter + Hind Siliguri (+ optional JetBrains Mono for admin IDs), the `17px` Bangla floor, and the `13px` Latin UI floor.
 - [ ] **Marketing vs. Admin Rules & Brand Direction:** Approve positioning, bilingual voice/microcopy rules, real-photo-first Kashmir gap policy, 17° marketing geometry, and flat high-density admin table standards.

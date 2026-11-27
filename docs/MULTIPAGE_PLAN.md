@@ -10,7 +10,7 @@ Extends Concept 1 (**"The Horizon Dispatch"**, [preview/index.html](../preview/i
 | :--- | :--- | :--- | :--- |
 | `/` | [preview/index.html](../preview/index.html) | Orient Chattogram/BD group travellers & start destination jump | 5/7 asymmetric dark-band hero + 8-disc strip + 7/5 departures + masonry proof + 5-field form |
 | `/tours` | [preview/tours.html](../preview/tours.html) | Search, filter, sort & factually compare all 8 routes | Subhero + interactive search/chip toolbar + 3-col cards + empty-state recovery + responsive `.pv-table--stack` comparison matrix |
-| `/tours/explore-nepal` | [preview/nepal-tour.html](../preview/nepal-tour.html) | Inspect full Nepal 5D/4N schedule, `৳36,000` ceiling, exclusions & bank details | Subhero breadcrumb + `8fr/4fr` sticky-aside layout (`.pv-detail-grid`) + Day 1–5 `.pv-timeline` + Bangla inclusions/exclusions + lightbox |
+| `/tours/explore-nepal` | [preview/nepal-tour.html](../preview/nepal-tour.html) | Inspect full Nepal 5D/4N schedule, `৳36,000` ceiling, exclusions & bank details | Subhero breadcrumb + `8fr/4fr` sticky-aside layout (`.pv-detail-grid`) + Day 1-5 `.pv-timeline` + Bangla inclusions/exclusions + lightbox |
 | `/about` | [preview/about.html](../preview/about.html) | Verify Chattogram office, leadership accounts, `তাঁবু নিবাসী` co-hosting & history | Subhero + Night Ocean 4-stat strip + 2-col office/photo proof + vertical `.pv-timeline` events log |
 | `/reports` | [preview/reports.html](../preview/reports.html) | Read verified Meghalaya/Nepal dispatches & Indian visa / airfare guides | Subhero + category filter chips + editorial report cards + resource guides |
 | `/contact` | [preview/contact.html](../preview/contact.html) | Submit seat enquiry (with URL `?tour=` pre-fill), test error/confirmation states, view FAQ | Subhero + `7fr/5fr` enquiry form (validation + simulated failure + confirmation ref) & office/bank stack + FAQ accordion |
@@ -25,7 +25,7 @@ Extends Concept 1 (**"The Horizon Dispatch"**, [preview/index.html](../preview/i
 | :--- | :--- | :--- |
 | Home | `Trip Express BD - Guided Group Tours from Chattogram` | Guided small-group departures from Chattogram to Nepal, Kashmir, Meghalaya & Maldives with fixed dates, published ৳ rates & real photos. |
 | Tours | `Tours, Search & Comparison - Trip Express BD` | Search and compare Trip Express BD group tours by destination, travel mode, duration & published Taka price. |
-| Nepal Detail | `Explore Nepal 5D/4N (৳58,500) - Trip Express BD` | 5D/4N Dhaka–Kathmandu–Nagarkot–Pokhara tour with full inclusions, exclusions, ৳36,000 airfare ceiling & bank deposit details. |
+| Nepal Detail | `Explore Nepal 5D/4N (৳58,500) - Trip Express BD` | 5D/4N Dhaka-Kathmandu-Nagarkot-Pokhara tour with full inclusions, exclusions, ৳36,000 airfare ceiling & bank deposit details. |
 | About | `About, Chattogram Roots & Events - Trip Express BD` | 1301 Mosjid Goli office desk, co-hosted Meghalaya tours with তাঁবু নিবাসী, verified group departures & operational milestones. |
 | Reports | `Trip Reports, Dispatches & Resource Guides - Trip Express BD` | Field trip reports plus Indian tourist visa advisories and airfare-cap breakdowns. |
 | Contact | `Contact, Booking Desk & FAQ - Trip Express BD` | Seat reservation form, Chattogram phone lines, bank verification & pre-booking FAQ. |

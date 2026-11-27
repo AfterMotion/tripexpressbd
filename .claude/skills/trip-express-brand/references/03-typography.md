@@ -84,8 +84,8 @@ four families.
 | `price-sm` | `1.125rem` | Num | 600 | 1.2 | `0` | Card price |
 
 ### Measure
-- Body copy: **60–75 characters** (`max-width: 68ch`).
-- Bangla body: **50–62 characters** - Bangla words are wider.
+- Body copy: **60-75 characters** (`max-width: 68ch`).
+- Bangla body: **50-62 characters** - Bangla words are wider.
 - Headings: max `20ch` for display, `28ch` for h1/h2.
 
 ---

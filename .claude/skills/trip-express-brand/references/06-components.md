@@ -182,7 +182,7 @@ Message. Anything longer loses this audience.
 ```
 
 - `overline` `orange-700` (dark sections: `orange-400`)
-- Flight rule 64–72×3px, `--te-grad-sunset`, `rotate(-3deg)` (`--te-rule-angle-neg`), `margin: 12px 0 16px` (`10px 0 12px` `<640px`) — never `-17deg` under text so it stays clear of the overline and `h2` on mobile and desktop
+- Flight rule 64-72×3px, `--te-grad-sunset`, `rotate(-3deg)` (`--te-rule-angle-neg`), `margin: 12px 0 16px` (`10px 0 12px` `<640px`) — never `-17deg` under text so it stays clear of the overline and `h2` on mobile and desktop
 - `h2` `n-900` (dark: `#FFFFFF`)
 - lead `body-lg` `n-600` (dark: `n-300`), `max-width: 56ch`
 - Centre-aligned for full-width sections, left-aligned when paired with media
@@ -380,6 +380,6 @@ scrollable, current section filled Sunset Orange with `--te-action-ink`.
 
 # Hero Seamless Glass Slider & Corporate Lineage Modal
 
-- **Seamless Section Transitions:** Hero background photography ends with a feathered bottom `mask-image` dissolve (`linear-gradient(to bottom, #000 74%–80%, transparent 100%)`) melting into `--te-glow-infinity` so section dividers are invisible.
+- **Seamless Section Transitions:** Hero background photography ends with a feathered bottom `mask-image` dissolve (`linear-gradient(to bottom, #000 74%-80%, transparent 100%)`) melting into `--te-glow-infinity` so section dividers are invisible.
 - **Stronger Glassmorphism:** Frosted panels (`hero__content`, `hero-slider__glass`, `#brandModal`) use `var(--te-glass-bg-strong)` (`0.72` opacity), `backdrop-filter: blur(30px) saturate(190%)`, and `var(--te-glass-highlight)` inset white top highlight over soft radial glows.
-- **Corporate Lineage Modal (`#brandModal`):** Opens gently after `2000ms` (`700ms` slow CSS glide) on every page reload. Compact centered glass card (`max-width: 390px`) displaying only one large round Taabu Nibash logo (`112–128px`, `border-radius: 50%`), concise `"Sister Concern by Taabu Nibash"` label, and one short relevant EN+BN line with top-right `✕`, outside-click, and `Escape` dismissal—zero Trip Express logo inside modal, zero Mother Company label, zero redundant name dump, zero buttons.
+- **Corporate Lineage Modal (`#brandModal`):** Opens gently after `2000ms` (`700ms` slow CSS glide) on every page reload. Compact centered glass card (`max-width: 390px`) displaying only one large round Taabu Nibash logo (`112-128px`, `border-radius: 50%`), concise `"Sister Concern by Taabu Nibash"` label, and one short relevant EN+BN line with top-right `✕`, outside-click, and `Escape` dismissal—zero Trip Express logo inside modal, zero Mother Company label, zero redundant name dump, zero buttons.

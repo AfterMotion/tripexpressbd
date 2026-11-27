@@ -91,7 +91,7 @@ These six are the brand. Full 50→950 ramps and dark mode live in
 - **Display accent / wordmark primacy:** Large display emphasis (`H1 em` e.g., `"Photographs to prove it."`), wordmark `"Trip"`, overlines, and brand icons strictly use pure source `--te-orange-500` `#ED7C30` to preserve unity with the logo; small body links/pills use `--te-orange-700` `#A45826` (5.25:1 ✓)
 - White text on blue must be `--te-deep-700` `#25517B` (8.26:1 ✓) or darker
 - **Corporate Lineage:** **Trip Express BD** is a dedicated Sister Concern of **Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)** (`assets/brand/taabu-nibashi-logo.jpg`, Mother Co. pigments `#0A8B48`, `#1F1610`, `#ED7C30`). Announced cleanly via a **pure minimalist frosted branding modal** (`2000ms` delay + `700ms` slow reveal on every reload; no trigger buttons in header/drawer/footer, no CTA inside modal).
-- **Stronger Frosted Glass & Seamless Infinity Flow:** Use `--te-glow-infinity` globally with `0.58–0.74` frosted glass (`24–30px` blur + `--te-glass-highlight`) and feathered hero transitions so section seams disappear. Wrap footer dark-surface `logo-mark.svg` in a **true 1:1 circular (`52×52px`, `border-radius: 50%`)** white chip—never stretched oval pills.
+- **Stronger Frosted Glass & Seamless Infinity Flow:** Use `--te-glow-infinity` globally with `0.58-0.74` frosted glass (`24-30px` blur + `--te-glass-highlight`) and feathered hero transitions so section seams disappear. Wrap footer dark-surface `logo-mark.svg` in a **true 1:1 circular (`52×52px`, `border-radius: 50%`)** white chip—never stretched oval pills.
 
 ---
 
@@ -218,7 +218,7 @@ Design 360px first, then 1440px. The primary break is **1024px**.
 
 | | Mobile (< 1024px / `pointer: coarse`) | Desktop (≥ 1024px / `pointer: fine`) |
 |---|---|---|
-| Grid | 4–8 col, 20–32px margin, cards 1–2 up | 12 col, container 1200, cards 3 up |
+| Grid | 4-8 col, 20-32px margin, cards 1-2 up | 12 col, container 1200, cards 3 up |
 | Body type | 16px Latin / **17px Bangla** minimum | 16px Latin / 17px Bangla |
 | Hero media | `4:5` portrait, text below | `21:9`, text overlaid |
 | Hover | **Does not exist** - every hover needs a touch equivalent | Card lift `translate(2px, -6px)` |
@@ -293,6 +293,6 @@ the responsive QA checklist: `references/11-responsive-standards.md`.
 - **WhatsApp:** wa.me/+8801838754207
 - **Email:** tripexpressb@gmail.com
 - **Signature destinations:** Kashmir, Meghalaya/Shillong, Sikkim, Darjeeling, Nepal
-  (Kathmandu–Nagarkot–Pokhara), Kolkata, Maldives, Sri Lanka
+  (Kathmandu-Nagarkot-Pokhara), Kolkata, Maldives, Sri Lanka
 
 More in `references/01-brand-foundation.md`.

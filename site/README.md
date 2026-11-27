@@ -8,7 +8,7 @@ Promotes Stage 3E into a clean, zero-framework, accessible, SEO-ready static HTM
 
 | File | Template Archetype | Purpose | Canonical URL |
 | :--- | :--- | :--- | :--- |
-| [index.html](index.html) | Editorial Home Showcase | Horizon hero, 8 corridors, Nepal/Meghalaya/Kashmir highlights, `5.9K` proof strip, gallery lightbox, enquiry form | `https://tripexpressbd.com/` |
+| [index.html](index.html) | Editorial Home Showcase | Horizon hero, 8 corridors, Nepal/Meghalaya/Kashmir highlights, `3.3K` proof strip, gallery lightbox, enquiry form | `https://tripexpressbd.com/` |
 | [tours.html](tours.html) | Searchable Catalog + Matrix | Live search, region/mode filter chips, price sort, empty state, responsive stacked comparison table | `https://tripexpressbd.com/tours.html` |
 | [nepal-tour.html](nepal-tour.html) | Service Detail + Sticky Aside | `8fr/4fr` sticky rate/bank panel, keyboard tabs (`5-Day Route` / `Inclusions`), gallery lightbox | `https://tripexpressbd.com/nepal-tour.html` |
 | [about.html](about.html) | Credibility & Chronological Log | Chattogram desk, named bank signatories, `তাঁবু নিবাসী` co-hosting, vertical timeline, `[PLACEHOLDER: ...]` gaps | `https://tripexpressbd.com/about.html` |
