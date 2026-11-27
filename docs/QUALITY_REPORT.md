@@ -1,8 +1,8 @@
 # Trip Express BD - Design System Quality & Validation Report
 
-**Package Version:** `2.1.0` (Stages 1–4 + Multipage Preview + Ops Portal Shell)  
-**Validation Date:** 2026-11-26  
-**Scope:** Brand assets, 3-layer tokens (`tokens/`), legacy token bridge (`assets/css/tokens.css`), `brand-guide/index.html`, `design-system/index.html`, `showcase/*.html`, `preview/*.html`, and `admin/index.html`.
+**Package Version:** `2.2.0` (Stages 1–4 + Seamless Glassmorphism Hero + Corporate Lineage System)  
+**Validation Date:** 2026-11-27  
+**Scope:** Root `index.html` (`site.css`, `main.js`), brand assets (`assets/brand/`), 3-layer tokens (`tokens/`), legacy token bridge (`assets/css/tokens.css`), `brand-guide/index.html`, `design-system/`, `showcase/*.html`, `docs/`, and `.claude/skills/trip-express-brand/`.
 
 ---
 
@@ -17,7 +17,8 @@
 | **Component & Showcase CSS Hygiene** | `design-system/assets/ds.css`, `showcase/assets/showcase.css` | **PASS** | **0 hardcoded hex values** across both files. |
 | **Tailwind Mapping Export** | `tokens/tailwind.tokens.js` | **PASS** | `require('./tokens/tailwind.tokens.js')` loads cleanly in Node v20.3.1 with 14 top-level theme keys. |
 | **WCAG 2.2 AA Contrast Math** | Primary, Secondary, Danger, Links, Borders, Status, Charts | **PASS** | Verified via relative luminance script: Primary `#111823` on `#ED7C30` = `6.39:1` (hover `#C96A2B` = `4.73:1`), Secondary `#FFFFFF` on `#25517B` = `8.26:1`, Control border `#6F7D90` on `#F7F9FB` = `3.95:1` (1.4.11), Success/Warning/Error/Info/WhatsApp all `≥4.95:1` in Light and `≥7.21:1` in Night Ocean Dark. |
-| **JavaScript Syntax Check** | `design-system/assets/ds.js`, `showcase/assets/showcase.js` | **PASS** | `node --check` exited `0` on both files. |
+| **JavaScript Syntax Check** | `assets/js/main.js`, `design-system/assets/ds.js`, `showcase/assets/showcase.js` | **PASS** | `node --check` exited `0` across all three scripts (`main.js` updated with minimalist `2000ms` reload-triggered `#brandModal`). |
+| **Root Marketing Page UI & Lineage Audit** | `index.html`, `assets/css/site.css`, `assets/js/main.js`, `docs/*` | **PASS** | Automated static validation confirmed ultra-minimalist centered `#brandModal` (`max-width: 390px`, single large circular Taabu Nibash emblem, `2000ms` delay on every reload, `700ms` open glide, no second logo/CTA buttons), removed `#openBrandModal`/`#openBrandModalDrawer`/`#openBrandModalFtr`/`#closeBrandModal`, `52×52px` (`border-radius: 50%`) circular `.brand__chip--footer`, stacked `<480px` hero CTAs, generous mobile card/timeline breathing space, and **0 hardcoded hex colors** in modal/footer rules. |
 | **HTML Structure & Asset Integrity** | `brand-guide/index.html`, `design-system/index.html`, `showcase/*.html` (10 files), `docs/COMPONENT_INVENTORY.md` | **PASS** | All HTML pages include `.skip-link`, `<main>`, central `tokens.css` + `themes.css`; all **13** inventory links and all image/script/SVG paths resolve on disk. |
 | **Headless Browser DOM/Console Probe** | `msedge.exe --headless=new` on local HTTP | **BLOCKED BY SANDBOX** | Sandbox denies Edge network process loopback access (`net::ERR_NETWORK_ACCESS_DENIED`); Playwright is not installed (`playwright: None`). Live browser console & computed layout geometry require manual/unsandboxed run. |
 

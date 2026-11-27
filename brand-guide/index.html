@@ -47,9 +47,16 @@
       --text-heading: var(--te-n-900);
       --text-body: var(--te-n-700);
       --text-muted: var(--te-n-600);
-      --overline: var(--te-orange-700);
+      --overline: var(--te-orange-500);
       --link: var(--te-deep-600);
-      --hdr-bg: rgba(255, 255, 255, 0.92);
+      --hdr-bg: rgba(255, 255, 255, 0.68);
+      --glass-strong: rgba(255, 255, 255, 0.72);
+      --glass-bd: rgba(255, 255, 255, 0.78);
+      --glow-infinity:
+        radial-gradient(840px circle at 90% 8%, rgba(237, 124, 48, 0.13), transparent 66%),
+        radial-gradient(740px circle at 8% 38%, rgba(67, 148, 213, 0.12), transparent 68%),
+        radial-gradient(780px circle at 84% 72%, rgba(237, 124, 48, 0.095), transparent 66%),
+        radial-gradient(680px circle at 14% 92%, rgba(67, 148, 213, 0.10), transparent 68%);
 
       --grad-sunset: linear-gradient(17deg, #F2A16A 0%, #ED7C30 100%);
       --grad-ocean: linear-gradient(17deg, #4394D5 0%, #3171AE 100%);
@@ -96,7 +103,9 @@
       font-size: 16px;
       line-height: 1.6;
       color: var(--text-body);
-      background: var(--bg);
+      background-color: var(--bg);
+      background-image: var(--glow-infinity);
+      background-attachment: fixed;
       -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, h4 {
@@ -145,8 +154,8 @@
     .flight-rule {
       width: 68px; height: 3px; border-radius: 999px;
       background: var(--grad-sunset);
-      transform: rotate(-17deg); transform-origin: left center;
-      margin: 10px 0 18px;
+      transform: rotate(-3deg); transform-origin: left center;
+      margin: 12px 0 16px;
     }
 
     /* Header */
@@ -210,8 +219,11 @@
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
     .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 16px; padding: 22px; box-shadow: var(--shadow-sm);
+      background: var(--glass-strong, var(--surface));
+      -webkit-backdrop-filter: saturate(180%) blur(24px);
+      backdrop-filter: saturate(180%) blur(24px);
+      border: 1px solid var(--glass-bd, var(--border));
+      border-radius: 16px; padding: 22px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), var(--shadow-sm);
     }
     .card h3 { font-size: 19px; margin-bottom: 8px; }
     .card--accent { border-top: 4px solid var(--te-orange-500); }
@@ -522,6 +534,29 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="card card--accent" style="margin-bottom:28px;">
+      <h3>Corporate Lineage: Taabu Nibash Travel Group (Mother Company) ➔ Trip Express BD (Sister Concern)</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface);">
+          <img src="../assets/brand/taabu-nibashi-logo.jpg" alt="Taabu Nibash Travel Group official logo" style="width:56px;height:56px;object-fit:contain;background:#fff;padding:3px;border-radius:10px;border:1px solid var(--border);flex:none;">
+          <div>
+            <span class="tag" style="background:var(--te-success-bg);color:var(--te-success-text);border-color:var(--te-success-bd);margin-bottom:4px;">Mother Company</span>
+            <div style="font-weight:800;color:var(--text-heading);font-size:15px;">Taabu Nibash Travel Group</div>
+            <div class="bn" lang="bn" style="font-size:15px;color:var(--text-muted);line-height:1.3;">তাঁবু নিবাসী ট্রাভেল গ্রুপ</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface);">
+          <img src="../assets/brand/logo-mark.svg" alt="Trip Express BD official mark" style="width:56px;height:56px;object-fit:contain;background:#fff;padding:6px;border-radius:10px;border:1px solid var(--border);flex:none;">
+          <div>
+            <span class="tag" style="background:var(--te-orange-100);color:var(--te-orange-500);border-color:var(--te-orange-300);margin-bottom:4px;">Sister Concern</span>
+            <div style="font-weight:800;color:var(--text-heading);font-size:15px;"><span style="color:#ED7C30;">Trip</span> Express BD</div>
+            <div class="bn" lang="bn" style="font-size:15px;color:var(--text-muted);line-height:1.3;">ট্রিপ এক্সপ্রেস বিডি</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin:12px 0 0;">Extracted Taabu Nibash pigments: Campfire Orange <code>#ED7C30</code>/<code>#E68D27</code> (harmonized), Forest Green <code>#0A8B48</code>, Charcoal Ink <code>#1F1610</code>. Wordmark emphasis (<code>Trip</code>, Hero <code>H1 em</code>) strictly preserves pure Sunset Orange <code>#ED7C30</code>.</p>
     </div>
 
     <h3 style="margin-bottom:14px;">Background Compatibility (Live SVG Cutout Demonstration)</h3>
@@ -896,10 +931,10 @@
     </div>
     <div class="card">
       <ol style="margin:0;padding-left:20px;display:grid;gap:10px;font-size:15px;">
-        <li><strong>Logo Fidelity:</strong> Approve preserving `assets/brand/logo-mark.svg` and `logo.jpg` untouched (17.12° overhanging streak, 76.9% disc) and generating proposed white-backed reverse, disc-only, monochrome, and wordmark lockup SVGs.</li>
-        <li><strong>Color Palette:</strong> Approve contrast-derived 50–950 ramps, `#111823` ink on `#ED7C30` buttons (`6.39:1`), `#A45826` text orange (`5.25:1`), Night Ocean `#132436` dark theme, and `#F2A15F` (logo) vs `#F2A16A` (`orange-400`) reconciliation.</li>
-        <li><strong>Typography:</strong> Approve Plus Jakarta Sans + Inter + Hind Siliguri (+ optional JetBrains Mono for admin IDs), `17px` Bangla floor, and `13px` Latin UI floor.</li>
-        <li><strong>Strategy &amp; Dual-Mode Rules:</strong> Approve positioning, bilingual voice, real-photo-first Kashmir gap illustration policy, and marketing vs. dense admin interface standards.</li>
+        <li><strong>Corporate Lineage &amp; Logo Fidelity:</strong> Preserve `assets/brand/logo-mark.svg`, `logo.jpg`, and parent emblem `assets/brand/taabu-nibashi-logo.jpg` untouched; announce Mother Company (<strong>Taabu Nibash Travel Group</strong>) ➔ Sister Concern (<strong>Trip Express BD</strong>) via a minimalist pure-branding frosted glass modal (`2000ms` delayed `700ms` slow reveal on every reload, zero navbar/drawer/CTA button clutter). Wrap footer dark-surface `logo-mark.svg` inside a true `1:1` circular (`52×52px`) white chip.</li>
+        <li><strong>Color Palette &amp; Brand Orange Alignment:</strong> Maintain exact Sunset Orange `#ED7C30` on display headlines (`"Photographs to prove it."`), wordmarks (`"Trip"`), overlines, and icons; pair `#ED7C30` CTA fills with `#111823` ink (`6.39:1` AA), Night Ocean `#132436` dark theme, and harmonized Taabu Nibash pigments (`#0A8B48`, `#1F1610`).</li>
+        <li><strong>Glassmorphism &amp; Infinity Radial Glow:</strong> Use translucent frosted glass layers (`0.58–0.74` opacity, `24–30px` blur, inner white highlight) floating over the continuous `--te-glow-infinity` canvas and seamless feathered hero dissolve.</li>
+        <li><strong>Typography &amp; Dual-Mode Rules:</strong> Plus Jakarta Sans + Inter + Hind Siliguri (`17px` Bangla floor, `13px` Latin UI floor), real-photo-first Kashmir flat vector illustration policy, and marketing vs. dense admin interface standards.</li>
       </ol>
     </div>
   </div>
@@ -916,7 +951,9 @@
     { name: 'Sky Blue', hex: '#4394D5', rgb: '67, 148, 213', hsl: '207, 63%, 55%', note: '13.66% canvas · Lower water disc', darkText: true },
     { name: 'Deep Ocean', hex: '#3171AE', rgb: '49, 113, 174', hsl: '209, 56%, 44%', note: '6.29% canvas · White text safe (5.12:1)', darkText: false },
     { name: 'Sea Shadow (JPEG)', hex: '#387DB4', rgb: '56, 125, 180', hsl: '207, 53%, 46%', note: 'Soft lower-disc wave in logo.jpg', darkText: false },
-    { name: 'Horizon White', hex: '#FFFFFF', rgb: '255, 255, 255', hsl: '0, 0%, 100%', note: '58.94% canvas · Logo negative space', darkText: true }
+    { name: 'Horizon White', hex: '#FFFFFF', rgb: '255, 255, 255', hsl: '0, 0%, 100%', note: '58.94% canvas · Logo negative space', darkText: true },
+    { name: 'Taabu Forest Green', hex: '#0A8B48', rgb: '10, 139, 72', hsl: '148, 86%, 29%', note: 'Mother Co. TRAVEL GROUP & pines', darkText: false },
+    { name: 'Taabu Charcoal Ink', hex: '#1F1610', rgb: '31, 22, 16', hsl: '24, 32%, 9%', note: 'Mother Co. TAABU NIBASH lettering', darkText: false }
   ];
 
   const RAMPS = {

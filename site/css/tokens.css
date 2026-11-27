@@ -200,6 +200,8 @@
   --te-p-container-wide:   1440px;
   --te-p-flight-angle:     17deg;
   --te-p-flight-angle-neg: -17deg;
+  --te-p-rule-angle:       3deg;
+  --te-p-rule-angle-neg:   -3deg;
   --te-p-cut-rise:         min(30.57vw, 170px);
   --te-p-ic-sm: 16px;
   --te-p-ic-md: 20px;

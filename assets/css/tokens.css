@@ -183,6 +183,8 @@
 
   --te-flight-angle:     var(--te-p-flight-angle);
   --te-flight-angle-neg: var(--te-p-flight-angle-neg);
+  --te-rule-angle:       var(--te-p-rule-angle);
+  --te-rule-angle-neg:   var(--te-p-rule-angle-neg);
   --te-cut-rise:         var(--te-p-cut-rise);
 
   --te-dur-instant: var(--te-p-dur-instant);

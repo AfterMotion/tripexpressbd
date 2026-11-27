@@ -26,6 +26,15 @@
         "hasWhiteBackingLayer": false,
         "fillRule": "evenodd",
         "status": "source_verified"
+      },
+      {
+        "path": "assets/brand/taabu-nibashi-logo.jpg",
+        "type": "image/jpeg",
+        "bytes": 70309,
+        "dimensions": { "w": 960, "h": 960 },
+        "role": "Parent / Mother Company official emblem (Taabu Nibash Travel Group)",
+        "extractedPigments": ["#ED7C30", "#0A8B48", "#1F1610"],
+        "status": "source_verified"
       }
     ],
     "suppliedElsewhereInRepo": [
@@ -91,6 +100,8 @@
     "whatsapp": "https://wa.me/8801838754207",
     "email": "tripexpressb@gmail.com",
     "facebookFollowers": "5.9K",
+    "motherCompany": "Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)",
+    "sisterConcern": "Trip Express BD",
     "partner": "তাঁবু নিবাসী",
     "banks": [
       { "bank": "Islami Bank", "accountName": "MD Mirajul Islam", "accountNumber": "20501620205843017", "branch": "Chawkbazar, Chattogram" },
@@ -293,11 +304,12 @@
   },
   "layoutAndModes": {
     "flightAngleDeg": 17,
+    "ruleAngleDeg": 3,
     "tan17": 0.3057,
     "breakpoints": { "mobile": "<640px (4 col, 20px margin)", "tablet": "640-1023px (8 col, 32px margin)", "laptop": "1024-1279px (12 col, 1120px)", "desktop": ">=1280px (12 col, 1240px)", "wide": ">=1536px (12 col, 1280px)" },
     "marketingRules": {
       "sectionPaddingY": "clamp(4rem, 8vw, 7rem)",
-      "flightAngle": "Active on hero cuts, section wedges, Flight Rules, featured badge skew (-6deg), and card lift translate(2px, -6px)",
+      "flightAngle": "Active on hero cuts, section wedges, featured badge skew (-6deg), and card lift translate(2px, -6px); text-adjacent Flight Rules use gentle -3deg (--te-p-rule-angle-neg) with 12px/16px desktop and 10px/12px mobile margins to prevent text overlap",
       "motion": "Depart reveal (-14px, 10px -> 0,0) in 260ms ease-out; prefers-reduced-motion shows static frame"
     },
     "adminInterfaceRules": {

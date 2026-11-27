@@ -85,6 +85,7 @@
     var dots = $$('.hero-slider__dot', root);
     var tagEl = $('#slideTag');
     var titleEl = $('#slideTitle');
+    var countEl = $('#slideCount');
     var prevBtn = $('#slidePrev');
     var nextBtn = $('#slideNext');
     if (!slides.length) return null;
@@ -92,8 +93,11 @@
     var idx = 0;
     var timer = 0;
 
+    function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
     function render(nextIndex) {
       idx = (nextIndex + slides.length) % slides.length;
+      if (countEl) countEl.textContent = pad2(idx + 1) + ' / ' + pad2(slides.length);
       slides.forEach(function (s, i) {
         var on = i === idx;
         s.classList.toggle('is-active', on);
@@ -666,38 +670,132 @@
     });
   }
 
-  /* ================= form ================= */
+  /* ================= form -> WhatsApp ================= */
   var form = $('#enquiry');
+  var WA_NUMBER = '8801838754207';
   var BD_PHONE = /^(?:\+?880|0)1[3-9]\d{8}$/;
-  function bad(field, isBad) { field.closest('.field').classList.toggle('is-bad', isBad); }
+  function bad(field, isBad) {
+    if (!field) return;
+    field.closest('.field').classList.toggle('is-bad', isBad);
+    if (isBad) field.setAttribute('aria-invalid', 'true');
+    else field.removeAttribute('aria-invalid');
+  }
+
+  function formatTravelMonth(raw) {
+    var val = (raw || '').trim();
+    if (!val) return '';
+    var m = /^(\d{4})-(\d{2})$/.exec(val);
+    if (!m) return val;
+    var months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    var idx = parseInt(m[2], 10) - 1;
+    return (idx >= 0 && idx < 12) ? (months[idx] + ' ' + m[1]) : val;
+  }
 
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = $('#f-name'), phone = $('#f-phone'), dest = $('#f-dest');
+      var month = $('#f-month'), notes = $('#f-msg');
+
       bad(name, name.value.trim().length < 2);
       bad(phone, !BD_PHONE.test(phone.value.replace(/[\s-]/g, '')));
       bad(dest, dest.value === '');
       var firstBad = form.querySelector('.field.is-bad input, .field.is-bad select');
       if (firstBad) {
         firstBad.focus();
-        firstBad.setAttribute('aria-invalid', 'true');
         return;
       }
+
+      var monthText = formatTravelMonth(month ? month.value : '') || 'Flexible / Not specified';
+      var notesText = notes ? notes.value.trim() : '';
+
+      var lines = [
+        'Hello Trip Express BD, I would like to inquire about a tour:',
+        '- Name: ' + name.value.trim(),
+        '- Mobile: ' + phone.value.trim(),
+        '- Destination: ' + dest.value,
+        '- Travel Time: ' + monthText
+      ];
+      if (notesText) lines.push('- Notes: ' + notesText);
+
+      var waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+
       var okBox = $('#formOk');
       var okTxt = $('#formOkText');
       if (okTxt) {
-        var msg = encodeURIComponent('Tour Enquiry: ' + dest.value + ' | Name: ' + name.value.trim() + ' | Phone: ' + phone.value.trim());
-        okTxt.innerHTML = 'Validated locally (static preview - no backend server). <a href="https://wa.me/8801838754207?text=' + msg + '">Tap to send on WhatsApp</a> or call <span class="te-num">01838-754207</span>.';
+        okTxt.textContent = 'Opening WhatsApp with your inquiry. If it does not open automatically, ';
+        var link = document.createElement('a');
+        link.href = waUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'tap here to send on WhatsApp';
+        okTxt.appendChild(link);
+        okTxt.appendChild(document.createTextNode('.'));
       }
-      okBox.setAttribute('data-show', 'true');
-      form.reset();
-      okBox.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+      if (okBox) {
+        okBox.setAttribute('data-show', 'true');
+        okBox.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+
+      var win = window.open(waUrl, '_blank', 'noopener,noreferrer');
+      if (!win) window.location.href = waUrl;
     });
     $$('#enquiry input, #enquiry select, #enquiry textarea').forEach(function (el) {
-      el.addEventListener('input', function () { bad(el, false); el.removeAttribute('aria-invalid'); });
+      var clear = function () { bad(el, false); };
+      el.addEventListener('input', clear);
+      el.addEventListener('change', clear);
     });
   }
+
+  /* ================= corporate lineage modal (2s delayed reload reveal) ================= */
+  (function initBrandModal() {
+    var modal = $('#brandModal');
+    if (!modal) return;
+    var xCloseBtn = $('#xCloseBrandModal');
+    var lastFocused = null;
+
+    function openModal() {
+      lastFocused = document.activeElement;
+      modal.removeAttribute('hidden');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          modal.setAttribute('data-open', 'true');
+        });
+      });
+      document.body.style.overflow = 'hidden';
+      if (xCloseBtn) xCloseBtn.focus({ preventScroll: true });
+    }
+
+    function closeModal() {
+      modal.setAttribute('data-open', 'false');
+      document.body.style.overflow = '';
+      setTimeout(function () {
+        if (modal.getAttribute('data-open') !== 'true') {
+          modal.setAttribute('hidden', '');
+        }
+      }, reduceMotion ? 20 : 720);
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus({ preventScroll: true });
+      }
+    }
+
+    if (xCloseBtn) xCloseBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.getAttribute('data-open') === 'true') {
+        closeModal();
+      }
+    });
+
+    setTimeout(openModal, 2000);
+  })();
 
   mqReduce.addEventListener('change', function (e) {
     reduceMotion = e.matches;

@@ -44,6 +44,7 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 639px) {
   .sec { padding: var(--te-p-space-10) 0; }
   .sec-head { margin-bottom: var(--te-p-space-5); }
+  .te-flight-rule { margin: 10px 0 12px; }
 }
 
 .te-overline {
@@ -53,8 +54,8 @@ img { max-width: 100%; height: auto; }
 .sec--dark .te-overline { color: var(--te-p-orange-400); }
 .te-flight-rule {
   display: block; width: 72px; height: 3px; border-radius: var(--te-p-r-pill);
-  background: var(--te-grad-sunset); transform: rotate(var(--te-p-flight-angle-neg));
-  transform-origin: left center; margin: 10px 0 18px;
+  background: var(--te-grad-sunset); transform: rotate(var(--te-p-rule-angle-neg));
+  transform-origin: left center; margin: 12px 0 16px;
 }
 .sec-head { max-width: 60ch; margin-bottom: var(--te-p-space-8); }
 .sec-head p.lead { font-size: var(--te-p-fs-body-lg); color: var(--te-text-muted); margin: 0; }

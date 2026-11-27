@@ -20,7 +20,7 @@ version: 2.0.0
 2. **Contrast Guardrails:** Never put `#FFFFFF` ink on `#ED7C30` (`2.79:1` FAIL). Pair `#ED7C30` buttons with `#111823` (`6.39:1` AA). Use `#A45826` (`5.25:1`) for orange text on light surfaces and `#F2A16A` (`7.56:1`) on Night Ocean `#132436`.
 3. **Bilingual & Micro Floors:** Tag Bangla runs with `lang="bn"` (`Hind Siliguri`, **`≥17px`** running text, `line-height: 1.85`, `letter-spacing: 0`, never uppercase). Keep Latin UI text **`≥13px`**. Use `tabular-nums` on every `৳` price, date, and ledger cell.
 4. **Logo Integrity:** Never recolor, stretch, rotate, add shadows, or clip the `17°` overhanging streak of `assets/brand/logo-mark.svg`. Because `logo-mark.svg` uses transparent `evenodd` cutouts, wrap it in a `#FFFFFF` disc chip on dark/photo surfaces until a white-backed reverse SVG is approved.
-5. **Context-Sensitive Density & Geometry:** Marketing pages use comfortable spacing + `17°` Flight Angle cuts/badges/lifts; `[data-density="compact"]` admin interfaces use `40px` table rows, `36px` controls, `8px` radii, and **zero** `17°` skew.
+5. **Context-Sensitive Density & Geometry:** Marketing pages use comfortable spacing + `17°` Flight Angle cuts/badges/lifts, while text-adjacent Flight Rules / underlines MUST use gentle `-3deg` (`--te-p-rule-angle-neg`) with `margin: 12px 0 16px` (`10px 0 12px` `<640px`) so angled rules never overlap overlines or headings; `[data-density="compact"]` admin interfaces use `40px` table rows, `36px` controls, `8px` radii, and **zero** skew.
 6. **Change Control:** Before building a missing or `spec-only` variant, document its anatomy, states, token aliases, responsive behavior, and `spec-ready` entry in `docs/COMPONENT_INVENTORY.md` and `docs/DESIGN_SYSTEM.md`.
 
 ---

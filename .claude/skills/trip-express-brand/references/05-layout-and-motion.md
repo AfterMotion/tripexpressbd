@@ -73,18 +73,19 @@ padding holds a 12px image, not another 16px.
 - Dark-section hairline: `1px solid #24405C`
 - Never use a border thicker than 2px except the Flight Rule (below).
 
-**Flight Rule** - the brand's decorative divider:
+**Flight Rule** - the brand's decorative divider (kept at a gentle `-3deg` so it never collides with adjacent text on desktop or mobile):
 ```css
 .te-flight-rule {
   height: 3px;
   width: 72px;
   background: var(--te-grad-sunset);
   border-radius: 999px;
-  transform: rotate(-17deg);      /* CSS rotate is clockwise-positive */
+  transform: rotate(var(--te-rule-angle-neg)); /* -3deg (~3.8px rise); never -17deg near text */
   transform-origin: left center;
+  margin: 12px 0 16px;            /* mobile <640px: 10px 0 12px */
 }
 ```
-Use once per section header, under the overline. Never more than one per section.
+Use once per section header, under the overline. Never more than one per section, and never rotate by `-17deg` (`72px × sin(17°) = 21px` vertical swing overlaps overlines and headings).
 
 ## 5. The 17° system
 
@@ -242,8 +243,7 @@ name. Measure it. If a true 17° rise would swallow the artwork behind it, short
 the **run** - a corner wedge over 330px - rather than shallowing the angle. The
 angle is the brand; the size of the shape is negotiable.
 
-Applies to: section seams, the footer cut, the OG card, hero clip-paths and the
-Flight Rule under every section header.
+Applies to: section seams, the footer cut, the OG card, and hero clip-paths. Text-adjacent Flight Rules under section overlines use `--te-rule-angle-neg` (`-3deg`) instead to preserve text clearance.
 
 ---
 

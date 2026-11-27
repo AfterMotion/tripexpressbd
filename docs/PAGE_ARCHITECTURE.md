@@ -83,7 +83,7 @@ Header
 - **Financial Clarity:** Publishing Islami Bank / Eastern Bank branch details + airfare-ceiling footnote alongside prices eliminates hidden-fee suspicion.
 
 ### 4.3 Mobile Ordering (`360px`) & Empty/Error States
-- **Mobile Reordering Rules:** Hero photo (`4:5`) sits *above* hero headline/CTA (never cramped side-by-side); Destination discs become a swipeable edge-peek rail; Package grid collapses `3 → 1` column; Inclusions stack above Exclusions; Contact Enquiry Form appears *above* Office/Phone block so quick lead capture precedes address lookup; Floating WhatsApp disc (`56px`) stays clear of `env(safe-area-inset-bottom)`.
+- **Mobile Reordering & Rule Clearance:** Hero photo (`4:5`) sits *above* hero headline/CTA (never cramped side-by-side); Destination discs become a swipeable edge-peek rail; Package grid collapses `3 → 1` column; Inclusions stack above Exclusions; Contact Enquiry Form appears *above* Office/Phone block so quick lead capture precedes address lookup; Floating WhatsApp disc (`56px`) stays clear of `env(safe-area-inset-bottom)`; text-adjacent Flight Rules use `-3deg` (`--te-p-rule-angle-neg`) with `10px 0 12px` mobile margin (`12px 0 16px` desktop) so rules never collide with overlines or headings.
 - **Empty & Error States:**
   - *Empty Gallery / New Destination:* `"Photos from this trip are on the way."` + 5-color flat Kashmir-style brand illustration.
   - *Sold-Out Departure:* `Sold Out` semantic badge (`#B02E2E` on `#FDECEC`) + `"This departure is full. Ask us about the next one."` routing to WhatsApp.

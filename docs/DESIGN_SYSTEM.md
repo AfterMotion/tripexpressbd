@@ -109,7 +109,7 @@ Highest to lowest: `disabled` > `loading` (`aria-busy="true"`) > `error` (`aria-
 | `--te-input-height` | `48px` | `38px` |
 | `--te-table-row-height` | `48px` | `40px` |
 | `--te-btn-radius` | `999px` (pill) | `8px` (`--te-p-r-sm`) |
-| `17° Flight Angle` | Active (cuts, Flight Rules, `-6deg` badges, `translate(2px,-6px)`) | **Disabled** (zero skew in tables, toolbars, forms) |
+| `17° Flight Angle & 3° Rule` | Active (cuts, `-3deg` Flight Rules with `12px/16px` desktop & `10px/12px` mobile clearance, `-6deg` badges, `translate(2px,-6px)`) | **Disabled** (zero skew in tables, toolbars, forms) |
 
 ### 4.3 Spacing, Radii, Elevation, Z-Index, Icons & Motion
 - **Spacing Scale (4px base):** `0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128px`.
@@ -172,3 +172,40 @@ Highest to lowest: `disabled` > `loading` (`aria-busy="true"`) > `error` (`aria-
 - [ ] Confirm adopting `tokens/tokens.css` + `tokens/themes.css` as the canonical replacement/superset of legacy `assets/css/tokens.css` in Stage 3+.
 - [ ] Confirm `--te-btn-radius` switching from `999px` (pill) in marketing to `8px` (`--te-p-r-sm`) in `[data-density="compact"]` admin toolbars.
 - [ ] Confirm `JetBrains Mono` as optional load for admin Booking IDs & bank accounts (or fall back to `ui-monospace` to protect the `180 KB` public marketing font budget-recommended: load `JetBrains Mono` on portal/admin routes only).
+
+---
+
+## 8. Corporate Lineage, Glassmorphism Modal & Ambient Radial Glow Specifications
+
+### 8.1 Corporate Hierarchy
+- **Mother / Parent Company:** **Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)** - Adventure, camping, hospitality network, and organizational umbrella.
+- **Sister Concern / Outbound Wing:** **Trip Express BD (ট্রিপ এক্সপ্রেস বিডি)** - Guided South Asia group departures (Kashmir, Meghalaya, Nepal, Darjeeling, Sikkim, Maldives/Sri Lanka) from Chattogram.
+
+### 8.2 Extracted & Authoritative Color Tokens
+| Identity | Element | Measured HEX | Token Equivalent | Role |
+|---|---|---|---|---|
+| **Trip Express BD** | Sunset Orange | `#ED7C30` | `--te-orange-500` | Primary brand accent & button fill |
+| **Trip Express BD** | Sand Orange | `#F2A15F` | `--te-orange-300` | Mountain highlights & soft badges |
+| **Trip Express BD** | Sky Blue | `#4394D5` | `--te-sky-500` | Lower water disc & decorative accents |
+| **Trip Express BD** | Deep Ocean | `#3171AE` | `--te-deep-500` | Focus rings & info alerts |
+| **Trip Express BD** | Night Ocean Ink | `#111823` | `--te-n-950` | Primary dark ink (`6.39:1` on `#ED7C30`) |
+| **Taabu Nibash** | Campfire Orange | `#ED7C30` / `#E68D27` | `--te-orange-500` | Campfire & tent canvas (harmonizes with TE) |
+| **Taabu Nibash** | Pine Green | `#0A8B48` / `#118C49` | `--te-green-700` | "TRAVEL GROUP" text & evergreen pine trees |
+| **Taabu Nibash** | Charcoal Brown | `#1F1610` / `#2D161E` | `--te-n-950` | "TAABU NIBASH" heading & outer boundary ring |
+
+### 8.3 Headline Accent Primacy Rule
+- **Rule:** Display headline emphasis (`.hero h1 em` e.g., *"Photographs to prove it."*) and brand lockup typography (`.brand__name i` e.g., *"Trip"*) MUST use the pure brand Sunset Orange `#ED7C30` (`var(--te-orange-500)`).
+- Never degrade headline accents to muddied `#A45826` (`--te-orange-700`), which was intended strictly for small running body text on white.
+
+### 8.4 Corporate Lineage Glassmorphism Modal (`#brandModal`) & Seamless Hero Slider
+- **Modal Structure (Minimalist Pure Branding):**
+  - **Behavior & Timing:** Opens `2000ms` after **every** page load/reload (so visitors scrolling are never interrupted abruptly at `0ms`), transitioning smoothly over `700ms cubic-bezier(0.22, 1, 0.36, 1)`. Zero persistent trigger buttons in navbar, drawer, or footer.
+  - Fullscreen Backdrop: `background: rgba(17, 24, 35, 0.54)`, `backdrop-filter: blur(26px) saturate(165%)`.
+  - Dual Ambient Glow Halo: `radial-gradient(380px circle at 76% 24%, rgba(237, 124, 48, 0.38), transparent 66%), radial-gradient(380px circle at 24% 78%, rgba(67, 148, 213, 0.30), transparent 68%)`, `filter: blur(48px)`.
+  - Ultra-Minimalist Centered Frosted Card (`max-width: 390px`): `var(--te-glass-bg-strong)`, `backdrop-filter: blur(30px) saturate(190%)`, specular `var(--te-glass-highlight)` top rim, `border: 1.5px solid var(--te-glass-border)`, `border-radius: var(--te-r-2xl)`. Centered single oversized circular **Taabu Nibash** emblem (`112–128px`, `border-radius: var(--te-r-disc)`), centered `"Sister Concern by Taabu Nibash"` title, one short relevant EN+BN sentence, and top-right `✕`—zero Trip Express duplicate logo, zero Mother Company badge, zero redundant subheadings, and zero footer CTA buttons.
+  - Dismiss: Top-right `✕`, click outside/backdrop, or `Escape` key.
+- **Seamless Hero Slider & Mobile Breathing Room (`#heroSlider`):**
+  - **Seamless Section Transition:** Hero image stage applies a feathered bottom mask (`linear-gradient(to bottom, #000 74%–80%, transparent 100%)`) melting into the continuous `body::before` `--te-glow-infinity` radial canvas so zero horizontal boundary separates Hero from Destinations.
+  - **Mobile Stage (`<1040px`):** Open top `16:11` (`235px–310px`) photo canvas keeping traveller faces unobstructed (`object-position: center 22%`), paired below with floating frosted slider dock (`.hero-slider__glass`) and frosted headline card (`padding: 20px 18px`) with stacked `12px`-gapped CTAs (`>=46px` touch height, never crammed side-by-side below `480px`) and generous `18px 16px` card breathing room across timeline cards and compact footer desk strip.
+  - **Footer Disc Mark:** True `1:1` `52×52px` circular white disc (`border-radius: 50%`) wrapping `logo-mark.svg` cleanly beside split `#ED7C30` wordmark.
+  - **Desktop Stage (`>=1040px`):** Full-bleed background slider with frosted glass headline card left and translucent frosted `.hero-slider__dock` right (`01 / 04` counter + slide controls).

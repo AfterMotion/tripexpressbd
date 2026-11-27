@@ -37,6 +37,7 @@ code { font-family: var(--te-font-mono); font-size: var(--te-p-fs-micro); }
 @media (max-width: 639px) {
   .sec { padding: var(--te-p-space-10) 0; }
   .sec-head { margin-bottom: var(--te-p-space-5); }
+  .te-flight-rule { margin: 10px 0 12px; }
   .te-hero__h1 { font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.5rem); }
   .lead { font-size: var(--te-p-fs-body); }
 }
@@ -83,7 +84,7 @@ code { font-family: var(--te-font-mono); font-size: var(--te-p-fs-micro); }
 .sec--dark .te-overline { color: var(--te-p-orange-400); }
 .sec--dark h1, .sec--dark h2 { color: var(--te-p-n-0); }
 .lead { font-size: var(--te-p-fs-body-lg); color: var(--te-text-muted); }
-.te-flight-rule { display: block; width: 72px; height: 3px; border-radius: var(--te-p-r-pill); background: var(--te-grad-sunset); transform: rotate(var(--te-p-flight-angle-neg)); transform-origin: left center; margin: 10px 0 18px; }
+.te-flight-rule { display: block; width: 72px; height: 3px; border-radius: var(--te-p-r-pill); background: var(--te-grad-sunset); transform: rotate(var(--te-p-rule-angle-neg)); transform-origin: left center; margin: 12px 0 16px; }
 .sec-head { max-width: 62ch; margin-bottom: var(--te-p-space-8); }
 
 .ic { display: inline-block; flex-shrink: 0; width: 20px; height: 20px; stroke-width: 1.85; vertical-align: middle; }

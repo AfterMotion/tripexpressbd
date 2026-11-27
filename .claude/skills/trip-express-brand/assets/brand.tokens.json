@@ -4,6 +4,7 @@
     "brand": "Trip Express BD",
     "source": "logo-primary.jpg (2048x2048), pixel-sampled",
     "flightAngleDeg": 17,
+    "ruleAngleDeg": 3,
     "discDiameterRatio": 0.766,
     "markBoundingBox": {
       "x": 80,
@@ -665,8 +666,20 @@
       "safeAreaInset": "env(safe-area-inset-bottom)"
     }
   },
+  "glassAndGlow": {
+    "blur": "24px",
+    "blurStrong": "30px",
+    "surfaceLight": "rgba(255, 255, 255, 0.58)",
+    "surfaceStrongLight": "rgba(255, 255, 255, 0.72)",
+    "surfaceDark": "rgba(19, 36, 54, 0.56)",
+    "surfaceStrongDark": "rgba(19, 36, 54, 0.72)",
+    "highlight": "inset 0 1px 0 rgba(255, 255, 255, 0.88)"
+  },
   "business": {
     "legalName": "Trip Express BD",
+    "motherCompany": "Taabu Nibash Travel Group",
+    "motherCompanyLogo": "assets/brand/taabu-nibashi-logo.jpg",
+    "sisterConcern": "Trip Express BD",
     "city": "Chattogram",
     "postcode": "4202",
     "country": "Bangladesh",

@@ -105,10 +105,13 @@ code { font-family: var(--te-font-mono); font-size: var(--te-p-fs-micro); }
 
 .te-flight-rule {
   display: block; width: 72px; height: 3px; border-radius: var(--te-p-r-pill);
-  background: var(--te-grad-sunset); transform: rotate(var(--te-p-flight-angle-neg));
-  transform-origin: left center; margin: 10px 0 18px;
+  background: var(--te-grad-sunset); transform: rotate(var(--te-p-rule-angle-neg));
+  transform-origin: left center; margin: 12px 0 16px;
 }
 [data-density="compact"] .te-flight-rule { transform: none; }
+@media (max-width: 639px) {
+  .te-flight-rule { margin: 10px 0 12px; }
+}
 .sec-head { max-width: 62ch; margin-bottom: var(--te-p-space-8); }
 
 .ic { display: inline-block; flex-shrink: 0; width: 20px; height: 20px; stroke-width: 1.85; vertical-align: middle; }

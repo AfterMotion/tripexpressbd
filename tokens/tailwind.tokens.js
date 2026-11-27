@@ -53,6 +53,9 @@ module.exports = {
     overline:'var(--te-text-overline)',
     link:    'var(--te-text-link)',
     ring:    'var(--te-focus-ring)',
+    glass:   'var(--te-glass-bg)',
+    'glass-strong': 'var(--te-glass-bg-strong)',
+    'glass-border': 'var(--te-glass-border)',
 
     primary: {
       DEFAULT: 'var(--te-action-primary-bg)',
@@ -148,6 +151,12 @@ module.exports = {
     lg: 'var(--te-shadow-lg)',
     xl: 'var(--te-shadow-xl)',
     warm: 'var(--te-p-shadow-warm)',
+    glass: 'var(--te-glass-shadow)',
+    'glass-highlight': 'var(--te-glass-highlight)',
+  },
+  backdropBlur: {
+    glass: 'var(--te-glass-blur)',
+    'glass-strong': 'var(--te-glass-blur-strong)',
   },
 
   backgroundImage: {
@@ -211,5 +220,7 @@ module.exports = {
   rotate: {
     flight: 'var(--te-p-flight-angle)',
     'flight-neg': 'var(--te-p-flight-angle-neg)',
+    rule: 'var(--te-p-rule-angle)',
+    'rule-neg': 'var(--te-p-rule-angle-neg)',
   },
 };

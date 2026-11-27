@@ -14,7 +14,7 @@ Any coding agent working in this repository MUST follow these instructions befor
 - **Dark & High-Contrast Parity:** Every theme token override must appear in both `[data-theme="dark"]` and `@media (prefers-color-scheme: dark)`. Support `[data-contrast="high"]` / `prefers-contrast: more`.
 - **Bangla Typography:** Tag Bangla text with `lang="bn"`, render in `Hind Siliguri`, enforce **`17px`** minimum running text (`1.85` line-height, `0` letter-spacing, no uppercase). Keep Latin UI text **`≥13px`**.
 - **Logo Fidelity:** Preserve `assets/brand/logo-mark.svg` untouched (`17.12°` overhang, `0.25 × D` clear space). Wrap in a white disc chip on dark/photographic surfaces unless an approved white-backed reverse SVG exists.
-- **Density Separation:** Marketing uses comfortable spacing + `17°` Flight Angle geometry. Admin interfaces use `[data-density="compact"]` (`40px` rows, `36px` controls, `8px` radii, zero `17°` skew).
+- **Density Separation:** Marketing uses comfortable spacing + `17°` Flight Angle cuts/gradients, while text-adjacent Flight Rules / underlines use a gentle `-3deg` (`--te-rule-angle-neg`) with `margin: 12px 0 16px` (`10px 0 12px` `<640px`) so lines never collide with text. Admin interfaces use `[data-density="compact"]` (`40px` rows, `36px` controls, `8px` radii, zero `17°`/`3°` skew).
 - **Real Proof Over Stock:** Use authentic tour photos from `assets/img/`. Where none exist (e.g., Kashmir), use the 5-color flat brand illustration style rather than generic stock.
 
 ## 3. Document Before Implementing New Variants

@@ -13,6 +13,7 @@
 - **Focus Trap & Return:** All modal overlays (`Dialog`, `Drawer`, `Lightbox`) trap `Tab`/`Shift+Tab`, close on `Escape`, lock background scroll cleanly, and restore focus to the opener.
 - **Validation Policy:** Validate on blur/submit (`no-premature-validation`), clear errors immediately on fix, focus error summary on failed submit, and never block paste.
 - **Bilingual Support:** Any slot accepting Bangla text inherits `:lang(bn)` (`Hind Siliguri`, `≥ 17px` body / `≥ 16px` UI chip, `1.85` line-height, zero uppercase/tracking).
+- **Section Header & Flight Rule Clearance:** Text-adjacent Flight Rules (`.rule`, `.te-flight-rule`) MUST use `--te-p-rule-angle-neg` (`-3deg`, `~3.4–3.8px` rise) with `margin: 12px 0 16px` (`10px 0 12px` on `<640px` mobile) — never `-17deg` under overlines/headings, preventing overlap on responsive screens.
 - **Command Palette & Bulk Action Contracts:** `Ctrl+K` / `Cmd+K` opens modal (`role="dialog"`, `aria-modal="true"`) with live filtered list (`role="listbox"` / `ArrowUp`/`ArrowDown`/`Enter` navigation, `Escape` closes and returns focus). Compact admin shells enforce `[data-density="compact"]` (`40px` rows, `36px` controls, `8px` card/button radii, zero `17°` skew), and client-side RBAC role switching only controls UI visibility while documenting mandatory server-side enforcement.
 
 ---
@@ -71,7 +72,7 @@
 
 | Component | Variants | Tokens Consumed | Preview Link | Status |
 |---|---|---|---|---|
-| **4.1 Hero (Scrim + 17° Cut Seam)** | `4:5` mobile / `21:9` desktop + Night Ocean scrim | `--te-scrim`, `--te-bg-dark-band` | [Marketing Home](../showcase/01-marketing-home.html) | `implemented` |
+| **4.1 Hero Seamless Glass Slider (`#heroSlider`)** | Full-bleed desktop + open top mobile `16:11` stage, feathered dissolve into infinity glow, frosted dock | `--te-glass-*`, `--te-glow-infinity`, `--te-orange-500` | [Marketing Home](../showcase/01-marketing-home.html) · [Live Landing](../index.html#top) | `implemented` |
 | **4.2 Destination Discs & Kashmir Flat Art** | Photo discs + 5-color brand illustration | `--te-p-r-disc` | [Marketing Home](../showcase/01-marketing-home.html) | `implemented` |
 | **4.3 Featured Package Card & KPI Card** | Nested `16px/12px` radius, `-6deg` badge, `17°` lift | `--te-card-*` | [Design System](../design-system/index.html#comp-card) | `implemented` |
 | **4.4 Proof Photo Grid & Modal Lightbox** | Real Meghalaya/Nepal/Dawki photos + lightbox | `--te-dialog-*` | [Marketing Home](../showcase/01-marketing-home.html) | `implemented` |
@@ -87,6 +88,7 @@
 | **5.1 Modal Dialog & Destructive AlertDialog** | Focus trap, `Esc` close, focus return | `--te-dialog-*`, `--te-p-z-modal` | [User CRUD](../showcase/06-admin-users-crud.html) · [Record](../showcase/07-record-detail.html) | `implemented` |
 | **5.2 Notification Center Modal** | Unread notification list | `--te-dialog-*` | [Dashboard](../showcase/05-admin-dashboard.html) | `implemented` |
 | **5.3 Popover, Tooltip, Nested Menu, Coach Marks** | Secondary contextual disclosures | `--te-p-z-dropdown` | - | `spec-only` |
+| **5.4 Corporate Lineage Glassmorphism Modal (`#brandModal`)** | Ultra-minimalist centered round Taabu Nibash logo modal (`2000ms` delayed `700ms` glide on every reload, `✕`/outside-click only) | `--te-glass-bg-strong`, `--te-glow-ambient`, `--te-p-z-modal` | [Live Landing](../index.html) · [Brand Guide](../brand-guide/index.html#logo) | `implemented` |
 
 ---
 

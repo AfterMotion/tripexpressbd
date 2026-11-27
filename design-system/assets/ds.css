@@ -12,7 +12,9 @@ body {
   font-size: var(--te-p-fs-body);
   line-height: var(--te-p-lh-normal);
   color: var(--te-text-body);
-  background: var(--te-bg-canvas);
+  background-color: var(--te-bg-canvas);
+  background-image: var(--te-glow-infinity);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4 {
@@ -111,8 +113,8 @@ code, pre { font-family: var(--te-font-mono); font-size: var(--te-p-fs-caption);
 }
 .te-flight-rule {
   display: block; width: 68px; height: 3px; border-radius: var(--te-p-r-pill);
-  background: var(--te-grad-sunset); transform: rotate(var(--te-p-flight-angle-neg));
-  transform-origin: left center; margin: 10px 0 18px;
+  background: var(--te-grad-sunset); transform: rotate(var(--te-p-rule-angle-neg));
+  transform-origin: left center; margin: 12px 0 16px;
 }
 [data-density="compact"] .te-flight-rule { transform: none; }
 
@@ -122,8 +124,12 @@ code, pre { font-family: var(--te-font-mono); font-size: var(--te-p-fs-caption);
 .ds-grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--te-p-space-4); }
 
 .ds-panel {
-  background: var(--te-card-bg); border: var(--te-border-width) solid var(--te-card-border);
-  border-radius: var(--te-card-radius); padding: var(--te-card-pad); box-shadow: var(--te-card-shadow);
+  background: var(--te-glass-bg-strong);
+  -webkit-backdrop-filter: saturate(180%) blur(var(--te-glass-blur));
+  backdrop-filter: saturate(180%) blur(var(--te-glass-blur));
+  border: var(--te-border-width) solid var(--te-glass-border);
+  border-radius: var(--te-card-radius); padding: var(--te-card-pad);
+  box-shadow: var(--te-glass-highlight), var(--te-card-shadow);
 }
 .ds-panel--subtle { background: var(--te-bg-subtle); }
 .ds-panel--warm { background: var(--te-bg-warm); }
@@ -312,12 +318,12 @@ code, pre { font-family: var(--te-font-mono); font-size: var(--te-p-fs-caption);
   display: flex; align-items: center; justify-content: center; padding: var(--te-p-space-3);
 }
 .ds-glass-chip {
-  background: var(--te-glass-bg);
-  backdrop-filter: saturate(140%) blur(var(--te-glass-blur));
-  -webkit-backdrop-filter: saturate(140%) blur(var(--te-glass-blur));
-  border: var(--te-border-width) solid var(--te-glass-border);
-  box-shadow: var(--te-glass-shadow);
-  border-radius: var(--te-p-r-md); padding: 8px 14px;
+  background: var(--te-glass-bg-strong);
+  backdrop-filter: saturate(185%) blur(var(--te-glass-blur-strong, 30px));
+  -webkit-backdrop-filter: saturate(185%) blur(var(--te-glass-blur-strong, 30px));
+  border: 1.5px solid var(--te-glass-border);
+  box-shadow: var(--te-glass-highlight), var(--te-glass-shadow);
+  border-radius: var(--te-p-r-md); padding: 10px 16px;
   font-size: var(--te-p-fs-micro); font-weight: 700; color: var(--te-text-heading);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {

@@ -113,10 +113,13 @@ Below 32px the palms, bus and kayak become noise - switch to the monogram.
 | `theme-color` | `#ED7C30` |
 | Social OG image | Stacked lockup on `--te-grad-horizon`, 1200×630 |
 
-## 9. Attribution and partner lockups
+## 9. Attribution, Corporate Lineage & Parent-Group Lockups
 
-When paired with a partner (for example **তাঁবু নিবাসী**):
+- **Mother Company:** **Taabu Nibash Travel Group** (`assets/brand/taabu-nibashi-logo.jpg`) — parent umbrella mark (`#ED7C30`, `#0A8B48`, `#1F1610`).
+- **Sister Concern:** **Trip Express BD** (`assets/brand/logo-mark.svg`) — outbound tour wing.
+- Wordmark split treatment (`Trip` `#ED7C30` + `Express BD` `#111823`/`#132436`) is permitted in header and stacked brand lockups to keep logo color unity.
+
 ```
-[ Trip Express BD lockup ]  [ 1px n-300 vertical rule, height = disc height ]  [ partner mark ]
+[ Taabu Nibash Mother Co. ]  →  [ Sister Concern Badge ]  →  [ Trip Express BD ]
 ```
-Gap either side of the rule = clear-space value. Trip Express BD always sits left.
+On dark surfaces (e.g. footer), wrap `logo-mark.svg` inside a **true `1:1` circular (`52×52px`, `border-radius: 50%`, `padding: 7px`)** white disc chip rather than stretched oval capsules, paired beside the split `#ED7C30` `"Trip Express BD"` wordmark. Also keep `0.25 × disc` clear space around both emblems.

@@ -438,6 +438,13 @@ because `--te-chrome-h` holds a `calc()` and comes back unresolved from
 
 ---
 
+# Mobile Hero Stage (`<1040px`) vs Desktop Seamless Slider (`>=1040px`)
+
+- **Mobile Hero (`<1040px`):** Keep photography unobstructed at the top (`16:11` / `clamp(235px, 38svh, 310px)`, `object-position: center 22%`) with a feathered bottom `mask-image` fade (`74% → 100%`) into the continuous infinity glow canvas. Place the frosted floating slider dock above a breathable frosted glass headline sheet (`padding: 20px 18px`, `12px` stacked CTA gap below `480px`, `>=46px` button height) so CTAs never cram into narrow columns or squeeze copy. Keep route timeline cards (`padding: 14px`, `gap: 14px`) clear of the bottom floating WhatsApp pill, and keep footer direct desk banner compact with compact `0.875rem` lead text and true `52×52px` circular footer disc chip.
+- **Desktop Hero (`>=1040px`):** Full-bleed background slider feathered smoothly (`80% → 100%`) into `#destinations`, pairing the frosted glass headline card left with the frosted `.hero-slider__dock` (`01 / 04` counter + controls) right.
+
+---
+
 # Dev-server caching will lie to you
 
 Not a brand rule, but it cost real time on this build. `python -m http.server`

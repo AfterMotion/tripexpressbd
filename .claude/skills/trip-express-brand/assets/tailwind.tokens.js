@@ -126,7 +126,7 @@ module.exports = {
     'measure-bangla': '62ch',
   },
 
-  rotate: { 'flight': '17deg', 'flight-neg': '-17deg' },
+  rotate: { 'flight': '17deg', 'flight-neg': '-17deg', 'rule': '3deg', 'rule-neg': '-3deg' },
 
   zIndex: {
     sticky: '100', dropdown: '200', whatsapp: '300',

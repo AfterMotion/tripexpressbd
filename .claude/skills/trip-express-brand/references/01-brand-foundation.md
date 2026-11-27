@@ -56,7 +56,7 @@ render correctly at every size.
 - A public Facebook page with ~5.9K followers and a deep archive of completed tours
 - Real tour photography from Nepal, Kashmir, Meghalaya, Maldives, Sri Lanka, Kolkata
 - A physical office in Chattogram with a documented opening event
-- A partnership with the **তাঁবু নিবাসী** travel group
+- A **Mother Company — Sister Concern** lineage: **Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)** operates as Parent / Mother Company (`assets/brand/taabu-nibashi-logo.jpg`), with **Trip Express BD** serving as its specialized Outbound & Group Tour Sister Concern (featured in the frosted glassmorphism welcome modal on first load)
 - Repeat-season trips ("Kashmir by road, Season 5", "4th Kolkata city trip")
 
 Use these on the site as: follower count, completed-trip count, seasons-run counters,

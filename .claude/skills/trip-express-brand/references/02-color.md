@@ -16,6 +16,9 @@ estimated.
 | Aircraft underwing | `#3171AE` | 3.3% | **Deep Ocean** |
 | Sea shadow wave | `#397AB4` | - | Sea Shadow |
 | Negative space | `#FFFFFF` | 54.9% | **Horizon White** |
+| **Taabu Nibash (Mother Co.)** | `#ED7C30`, `#0A8B48`, `#1F1610` | - | Campfire Orange, Forest Green (`TRAVEL GROUP`), Charcoal Ink (`TAABU NIBASH`) |
+
+> **Display Orange Primacy:** Display headline accents (`.hero h1 em` *"Photographs to prove it."*), brand wordmark `"Trip"`, overlines, and brand icons strictly maintain `#ED7C30` (`orange-500`) rather than darkened brownish tints (`#A45826`).
 
 **Read the share column.** White is more than half the mark. The brand is
 *mostly white space* with confident colour blocks. Do not build dense, saturated

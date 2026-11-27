@@ -87,14 +87,15 @@
   --te-shadow-lg:   var(--te-p-shadow-lg);
   --te-shadow-xl:   var(--te-p-shadow-xl);
 
-  --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.08), transparent 68%);
-  --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.08), transparent 70%);
+  --te-glow-warm:       radial-gradient(640px circle at 88% 8%, rgba(237, 124, 48, 0.12), transparent 68%);
+  --te-glow-sky:        radial-gradient(600px circle at 10% 88%, rgba(67, 148, 213, 0.11), transparent 70%);
   --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
-  --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.085), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.08), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.06), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.07), transparent 70%);
-  --te-glass-bg:        rgba(255, 255, 255, 0.80);
-  --te-glass-bg-strong: rgba(255, 255, 255, 0.95);
-  --te-glass-border:    rgba(223, 229, 236, 0.85);
-  --te-glass-shadow:    0 8px 24px rgba(19, 36, 54, 0.08);
+  --te-glow-infinity:   radial-gradient(840px circle at 90% 8%, rgba(237, 124, 48, 0.13), transparent 66%), radial-gradient(740px circle at 8% 38%, rgba(67, 148, 213, 0.12), transparent 68%), radial-gradient(780px circle at 84% 72%, rgba(237, 124, 48, 0.095), transparent 66%), radial-gradient(680px circle at 14% 92%, rgba(67, 148, 213, 0.10), transparent 68%);
+  --te-glass-bg:        rgba(255, 255, 255, 0.58);
+  --te-glass-bg-strong: rgba(255, 255, 255, 0.72);
+  --te-glass-border:    rgba(255, 255, 255, 0.78);
+  --te-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  --te-glass-shadow:    0 12px 32px rgba(19, 36, 54, 0.10);
 }
 
 /* ---------- 2. DARK THEME (Night Ocean #132436) ---------- */
@@ -178,14 +179,15 @@
   --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
   --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
 
-  --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.15), transparent 68%);
-  --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.16), transparent 70%);
+  --te-glow-warm:       radial-gradient(640px circle at 88% 8%, rgba(237, 124, 48, 0.18), transparent 68%);
+  --te-glow-sky:        radial-gradient(600px circle at 10% 88%, rgba(67, 148, 213, 0.18), transparent 70%);
   --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
-  --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.14), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.15), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.11), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.12), transparent 70%);
-  --te-glass-bg:        rgba(19, 36, 54, 0.68);
-  --te-glass-bg-strong: rgba(19, 36, 54, 0.92);
-  --te-glass-border:    rgba(164, 193, 219, 0.18);
-  --te-glass-shadow:    0 12px 32px rgba(0, 0, 0, 0.36);
+  --te-glow-infinity:   radial-gradient(840px circle at 90% 8%, rgba(237, 124, 48, 0.17), transparent 66%), radial-gradient(740px circle at 8% 38%, rgba(67, 148, 213, 0.16), transparent 68%), radial-gradient(780px circle at 84% 72%, rgba(237, 124, 48, 0.13), transparent 66%), radial-gradient(680px circle at 14% 92%, rgba(67, 148, 213, 0.14), transparent 68%);
+  --te-glass-bg:        rgba(19, 36, 54, 0.56);
+  --te-glass-bg-strong: rgba(19, 36, 54, 0.72);
+  --te-glass-border:    rgba(164, 193, 219, 0.24);
+  --te-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --te-glass-shadow:    0 16px 40px rgba(0, 0, 0, 0.42);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -269,14 +271,15 @@
     --te-shadow-lg:   0 16px 40px rgba(0, 0, 0, 0.48);
     --te-shadow-xl:   0 28px 64px rgba(0, 0, 0, 0.56);
 
-    --te-glow-warm:       radial-gradient(620px circle at 88% 8%, rgba(237, 124, 48, 0.15), transparent 68%);
-    --te-glow-sky:        radial-gradient(580px circle at 10% 88%, rgba(67, 148, 213, 0.16), transparent 70%);
+    --te-glow-warm:       radial-gradient(640px circle at 88% 8%, rgba(237, 124, 48, 0.18), transparent 68%);
+    --te-glow-sky:        radial-gradient(600px circle at 10% 88%, rgba(67, 148, 213, 0.18), transparent 70%);
     --te-glow-ambient:    var(--te-glow-warm), var(--te-glow-sky);
-    --te-glow-infinity:   radial-gradient(760px circle at 90% 10%, rgba(237, 124, 48, 0.14), transparent 68%), radial-gradient(680px circle at 8% 42%, rgba(67, 148, 213, 0.15), transparent 70%), radial-gradient(740px circle at 84% 78%, rgba(237, 124, 48, 0.11), transparent 68%), radial-gradient(640px circle at 14% 94%, rgba(67, 148, 213, 0.12), transparent 70%);
-    --te-glass-bg:        rgba(19, 36, 54, 0.68);
-    --te-glass-bg-strong: rgba(19, 36, 54, 0.92);
-    --te-glass-border:    rgba(164, 193, 219, 0.18);
-    --te-glass-shadow:    0 12px 32px rgba(0, 0, 0, 0.36);
+    --te-glow-infinity:   radial-gradient(840px circle at 90% 8%, rgba(237, 124, 48, 0.17), transparent 66%), radial-gradient(740px circle at 8% 38%, rgba(67, 148, 213, 0.16), transparent 68%), radial-gradient(780px circle at 84% 72%, rgba(237, 124, 48, 0.13), transparent 66%), radial-gradient(680px circle at 14% 92%, rgba(67, 148, 213, 0.14), transparent 68%);
+    --te-glass-bg:        rgba(19, 36, 54, 0.56);
+    --te-glass-bg-strong: rgba(19, 36, 54, 0.72);
+    --te-glass-border:    rgba(164, 193, 219, 0.24);
+    --te-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    --te-glass-shadow:    0 16px 40px rgba(0, 0, 0, 0.42);
   }
 }
 
@@ -292,7 +295,9 @@
   --te-glow-ambient:    none;
   --te-glow-infinity:   none;
   --te-glass-bg:        var(--te-p-n-0);
+  --te-glass-bg-strong: var(--te-p-n-0);
   --te-glass-border:    var(--te-p-n-800);
+  --te-glass-highlight: none;
 }
 
 [data-theme="dark"][data-contrast="high"] {
@@ -304,7 +309,9 @@
   --te-glow-ambient:    none;
   --te-glow-infinity:   none;
   --te-glass-bg:        var(--te-p-dark-elevated);
+  --te-glass-bg-strong: var(--te-p-dark-elevated);
   --te-glass-border:    var(--te-p-n-0);
+  --te-glass-highlight: none;
 }
 
 @media (prefers-contrast: more) {
@@ -317,9 +324,11 @@
     --te-text-muted:      var(--te-p-n-700);
     --te-focus-offset:    3px;
     --te-glow-ambient:    none;
-  --te-glow-infinity:   none;
+    --te-glow-infinity:   none;
     --te-glass-bg:        var(--te-p-n-0);
+    --te-glass-bg-strong: var(--te-p-n-0);
     --te-glass-border:    var(--te-p-n-800);
+    --te-glass-highlight: none;
   }
   [data-theme="dark"] {
     --te-border-subtle:   var(--te-p-ocean-300);
@@ -328,9 +337,11 @@
     --te-text-body:       var(--te-p-n-0);
     --te-text-muted:      var(--te-p-n-200);
     --te-glow-ambient:    none;
-  --te-glow-infinity:   none;
+    --te-glow-infinity:   none;
     --te-glass-bg:        var(--te-p-dark-elevated);
+    --te-glass-bg-strong: var(--te-p-dark-elevated);
     --te-glass-border:    var(--te-p-n-0);
+    --te-glass-highlight: none;
   }
 }
 

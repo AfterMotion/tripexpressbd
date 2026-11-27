@@ -87,9 +87,11 @@ These six are the brand. Full 50→950 ramps and dark mode live in
 
 `#FFFFFF` on `#ED7C30` is **2.79:1 - it fails WCAG AA.**
 
-- **Primary button = Sunset Orange background + `#111823` ink text** (5.66:1 ✓)
-- Orange text on white must be `--te-orange-700` `#A45826` (5.25:1 ✓)
+- **Primary button = Sunset Orange background + `#111823` ink text** (6.39:1 ✓)
+- **Display accent / wordmark primacy:** Large display emphasis (`H1 em` e.g., `"Photographs to prove it."`), wordmark `"Trip"`, overlines, and brand icons strictly use pure source `--te-orange-500` `#ED7C30` to preserve unity with the logo; small body links/pills use `--te-orange-700` `#A45826` (5.25:1 ✓)
 - White text on blue must be `--te-deep-700` `#25517B` (8.26:1 ✓) or darker
+- **Corporate Lineage:** **Trip Express BD** is a dedicated Sister Concern of **Taabu Nibash Travel Group (তাঁবু নিবাসী ট্রাভেল গ্রুপ)** (`assets/brand/taabu-nibashi-logo.jpg`, Mother Co. pigments `#0A8B48`, `#1F1610`, `#ED7C30`). Announced cleanly via a **pure minimalist frosted branding modal** (`2000ms` delay + `700ms` slow reveal on every reload; no trigger buttons in header/drawer/footer, no CTA inside modal).
+- **Stronger Frosted Glass & Seamless Infinity Flow:** Use `--te-glow-infinity` globally with `0.58–0.74` frosted glass (`24–30px` blur + `--te-glass-highlight`) and feathered hero transitions so section seams disappear. Wrap footer dark-surface `logo-mark.svg` in a **true 1:1 circular (`52×52px`, `border-radius: 50%`)** white chip—never stretched oval pills.
 
 ---
 
@@ -100,6 +102,8 @@ Measured from the logo's aircraft streak: **17°**, rising left → right.
 ```css
 --te-flight-angle: 17deg;
 --te-flight-angle-neg: -17deg;
+--te-rule-angle: 3deg;
+--te-rule-angle-neg: -3deg;        /* text-adjacent Flight Rules only; avoids colliding with copy */
 --te-cut-rise: min(30.57vw, 170px);   /* tan(17deg) = 0.3057 */
 ```
 
@@ -108,9 +112,9 @@ an arbitrary `height: 36px` is a 5° cut wearing the brand's name - that is the
 single most common way this system gets faked. When a true 17° rise would swallow
 the artwork, shorten the *run* (a corner wedge) rather than shallowing the angle.
 
-Use it for: section dividers, the sunset/sea gradient direction, hero clip-paths,
-underline swashes, badge skews, card hover lift direction, and the motion path of
-anything that "departs".
+Use `17°` for: section dividers, the sunset/sea gradient direction, hero clip-paths,
+and the motion path of anything that "departs". Use gentle **`-3deg`** (`--te-rule-angle-neg`)
+for text-adjacent Flight Rules / underline swashes so they never overlap overlines or headings on mobile or desktop.
 
 Never use 45°, never use a horizontal-only divider on a hero. The site should feel
 like it is always climbing slightly to the right.

@@ -97,6 +97,10 @@
   --te-p-wa-700: #10693C;
   --te-p-wa-950: #0B3D22;
 
+  /* Partner / Parent Group pigment reference (Taabu Nibash Travel Group) */
+  --te-p-partner-green: #0A8B48;
+  --te-p-partner-ink:   #1F1610;
+
   /* Dark surface primitives */
   --te-p-dark-subtle:       #17293C;
   --te-p-dark-elevated:     #1A2E43;
@@ -214,6 +218,8 @@
   --te-p-container-wide:   1440px;
   --te-p-flight-angle:     17deg;
   --te-p-flight-angle-neg: -17deg;
+  --te-p-rule-angle:       3deg;
+  --te-p-rule-angle-neg:   -3deg;
   --te-p-cut-rise:         min(30.57vw, 170px);
   --te-p-ic-sm: 16px;
   --te-p-ic-md: 20px;
@@ -238,8 +244,9 @@
     rgba(19, 36, 54, 0.55) 38%,
     rgba(19, 36, 54, 0.00) 100%
   );
-  --te-glass-blur: 16px;
-  --te-glass-dark-bd: rgba(255, 255, 255, 0.32);
+  --te-glass-blur: 24px;
+  --te-glass-blur-strong: 30px;
+  --te-glass-dark-bd: rgba(255, 255, 255, 0.34);
 
   /* ==========================================================
      LAYER 2: STRUCTURAL & DENSITY SEMANTICS (Comfortable Default)

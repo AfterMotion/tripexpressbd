@@ -144,6 +144,13 @@
     rgba(19, 36, 54, 0.55) 38%,
     rgba(19, 36, 54, 0.00) 100%
   );
+  --te-glass-blur:        24px;
+  --te-glass-blur-strong: 30px;
+  --te-glass-bg:          rgba(255, 255, 255, 0.58);
+  --te-glass-bg-strong:   rgba(255, 255, 255, 0.72);
+  --te-glass-border:      rgba(255, 255, 255, 0.78);
+  --te-glass-highlight:   inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  --te-glow-infinity:     radial-gradient(840px circle at 90% 8%, rgba(237, 124, 48, 0.13), transparent 66%), radial-gradient(740px circle at 8% 38%, rgba(67, 148, 213, 0.12), transparent 68%), radial-gradient(780px circle at 84% 72%, rgba(237, 124, 48, 0.095), transparent 66%), radial-gradient(680px circle at 14% 92%, rgba(67, 148, 213, 0.10), transparent 68%);
 
   /* ---------- Shadows (tinted with Deep Ocean) ---------- */
   --te-shadow-xs:   0 1px 2px   rgba(19, 36, 54, 0.06);
@@ -248,9 +255,11 @@
   --te-r-pill: 999px;
   --te-r-disc: 50%;
 
-  /* ---------- The Flight Angle (measured from the logo: 17deg) ---------- */
+  /* ---------- The Flight Angle (logo: 17deg; text-adjacent Flight Rule: 3deg) ---------- */
   --te-flight-angle:     17deg;
   --te-flight-angle-neg: -17deg;
+  --te-rule-angle:       3deg;
+  --te-rule-angle-neg:   -3deg;
   /* tan(17deg) = 0.3057 - a cut whose rise is 30.57% of its width IS the Flight
      Angle. Capped so a full-width cut never swallows the art behind it. */
   --te-cut-rise: min(30.57vw, 170px);
@@ -456,7 +465,7 @@
   height: 3px;
   border-radius: 999px;
   background: var(--te-grad-sunset);
-  transform: rotate(var(--te-flight-angle-neg));
+  transform: rotate(var(--te-rule-angle-neg));
   transform-origin: left center;
   margin: 12px 0 16px;
 }
